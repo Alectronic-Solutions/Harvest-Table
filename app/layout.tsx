@@ -45,10 +45,6 @@ export const metadata: Metadata = {
   },
   description:
     'Seasonal dining sourced within 60 miles. Named by the farmer. Cooked to order. Reservations open Tuesday through Sunday in Lodi, California.',
-  icons: {
-    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
-    apple: '/logo.svg',
-  },
   openGraph: {
     title: 'Harvest Table | Farm-to-Table Restaurant in Lodi, CA',
     description:
@@ -75,9 +71,9 @@ export default function RootLayout({
       className={`${cormorant.variable} ${dmMono.variable} ${dmSans.variable}`}
     >
       <head>
+        <link rel="icon" type="image/svg+xml" href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/favicon.svg`} />
         <script
           type="application/ld+json"
-          // Restaurant structured data for local SEO.
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(restaurantSchema()),
           }}
