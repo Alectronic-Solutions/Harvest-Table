@@ -4,6 +4,7 @@
 // smaller partner cards, and a closing commitment statement.
 
 import Image from "next/image"
+import { asset } from '@/lib/basePath'
 import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { FARMERS, type Farmer } from "@/data/farmers"
@@ -42,7 +43,7 @@ function FeaturedFarmerCard({ farmer, index }: { farmer: Farmer; index: number }
             className="absolute inset-0"
           >
             <Image
-              src={farmer.image}
+              src={asset(farmer.image)}
               alt={`${farmer.name} of ${farmer.farm}`}
               fill
               className="object-cover object-top"
@@ -53,7 +54,7 @@ function FeaturedFarmerCard({ farmer, index }: { farmer: Farmer; index: number }
         {/* Mobile: no parallax */}
         <div className="absolute inset-0 md:hidden">
           <Image
-            src={farmer.image}
+            src={asset(farmer.image)}
             alt={`${farmer.name} of ${farmer.farm}`}
             fill
             className="object-cover object-top"
@@ -111,7 +112,7 @@ function AdditionalFarmerCard({ farmer }: { farmer: Farmer }) {
     >
       <div className="relative flex-shrink-0 w-[120px] h-[120px] overflow-hidden">
         <Image
-          src={farmer.image}
+          src={asset(farmer.image)}
           alt={`${farmer.name} of ${farmer.farm}`}
           fill
           className="object-cover object-top"
@@ -144,7 +145,7 @@ export default function FarmersClient() {
           className="absolute inset-0 scale-110 hidden md:block"
         >
           <Image
-            src="/images/farm-field.jpg"
+            src={asset('/images/farm-field.jpg')}
             alt="Rolling farmland at golden hour"
             fill
             priority
@@ -155,7 +156,7 @@ export default function FarmersClient() {
         {/* Mobile: static */}
         <div className="absolute inset-0 md:hidden">
           <Image
-            src="/images/farm-field.jpg"
+            src={asset('/images/farm-field.jpg')}
             alt="Rolling farmland at golden hour"
             fill
             priority

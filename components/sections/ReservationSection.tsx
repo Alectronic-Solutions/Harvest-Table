@@ -5,6 +5,7 @@
 // per-element parallax. Stacks to form-over-image on mobile.
 
 import Image from 'next/image';
+import { asset } from '@/lib/basePath';
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { CONTACT } from '@/data/restaurant';
@@ -182,7 +183,7 @@ export default function ReservationSection() {
       >
         <motion.div style={{ y: imageY }} className="absolute inset-0 scale-110">
           <Image
-            src="/images/restaurant-interior.jpg"
+            src={asset('/images/restaurant-interior.jpg')}
             alt="The warm, wood-paneled dining room at Harvest Table"
             fill
             className="object-cover"

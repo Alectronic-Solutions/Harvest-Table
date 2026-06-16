@@ -7,6 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useIsDesktop } from '@/lib/useIsDesktop';
+import { asset } from '@/lib/basePath';
 
 const VALUES = [
   {
@@ -38,7 +39,7 @@ function AboutHero() {
     <section className="relative flex h-[300px] items-end overflow-hidden md:h-[420px]">
       <motion.div style={{ y: imageY }} className="absolute inset-0 scale-110">
         <Image
-          src="/images/hero-dining.jpg"
+          src={asset('/images/hero-dining.jpg')}
           alt="Harvest Table dining room"
           fill
           priority
@@ -122,7 +123,7 @@ function OriginStory() {
           >
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
-                src="/images/farmer-portrait-1.jpg"
+                src={asset('/images/farmer-portrait-1.jpg')}
                 alt="Daniel Park, Chef and Founder"
                 fill
                 className="object-cover object-top"
@@ -188,7 +189,7 @@ function TeamPhoto() {
     <section className="relative h-[280px] overflow-hidden md:h-[400px]">
       <motion.div style={{ y: imageY }} className="absolute inset-0 scale-110">
         <Image
-          src="/images/space-wide.jpg"
+          src={asset('/images/space-wide.jpg')}
           alt="The Harvest Table team"
           fill
           className="object-cover"

@@ -3,6 +3,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { asset } from '@/lib/basePath';
 import { HOURS, CONTACT, SOCIAL } from '@/data/restaurant';
 
 const NAV_LINKS = [
@@ -50,7 +51,7 @@ export default function Footer() {
           <div className="pb-10 md:pb-0">
             <Link href="/" className="inline-flex items-center gap-3">
               <Image
-                src="/logo.svg"
+                src={asset('/logo.svg')}
                 alt="Harvest Table"
                 width={44}
                 height={44}

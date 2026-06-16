@@ -4,6 +4,7 @@
 // decorative room image strip at the bottom.
 
 import Image from 'next/image';
+import { asset } from '@/lib/basePath';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { CONTACT, HOURS } from '@/data/restaurant';
 import { useIsDesktop } from '@/lib/useIsDesktop';
@@ -32,7 +33,7 @@ export default function ReservationsClient() {
       <section className="relative flex h-[220px] items-center justify-center overflow-hidden md:h-[300px]">
         <motion.div style={{ y: heroY }} className="absolute inset-0 scale-110">
           <Image
-            src="/images/restaurant-interior.jpg"
+            src={asset('/images/restaurant-interior.jpg')}
             alt="Candlelit dining room set for evening service"
             fill
             priority
@@ -262,7 +263,7 @@ export default function ReservationsClient() {
       <section className="relative h-[220px] overflow-hidden md:h-[320px]">
         <motion.div style={{ y: roomY }} className="absolute inset-0 scale-110">
           <Image
-            src="/images/space-wide.jpg"
+            src={asset('/images/space-wide.jpg')}
             alt="The Harvest Table dining room"
             fill
             className="object-cover object-center"

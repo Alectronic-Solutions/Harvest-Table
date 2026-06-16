@@ -4,6 +4,7 @@
 // a newsletter signup strip, and a hero. Sold-out state handled per card.
 
 import Image from 'next/image';
+import { asset } from '@/lib/basePath';
 import Link from 'next/link';
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -25,7 +26,7 @@ const IMAGE_FALLBACKS: Record<string, string> = {
   '/images/event-harvest.jpg': '/images/farm-field.jpg',
 };
 function resolveImage(src: string): string {
-  return IMAGE_FALLBACKS[src] ?? src;
+  return asset(IMAGE_FALLBACKS[src] ?? src);
 }
 
 // ── Hero ──────────────────────────────────────────────────────────────────────
@@ -40,7 +41,7 @@ function EventsHero() {
     <section className="relative flex h-[260px] items-center justify-center overflow-hidden md:h-[360px]">
       <motion.div style={{ y: imageY }} className="absolute inset-0 scale-110">
         <Image
-          src="/images/restaurant-interior.jpg"
+          src={asset('/images/restaurant-interior.jpg')}
           alt="Harvest Table dining room set for an evening event"
           fill
           priority

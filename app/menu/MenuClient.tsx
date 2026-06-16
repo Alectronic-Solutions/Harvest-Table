@@ -5,6 +5,7 @@
 // IntersectionObserver to track the active section as the user scrolls.
 
 import Image from 'next/image';
+import { asset } from '@/lib/basePath';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -25,7 +26,7 @@ function MenuHero() {
     <div className="relative h-[260px] overflow-hidden md:h-[340px]">
       <motion.div style={{ y: imageY }} className="absolute inset-0 scale-110">
         <Image
-          src="/images/farm-field.jpg"
+          src={asset('/images/farm-field.jpg')}
           alt="California farm fields at golden hour"
           fill
           priority

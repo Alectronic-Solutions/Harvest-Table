@@ -5,6 +5,7 @@
 // photo show more on the right. Content sits on the left third.
 
 import Image from 'next/image';
+import { asset } from '@/lib/basePath';
 import Link from 'next/link';
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -36,7 +37,7 @@ export default function PrivateDining() {
       {/* Background image with parallax */}
       <motion.div style={{ y: imageY }} className="absolute inset-0 scale-110">
         <Image
-          src="/images/private-dining.jpg"
+          src={asset('/images/private-dining.jpg')}
           alt="The private dining room set for an intimate event"
           fill
           className="object-cover object-center"

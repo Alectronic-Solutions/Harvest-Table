@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
+import { asset } from '@/lib/basePath';
 
 const LINKS = [
   { label: 'Menu', href: '/menu' },
@@ -80,7 +81,7 @@ export default function Navbar() {
             className="flex items-center gap-2.5"
           >
             <Image
-              src="/logo.svg"
+              src={asset('/logo.svg')}
               alt=""
               width={44}
               height={44}

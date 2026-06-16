@@ -9,6 +9,7 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { MENU, type MenuItem } from '@/data/menu';
 import { useIsDesktop } from '@/lib/useIsDesktop';
+import { asset } from '@/lib/basePath';
 
 // Pull the 4 mains to display.
 const mainsSection = MENU.find((s) => s.label === 'Mains');
@@ -61,7 +62,7 @@ function MenuCard({
           className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.03]"
         >
           <Image
-            src={imageSrc}
+            src={asset(imageSrc)}
             alt={item.name}
             fill
             className="object-cover"

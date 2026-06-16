@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useIsDesktop } from '@/lib/useIsDesktop';
+import { asset } from '@/lib/basePath';
 
 interface Farmer {
   name: string;
@@ -77,7 +78,7 @@ function FarmerCard({ farmer }: { farmer: Farmer }) {
       <div className="relative h-[320px] overflow-hidden md:h-auto md:aspect-[3/4]">
         <motion.div style={{ y: imageY }} className="absolute inset-0 scale-110">
           <Image
-            src={farmer.image}
+            src={asset(farmer.image)}
             alt={`${farmer.name} of ${farmer.farm}`}
             fill
             className="object-cover object-top"

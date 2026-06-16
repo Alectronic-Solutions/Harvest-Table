@@ -4,6 +4,7 @@
 // and a careers + press strip. Form pre-selects inquiry type from URL params.
 
 import Image from 'next/image';
+import { asset } from '@/lib/basePath';
 import { Suspense } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useSearchParams } from 'next/navigation';
@@ -23,7 +24,7 @@ function ContactHero() {
     <section className="relative flex h-[200px] items-center justify-center overflow-hidden md:h-[260px]">
       <motion.div style={{ y: imageY }} className="absolute inset-0 scale-110">
         <Image
-          src="/images/restaurant-interior.jpg"
+          src={asset('/images/restaurant-interior.jpg')}
           alt="Harvest Table dining room"
           fill
           priority

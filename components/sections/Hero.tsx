@@ -5,6 +5,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { asset } from '@/lib/basePath';
 import {
   motion,
   useScroll,
@@ -53,7 +54,7 @@ export default function Hero() {
         className="absolute inset-0 scale-110"
       >
         <Image
-          src="/images/hero-dining.jpg"
+          src={asset('/images/hero-dining.jpg')}
           alt="Warm candlelit dining room at Harvest Table"
           fill
           priority
