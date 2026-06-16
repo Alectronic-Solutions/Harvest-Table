@@ -62,8 +62,11 @@ export default function Hero() {
         />
       </motion.div>
 
-      {/* Dark overlay so text stays legible over any photo */}
-      <div className="absolute inset-0 bg-forest/60" />
+      {/* Layered overlays: base dark + subtle radial warmth around the copy */}
+      <div className="absolute inset-0 bg-forest/55" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_70%_at_50%_45%,rgba(160,82,45,0.08)_0%,transparent_70%)]" />
+      {/* Bottom vignette bleeds the hero into the Philosophy section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-forest/40" />
 
       {/* Content */}
       <motion.div
@@ -103,7 +106,8 @@ export default function Hero() {
         <motion.div variants={fadeIn(1.5)}>
           <Link
             href="/reservations"
-            className="mt-8 flex w-full min-h-[48px] items-center justify-center rounded-full bg-gold px-8 py-4 font-sans text-base font-medium text-forest transition-opacity duration-300 hover:opacity-90 md:inline-flex md:w-auto"
+            className="mt-8 flex w-full min-h-[48px] items-center justify-center rounded-full bg-gold px-8 py-4 font-sans text-base font-medium text-forest transition-all duration-300 hover:opacity-95 hover:scale-[1.02] md:inline-flex md:w-auto"
+            style={{ boxShadow: '0 0 32px rgba(212,168,67,0.35), inset 0 1px 0 rgba(255,255,255,0.2)' }}
           >
             Reserve a Table
           </Link>

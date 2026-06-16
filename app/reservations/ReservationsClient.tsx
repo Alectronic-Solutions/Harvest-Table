@@ -132,7 +132,7 @@ export default function ReservationsClient() {
                     {[1,2,3,4,5,6,7,8].map((n) => (
                       <option key={n} value={n}>{n} {n === 1 ? 'guest' : 'guests'}</option>
                     ))}
-                    <option value="9+">9+ guests -- please call</option>
+                    <option value="9+">9+ guests / please call</option>
                   </select>
                 </div>
 

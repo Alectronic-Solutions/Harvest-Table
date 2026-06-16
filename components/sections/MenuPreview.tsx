@@ -56,7 +56,10 @@ function MenuCard({
     >
       {/* Image container: overflow-hidden clips the parallax drift */}
       <div className="relative overflow-hidden rounded-sm aspect-video md:aspect-[4/3]">
-        <motion.div style={{ y: imageY }} className="absolute inset-0">
+        <motion.div
+          style={{ y: imageY }}
+          className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+        >
           <Image
             src={imageSrc}
             alt={item.name}
@@ -65,6 +68,10 @@ function MenuCard({
             sizes="(min-width: 768px) 50vw, 100vw"
           />
         </motion.div>
+        {/* Hover shimmer overlay */}
+        <div className="absolute inset-0 bg-forest/0 transition-all duration-500 group-hover:bg-forest/10" />
+        {/* Permanent bottom gradient for farm text legibility */}
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-forest/30 to-transparent" />
       </div>
 
       <div className="mt-3">
@@ -97,16 +104,18 @@ export default function MenuPreview() {
     <section className="bg-linen py-16 md:py-24">
       <div className="mx-auto max-w-content px-5 md:px-8">
         {/* Section header */}
-        <div className="mb-12">
-          <p className="font-mono text-xs uppercase tracking-widest text-fog">
-            What&apos;s on the table
-          </p>
-          <h2 className="mt-3 font-display text-5xl font-semibold text-forest">
-            This season&apos;s menu
-          </h2>
+        <div className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-widest text-fog">
+              What&apos;s on the table
+            </p>
+            <h2 className="mt-3 font-display text-5xl font-semibold text-forest">
+              This season&apos;s menu
+            </h2>
+          </div>
           <Link
             href="/menu"
-            className="mt-4 inline-block font-sans text-base text-ember underline underline-offset-4 hover:opacity-80"
+            className="mt-4 inline-block font-sans text-sm font-medium text-ember underline underline-offset-4 transition-opacity hover:opacity-70 md:mt-0 md:pb-1"
           >
             View full menu &rarr;
           </Link>

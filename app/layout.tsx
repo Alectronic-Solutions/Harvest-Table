@@ -4,6 +4,10 @@ import './globals.css';
 import SeasonalStrip from '@/components/SeasonalStrip';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ScrollProgress from '@/components/ScrollProgress';
+import GrainOverlay from '@/components/GrainOverlay';
+import PageTransition from '@/components/PageTransition';
+import CustomCursor from '@/components/CustomCursor';
 import { CONTACT } from '@/data/restaurant';
 import { restaurantSchema } from '@/lib/schema';
 
@@ -80,9 +84,14 @@ export default function RootLayout({
         />
       </head>
       <body id="top">
+        <CustomCursor />
+        <GrainOverlay />
+        <ScrollProgress />
         <SeasonalStrip />
         <Navbar />
-        <main>{children}</main>
+        <PageTransition>
+          <main>{children}</main>
+        </PageTransition>
         <Footer />
       </body>
     </html>

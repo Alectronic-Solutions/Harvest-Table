@@ -136,9 +136,9 @@ export default function FarmersClient() {
 
   return (
     <main>
-      {/* PART 1 â€” Hero */}
+      {/* PART 1 - Hero */}
       <section className="relative h-[280px] md:h-[380px] overflow-hidden flex items-center justify-center">
-        {/* Parallax image â€” desktop only */}
+        {/* Parallax image - desktop only */}
         <motion.div
           style={{ y: heroY }}
           className="absolute inset-0 scale-110 hidden md:block"
@@ -180,7 +180,7 @@ export default function FarmersClient() {
         </div>
       </section>
 
-      {/* PART 2 â€” Featured farmers */}
+      {/* PART 2 - Featured farmers */}
       <section className="bg-linen py-24">
         <div className="max-w-5xl mx-auto px-6">
           {/* Section label */}
@@ -197,7 +197,7 @@ export default function FarmersClient() {
         </div>
       </section>
 
-      {/* PART 3 â€” Additional partners */}
+      {/* PART 3 - Additional partners */}
       <section className="bg-white py-20">
         <div className="max-w-5xl mx-auto px-6">
           {/* Section label */}
@@ -216,7 +216,7 @@ export default function FarmersClient() {
         </div>
       </section>
 
-      {/* PART 4 â€” Commitment statement */}
+      {/* PART 4 - Commitment statement */}
       <section className="bg-forest py-20 text-center">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

@@ -38,14 +38,15 @@ export default function Navbar() {
   // Solid when scrolled past the hero top or mobile menu is open.
   const solid = scrolled || menuOpen;
 
-  // Text and icon color flips with the background.
-  const textColor = solid ? 'text-linen' : 'text-ink';
-  const barColor  = solid ? 'bg-linen'   : 'bg-ink';
+  const textColor = 'text-ink';
+  const barColor  = 'bg-ink';
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-colors duration-300 ${
-        solid ? 'bg-forest' : 'bg-linen/95 backdrop-blur-sm'
+      className={`sticky top-0 z-50 transition-all duration-500 ${
+        solid
+          ? 'bg-linen/90 backdrop-blur-md border-b border-ink/10 shadow-[0_2px_20px_rgba(0,0,0,0.08)]'
+          : 'bg-linen/70 backdrop-blur-sm border-b border-ink/6'
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-content items-center justify-between px-5 md:h-20 md:px-8">
@@ -98,7 +99,7 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className={`link-underline font-sans text-sm font-medium transition-colors duration-300 ${textColor} opacity-90 hover:opacity-100`}
+                className={`link-underline font-sans text-sm font-medium transition-colors duration-300 ${textColor} ${solid ? 'opacity-80 hover:opacity-100' : 'opacity-100'}`}
               >
                 {link.label}
               </Link>
@@ -110,11 +111,7 @@ export default function Navbar() {
         <div className="flex items-center justify-end">
           <Link
             href="/reservations"
-            className={`hidden rounded-full px-5 py-2.5 font-sans text-sm font-medium transition-all duration-300 hover:scale-[1.02] md:inline-block ${
-              solid
-                ? 'bg-gold text-forest'
-                : 'border border-ink/30 text-ink hover:border-ink hover:bg-ink hover:text-linen'
-            }`}
+            className="hidden rounded-full bg-gold px-5 py-2.5 font-sans text-sm font-medium text-forest transition-all duration-300 hover:scale-[1.02] hover:opacity-90 md:inline-block"
           >
             Reserve a Table
           </Link>

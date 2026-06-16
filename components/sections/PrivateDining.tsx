@@ -45,19 +45,10 @@ export default function PrivateDining() {
       </motion.div>
 
       {/* Overlay: uniform forest/70 on mobile, left-to-right gradient on desktop. */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: 'rgba(44,59,45,0.70)',
-        }}
-      />
-      <div
-        className="absolute inset-0 hidden md:block"
-        style={{
-          background:
-            'linear-gradient(to right, rgba(44,59,45,0.80) 0%, rgba(44,59,45,0.40) 100%)',
-        }}
-      />
+      <div className="absolute inset-0 bg-forest/72 md:hidden" />
+      <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-forest/85 via-forest/60 to-forest/20" />
+      {/* Vignette edges */}
+      <div className="absolute inset-0 hidden md:block bg-[radial-gradient(ellipse_at_left,rgba(44,59,45,0.3)_0%,transparent_60%)]" />
 
       {/* Content */}
       <motion.div
@@ -99,7 +90,7 @@ export default function PrivateDining() {
 
           <Link
             href="/contact?inquiry=private-dining"
-            className="mt-10 flex min-h-[48px] items-center justify-center border border-gold px-8 py-4 font-sans text-base font-medium text-gold transition-colors duration-300 hover:bg-gold hover:text-forest md:inline-flex md:w-auto"
+            className="mt-10 flex min-h-[48px] items-center justify-center border-[1.5px] border-gold px-9 py-4 font-sans text-base font-medium text-gold transition-all duration-300 hover:bg-gold hover:text-forest hover:shadow-[0_0_24px_rgba(212,168,67,0.3)] md:inline-flex md:w-auto"
           >
             Inquire About Events
           </Link>
