@@ -72,6 +72,8 @@ export default function RootLayout({
     >
       <head>
         <link rel="icon" type="image/svg+xml" href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/favicon.svg`} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -80,13 +82,16 @@ export default function RootLayout({
         />
       </head>
       <body id="top">
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <CustomCursor />
         <GrainOverlay />
         <ScrollProgress />
         <SeasonalStrip />
         <Navbar />
         <PageTransition>
-          <main>{children}</main>
+          <main id="main-content" tabIndex={-1}>{children}</main>
         </PageTransition>
         <Footer />
       </body>

@@ -162,6 +162,22 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} {CONTACT.name}. All rights reserved.
           </p>
 
+          {/* Legal links */}
+          <div className="flex gap-4">
+            <Link
+              href="/privacy-policy"
+              className="font-sans text-xs text-linen/35 transition-colors hover:text-gold/80"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms-of-service"
+              className="font-sans text-xs text-linen/35 transition-colors hover:text-gold/80"
+            >
+              Terms of Service
+            </Link>
+          </div>
+
           {/* Centered back-to-top with ornament */}
           <a
             href="#top"

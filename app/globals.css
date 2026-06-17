@@ -13,7 +13,22 @@
 
   body {
     @apply bg-linen text-ink font-sans antialiased;
-    cursor: none; /* custom cursor takes over */
+  }
+
+  /* Custom cursor users - hide default cursor only when cursor is active */
+  .custom-cursor-active {
+    cursor: none;
+  }
+
+  /* Focus visible styles for keyboard navigation */
+  :focus-visible {
+    outline: 2px solid #D4A843;
+    outline-offset: 2px;
+  }
+
+  /* Remove outline for mouse users but keep for keyboard */
+  :focus:not(:focus-visible) {
+    outline: none;
   }
 
   /* Display headings always use Cormorant Garamond. */
@@ -27,6 +42,25 @@
   ::selection {
     background: rgba(212, 168, 67, 0.28);
     color: #1A1A1A;
+  }
+
+  /* Skip link for accessibility */
+  .skip-link {
+    position: absolute;
+    top: -9999px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999999;
+    background: #1A3C1E;
+    color: #F0EBE1;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .skip-link:focus {
+    top: 16px;
   }
 }
 

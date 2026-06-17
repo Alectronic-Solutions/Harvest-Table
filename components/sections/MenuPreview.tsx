@@ -67,6 +67,7 @@ function MenuCard({
             fill
             className="object-cover"
             sizes="(min-width: 768px) 50vw, 100vw"
+            loading="lazy"
           />
         </motion.div>
         {/* Hover shimmer overlay */}

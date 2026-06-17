@@ -83,6 +83,7 @@ function FarmerCard({ farmer }: { farmer: Farmer }) {
             fill
             className="object-cover object-top"
             sizes="(min-width: 1024px) 33vw, 100vw"
+            loading="lazy"
           />
         </motion.div>
       </div>

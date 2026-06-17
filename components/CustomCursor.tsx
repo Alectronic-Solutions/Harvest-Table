@@ -3,6 +3,7 @@
 // One job: replace the OS cursor with a small gold dot that tracks the pointer.
 // A larger ring trails behind with a spring delay — standard luxury-site treatment.
 // Hides on touch devices. Expands on interactive elements.
+// Also manages cursor visibility state for CSS styling.
 
 import { useEffect, useRef, useState } from 'react';
 
@@ -22,6 +23,9 @@ export default function CustomCursor() {
   useEffect(() => {
     // Skip on touch-primary devices.
     if (window.matchMedia('(hover: none)').matches) return;
+
+    // Add class to body for CSS cursor hiding
+    document.body.classList.add('custom-cursor-active');
 
     const onMove = (e: MouseEvent) => {
       mouse.current = { x: e.clientX, y: e.clientY };
@@ -68,6 +72,7 @@ export default function CustomCursor() {
       document.removeEventListener('mouseleave', onLeave);
       document.removeEventListener('mouseenter', onEnter);
       cancelAnimationFrame(rafId.current);
+      document.body.classList.remove('custom-cursor-active');
     };
   }, [visible]);
 
