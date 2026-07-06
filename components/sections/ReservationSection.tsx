@@ -63,10 +63,7 @@ export default function ReservationSection() {
       <div className="bg-forest px-6 py-14 md:w-[55%] md:px-12 md:py-20">
         <div className="mx-auto max-w-lg">
           {/* Header */}
-          <p className="font-mono text-xs uppercase tracking-widest text-gold">
-            Join us
-          </p>
-          <h2 className="mt-2 font-display text-4xl font-normal text-white">
+          <h2 className="font-display text-4xl font-normal text-white">
             Reserve a table
           </h2>
           <p className="mt-3 font-sans text-sm text-linen/90">

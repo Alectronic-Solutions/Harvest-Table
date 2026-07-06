@@ -262,8 +262,7 @@ function CareersAndPress() {
             transition={{ duration: 0.6 }}
             className="py-10 md:py-0 md:pr-12"
           >
-            <p className="font-mono text-xs uppercase tracking-widest text-fog">Work with us</p>
-            <h2 className="mt-3 font-display text-2xl font-medium text-forest">
+            <h2 className="font-display text-2xl font-medium text-forest">
               We are always looking for people who care about food.
             </h2>
             <p className="mt-3 font-sans text-sm leading-relaxed text-fog">
@@ -286,8 +285,7 @@ function CareersAndPress() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="py-10 md:py-0 md:pl-12"
           >
-            <p className="font-mono text-xs uppercase tracking-widest text-fog">Press inquiries</p>
-            <h2 className="mt-3 font-display text-2xl font-medium text-forest">
+            <h2 className="font-display text-2xl font-medium text-forest">
               We are happy to speak with food writers and journalists.
             </h2>
             <p className="mt-3 font-sans text-sm leading-relaxed text-fog">

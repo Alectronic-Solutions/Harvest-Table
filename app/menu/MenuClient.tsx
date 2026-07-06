@@ -37,10 +37,7 @@ function MenuHero() {
       </motion.div>
       <div className="absolute inset-0 bg-forest/70" />
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-5 text-center">
-        <p className="font-mono text-xs uppercase tracking-widest text-gold">
-          Updated with the seasons
-        </p>
-        <h1 className="mt-3 font-display text-5xl font-semibold text-white md:text-6xl">
+        <h1 className="font-display text-5xl font-semibold text-white md:text-6xl">
           Our Menu
         </h1>
         <p className="mt-3 max-w-md font-sans text-sm text-white/90">

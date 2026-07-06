@@ -43,7 +43,17 @@ export default function Navbar() {
       menuButtonRef.current.focus();
     }
 
-    return () => { document.body.style.overflow = ''; };
+    if (!menuOpen) return () => { document.body.style.overflow = ''; };
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMenuOpen(false);
+    };
+    window.addEventListener('keydown', onKeyDown);
+
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', onKeyDown);
+    };
   }, [menuOpen]);
 
   // Solid when scrolled past the hero top or mobile menu is open.
@@ -64,28 +74,6 @@ export default function Navbar() {
 
         {/* Left: logo + wordmark (all viewports) */}
         <div className="flex items-center gap-3">
-          {/* Mobile hamburger */}
-          <button
-            ref={menuButtonRef}
-            type="button"
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((v) => !v)}
-            className="-ml-2 flex h-12 w-12 items-center justify-center md:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-linen"
-          >
-            <span className="relative block h-[14px] w-6">
-              <span className={`absolute left-0 block h-[1.5px] w-6 transition-all duration-300 ${barColor} ${
-                menuOpen ? 'top-[6px] rotate-45' : 'top-0'
-              }`} />
-              <span className={`absolute left-0 top-[6px] block h-[1.5px] w-6 transition-all duration-300 ${barColor} ${
-                menuOpen ? 'opacity-0' : 'opacity-100'
-              }`} />
-              <span className={`absolute left-0 block h-[1.5px] w-6 transition-all duration-300 ${barColor} ${
-                menuOpen ? 'top-[6px] -rotate-45' : 'top-[12px]'
-              }`} />
-            </span>
-          </button>
-
           <Link
             href="/"
             onClick={() => setMenuOpen(false)}
@@ -119,8 +107,29 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Right: reserve CTA */}
+        {/* Right: mobile hamburger + desktop reserve CTA */}
         <div className="flex items-center justify-end">
+          <button
+            ref={menuButtonRef}
+            type="button"
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((v) => !v)}
+            className="-mr-2 flex h-12 w-12 items-center justify-center md:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-linen"
+          >
+            <span className="relative block h-[14px] w-6">
+              <span className={`absolute left-0 block h-[1.5px] w-6 transition-all duration-300 ${barColor} ${
+                menuOpen ? 'top-[6px] rotate-45' : 'top-0'
+              }`} />
+              <span className={`absolute left-0 top-[6px] block h-[1.5px] w-6 transition-all duration-300 ${barColor} ${
+                menuOpen ? 'opacity-0' : 'opacity-100'
+              }`} />
+              <span className={`absolute left-0 block h-[1.5px] w-6 transition-all duration-300 ${barColor} ${
+                menuOpen ? 'top-[6px] -rotate-45' : 'top-[12px]'
+              }`} />
+            </span>
+          </button>
+
           <Link
             href="/reservations"
             className="hidden rounded-full bg-gold px-5 py-2.5 font-sans text-sm font-medium text-forest transition-all duration-300 hover:scale-[1.02] hover:opacity-90 md:inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-linen"
@@ -138,7 +147,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 top-[calc(36px+64px)] z-40 flex flex-col bg-forest px-8 pb-12 pt-10 md:hidden"
+            className="fixed inset-0 top-16 z-40 flex flex-col bg-forest px-8 pb-12 pt-10 md:top-20 md:hidden"
           >
             <ul className="flex flex-col gap-2" role="menu">
               {LINKS.map((link, i) => (

@@ -18,8 +18,8 @@ export const HOURS = [
 ]
 
 export const SOCIAL = {
-  instagram: "https://instagram.com/",
-  facebook: "https://facebook.com/",
+  instagram: "https://instagram.com/harvesttablelodi",
+  facebook: "https://facebook.com/harvesttablelodi",
 }
 
 export const CURRENT_SEASON = "Summer 2026"

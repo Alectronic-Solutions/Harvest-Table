@@ -108,10 +108,7 @@ export default function MenuPreview() {
         {/* Section header */}
         <div className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="font-mono text-xs uppercase tracking-widest text-fog">
-              What&apos;s on the table
-            </p>
-            <h2 className="mt-3 font-display text-5xl font-semibold text-forest">
+            <h2 className="font-display text-5xl font-semibold text-forest">
               This season&apos;s menu
             </h2>
           </div>

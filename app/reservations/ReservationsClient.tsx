@@ -43,9 +43,6 @@ export default function ReservationsClient() {
         </motion.div>
         <div className="absolute inset-0 bg-forest/60" />
         <div className="relative z-10 px-6 text-center">
-          <p className="mb-4 font-mono text-xs uppercase tracking-widest text-gold">
-            Join us for dinner
-          </p>
           <h1 className="font-display text-5xl font-semibold leading-none text-white">
             Reserve a Table
           </h1>

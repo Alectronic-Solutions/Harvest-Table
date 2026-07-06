@@ -120,10 +120,7 @@ export default function Farmers() {
       <div className="mx-auto max-w-content px-5 md:px-8">
         {/* Section header */}
         <div className="mb-14">
-          <p className="font-mono text-xs uppercase tracking-widest text-fog">
-            The people behind the plate
-          </p>
-          <h2 className="mt-3 font-display text-5xl font-semibold text-forest">
+          <h2 className="font-display text-5xl font-semibold text-forest">
             Meet our farmers
           </h2>
           <p className="mt-4 max-w-xl font-sans text-base text-fog">

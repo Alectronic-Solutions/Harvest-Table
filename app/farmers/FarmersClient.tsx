@@ -168,9 +168,6 @@ export default function FarmersClient() {
         <div className="absolute inset-0 bg-forest/65" />
         {/* Content */}
         <div className="relative z-10 text-center px-6">
-          <p className="font-mono text-gold text-xs uppercase tracking-widest mb-4">
-            Within 60 miles
-          </p>
           <h1 className="font-display font-semibold text-white text-5xl md:text-6xl leading-none">
             Our farm partners
           </h1>

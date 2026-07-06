@@ -63,10 +63,7 @@ export default function TheSpace() {
 
         {/* Section header */}
         <div className="mb-16 text-center">
-          <p className="font-mono text-xs uppercase tracking-widest text-fog">
-            Where you will sit
-          </p>
-          <h2 className="mt-3 font-display text-5xl font-semibold text-forest">
+          <h2 className="font-display text-5xl font-semibold text-forest">
             The room
           </h2>
           <p className="mx-auto mt-4 max-w-lg font-sans text-base text-fog">

@@ -4,6 +4,27 @@
 
 :root {
   --seasonal-strip-height: 36px;
+
+  /* Brand palette — mirrors tailwind.config.ts. Single source of truth for
+     raw CSS and inline style props that can't reference Tailwind classes. */
+  --color-forest: #2C3B2D;
+  --color-gold: #D4A843;
+  --color-linen: #F0EBE1;
+  --color-ember: #A0522D;
+  --color-fog: #6B7A6B;
+  --color-ink: #1A1A1A;
+
+  /* One-off tints used by the custom scrollbar / scroll-progress bar. */
+  --color-gold-light: #f0d080;
+  --color-gold-glint: #f5e098;
+  --scrollbar-track: #1e2a1f;
+  --scrollbar-thumb-end: #b8882e;
+  --scrollbar-thumb-hover-start: #b85e33;
+  --scrollbar-thumb-hover-mid: #e8b84a;
+  --scrollbar-thumb-hover-end: #c99430;
+  --scrollbar-thumb-active-start: #8b3d1e;
+  --scrollbar-thumb-active-mid: #c49030;
+  --scrollbar-thumb-active-end: #9b6e20;
 }
 
 @layer base {
@@ -22,7 +43,7 @@
 
   /* Focus visible styles for keyboard navigation */
   :focus-visible {
-    outline: 2px solid #D4A843;
+    outline: 2px solid var(--color-gold);
     outline-offset: 2px;
   }
 
@@ -41,7 +62,7 @@
   /* Premium text selection */
   ::selection {
     background: rgba(212, 168, 67, 0.28);
-    color: #1A1A1A;
+    color: var(--color-ink);
   }
 
   /* Skip link for accessibility */
@@ -51,8 +72,8 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 999999;
-    background: #1A3C1E;
-    color: #F0EBE1;
+    background: var(--color-forest);
+    color: var(--color-linen);
     padding: 12px 24px;
     border-radius: 8px;
     font-weight: 600;
@@ -68,8 +89,8 @@
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus {
-    -webkit-box-shadow: 0 0 0px 1000px #2C3B2D inset;
-    -webkit-text-fill-color: #F0EBE1;
+    -webkit-box-shadow: 0 0 0px 1000px var(--color-forest) inset;
+    -webkit-text-fill-color: var(--color-linen);
     transition: background-color 5000s ease-in-out 0s;
   }
 }

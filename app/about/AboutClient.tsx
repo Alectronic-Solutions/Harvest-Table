@@ -51,19 +51,11 @@ function AboutHero() {
       <div className="absolute inset-0 bg-forest/55" />
 
       <div className="relative z-10 mx-auto w-full max-w-5xl px-6 pb-16 text-center md:text-left">
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="font-mono text-xs uppercase tracking-widest text-gold"
-        >
-          Our story
-        </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="mt-3 font-display text-6xl font-light leading-none text-white md:text-7xl"
+          className="font-display text-6xl font-light leading-none text-white md:text-7xl"
         >
           We opened
           <br />

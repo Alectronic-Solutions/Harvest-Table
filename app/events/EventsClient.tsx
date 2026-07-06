@@ -52,10 +52,7 @@ function EventsHero() {
       </motion.div>
       <div className="absolute inset-0 bg-forest/65" />
       <div className="relative z-10 px-6 text-center">
-        <p className="font-mono text-xs uppercase tracking-widest text-gold">
-          Dinners, tastings, and private events
-        </p>
-        <h1 className="mt-3 font-display text-5xl font-semibold text-white md:text-6xl">
+        <h1 className="font-display text-5xl font-semibold text-white md:text-6xl">
           Events
         </h1>
         <p className="mx-auto mt-4 max-w-sm font-sans text-sm leading-relaxed text-white/90">
@@ -171,7 +168,7 @@ function EventCard({ event, index }: { event: Event; index: number }) {
               href={`/contact?inquiry=${event.id}`}
               className="inline-block bg-gold px-6 py-3 font-sans text-sm font-medium text-forest transition-opacity hover:opacity-90"
             >
-              Reserve Your Seat
+              Reserve a Table
             </Link>
           )}
         </div>

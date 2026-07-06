@@ -1,7 +1,7 @@
 'use client';
 
 // One job: replace the OS cursor with a small gold dot that tracks the pointer.
-// A larger ring trails behind with a spring delay — standard luxury-site treatment.
+// A larger ring trails behind with a spring delay, a standard luxury-site treatment.
 // Hides on touch devices. Expands on interactive elements.
 // Also manages cursor visibility state for CSS styling.
 
@@ -78,7 +78,7 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Inner dot — snaps instantly */}
+      {/* Inner dot, snaps instantly */}
       <div
         ref={dotRef}
         aria-hidden
@@ -90,7 +90,7 @@ export default function CustomCursor() {
           width: hovering ? '10px' : '6px',
           height: hovering ? '10px' : '6px',
           borderRadius: '50%',
-          background: '#D4A843',
+          background: 'var(--color-gold)',
           pointerEvents: 'none',
           opacity: visible ? 1 : 0,
           transition: 'width 0.2s ease, height 0.2s ease, opacity 0.3s ease',
@@ -99,7 +99,7 @@ export default function CustomCursor() {
         }}
       />
 
-      {/* Outer ring — lerps behind */}
+      {/* Outer ring, lerps behind */}
       <div
         ref={ringRef}
         aria-hidden

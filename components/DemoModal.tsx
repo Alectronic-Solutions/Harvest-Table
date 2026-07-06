@@ -30,10 +30,7 @@ function ThankYouModal({ onClose }: { onClose: () => void }) {
           {/* Gold accent line */}
           <div className="mx-auto mb-6 h-0.5 w-12 bg-gold" />
 
-          <p className="font-mono text-xs uppercase tracking-widest text-fog">
-            Message received
-          </p>
-          <h2 className="mt-3 font-display text-4xl font-semibold text-forest">
+          <h2 className="font-display text-4xl font-semibold text-forest">
             Thank you.
           </h2>
           <p className="mx-auto mt-4 max-w-xs font-sans text-sm leading-relaxed text-fog">

@@ -4,8 +4,7 @@ export default function NotFound() {
   return (
     <section className="flex min-h-[calc(100svh-36px-80px)] items-center justify-center bg-linen px-5">
       <div className="text-center">
-        <p className="font-mono text-xs uppercase tracking-widest text-fog">404</p>
-        <h1 className="mt-3 font-display text-5xl font-semibold text-forest">
+        <h1 className="font-display text-5xl font-semibold text-forest">
           This page has gone out of season.
         </h1>
         <p className="mx-auto mt-4 max-w-sm font-sans text-sm leading-relaxed text-fog">

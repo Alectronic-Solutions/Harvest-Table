@@ -123,7 +123,7 @@ export default function Footer() {
             <p className="font-mono text-xs uppercase tracking-label text-gold">Visit us</p>
             <Link
               href="/reservations"
-              className="mt-4 inline-flex min-h-[44px] items-center rounded-full bg-gold px-6 py-2.5 font-sans text-sm font-medium text-forest transition-opacity hover:opacity-90"
+              className="mt-4 inline-flex min-h-[48px] items-center rounded-full bg-gold px-6 py-2.5 font-sans text-sm font-medium text-forest transition-opacity hover:opacity-90"
             >
               Reserve a Table
             </Link>

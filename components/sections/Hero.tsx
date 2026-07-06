@@ -1,19 +1,12 @@
 'use client';
 
-// One job: full-bleed hero with a parallax background image, staggered entry
-// animations, and a scroll-progress chevron. Parallax is disabled on mobile.
+// One job: full-bleed hero with a crossfading video background, staggered
+// entry animations, and a scroll-progress chevron.
 
-import Image from 'next/image';
 import Link from 'next/link';
-import { asset } from '@/lib/basePath';
-import {
-  motion,
-  useScroll,
-  useTransform,
-  AnimatePresence,
-} from 'framer-motion';
+import HeroVideoBackground from './HeroVideoBackground';
+import { motion, useScroll, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { useIsDesktop } from '@/lib/useIsDesktop';
 
 
 const contentVariants = {
@@ -32,13 +25,7 @@ const fadeIn = (delay: number) => ({
 });
 
 export default function Hero() {
-  const isDesktop = useIsDesktop();
   const { scrollY } = useScroll();
-
-  // Parallax: image drifts down at 0.4x scroll speed. Disabled on mobile by
-  // multiplying the output by 0 when not on desktop, avoiding a conditional hook.
-  const rawY = useTransform(scrollY, [0, 600], [0, 240]);
-  const parallaxY = useTransform(rawY, (v) => (isDesktop ? v : 0));
 
   // Chevron hides once the user has scrolled 100px.
   const [showChevron, setShowChevron] = useState(true);
@@ -47,24 +34,14 @@ export default function Hero() {
   }, [scrollY]);
 
   return (
-    <section className="relative flex h-svh min-h-[600px] items-center justify-center overflow-hidden">
-      {/* Background image with parallax wrapper */}
-      <motion.div
-        style={{ y: parallaxY }}
-        className="absolute inset-0 scale-110"
-      >
-        <Image
-          src={asset('/images/hero-dining.jpg')}
-          alt="Warm candlelit dining room at Harvest Table"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
-      </motion.div>
+    <section className="relative flex h-[calc(100svh-100px)] min-h-[520px] items-center justify-center overflow-hidden md:h-[calc(100svh-116px)]">
+      <HeroVideoBackground />
 
-      {/* Layered overlays: base dark + subtle radial warmth around the copy */}
-      <div className="absolute inset-0 bg-forest/55" />
+      {/* Layered overlays: base dark wash, focused contrast scrim behind the
+          copy (guards legibility regardless of which video frame is showing),
+          and a subtle radial warmth accent */}
+      <div className="absolute inset-0 bg-forest/60" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_65%_55%_at_50%_48%,rgba(10,14,10,0.45)_0%,transparent_72%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_70%_at_50%_45%,rgba(160,82,45,0.08)_0%,transparent_70%)]" />
       {/* Bottom vignette bleeds the hero into the Philosophy section */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-forest/40" />
@@ -76,17 +53,10 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        <motion.p
-          variants={fadeIn(0.3)}
-          className="font-mono text-xs uppercase tracking-widest text-linen/90"
-        >
-          Farm to Table / Lodi, California
-        </motion.p>
-
         <motion.h1
           variants={fadeUp}
-          className="mt-4 font-display text-4xl font-semibold leading-none text-linen md:text-[clamp(4rem,10vw,6rem)]"
-          style={{ transitionDelay: '0.5s' }}
+          className="font-display text-4xl font-semibold leading-none text-linen md:text-[clamp(4rem,10vw,6rem)]"
+          style={{ transitionDelay: '0.5s', textShadow: '0 2px 24px rgba(0,0,0,0.35)' }}
         >
           Honest food.
           <br />
@@ -98,6 +68,7 @@ export default function Hero() {
         <motion.p
           variants={fadeIn(1.2)}
           className="mx-auto mt-6 max-w-md font-sans text-lg leading-relaxed text-linen/80"
+          style={{ textShadow: '0 1px 12px rgba(0,0,0,0.3)' }}
         >
           Sourced from farms within 60 miles.
           <br />

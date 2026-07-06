@@ -60,10 +60,7 @@ export default function PrivateDining() {
         transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
       >
         <div className="max-w-xl">
-          <p className="font-mono text-xs uppercase tracking-widest text-gold">
-            Private events
-          </p>
-          <h2 className="mt-3 font-display text-5xl font-light leading-tight text-white md:text-6xl">
+          <h2 className="font-display text-5xl font-light leading-tight text-white md:text-6xl">
             Host something
             <br />
             worth remembering

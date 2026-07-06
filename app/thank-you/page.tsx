@@ -11,10 +11,7 @@ export default function ThankYouPage() {
     <section className="flex min-h-[calc(100svh-36px-80px)] items-center justify-center bg-linen px-5">
       <div className="text-center">
         <div className="mx-auto mb-6 h-0.5 w-12 bg-gold" />
-        <p className="font-mono text-xs uppercase tracking-widest text-fog">
-          Message received
-        </p>
-        <h1 className="mt-3 font-display text-5xl font-semibold text-forest">
+        <h1 className="font-display text-5xl font-semibold text-forest">
           Thank you.
         </h1>
         <p className="mx-auto mt-4 max-w-sm font-sans text-base leading-relaxed text-fog">

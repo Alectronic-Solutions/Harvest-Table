@@ -53,7 +53,7 @@ export default function ScrollProgress() {
             left: 0,
             height: '100%',
             width: pct,
-            background: 'linear-gradient(90deg, #A0522D 0%, #D4A843 55%, #f0d080 100%)',
+            background: 'linear-gradient(90deg, var(--color-ember) 0%, var(--color-gold) 55%, var(--color-gold-light) 100%)',
             boxShadow: '0 0 8px 1px rgba(212,168,67,0.55), 0 0 2px rgba(212,168,67,0.9)',
             transition: 'width 0.08s linear',
             borderRadius: '0 1px 1px 0',
@@ -69,7 +69,7 @@ export default function ScrollProgress() {
             width: '5px',
             height: '5px',
             borderRadius: '50%',
-            background: '#f5e098',
+            background: 'var(--color-gold-glint)',
             boxShadow: '0 0 6px 2px rgba(212,168,67,0.9), 0 0 14px 4px rgba(212,168,67,0.4)',
             opacity: progress > 0.005 && progress < 0.998 ? 1 : 0,
             transition: 'opacity 0.2s',
@@ -82,7 +82,7 @@ export default function ScrollProgress() {
         /* Firefox */
         html {
           scrollbar-width: thin;
-          scrollbar-color: #D4A843 #1e2a1f;
+          scrollbar-color: var(--color-gold) var(--scrollbar-track);
         }
 
         /* WebKit / Blink (Chrome, Safari, Edge) */
@@ -90,28 +90,28 @@ export default function ScrollProgress() {
           width: 7px;
         }
         ::-webkit-scrollbar-track {
-          background: #1e2a1f;
+          background: var(--scrollbar-track);
           border-left: 1px solid rgba(212,168,67,0.08);
         }
         ::-webkit-scrollbar-thumb {
-          background: linear-gradient(180deg, #A0522D 0%, #D4A843 45%, #b8882e 100%);
+          background: linear-gradient(180deg, var(--color-ember) 0%, var(--color-gold) 45%, var(--scrollbar-thumb-end) 100%);
           border-radius: 999px;
-          border: 1.5px solid #1e2a1f;
+          border: 1.5px solid var(--scrollbar-track);
           box-shadow: inset 0 1px 0 rgba(255,255,255,0.18),
                       inset 0 -1px 0 rgba(0,0,0,0.35);
           transition: background 0.25s ease;
         }
         ::-webkit-scrollbar-thumb:hover {
-          background: linear-gradient(180deg, #b85e33 0%, #e8b84a 45%, #c99430 100%);
+          background: linear-gradient(180deg, var(--scrollbar-thumb-hover-start) 0%, var(--scrollbar-thumb-hover-mid) 45%, var(--scrollbar-thumb-hover-end) 100%);
           box-shadow: inset 0 1px 0 rgba(255,255,255,0.25),
                       inset 0 -1px 0 rgba(0,0,0,0.4),
                       0 0 6px rgba(212,168,67,0.35);
         }
         ::-webkit-scrollbar-thumb:active {
-          background: linear-gradient(180deg, #8b3d1e 0%, #c49030 45%, #9b6e20 100%);
+          background: linear-gradient(180deg, var(--scrollbar-thumb-active-start) 0%, var(--scrollbar-thumb-active-mid) 45%, var(--scrollbar-thumb-active-end) 100%);
         }
         ::-webkit-scrollbar-corner {
-          background: #1e2a1f;
+          background: var(--scrollbar-track);
         }
 
         /* Horizontal scrollbars (carousels, code blocks, etc.) */
