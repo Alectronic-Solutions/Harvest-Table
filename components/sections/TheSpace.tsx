@@ -66,7 +66,7 @@ export default function TheSpace() {
           <h2 className="font-display text-5xl font-semibold text-forest">
             The room
           </h2>
-          <p className="mx-auto mt-4 max-w-lg font-sans text-base text-fog">
+          <p className="mx-auto mt-4 max-w-lg font-sans text-base text-fog-dark">
             Forty seats. Natural light during the day. Candlelight after dark.
             No music loud enough to interrupt a conversation.
           </p>
@@ -75,7 +75,7 @@ export default function TheSpace() {
         {/* ── MOBILE LAYOUT ── single column, aspect-ratio heights scale with viewport */}
         <div className="flex flex-col gap-3 md:hidden">
           <ParallaxPanel
-            src={asset('/images/space-wide.jpg')}
+            src={asset('/images/space-wide.webp')}
             alt="The full dining room at Harvest Table"
             parallaxEnd="0px"
             revealDelay={0}
@@ -83,7 +83,7 @@ export default function TheSpace() {
             className="aspect-[16/9] w-full"
           />
           <ParallaxPanel
-            src={asset('/images/space-detail-1.jpg')}
+            src={asset('/images/space-detail-1.webp')}
             alt="Candlelit place setting with crystal glasses"
             parallaxEnd="0px"
             revealDelay={0.05}
@@ -92,7 +92,7 @@ export default function TheSpace() {
           />
           <div className="flex gap-3">
             <ParallaxPanel
-              src={asset('/images/space-detail-2.jpg')}
+              src={asset('/images/space-detail-2.webp')}
               alt="Table detail: silver cutlery and wine glass"
               parallaxEnd="0px"
               revealDelay={0.1}
@@ -100,7 +100,7 @@ export default function TheSpace() {
               className="aspect-square flex-1"
             />
             <ParallaxPanel
-              src={asset('/images/space-detail-3.jpg')}
+              src={asset('/images/space-detail-3.webp')}
               alt="Wine glass and candle flame"
               parallaxEnd="0px"
               revealDelay={0.15}
@@ -109,7 +109,7 @@ export default function TheSpace() {
             />
           </div>
           <ParallaxPanel
-            src={asset('/images/space-bar.jpg')}
+            src={asset('/images/space-bar.webp')}
             alt="The wine and spirits bar"
             parallaxEnd="0px"
             revealDelay={0.2}
@@ -129,7 +129,7 @@ export default function TheSpace() {
         <div className="hidden md:grid md:grid-cols-12 md:grid-rows-3 md:gap-3">
 
           <ParallaxPanel
-            src={asset('/images/space-wide.jpg')}
+            src={asset('/images/space-wide.webp')}
             alt="The full dining room at Harvest Table, warm wood and candlelight"
             parallaxEnd="-40px"
             revealDelay={0}
@@ -138,7 +138,7 @@ export default function TheSpace() {
           />
 
           <ParallaxPanel
-            src={asset('/images/space-detail-1.jpg')}
+            src={asset('/images/space-detail-1.webp')}
             alt="Candlelit place setting, crystal glasses and polished silver"
             parallaxEnd="-25px"
             revealDelay={0.1}
@@ -147,7 +147,7 @@ export default function TheSpace() {
           />
 
           <ParallaxPanel
-            src={asset('/images/space-detail-2.jpg')}
+            src={asset('/images/space-detail-2.webp')}
             alt="Table detail: silver cutlery and a wine glass by candlelight"
             parallaxEnd="-30px"
             revealDelay={0.2}
@@ -156,7 +156,7 @@ export default function TheSpace() {
           />
 
           <ParallaxPanel
-            src={asset('/images/space-detail-3.jpg')}
+            src={asset('/images/space-detail-3.webp')}
             alt="Wine glass and candle flame, close detail"
             parallaxEnd="-20px"
             revealDelay={0.3}
@@ -165,7 +165,7 @@ export default function TheSpace() {
           />
 
           <ParallaxPanel
-            src={asset('/images/space-bar.jpg')}
+            src={asset('/images/space-bar.webp')}
             alt="The wine and spirits bar, warm wood shelving and ambient light"
             parallaxEnd="-35px"
             revealDelay={0.4}
@@ -174,7 +174,7 @@ export default function TheSpace() {
           />
 
           <ParallaxPanel
-            src={asset('/images/restaurant-interior.jpg')}
+            src={asset('/images/restaurant-interior.webp')}
             alt="Restaurant interior, evening light through the front windows"
             parallaxEnd="-25px"
             revealDelay={0.5}

@@ -5,7 +5,7 @@
 :root {
   --seasonal-strip-height: 36px;
 
-  /* Brand palette — mirrors tailwind.config.ts. Single source of truth for
+  /* Brand palette. Mirrors tailwind.config.ts. Single source of truth for
      raw CSS and inline style props that can't reference Tailwind classes. */
   --color-forest: #2C3B2D;
   --color-gold: #D4A843;
@@ -13,6 +13,8 @@
   --color-ember: #A0522D;
   --color-fog: #6B7A6B;
   --color-ink: #1A1A1A;
+  --color-gold-dark: #7A5A1C;
+  --color-fog-dark: #566256;
 
   /* One-off tints used by the custom scrollbar / scroll-progress bar. */
   --color-gold-light: #f0d080;
@@ -121,7 +123,7 @@
     background-size: 100% 1px;
   }
 
-  /* Grain texture overlay — applied via a fixed pseudo-element in GrainOverlay */
+  /* Grain texture overlay, applied via a fixed pseudo-element in GrainOverlay */
   .grain {
     position: fixed;
     inset: 0;

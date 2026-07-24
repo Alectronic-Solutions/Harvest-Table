@@ -21,9 +21,9 @@ const CATEGORY_LABELS: Record<EventCategory, string> = {
 
 // Maps spec image paths that don't exist to available images.
 const IMAGE_FALLBACKS: Record<string, string> = {
-  '/images/event-wine.jpg': '/images/space-bar.jpg',
-  '/images/event-chefs-table.jpg': '/images/dish-salmon.jpg',
-  '/images/event-harvest.jpg': '/images/farm-field.jpg',
+  '/images/event-wine.jpg': '/images/space-bar.webp',
+  '/images/event-chefs-table.jpg': '/images/dish-salmon.webp',
+  '/images/event-harvest.jpg': '/images/farm-field.webp',
 };
 function resolveImage(src: string): string {
   return asset(IMAGE_FALLBACKS[src] ?? src);
@@ -41,7 +41,7 @@ function EventsHero() {
     <section className="relative flex h-[260px] items-center justify-center overflow-hidden md:h-[360px]">
       <motion.div style={{ y: imageY }} className="absolute inset-0 scale-110">
         <Image
-          src={asset('/images/restaurant-interior.jpg')}
+          src={asset('/images/restaurant-interior.webp')}
           alt="Harvest Table dining room set for an evening event"
           fill
           priority
@@ -114,12 +114,12 @@ function EventCard({ event, index }: { event: Event; index: number }) {
       {/* Content column */}
       <div className="flex h-full flex-col justify-between bg-white p-6 md:w-[60%] md:p-10">
         <div>
-          <span className="w-fit border border-fog/40 px-2 py-0.5 font-mono text-xs uppercase tracking-widest text-fog">
+          <span className="w-fit border border-fog/40 px-2 py-0.5 font-mono text-xs uppercase tracking-widest text-fog-dark">
             {CATEGORY_LABELS[event.category]}
           </span>
           <h2 className="mt-3 font-display text-3xl font-semibold text-forest">{event.title}</h2>
-          <p className="mt-1 font-sans text-base italic text-fog">{event.subtitle}</p>
-          <p className="mt-4 max-w-prose font-sans text-sm leading-relaxed text-fog">
+          <p className="mt-1 font-sans text-base italic text-fog-dark">{event.subtitle}</p>
+          <p className="mt-4 max-w-prose font-sans text-sm leading-relaxed text-fog-dark">
             {event.description}
           </p>
 
@@ -137,7 +137,7 @@ function EventCard({ event, index }: { event: Event; index: number }) {
               },
             ].map(({ label, value, soldOut }) => (
               <div key={label} className="flex flex-col">
-                <span className="font-mono text-xs uppercase tracking-wide text-fog">{label}</span>
+                <span className="font-mono text-xs uppercase tracking-wide text-fog-dark">{label}</span>
                 {soldOut ? (
                   <span className="mt-0.5 font-sans text-sm text-ember">Sold out</span>
                 ) : (
@@ -152,7 +152,7 @@ function EventCard({ event, index }: { event: Event; index: number }) {
           {event.soldOut ? (
             <button
               disabled
-              className="cursor-not-allowed border border-fog/40 px-6 py-3 font-sans text-sm text-fog opacity-60"
+              className="cursor-not-allowed border border-fog/40 px-6 py-3 font-sans text-sm text-fog-dark opacity-60"
             >
               Join Waitlist
             </button>
@@ -186,18 +186,22 @@ function NewsletterStrip() {
       {modal}
       <div className="mx-auto max-w-2xl px-6 text-center">
         <h2 className="font-display text-3xl font-normal text-white">Be the first to know</h2>
-        <p className="mt-3 font-sans text-sm text-fog">
+        <p className="mt-3 font-sans text-sm text-linen/70">
           Events sell out quickly. We announce new dinners to our list before anyone else.
         </p>
         <form onSubmit={handleSubmit} className="mt-8">
 
           <div className="mx-auto flex max-w-sm">
+            <label htmlFor="newsletter-email" className="sr-only">
+              Email address
+            </label>
             <input
+              id="newsletter-email"
               type="email"
               name="email"
               required
               placeholder="your@email.com"
-              className="flex-1 border border-fog/40 bg-transparent px-4 py-3 font-sans text-sm text-white placeholder:text-fog/60 focus:border-gold focus:outline-none"
+              className="flex-1 border border-fog/40 bg-transparent px-4 py-3 font-sans text-sm text-white placeholder:text-linen/50 focus:border-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
             />
             <button
               type="submit"
@@ -207,7 +211,7 @@ function NewsletterStrip() {
             </button>
           </div>
         </form>
-        <p className="mt-3 font-sans text-xs italic text-fog/50">
+        <p className="mt-3 font-sans text-xs italic text-linen/50">
           No spam. Announcements only. Unsubscribe anytime.
         </p>
       </div>
@@ -219,13 +223,13 @@ function NewsletterStrip() {
 
 export default function EventsClient() {
   return (
-    <main>
+    <>
       <EventsHero />
 
       <section className="bg-linen py-24">
         <div className="mx-auto max-w-5xl px-6">
           <div className="mb-16 flex items-center gap-6">
-            <span className="font-mono text-xs uppercase tracking-widest text-fog">Upcoming</span>
+            <span className="font-mono text-xs uppercase tracking-widest text-fog-dark">Upcoming</span>
             <div className="h-px flex-1 bg-fog/20" />
           </div>
 
@@ -236,6 +240,6 @@ export default function EventsClient() {
       </section>
 
       <NewsletterStrip />
-    </main>
+    </>
   );
 }

@@ -27,7 +27,7 @@ const FARMERS: Farmer[] = [
     location: 'Lodi, CA / 12 miles',
     grows: ['Heirloom beets', 'Specialty lettuces', 'Edible flowers'],
     since: 'Partners since 2019',
-    image: '/images/farmer-portrait-1.jpg',
+    image: '/images/farmer-portrait-1.webp',
   },
   {
     name: 'Maria Gonzalez',
@@ -35,7 +35,7 @@ const FARMERS: Farmer[] = [
     location: 'Elk Grove, CA / 35 miles',
     grows: ['Summer squash', 'Zucchini blossoms', 'Peppers'],
     since: 'Partners since 2021',
-    image: '/images/farmer-portrait-2.jpg',
+    image: '/images/farmer-portrait-2.webp',
   },
   {
     name: 'James Whitfield',
@@ -43,7 +43,7 @@ const FARMERS: Farmer[] = [
     location: 'Newcastle, CA / 52 miles',
     grows: ['Stone fruit', 'Pears', 'Cider apples'],
     since: 'Partners since 2020',
-    image: '/images/farmer-portrait-3.jpg',
+    image: '/images/farmer-portrait-3.webp',
   },
 ];
 
@@ -92,8 +92,8 @@ function FarmerCard({ farmer }: { farmer: Farmer }) {
         <p className="font-display text-xl font-medium text-forest">
           {farmer.farm}
         </p>
-        <p className="mt-1 font-sans text-sm text-fog">{farmer.name}</p>
-        <p className="mt-2 font-mono text-xs uppercase tracking-wide text-fog">
+        <p className="mt-1 font-sans text-sm text-fog-dark">{farmer.name}</p>
+        <p className="mt-2 font-mono text-xs uppercase tracking-wide text-fog-dark">
           {farmer.location}
         </p>
 
@@ -101,14 +101,14 @@ function FarmerCard({ farmer }: { farmer: Farmer }) {
           {farmer.grows.map((item) => (
             <span
               key={item}
-              className="rounded-sm border border-fog/40 px-2 py-0.5 font-sans text-xs text-fog"
+              className="rounded-sm border border-fog/40 px-2 py-0.5 font-sans text-xs text-fog-dark"
             >
               {item}
             </span>
           ))}
         </div>
 
-        <p className="mt-3 font-mono text-xs text-fog">{farmer.since}</p>
+        <p className="mt-3 font-mono text-xs text-fog-dark">{farmer.since}</p>
       </div>
     </motion.article>
   );
@@ -123,7 +123,7 @@ export default function Farmers() {
           <h2 className="font-display text-5xl font-semibold text-forest">
             Meet our farmers
           </h2>
-          <p className="mt-4 max-w-xl font-sans text-base text-fog">
+          <p className="mt-4 max-w-xl font-sans text-base text-fog-dark">
             We visit every farm before we put it on the menu. These are the
             people who make this food possible.
           </p>

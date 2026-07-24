@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import { Cormorant_Garamond, DM_Mono, DM_Sans } from 'next/font/google';
 import './globals.css';
 import SeasonalStrip from '@/components/SeasonalStrip';
@@ -7,9 +8,13 @@ import Footer from '@/components/Footer';
 import ScrollProgress from '@/components/ScrollProgress';
 import GrainOverlay from '@/components/GrainOverlay';
 import PageTransition from '@/components/PageTransition';
-import CustomCursor from '@/components/CustomCursor';
 import { CONTACT } from '@/data/restaurant';
 import { restaurantSchema } from '@/lib/schema';
+import { SITE_URL, asset } from '@/lib/basePath';
+
+// Custom cursor is a purely decorative, client-only effect that runs a
+// persistent rAF loop. Keep it out of the critical initial bundle.
+const CustomCursor = dynamic(() => import('@/components/CustomCursor'), { ssr: false });
 
 // Display face for headings only.
 const cormorant = Cormorant_Garamond({
@@ -35,8 +40,6 @@ const dmSans = DM_Sans({
   display: 'swap',
 });
 
-const SITE_URL = 'https://harvesttable.com';
-
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -45,6 +48,9 @@ export const metadata: Metadata = {
   },
   description:
     'Seasonal dining sourced within 60 miles. Named by the farmer. Cooked to order. Reservations open Tuesday through Sunday in Lodi, California.',
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
     title: 'Harvest Table | Farm-to-Table Restaurant in Lodi, CA',
     description:
@@ -53,7 +59,10 @@ export const metadata: Metadata = {
     siteName: CONTACT.name,
     type: 'website',
     locale: 'en_US',
-    images: [{ url: '/logo.svg', width: 200, height: 200, alt: 'Harvest Table' }],
+    // Next auto-prepends basePath when resolving OG/twitter image URLs against
+    // metadataBase, so this must stay un-prefixed. Prefixing it ourselves
+    // (like the manifest/favicon links) would double up the base path.
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Harvest Table' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -71,9 +80,8 @@ export default function RootLayout({
       className={`${cormorant.variable} ${dmMono.variable} ${dmSans.variable}`}
     >
       <head>
-        <link rel="icon" type="image/svg+xml" href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/favicon.svg`} />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="icon" type="image/svg+xml" href={asset('/favicon.svg')} />
+        <link rel="manifest" href={asset('/manifest.webmanifest')} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

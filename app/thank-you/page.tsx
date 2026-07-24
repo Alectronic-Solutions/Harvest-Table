@@ -14,7 +14,7 @@ export default function ThankYouPage() {
         <h1 className="font-display text-5xl font-semibold text-forest">
           Thank you.
         </h1>
-        <p className="mx-auto mt-4 max-w-sm font-sans text-base leading-relaxed text-fog">
+        <p className="mx-auto mt-4 max-w-sm font-sans text-base leading-relaxed text-fog-dark">
           We will be in touch within 2 hours during business hours. We look
           forward to having you at the table.
         </p>

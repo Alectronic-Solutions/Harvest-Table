@@ -16,7 +16,7 @@ import { useDemoForm } from '@/components/DemoModal';
 function SelectChevron() {
   return (
     <svg
-      className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-fog"
+      className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-linen/50"
       width={16}
       height={16}
       viewBox="0 0 24 24"
@@ -34,10 +34,10 @@ function SelectChevron() {
 
 // Shared class strings kept as constants to avoid repetition.
 const inputClass =
-  'w-full border-b border-linen/30 bg-transparent py-3 font-sans text-base text-white placeholder-linen/50 focus:border-gold focus:outline-none transition-colors duration-200';
+  'w-full border-b border-linen/30 bg-transparent py-3 font-sans text-base text-white placeholder-linen/50 focus:border-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-forest transition-colors duration-200';
 
 const selectClass =
-  'w-full appearance-none border-b border-linen/30 bg-transparent py-3 font-sans text-base text-white focus:border-gold focus:outline-none transition-colors duration-200 cursor-pointer';
+  'w-full appearance-none border-b border-linen/30 bg-transparent py-3 font-sans text-base text-white focus:border-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-forest transition-colors duration-200 cursor-pointer';
 
 export default function ReservationSection() {
   const { handleSubmit, modal } = useDemoForm();
@@ -180,7 +180,7 @@ export default function ReservationSection() {
       >
         <motion.div style={{ y: imageY }} className="absolute inset-0 scale-110">
           <Image
-            src={asset('/images/restaurant-interior.jpg')}
+            src={asset('/images/restaurant-interior.webp')}
             alt="The warm, wood-paneled dining room at Harvest Table"
             fill
             className="object-cover"

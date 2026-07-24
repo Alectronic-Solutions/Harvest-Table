@@ -17,10 +17,10 @@ const PREVIEW_ITEMS = (mainsSection?.items ?? []).slice(0, 4);
 
 // Maps item index to its hero dish image filename.
 const DISH_IMAGES = [
-  '/images/dish-beets.jpg',
-  '/images/dish-pasta.jpg',
-  '/images/dish-salmon.jpg',
-  '/images/dish-bread.jpg',
+  '/images/dish-beets.webp',
+  '/images/dish-pasta.webp',
+  '/images/dish-salmon.webp',
+  '/images/dish-bread.webp',
 ];
 
 const containerVariants = {
@@ -79,7 +79,7 @@ function MenuCard({
       <div className="mt-3">
         {/* Farm attribution + seasonal badge on the same row */}
         <div className="flex flex-wrap items-center gap-2">
-          <p className="font-mono text-xs uppercase tracking-wide text-fog">
+          <p className="font-mono text-xs uppercase tracking-wide text-fog-dark">
             {item.farmSource} / {item.farmLocation}
           </p>
           {item.seasonal && (
@@ -92,7 +92,7 @@ function MenuCard({
         <h3 className="mt-1 font-display text-2xl font-medium text-forest">
           {item.name}
         </h3>
-        <p className="mt-1 line-clamp-2 font-sans text-sm text-fog md:line-clamp-none">
+        <p className="mt-1 line-clamp-2 font-sans text-sm text-fog-dark md:line-clamp-none">
           {item.description}
         </p>
         <p className="mt-2 font-mono text-base text-ember">{item.price}</p>

@@ -35,7 +35,7 @@ export const EVENTS: Event[] = [
   },
   {
     id: 'chefs-table-august',
-    title: "Chef's Table — August",
+    title: "Chef's Table: August",
     subtitle: 'Eight seats. One night. No menu in advance.',
     date: 'August 6, 2026',
     time: '7:00 PM',
@@ -74,7 +74,7 @@ export const EVENTS: Event[] = [
     seatsRemaining: 24,
     description:
       'Our private dining room seats up to 24 guests with a fully custom menu, dedicated server, and curated wine list. Available for rehearsal dinners, corporate gatherings, milestone birthdays, and full buyouts. Inquire at least three weeks in advance.',
-    image: '/images/space-wide.jpg',
+    image: '/images/space-wide.webp',
     category: 'private',
     soldOut: false,
   },

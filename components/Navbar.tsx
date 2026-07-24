@@ -146,7 +146,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile full-screen overlay — portaled to <body> so it isn't clipped by
+      {/* Mobile full-screen overlay, portaled to <body> so it isn't clipped by
           the header's backdrop-blur, which creates a containing block for any
           fixed-position descendant and would otherwise shrink this panel down
           to the header's own height. */}
@@ -154,6 +154,9 @@ export default function Navbar() {
         <AnimatePresence>
           {menuOpen && (
             <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-label="Mobile navigation"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}

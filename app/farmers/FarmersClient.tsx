@@ -68,28 +68,28 @@ function FeaturedFarmerCard({ farmer, index }: { farmer: Farmer; index: number }
         <h2 className="font-display font-semibold text-forest text-4xl leading-tight">
           {farmer.farm}
         </h2>
-        <p className="font-sans text-fog text-base mt-1">{farmer.name}</p>
+        <p className="font-sans text-fog-dark text-base mt-1">{farmer.name}</p>
 
         <div className="mt-3 space-y-0.5">
-          <p className="font-mono text-fog text-xs uppercase tracking-widest">
+          <p className="font-mono text-fog-dark text-xs uppercase tracking-widest">
             {farmer.distanceMiles} miles from our kitchen
           </p>
-          <p className="font-mono text-fog text-xs uppercase tracking-widest">
+          <p className="font-mono text-fog-dark text-xs uppercase tracking-widest">
             Partners since {farmer.partnerSince}
           </p>
         </div>
 
-        <p className="font-sans text-fog text-base mt-6 leading-relaxed max-w-sm">
+        <p className="font-sans text-fog-dark text-base mt-6 leading-relaxed max-w-sm">
           {farmer.story}
         </p>
 
         <div className="mt-6">
-          <p className="font-mono text-fog text-xs uppercase tracking-wide">What they grow</p>
+          <p className="font-mono text-fog-dark text-xs uppercase tracking-wide">What they grow</p>
           <div className="mt-2 flex flex-wrap gap-2">
             {farmer.grows.map((item) => (
               <span
                 key={item}
-                className="border border-fog/40 text-fog font-sans text-xs px-3 py-1 rounded-full"
+                className="border border-fog/40 text-fog-dark font-sans text-xs px-3 py-1 rounded-full"
               >
                 {item}
               </span>
@@ -121,9 +121,9 @@ function AdditionalFarmerCard({ farmer }: { farmer: Farmer }) {
       </div>
       <div className="min-w-0">
         <h3 className="font-display font-medium text-forest text-xl leading-tight">{farmer.farm}</h3>
-        <p className="font-sans text-fog text-sm mt-0.5">{farmer.name}</p>
-        <p className="font-mono text-fog text-xs mt-1">{farmer.distanceMiles} miles</p>
-        <p className="font-sans text-fog text-xs mt-2 line-clamp-1">
+        <p className="font-sans text-fog-dark text-sm mt-0.5">{farmer.name}</p>
+        <p className="font-mono text-fog-dark text-xs mt-1">{farmer.distanceMiles} miles</p>
+        <p className="font-sans text-fog-dark text-xs mt-2 line-clamp-1">
           {farmer.grows.join(", ")}
         </p>
       </div>
@@ -136,7 +136,7 @@ export default function FarmersClient() {
   const heroY = useTransform(scrollY, [0, 400], [0, 130])
 
   return (
-    <main>
+    <>
       {/* PART 1 - Hero */}
       <section className="relative h-[280px] md:h-[380px] overflow-hidden flex items-center justify-center">
         {/* Parallax image - desktop only */}
@@ -145,7 +145,7 @@ export default function FarmersClient() {
           className="absolute inset-0 scale-110 hidden md:block"
         >
           <Image
-            src={asset('/images/farm-field.jpg')}
+            src={asset('/images/farm-field.webp')}
             alt="Rolling farmland at golden hour"
             fill
             priority
@@ -156,7 +156,7 @@ export default function FarmersClient() {
         {/* Mobile: static */}
         <div className="absolute inset-0 md:hidden">
           <Image
-            src={asset('/images/farm-field.jpg')}
+            src={asset('/images/farm-field.webp')}
             alt="Rolling farmland at golden hour"
             fill
             priority
@@ -183,7 +183,7 @@ export default function FarmersClient() {
         <div className="max-w-5xl mx-auto px-6">
           {/* Section label */}
           <div className="flex items-center gap-6 mb-16">
-            <span className="font-mono text-fog text-xs uppercase tracking-widest whitespace-nowrap">
+            <span className="font-mono text-fog-dark text-xs uppercase tracking-widest whitespace-nowrap">
               Core partners
             </span>
             <div className="flex-1 h-px bg-fog/20" />
@@ -200,7 +200,7 @@ export default function FarmersClient() {
         <div className="max-w-5xl mx-auto px-6">
           {/* Section label */}
           <div className="flex items-center gap-6 mb-12">
-            <span className="font-mono text-fog text-xs uppercase tracking-widest whitespace-nowrap">
+            <span className="font-mono text-fog-dark text-xs uppercase tracking-widest whitespace-nowrap">
               Also on the menu
             </span>
             <div className="flex-1 h-px bg-fog/20" />
@@ -226,12 +226,12 @@ export default function FarmersClient() {
           <h2 className="font-display font-light text-white text-4xl max-w-2xl mx-auto leading-relaxed">
             We visit every farm before we put it on the menu. No exceptions.
           </h2>
-          <p className="font-sans text-fog text-sm mt-4 max-w-lg mx-auto">
+          <p className="font-sans text-fog-dark text-sm mt-4 max-w-lg mx-auto">
             If you want to know where a specific ingredient comes from, ask your server. They will
             know the answer.
           </p>
         </motion.div>
       </section>
-    </main>
+    </>
   )
 }

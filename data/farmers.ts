@@ -25,7 +25,7 @@ export const FARMERS: Farmer[] = [
     partnerSince: 2019,
     story:
       "Tom and Linda converted their conventional row crop operation to certified organic in 2015. They were the first farm we called when we opened, and they have never missed a delivery. Their edible flowers go on almost every plate we serve.",
-    image: "/images/farmer-portrait-1.jpg",
+    image: "/images/farmer-portrait-1.webp",
     featured: true,
   },
   {
@@ -38,7 +38,7 @@ export const FARMERS: Farmer[] = [
     partnerSince: 2021,
     story:
       "Maria farms four acres along the Cosumnes River on land her family has worked for three generations. She texts us every Tuesday with what is ready to pick that week. Our kitchen plans around her message.",
-    image: "/images/farmer-portrait-2.jpg",
+    image: "/images/farmer-portrait-2.webp",
     featured: true,
   },
   {
@@ -51,7 +51,7 @@ export const FARMERS: Farmer[] = [
     partnerSince: 2020,
     story:
       "James grows stone fruit at 1,800 feet in the Sierra Nevada foothills. The elevation gives his peaches an intensity you cannot find at lower altitudes. Our summer galette exists entirely because of his harvest.",
-    image: "/images/farmer-portrait-3.jpg",
+    image: "/images/farmer-portrait-3.webp",
     featured: true,
   },
   {
@@ -64,7 +64,7 @@ export const FARMERS: Farmer[] = [
     partnerSince: 2022,
     story:
       "Three generations of the Nakamura family farm 80 acres in the San Joaquin delta. Their sweet corn is the basis of our summer bisque. We buy their entire dry bean harvest every fall and cure it through winter.",
-    image: "/images/farmer-portrait-1.jpg",
+    image: "/images/farmer-portrait-1.webp",
     featured: false,
   },
   {
@@ -77,7 +77,7 @@ export const FARMERS: Farmer[] = [
     partnerSince: 2023,
     story:
       "Sofia trained as a perfumer in Lyon before returning to California to farm botanicals with her husband Andre. Their lavender syrup goes into our lemonade and their dried chamomile finishes our dessert tea service.",
-    image: "/images/farmer-portrait-2.jpg",
+    image: "/images/farmer-portrait-2.webp",
     featured: false,
   },
 ]

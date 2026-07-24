@@ -11,10 +11,10 @@ import { useIsDesktop } from '@/lib/useIsDesktop';
 import { useDemoForm } from '@/components/DemoModal';
 
 const inputClass =
-  'w-full border-0 border-b border-fog/40 bg-transparent py-3 font-sans text-sm text-ink focus:outline-none focus:border-forest transition-colors min-h-[48px]';
+  'w-full border-0 border-b border-fog/40 bg-transparent py-3 font-sans text-sm text-ink focus:outline-none focus:border-forest focus-visible:ring-2 focus-visible:ring-gold-dark transition-colors min-h-[48px]';
 
 const selectClass =
-  'w-full border-0 border-b border-fog/40 bg-transparent py-3 font-sans text-sm text-ink focus:outline-none focus:border-forest transition-colors appearance-none min-h-[48px]';
+  'w-full border-0 border-b border-fog/40 bg-transparent py-3 font-sans text-sm text-ink focus:outline-none focus:border-forest focus-visible:ring-2 focus-visible:ring-gold-dark transition-colors appearance-none min-h-[48px]';
 
 export default function ReservationsClient() {
   const { handleSubmit, modal } = useDemoForm();
@@ -26,14 +26,14 @@ export default function ReservationsClient() {
   const roomY = useTransform(rawRoomY, (v) => (isDesktop ? v : 0));
 
   return (
-    <main>
+    <>
       {modal}
 
       {/* Hero */}
       <section className="relative flex h-[220px] items-center justify-center overflow-hidden md:h-[300px]">
         <motion.div style={{ y: heroY }} className="absolute inset-0 scale-110">
           <Image
-            src={asset('/images/restaurant-interior.jpg')}
+            src={asset('/images/restaurant-interior.webp')}
             alt="Candlelit dining room set for evening service"
             fill
             priority
@@ -69,17 +69,18 @@ export default function ReservationsClient() {
               <form onSubmit={handleSubmit} className="space-y-6">
 
                 <div>
-                  <label className="mb-2 block font-mono text-xs uppercase tracking-widest text-fog">
+                  <label htmlFor="res-name" className="mb-2 block font-mono text-xs uppercase tracking-widest text-fog-dark">
                     Full Name
                   </label>
-                  <input type="text" name="name" required className={inputClass} />
+                  <input id="res-name" type="text" name="name" required className={inputClass} />
                 </div>
 
                 <div>
-                  <label className="mb-2 block font-mono text-xs uppercase tracking-widest text-fog">
+                  <label htmlFor="res-phone" className="mb-2 block font-mono text-xs uppercase tracking-widest text-fog-dark">
                     Phone
                   </label>
                   <input
+                    id="res-phone"
                     type="tel"
                     name="phone"
                     placeholder="(209) 555-0000"
@@ -89,18 +90,19 @@ export default function ReservationsClient() {
                 </div>
 
                 <div>
-                  <label className="mb-2 block font-mono text-xs uppercase tracking-widest text-fog">
+                  <label htmlFor="res-email" className="mb-2 block font-mono text-xs uppercase tracking-widest text-fog-dark">
                     Email
                   </label>
-                  <input type="email" name="email" required className={inputClass} />
+                  <input id="res-email" type="email" name="email" required className={inputClass} />
                 </div>
 
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                   <div>
-                    <label className="mb-2 block font-mono text-xs uppercase tracking-widest text-fog">
+                    <label htmlFor="res-date" className="mb-2 block font-mono text-xs uppercase tracking-widest text-fog-dark">
                       Date
                     </label>
                     <input
+                      id="res-date"
                       type="date"
                       name="date"
                       required
@@ -109,10 +111,10 @@ export default function ReservationsClient() {
                     />
                   </div>
                   <div>
-                    <label className="mb-2 block font-mono text-xs uppercase tracking-widest text-fog">
+                    <label htmlFor="res-time" className="mb-2 block font-mono text-xs uppercase tracking-widest text-fog-dark">
                       Time
                     </label>
-                    <select name="time" required className={selectClass}>
+                    <select id="res-time" name="time" required className={selectClass}>
                       <option value="">Select a time</option>
                       {['5:00 PM','5:30 PM','6:00 PM','6:30 PM','7:00 PM','7:30 PM','8:00 PM','8:30 PM','9:00 PM'].map((t) => (
                         <option key={t} value={t}>{t}</option>
@@ -122,10 +124,10 @@ export default function ReservationsClient() {
                 </div>
 
                 <div>
-                  <label className="mb-2 block font-mono text-xs uppercase tracking-widest text-fog">
+                  <label htmlFor="res-party-size" className="mb-2 block font-mono text-xs uppercase tracking-widest text-fog-dark">
                     Party size
                   </label>
-                  <select name="party_size" required className={selectClass}>
+                  <select id="res-party-size" name="party_size" required className={selectClass}>
                     <option value="">Select party size</option>
                     {[1,2,3,4,5,6,7,8].map((n) => (
                       <option key={n} value={n}>{n} {n === 1 ? 'guest' : 'guests'}</option>
@@ -135,10 +137,10 @@ export default function ReservationsClient() {
                 </div>
 
                 <div>
-                  <label className="mb-2 block font-mono text-xs uppercase tracking-widest text-fog">
+                  <label htmlFor="res-occasion" className="mb-2 block font-mono text-xs uppercase tracking-widest text-fog-dark">
                     Occasion
                   </label>
-                  <select name="occasion" className={selectClass}>
+                  <select id="res-occasion" name="occasion" className={selectClass}>
                     <option value="No special occasion">No special occasion</option>
                     <option value="Birthday">Birthday</option>
                     <option value="Anniversary">Anniversary</option>
@@ -149,21 +151,22 @@ export default function ReservationsClient() {
                 </div>
 
                 <div>
-                  <label className="mb-2 block font-mono text-xs uppercase tracking-widest text-fog">
+                  <label htmlFor="res-special-requests" className="mb-2 block font-mono text-xs uppercase tracking-widest text-fog-dark">
                     Special requests / dietary needs
                   </label>
                   <textarea
+                    id="res-special-requests"
                     name="special_requests"
                     rows={4}
-                    className="w-full resize-none border-0 border-b border-fog/40 bg-transparent py-3 font-sans text-sm text-ink focus:border-forest focus:outline-none transition-colors"
+                    className="w-full resize-none border-0 border-b border-fog/40 bg-transparent py-3 font-sans text-sm text-ink focus:border-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-dark transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="mb-2 block font-mono text-xs uppercase tracking-widest text-fog">
+                  <label htmlFor="res-referral" className="mb-2 block font-mono text-xs uppercase tracking-widest text-fog-dark">
                     How did you hear about us?
                   </label>
-                  <select name="referral" className={selectClass}>
+                  <select id="res-referral" name="referral" className={selectClass}>
                     <option value="">Select one</option>
                     <option value="Google search">Google search</option>
                     <option value="Instagram">Instagram</option>
@@ -181,7 +184,7 @@ export default function ReservationsClient() {
                   >
                     Request Reservation
                   </button>
-                  <p className="mt-4 font-sans text-xs leading-relaxed text-fog">
+                  <p className="mt-4 font-sans text-xs leading-relaxed text-fog-dark">
                     We confirm all reservations within 2 hours. For same-day reservations please
                     call us directly.
                   </p>
@@ -260,7 +263,7 @@ export default function ReservationsClient() {
       <section className="relative h-[220px] overflow-hidden md:h-[320px]">
         <motion.div style={{ y: roomY }} className="absolute inset-0 scale-110">
           <Image
-            src={asset('/images/space-wide.jpg')}
+            src={asset('/images/space-wide.webp')}
             alt="The Harvest Table dining room"
             fill
             className="object-cover object-center"
@@ -269,6 +272,6 @@ export default function ReservationsClient() {
         </motion.div>
         <div className="absolute inset-0 bg-forest/30" />
       </section>
-    </main>
+    </>
   );
 }

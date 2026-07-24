@@ -1,6 +1,5 @@
 import type { MetadataRoute } from 'next';
-
-const BASE_URL = 'https://harvesttable.com';
+import { SITE_URL as BASE_URL } from '@/lib/basePath';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

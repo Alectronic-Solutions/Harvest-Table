@@ -4,10 +4,22 @@
 // Intercepts the native form submit, prevents the POST, shows the modal.
 // Exported as both a wrapper component and a standalone hook.
 
-import { useState, useCallback, type FormEvent } from 'react';
+import { useState, useCallback, useEffect, useRef, type FormEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function ThankYouModal({ onClose }: { onClose: () => void }) {
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    closeButtonRef.current?.focus();
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [onClose]);
+
   return (
     <AnimatePresence>
       <motion.div
@@ -20,6 +32,9 @@ function ThankYouModal({ onClose }: { onClose: () => void }) {
       >
         <motion.div
           key="card"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="thank-you-modal-title"
           initial={{ opacity: 0, y: 24, scale: 0.97 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 12, scale: 0.97 }}
@@ -30,22 +45,23 @@ function ThankYouModal({ onClose }: { onClose: () => void }) {
           {/* Gold accent line */}
           <div className="mx-auto mb-6 h-0.5 w-12 bg-gold" />
 
-          <h2 className="font-display text-4xl font-semibold text-forest">
+          <h2 id="thank-you-modal-title" className="font-display text-4xl font-semibold text-forest">
             Thank you.
           </h2>
-          <p className="mx-auto mt-4 max-w-xs font-sans text-sm leading-relaxed text-fog">
+          <p className="mx-auto mt-4 max-w-xs font-sans text-sm leading-relaxed text-fog-dark">
             We will be in touch within 2 hours during business hours. We look
             forward to having you at the table.
           </p>
 
           <button
+            ref={closeButtonRef}
             onClick={onClose}
             className="mt-8 inline-flex min-h-[48px] items-center bg-gold px-8 py-3 font-sans text-sm font-medium text-forest transition-opacity hover:opacity-90"
           >
             Close
           </button>
 
-          <p className="mt-4 font-sans text-xs italic text-fog/50">
+          <p className="mt-4 font-sans text-xs italic text-fog-dark/70">
             This is a demo site. No data was sent.
           </p>
         </motion.div>

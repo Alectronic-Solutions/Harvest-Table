@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://harvesttable.com/sitemap.xml

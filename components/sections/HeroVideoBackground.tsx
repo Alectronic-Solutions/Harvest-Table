@@ -78,37 +78,46 @@ export default function HeroVideoBackground() {
       <div
         className="absolute inset-0 bg-cover bg-center transition-opacity duration-700"
         style={{
-          backgroundImage: `url(${asset('/images/hero-poster.jpg')})`,
+          backgroundImage: `url(${asset('/images/hero-poster.webp')})`,
           opacity: canPlay && !reducedMotion ? 0 : 1,
         }}
       />
 
       {!reducedMotion &&
-        CLIPS.map((clip, i) => (
-          <motion.video
-            key={clip.src}
-            ref={(el) => {
-              videoRefs.current[i] = el;
-            }}
-            src={asset(clip.src)}
-            muted
-            playsInline
-            autoPlay={i === 0}
-            preload="auto"
-            onLoadedMetadata={(e) => {
-              durationsRef.current[i] = e.currentTarget.duration;
-            }}
-            onCanPlay={() => i === 0 && setCanPlay(true)}
-            className="absolute inset-0 h-full w-full object-cover"
-            animate={{ opacity: i === activeIndex ? 1 : 0 }}
-            transition={{ duration: FADE_MS / 1000, ease: 'easeInOut' }}
-            style={{
-              willChange: 'opacity',
-              backfaceVisibility: 'hidden',
-              transform: 'translateZ(0)',
-            }}
-          />
-        ))}
+        CLIPS.map((clip, i) => {
+          // Only mount the clip that's currently visible plus the one queued to
+          // play next. The clip after that stays out of the DOM (and off the
+          // network) until it becomes "next", so the browser never downloads
+          // all three videos up front.
+          const nextIndex = (activeIndex + 1) % CLIPS.length;
+          if (i !== activeIndex && i !== nextIndex) return null;
+
+          return (
+            <motion.video
+              key={clip.src}
+              ref={(el) => {
+                videoRefs.current[i] = el;
+              }}
+              src={asset(clip.src)}
+              muted
+              playsInline
+              autoPlay={i === 0}
+              preload={i === activeIndex ? 'auto' : 'metadata'}
+              onLoadedMetadata={(e) => {
+                durationsRef.current[i] = e.currentTarget.duration;
+              }}
+              onCanPlay={() => i === 0 && setCanPlay(true)}
+              className="absolute inset-0 h-full w-full object-cover"
+              animate={{ opacity: i === activeIndex ? 1 : 0 }}
+              transition={{ duration: FADE_MS / 1000, ease: 'easeInOut' }}
+              style={{
+                willChange: 'opacity',
+                backfaceVisibility: 'hidden',
+                transform: 'translateZ(0)',
+              }}
+            />
+          );
+        })}
     </div>
   );
 }

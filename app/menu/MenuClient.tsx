@@ -26,7 +26,7 @@ function MenuHero() {
     <div className="relative h-[260px] overflow-hidden md:h-[340px]">
       <motion.div style={{ y: imageY }} className="absolute inset-0 scale-110">
         <Image
-          src={asset('/images/farm-field.jpg')}
+          src={asset('/images/farm-field.webp')}
           alt="California farm fields at golden hour"
           fill
           priority
@@ -70,7 +70,7 @@ function SectionNav({ activeId }: { activeId: string }) {
                   });
                 }}
                 className={`relative whitespace-nowrap font-mono text-xs uppercase tracking-widest transition-colors duration-200 ${
-                  isActive ? 'text-gold' : 'text-fog hover:text-ink'
+                  isActive ? 'text-gold-dark' : 'text-fog-dark hover:text-ink'
                 }`}
               >
                 {section.navLabel}
@@ -94,20 +94,20 @@ function DrinksNote() {
       <div className="mx-auto max-w-3xl px-4 md:px-0">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-12">
           <div>
-            <p className="font-mono text-xs uppercase tracking-widest text-fog">
+            <p className="font-mono text-xs uppercase tracking-widest text-fog-dark">
               Natural wine list
             </p>
-            <p className="mt-3 font-sans text-sm leading-relaxed text-fog">
+            <p className="mt-3 font-sans text-sm leading-relaxed text-fog-dark">
               We pour small-production California wines, chosen to complement
               what is on the menu that week. Our list changes often. Ask your
               server what is open.
             </p>
           </div>
           <div>
-            <p className="font-mono text-xs uppercase tracking-widest text-fog">
+            <p className="font-mono text-xs uppercase tracking-widest text-fog-dark">
               Dietary accommodations
             </p>
-            <p className="mt-3 font-sans text-sm leading-relaxed text-fog">
+            <p className="mt-3 font-sans text-sm leading-relaxed text-fog-dark">
               Most dishes can be adjusted for dietary needs with advance notice.
               Please mention any allergies or restrictions when you reserve.
             </p>
@@ -120,8 +120,8 @@ function DrinksNote() {
             { flag: 'VE', label: 'Vegan' },
             { flag: 'GF', label: 'Gluten-free' },
           ].map(({ flag, label }) => (
-            <span key={flag} className="flex items-center gap-1.5 font-sans text-xs text-fog">
-              <span className="rounded-full border border-fog/40 px-1.5 py-0.5 font-mono text-[10px] text-fog">
+            <span key={flag} className="flex items-center gap-1.5 font-sans text-xs text-fog-dark">
+              <span className="rounded-full border border-fog/40 px-1.5 py-0.5 font-mono text-[10px] text-fog-dark">
                 {flag}
               </span>
               {label}
@@ -142,7 +142,7 @@ function BottomCta() {
         <h2 className="font-display text-4xl font-normal text-white">
           Ready to sit down?
         </h2>
-        <p className="mt-3 font-sans text-sm text-fog">
+        <p className="mt-3 font-sans text-sm text-linen/70">
           Reservations open Tuesday through Sunday.
         </p>
         <Link

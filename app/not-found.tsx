@@ -7,7 +7,7 @@ export default function NotFound() {
         <h1 className="font-display text-5xl font-semibold text-forest">
           This page has gone out of season.
         </h1>
-        <p className="mx-auto mt-4 max-w-sm font-sans text-sm leading-relaxed text-fog">
+        <p className="mx-auto mt-4 max-w-sm font-sans text-sm leading-relaxed text-fog-dark">
           It may have moved or been removed. Try the menu or head back home.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">

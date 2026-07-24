@@ -15,7 +15,7 @@ const FLAG_LABEL: Record<DietaryFlag, string> = {
 
 function DietaryBadge({ flag }: { flag: DietaryFlag }) {
   return (
-    <span className="rounded-full border border-fog/40 px-1.5 py-0.5 font-mono text-[10px] text-fog">
+    <span className="rounded-full border border-fog/40 px-1.5 py-0.5 font-mono text-[10px] text-fog-dark">
       {FLAG_LABEL[flag]}
     </span>
   );
@@ -45,7 +45,7 @@ export default function MenuSection({ section, isEven }: Props) {
       <div className="mx-auto max-w-3xl">
         {/* Section label + horizontal rule */}
         <div className="mb-12 flex items-center gap-6">
-          <span className="whitespace-nowrap font-mono text-xs uppercase tracking-[0.2em] text-fog">
+          <span className="whitespace-nowrap font-mono text-xs uppercase tracking-[0.2em] text-fog-dark">
             {section.label}
           </span>
           <div className="flex-1 border-t border-fog/25" />
@@ -83,22 +83,22 @@ export default function MenuSection({ section, isEven }: Props) {
                       <DietaryBadge key={flag} flag={flag} />
                     ))}
                   </div>
-                  <p className="mt-2 max-w-prose font-sans text-sm leading-relaxed text-fog">
+                  <p className="mt-2 max-w-prose font-sans text-sm leading-relaxed text-fog-dark">
                     {item.description}
                   </p>
                   {/* Farm source: visible below description on mobile */}
-                  <p className="mt-3 font-mono text-xs text-fog md:hidden">
+                  <p className="mt-3 font-mono text-xs text-fog-dark md:hidden">
                     {item.farmSource}
-                    <span className="text-fog/70"> / {item.farmLocation}</span>
+                    <span className="text-fog-dark/70"> / {item.farmLocation}</span>
                   </p>
                 </div>
 
                 {/* Farm source: desktop col 9-10 */}
                 <div className="hidden md:col-span-2 md:block">
-                  <p className="font-mono text-xs leading-relaxed text-fog">
+                  <p className="font-mono text-xs leading-relaxed text-fog-dark">
                     {item.farmSource}
                   </p>
-                  <p className="font-mono text-xs text-fog/70">
+                  <p className="font-mono text-xs text-fog-dark/70">
                     {item.farmLocation}
                   </p>
                 </div>

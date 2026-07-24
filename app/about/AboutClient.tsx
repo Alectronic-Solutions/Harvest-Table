@@ -39,7 +39,7 @@ function AboutHero() {
     <section className="relative flex h-[300px] items-end overflow-hidden md:h-[420px]">
       <motion.div style={{ y: imageY }} className="absolute inset-0 scale-110">
         <Image
-          src={asset('/images/hero-dining.jpg')}
+          src={asset('/images/hero-dining.webp')}
           alt="Harvest Table dining room"
           fill
           priority
@@ -88,17 +88,17 @@ function OriginStory() {
               agreement with two farms down the road. The plan was simple: cook what was ripe, name
               where it came from, and get out of the way.
             </p>
-            <p className="font-sans text-base leading-loose text-fog">
+            <p className="font-sans text-base leading-loose text-fog-dark">
               Our chef and founder, Daniel Park, spent twelve years in restaurant kitchens in San
               Francisco and Portland before moving to the Central Valley. He did not come here for
               the restaurant scene. He came because the farms were here.
             </p>
-            <p className="font-sans text-base leading-loose text-fog">
+            <p className="font-sans text-base leading-loose text-fog-dark">
               The menu has never been the same two weeks in a row. We have served dishes we could
               not repeat if we tried, because the ingredient that made them possible was gone by the
               following Tuesday. That is not a problem. That is the point.
             </p>
-            <p className="font-sans text-base leading-loose text-fog">
+            <p className="font-sans text-base leading-loose text-fog-dark">
               We are now partners with twelve farms. We seat forty guests per night, four nights a
               week. We have never put a dish on the menu that we were not proud of. We intend to
               keep it that way.
@@ -115,7 +115,7 @@ function OriginStory() {
           >
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
-                src={asset('/images/farmer-portrait-1.jpg')}
+                src={asset('/images/farmer-portrait-1.webp')}
                 alt="Daniel Park, Chef and Founder"
                 fill
                 className="object-cover object-top"
@@ -127,7 +127,7 @@ function OriginStory() {
                 &ldquo;The best ingredient is always the one you did not plan for. That is why we do
                 not lock our menu in advance.&rdquo;
               </p>
-              <footer className="mt-3 font-mono text-xs uppercase tracking-wide text-fog">
+              <footer className="mt-3 font-mono text-xs uppercase tracking-wide text-fog-dark">
                 Daniel Park, Chef and Founder
               </footer>
             </blockquote>
@@ -145,7 +145,7 @@ function ValuesSection() {
     <section className="bg-white py-20">
       <div className="mx-auto max-w-5xl px-6">
         <div className="mb-12 flex items-center gap-6">
-          <span className="font-mono text-xs uppercase tracking-widest text-fog">How we cook</span>
+          <span className="font-mono text-xs uppercase tracking-widest text-fog-dark">How we cook</span>
           <div className="h-px flex-1 bg-fog/20" />
         </div>
 
@@ -160,7 +160,7 @@ function ValuesSection() {
               className="border-t-2 border-gold pt-8"
             >
               <h3 className="font-display text-2xl font-medium text-forest">{v.headline}</h3>
-              <p className="mt-3 font-sans text-sm leading-relaxed text-fog">{v.body}</p>
+              <p className="mt-3 font-sans text-sm leading-relaxed text-fog-dark">{v.body}</p>
             </motion.div>
           ))}
         </div>
@@ -181,7 +181,7 @@ function TeamPhoto() {
     <section className="relative h-[280px] overflow-hidden md:h-[400px]">
       <motion.div style={{ y: imageY }} className="absolute inset-0 scale-110">
         <Image
-          src={asset('/images/space-wide.jpg')}
+          src={asset('/images/space-wide.webp')}
           alt="The Harvest Table team"
           fill
           className="object-cover"
@@ -224,12 +224,12 @@ function BottomCta() {
 
 export default function AboutClient() {
   return (
-    <main>
+    <>
       <AboutHero />
       <OriginStory />
       <ValuesSection />
       <TeamPhoto />
       <BottomCta />
-    </main>
+    </>
   );
 }

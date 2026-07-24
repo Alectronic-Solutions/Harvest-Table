@@ -23,4 +23,4 @@ export const SOCIAL = {
 }
 
 export const CURRENT_SEASON = "Summer 2026"
-export const SEASONAL_STRIP_TEXT = `${CURRENT_SEASON} — Menu changes with the harvest`
+export const SEASONAL_STRIP_TEXT = `${CURRENT_SEASON} · Menu changes with the harvest`

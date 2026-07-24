@@ -8,7 +8,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Brand palette — see CLAUDE.md design system. Never hardcode these
+        // Brand palette. See CLAUDE.md design system. Never hardcode these
         // hex values in JSX; reference the token names instead.
         forest: '#2C3B2D',
         gold: '#D4A843',
@@ -16,6 +16,11 @@ const config: Config = {
         ember: '#A0522D',
         fog: '#6B7A6B',
         ink: '#1A1A1A',
+        // WCAG AA-safe variants for small text on linen/white backgrounds.
+        // `gold` and `fog` stay unchanged for use on forest (dark) backgrounds
+        // and decorative/large-scale treatments where they already pass.
+        'gold-dark': '#7A5A1C',
+        'fog-dark': '#566256',
       },
       fontFamily: {
         // Bound to the next/font CSS variables defined in app/layout.tsx.

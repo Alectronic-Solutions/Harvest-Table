@@ -1,17 +1,19 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/basePath';
 
 export const metadata: Metadata = {
   title: 'Terms of Service | Harvest Table',
   description: 'Terms of Service for Harvest Table restaurant.',
+  alternates: { canonical: `${SITE_URL}/terms-of-service` },
 };
 
 export default function TermsOfServicePage() {
   return (
-    <main className="min-h-screen bg-linen pt-24">
+    <div className="min-h-screen bg-linen pt-24">
       <div className="mx-auto max-w-3xl px-5 py-12 md:px-8 md:py-16">
         <h1 className="font-display text-3xl text-forest md:text-4xl">Terms of Service</h1>
-        <p className="mt-2 font-mono text-xs text-gold">Last updated: January 2025</p>
+        <p className="mt-2 font-mono text-xs text-gold-dark">Last updated: January 2025</p>
 
         <div className="prose prose-stone mt-8 font-sans text-forest/80">
           <section className="mb-8">
@@ -98,19 +100,19 @@ export default function TermsOfServicePage() {
             <h2 className="font-display text-xl text-forest">10. Contact</h2>
             <p className="mt-2">
               For questions about these Terms of Service, please contact us at:{' '}
-              <a href="mailto:hello@harvesttable.com" className="text-gold underline">
+              <a href="mailto:hello@harvesttable.com" className="text-gold-dark underline">
                 hello@harvesttable.com
               </a>
             </p>
           </section>
 
           <div className="mt-12 border-t border-forest/10 pt-6">
-            <Link href="/" className="text-sm text-gold hover:underline">
+            <Link href="/" className="text-sm text-gold-dark hover:underline">
               ← Back to Home
             </Link>
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

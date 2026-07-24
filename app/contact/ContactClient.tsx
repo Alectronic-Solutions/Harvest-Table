@@ -24,7 +24,7 @@ function ContactHero() {
     <section className="relative flex h-[200px] items-center justify-center overflow-hidden md:h-[260px]">
       <motion.div style={{ y: imageY }} className="absolute inset-0 scale-110">
         <Image
-          src={asset('/images/restaurant-interior.jpg')}
+          src={asset('/images/restaurant-interior.webp')}
           alt="Harvest Table dining room"
           fill
           priority
@@ -69,43 +69,46 @@ function InquiryForm() {
   return (
     <div>
       {modal}
-      <p className="font-mono text-xs uppercase tracking-widest text-gold">Send a message</p>
+      <p className="font-mono text-xs uppercase tracking-widest text-gold-dark">Send a message</p>
       <div className="mt-3 mb-6 border-t border-fog/25" />
 
       <form onSubmit={handleSubmit} className="space-y-6">
 
         <div>
-          <label className="block font-mono text-xs uppercase tracking-widest text-fog mb-2">
+          <label htmlFor="contact-name" className="block font-mono text-xs uppercase tracking-widest text-fog-dark mb-2">
             Name
           </label>
           <input
+            id="contact-name"
             type="text"
             name="name"
             required
-            className="w-full border-0 border-b border-fog/40 bg-transparent py-2 font-sans text-sm text-ink focus:border-forest focus:outline-none transition-colors"
+            className="w-full border-0 border-b border-fog/40 bg-transparent py-2 font-sans text-sm text-ink focus:border-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-dark transition-colors"
           />
         </div>
 
         <div>
-          <label className="block font-mono text-xs uppercase tracking-widest text-fog mb-2">
+          <label htmlFor="contact-email" className="block font-mono text-xs uppercase tracking-widest text-fog-dark mb-2">
             Email
           </label>
           <input
+            id="contact-email"
             type="email"
             name="email"
             required
-            className="w-full border-0 border-b border-fog/40 bg-transparent py-2 font-sans text-sm text-ink focus:border-forest focus:outline-none transition-colors"
+            className="w-full border-0 border-b border-fog/40 bg-transparent py-2 font-sans text-sm text-ink focus:border-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-dark transition-colors"
           />
         </div>
 
         <div>
-          <label className="block font-mono text-xs uppercase tracking-widest text-fog mb-2">
+          <label htmlFor="contact-inquiry-type" className="block font-mono text-xs uppercase tracking-widest text-fog-dark mb-2">
             Inquiry type
           </label>
           <select
+            id="contact-inquiry-type"
             name="inquiry_type"
             defaultValue={defaultInquiry}
-            className="w-full appearance-none border-0 border-b border-fog/40 bg-transparent py-2 font-sans text-sm text-ink focus:border-forest focus:outline-none transition-colors"
+            className="w-full appearance-none border-0 border-b border-fog/40 bg-transparent py-2 font-sans text-sm text-ink focus:border-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-dark transition-colors"
           >
             <option value="">Select one</option>
             {INQUIRY_OPTIONS.map((o) => (
@@ -117,14 +120,15 @@ function InquiryForm() {
         </div>
 
         <div>
-          <label className="block font-mono text-xs uppercase tracking-widest text-fog mb-2">
+          <label htmlFor="contact-message" className="block font-mono text-xs uppercase tracking-widest text-fog-dark mb-2">
             Message
           </label>
           <textarea
+            id="contact-message"
             name="message"
             rows={5}
             required
-            className="w-full resize-none border-0 border-b border-fog/40 bg-transparent py-2 font-sans text-sm text-ink focus:border-forest focus:outline-none transition-colors"
+            className="w-full resize-none border-0 border-b border-fog/40 bg-transparent py-2 font-sans text-sm text-ink focus:border-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-dark transition-colors"
           />
         </div>
 
@@ -154,7 +158,7 @@ function ContactContent() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="font-mono text-xs uppercase tracking-widest text-gold">Find us</p>
+            <p className="font-mono text-xs uppercase tracking-widest text-gold-dark">Find us</p>
             <div className="mt-3 mb-6 border-t border-fog/25" />
 
             <address className="not-italic font-sans text-base leading-relaxed text-forest">
@@ -164,7 +168,7 @@ function ContactContent() {
             </address>
 
             <div className="mt-4">
-              <p className="font-mono text-xs uppercase tracking-wide text-fog">Reservations</p>
+              <p className="font-mono text-xs uppercase tracking-wide text-fog-dark">Reservations</p>
               <a
                 href={`tel:${CONTACT.phone.replace(/\D/g, '')}`}
                 className="mt-1 block font-sans text-base text-forest transition-colors hover:text-ember"
@@ -174,7 +178,7 @@ function ContactContent() {
             </div>
 
             <div className="mt-4">
-              <p className="font-mono text-xs uppercase tracking-wide text-fog">General inquiries</p>
+              <p className="font-mono text-xs uppercase tracking-wide text-fog-dark">General inquiries</p>
               <a
                 href={`mailto:${CONTACT.email}`}
                 className="mt-1 block font-sans text-sm text-forest transition-colors hover:text-ember"
@@ -184,14 +188,14 @@ function ContactContent() {
             </div>
 
             <div className="mt-8">
-              <p className="mb-3 font-mono text-xs uppercase tracking-wide text-fog">Hours</p>
+              <p className="mb-3 font-mono text-xs uppercase tracking-wide text-fog-dark">Hours</p>
               {HOURS.map((h) => (
                 <div
                   key={h.day}
                   className="flex justify-between border-b border-fog/15 py-2"
                 >
                   <span className="font-sans text-sm text-forest">{h.day}</span>
-                  <span className="font-mono text-xs text-fog">{h.time}</span>
+                  <span className="font-mono text-xs text-fog-dark">{h.time}</span>
                 </div>
               ))}
             </div>
@@ -204,7 +208,7 @@ function ContactContent() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <p className="font-mono text-xs uppercase tracking-widest text-gold">Location</p>
+            <p className="font-mono text-xs uppercase tracking-widest text-gold-dark">Location</p>
             <div className="mt-3 mb-6 border-t border-fog/25" />
 
             <iframe
@@ -217,7 +221,7 @@ function ContactContent() {
               title="Harvest Table location"
             />
 
-            <p className="mt-4 font-sans text-xs text-fog">214 Main Street, Lodi CA 95240</p>
+            <p className="mt-4 font-sans text-xs text-fog-dark">214 Main Street, Lodi CA 95240</p>
             <a
               href="https://maps.google.com/maps?q=214+Main+Street+Lodi+CA"
               target="_blank"
@@ -265,7 +269,7 @@ function CareersAndPress() {
             <h2 className="font-display text-2xl font-medium text-forest">
               We are always looking for people who care about food.
             </h2>
-            <p className="mt-3 font-sans text-sm leading-relaxed text-fog">
+            <p className="mt-3 font-sans text-sm leading-relaxed text-fog-dark">
               Send your resume and a note about why you want to cook or serve at Harvest Table.
               We read every message.
             </p>
@@ -288,7 +292,7 @@ function CareersAndPress() {
             <h2 className="font-display text-2xl font-medium text-forest">
               We are happy to speak with food writers and journalists.
             </h2>
-            <p className="mt-3 font-sans text-sm leading-relaxed text-fog">
+            <p className="mt-3 font-sans text-sm leading-relaxed text-fog-dark">
               For recipe requests, photography access, chef interviews, or event coverage, reach
               out directly. We respond within three business days.
             </p>
@@ -310,10 +314,10 @@ function CareersAndPress() {
 
 export default function ContactClient() {
   return (
-    <main>
+    <>
       <ContactHero />
       <ContactContent />
       <CareersAndPress />
-    </main>
+    </>
   );
 }

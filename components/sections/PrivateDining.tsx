@@ -37,7 +37,7 @@ export default function PrivateDining() {
       {/* Background image with parallax */}
       <motion.div style={{ y: imageY }} className="absolute inset-0 scale-110">
         <Image
-          src={asset('/images/private-dining.jpg')}
+          src={asset('/images/private-dining.webp')}
           alt="The private dining room set for an intimate event"
           fill
           className="object-cover object-center"
