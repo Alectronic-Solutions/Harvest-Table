@@ -65,7 +65,7 @@ function MenuCard({ item }: { item: MenuItem & { image: string } }) {
           )}
         </div>
 
-        <div className="mt-4 flex items-start justify-between gap-4">
+        <div className="mt-4 flex flex-col items-center gap-1 text-center md:flex-row md:items-start md:justify-between md:gap-4 md:text-left">
           <div className="min-w-0">
             <h3 className="font-display text-2xl font-semibold leading-tight text-forest md:text-[1.75rem]">
               <span className="link-underline">{item.name}</span>
@@ -74,15 +74,15 @@ function MenuCard({ item }: { item: MenuItem & { image: string } }) {
               {item.farmSource}, {item.farmLocation}
             </p>
           </div>
-          <p className="shrink-0 pt-1 font-mono text-lg text-ember">{item.price}</p>
+          <p className="shrink-0 font-mono text-lg text-ember md:pt-1">{item.price}</p>
         </div>
 
-        <p className="mt-2 font-sans text-sm leading-relaxed text-fog-dark">
+        <p className="mt-2 text-center font-sans text-sm leading-relaxed text-fog-dark md:text-left">
           {item.description}
         </p>
 
         {item.dietaryFlags && (
-          <ul className="mt-3 flex gap-2" aria-label="Dietary information">
+          <ul className="mt-3 flex justify-center gap-2 md:justify-start" aria-label="Dietary information">
             {item.dietaryFlags.map((flag) => (
               <li
                 key={flag}
@@ -105,12 +105,12 @@ export default function MenuPreview() {
     <section aria-labelledby="menu-preview-heading" className="bg-linen py-16 md:py-24">
       <div className="mx-auto max-w-content px-5 md:px-8">
         {/* Section header */}
-        <div className="mb-10 flex flex-col gap-4 md:mb-12 md:flex-row md:items-end md:justify-between">
+        <div className="mb-10 flex flex-col items-center gap-4 text-center md:mb-12 md:flex-row md:items-end md:justify-between md:text-left">
           <div>
             <h2 id="menu-preview-heading" className="font-display text-4xl font-semibold text-forest md:text-5xl">
               This season&apos;s menu
             </h2>
-            <p className="mt-3 max-w-lg font-sans text-base text-fog-dark">
+            <p className="mx-auto mt-3 max-w-lg font-sans text-base text-fog-dark md:mx-0">
               A few of the mains on our {CURRENT_SEASON} menu. Every plate names the
               farm it came from.
             </p>

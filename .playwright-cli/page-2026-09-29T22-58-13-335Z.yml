@@ -1,0 +1,263 @@
+- generic [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - complementary "Seasonal announcement" [ref=e3]:
+    - paragraph [ref=e4]: Fall 2026 · Menu changes with the harvest
+    - paragraph [ref=e206]: Dinner tonight from 5 pm
+  - banner [ref=e5]:
+    - navigation [ref=e6]:
+      - link "Harvest Table" [ref=e8] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e9]: Harvest Table
+      - list [ref=e10]:
+        - listitem [ref=e11]:
+          - link "Menu" [ref=e12] [cursor=pointer]:
+            - /url: /menu/
+        - listitem [ref=e13]:
+          - link "Farmers" [ref=e14] [cursor=pointer]:
+            - /url: /farmers/
+        - listitem [ref=e15]:
+          - link "Reservations" [ref=e16] [cursor=pointer]:
+            - /url: /reservations/
+        - listitem [ref=e17]:
+          - link "Events" [ref=e18] [cursor=pointer]:
+            - /url: /events/
+        - listitem [ref=e19]:
+          - link "About" [ref=e20] [cursor=pointer]:
+            - /url: /about/
+        - listitem [ref=e21]:
+          - link "Contact" [ref=e22] [cursor=pointer]:
+            - /url: /contact/
+      - link "Reserve a Table" [ref=e24] [cursor=pointer]:
+        - /url: /reservations/
+  - main [ref=e26]:
+    - generic [ref=e27]:
+      - img "Candlelit dining room set for evening service" [ref=e29]
+      - generic [ref=e32]:
+        - heading "Reserve a Table" [level=1] [ref=e33]
+        - paragraph [ref=e34]: Dinner Tuesday to Saturday · Brunch Sunday · Walk-ins welcome at the bar
+    - generic [ref=e37]:
+      - generic [ref=e38]:
+        - heading "Request a table" [level=2] [ref=e39]
+        - paragraph [ref=e40]: Tell us when you would like to come in and we will confirm by email or text.
+        - generic [ref=e41]:
+          - generic [ref=e42]:
+            - generic [ref=e43]: Reservation for
+            - combobox "Reservation for" [ref=e44] [cursor=pointer]:
+              - option "Regular dinner or brunch" [selected]
+              - option "Harvest Moon Wine Dinner, Saturday, October 24, 2026"
+              - option "Thanksgiving Family Supper, Thursday, November 26, 2026"
+              - option "Winter Solstice Dinner, Monday, December 21, 2026"
+          - generic [ref=e45]:
+            - generic [ref=e46]: Full name
+            - textbox "Full name" [ref=e47]
+          - generic [ref=e48]:
+            - generic [ref=e49]: Email
+            - textbox "Email" [ref=e50]
+          - generic [ref=e51]:
+            - generic [ref=e52]: Phone
+            - textbox "Phone" [ref=e53]:
+              - /placeholder: (209) 555-0000
+          - generic [ref=e54]:
+            - generic [ref=e55]: Date
+            - textbox "Date" [ref=e56]
+          - generic [ref=e57]:
+            - generic [ref=e58]: Time
+            - combobox "Time" [ref=e59] [cursor=pointer]:
+              - option "Select a time" [disabled] [selected]
+              - option "5:00 PM"
+              - option "5:30 PM"
+              - option "6:00 PM"
+              - option "6:30 PM"
+              - option "7:00 PM"
+              - option "7:30 PM"
+              - option "8:00 PM"
+              - option "8:30 PM"
+              - option "9:00 PM"
+          - generic [ref=e60]:
+            - generic [ref=e61]: Party size
+            - combobox "Party size" [ref=e62] [cursor=pointer]:
+              - option "Select party size" [disabled] [selected]
+              - option "1 guest"
+              - option "2 guests"
+              - option "3 guests"
+              - option "4 guests"
+              - option "5 guests"
+              - option "6 guests"
+              - option "7 guests"
+              - option "8 guests"
+              - option "9+ guests (please call)"
+          - generic [ref=e63]:
+            - generic [ref=e64]: Occasion
+            - combobox "Occasion" [ref=e65] [cursor=pointer]:
+              - option "No special occasion" [selected]
+              - option "Birthday"
+              - option "Anniversary"
+              - option "Business dinner"
+              - option "Rehearsal dinner"
+              - option "Other"
+          - generic [ref=e66]:
+            - generic [ref=e67]: Special requests or dietary needs
+            - textbox "Special requests or dietary needs" [ref=e68]
+          - generic [ref=e69]:
+            - generic [ref=e70]: How did you hear about us?
+            - combobox "How did you hear about us?" [ref=e71] [cursor=pointer]:
+              - option "Select one" [selected]
+              - option "Google search"
+              - option "Instagram"
+              - option "Friend or family"
+              - option "Food press"
+              - option "Walked by"
+              - option "Other"
+          - generic [ref=e72]:
+            - button "Request Reservation" [ref=e73] [cursor=pointer]
+            - paragraph [ref=e74]:
+              - text: We confirm every request within 2 hours during business hours. For same-day tables, please call
+              - link "(209) 555-0182" [ref=e75] [cursor=pointer]:
+                - /url: tel:+12095550182
+              - text: .
+      - complementary "Hours and location" [ref=e76]:
+        - generic [ref=e77]:
+          - heading "Hours" [level=2] [ref=e78]
+          - generic [ref=e79]:
+            - generic [ref=e80]:
+              - term [ref=e81]: Tuesday – Thursday
+              - definition [ref=e82]: 5:00 pm – 9:00 pm
+            - generic [ref=e83]:
+              - term [ref=e84]: Friday – Saturday
+              - definition [ref=e85]: 5:00 pm – 10:00 pm
+            - generic [ref=e86]:
+              - term [ref=e87]: Sunday
+              - definition [ref=e88]: 10:00 am – 2:00 pm (Brunch)
+            - generic [ref=e89]:
+              - term [ref=e90]: Monday
+              - definition [ref=e91]: Closed
+        - generic [ref=e92]:
+          - heading "Find us" [level=2] [ref=e93]
+          - generic [ref=e94]:
+            - text: Harvest Lane
+            - text: Lodi, CA 95240
+          - link "Get directions" [ref=e95] [cursor=pointer]:
+            - /url: https://maps.google.com/maps?q=Lodi+CA+95240
+          - link "(209) 555-0182" [ref=e96] [cursor=pointer]:
+            - /url: tel:+12095550182
+        - generic [ref=e97]:
+          - heading "Parties of 9 or more" [level=2] [ref=e98]
+          - paragraph [ref=e99]: Please call us directly to arrange seating for large groups. We will do our best to accommodate you.
+        - generic [ref=e100]:
+          - heading "Private dining" [level=2] [ref=e101]
+          - paragraph [ref=e102]: Our private room seats up to 24 guests with a custom menu and a dedicated server.
+          - link "Inquire about private events →" [ref=e103] [cursor=pointer]:
+            - /url: /contact/?inquiry=private-dining
+    - region "Good to know" [ref=e104]:
+      - generic [ref=e105]:
+        - heading "Good to know" [level=2] [ref=e106]
+        - generic [ref=e107]:
+          - group [ref=e108]:
+            - generic "How far ahead can I book?" [active] [ref=e109] [cursor=pointer]:
+              - generic [ref=e110]: How far ahead can I book?
+              - generic [ref=e111]: +
+            - paragraph [ref=e208]: Reservations open 30 days in advance. Friday and Saturday evenings usually fill a week or two out, so plan ahead for weekends.
+          - group [ref=e112]:
+            - generic "Do you take walk-ins?" [ref=e113] [cursor=pointer]:
+              - generic [ref=e114]: Do you take walk-ins?
+              - generic [ref=e115]: +
+          - group [ref=e116]:
+            - generic "What is your cancellation policy?" [ref=e117] [cursor=pointer]:
+              - generic [ref=e118]: What is your cancellation policy?
+              - generic [ref=e119]: +
+          - group [ref=e120]:
+            - generic "Can you accommodate allergies and dietary needs?" [ref=e121] [cursor=pointer]:
+              - generic [ref=e122]: Can you accommodate allergies and dietary needs?
+              - generic [ref=e123]: +
+          - group [ref=e124]:
+            - generic "Is there a dress code?" [ref=e125] [cursor=pointer]:
+              - generic [ref=e126]: Is there a dress code?
+              - generic [ref=e127]: +
+          - group [ref=e128]:
+            - generic "Are children welcome?" [ref=e129] [cursor=pointer]:
+              - generic [ref=e130]: Are children welcome?
+              - generic [ref=e131]: +
+          - group [ref=e132]:
+            - generic "Where do I park?" [ref=e133] [cursor=pointer]:
+              - generic [ref=e134]: Where do I park?
+              - generic [ref=e135]: +
+    - img "The Harvest Table dining room" [ref=e137]
+  - contentinfo [ref=e139]:
+    - generic [ref=e141]:
+      - generic [ref=e142]:
+        - link "Harvest Table" [ref=e143] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e144]: Harvest Table
+        - generic [ref=e145]:
+          - text: Harvest Lane
+          - text: Lodi, CA 95240
+        - link "Get directions" [ref=e146] [cursor=pointer]:
+          - /url: https://maps.google.com/maps?q=Lodi+CA+95240
+        - link "(209) 555-0182" [ref=e147] [cursor=pointer]:
+          - /url: tel:+12095550182
+        - link "hello@harvesttable.com" [ref=e148] [cursor=pointer]:
+          - /url: mailto:hello@harvesttable.com
+      - generic [ref=e149]:
+        - heading "Explore" [level=2] [ref=e150]
+        - navigation "Footer navigation" [ref=e151]:
+          - list [ref=e152]:
+            - listitem [ref=e153]:
+              - link "Menu" [ref=e154] [cursor=pointer]:
+                - /url: /menu/
+            - listitem [ref=e155]:
+              - link "Farmers" [ref=e156] [cursor=pointer]:
+                - /url: /farmers/
+            - listitem [ref=e157]:
+              - link "Reservations" [ref=e158] [cursor=pointer]:
+                - /url: /reservations/
+            - listitem [ref=e159]:
+              - link "Events" [ref=e160] [cursor=pointer]:
+                - /url: /events/
+            - listitem [ref=e161]:
+              - link "About" [ref=e162] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=e163]:
+              - link "Contact" [ref=e164] [cursor=pointer]:
+                - /url: /contact/
+      - generic [ref=e165]:
+        - heading "Hours" [level=2] [ref=e166]
+        - generic [ref=e167]:
+          - generic [ref=e168]:
+            - term [ref=e169]: Tuesday – Thursday
+            - definition [ref=e170]: 5:00 pm – 9:00 pm
+          - generic [ref=e171]:
+            - term [ref=e172]: Friday – Saturday
+            - definition [ref=e173]: 5:00 pm – 10:00 pm
+          - generic [ref=e174]:
+            - term [ref=e175]: Sunday
+            - definition [ref=e176]: 10:00 am – 2:00 pm (Brunch)
+          - generic [ref=e177]:
+            - term [ref=e178]: Monday
+            - definition [ref=e179]: Closed
+      - generic [ref=e180]:
+        - heading "Visit us" [level=2] [ref=e181]
+        - link "Reserve a Table" [ref=e182] [cursor=pointer]:
+          - /url: /reservations/
+        - generic [ref=e183]:
+          - link "Harvest Table on Instagram" [ref=e184] [cursor=pointer]:
+            - /url: https://instagram.com/harvesttablelodi
+            - img [ref=e185]
+          - link "Harvest Table on Facebook" [ref=e189] [cursor=pointer]:
+            - /url: https://facebook.com/harvesttablelodi
+            - img [ref=e190]
+    - generic [ref=e195]:
+      - paragraph [ref=e196]: © 2026 Harvest Table. All rights reserved.
+      - generic [ref=e197]:
+        - link "Privacy Policy" [ref=e198] [cursor=pointer]:
+          - /url: /privacy-policy/
+        - link "Terms of Service" [ref=e199] [cursor=pointer]:
+          - /url: /terms-of-service/
+      - link "Back to top" [ref=e200] [cursor=pointer]:
+        - /url: "#top"
+        - text: Back to top
+      - paragraph [ref=e203]:
+        - text: Built by
+        - link "Alectronic Solutions" [ref=e204] [cursor=pointer]:
+          - /url: https://alectronicsolutions.com
+  - alert [ref=e207]

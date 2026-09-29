@@ -83,7 +83,7 @@ function OriginStory() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="space-y-6 md:col-span-7"
+            className="space-y-6 text-center md:col-span-7 md:text-left"
           >
             <p className="font-display text-xl leading-relaxed text-forest">
               Harvest Table opened in 2019 with eight tables, a wood-fired oven, and a handshake
@@ -124,7 +124,7 @@ function OriginStory() {
                 sizes="(max-width: 768px) 100vw, 42vw"
               />
             </div>
-            <blockquote className="mt-8 border-l-2 border-gold pl-5">
+            <blockquote className="mt-8 border-l-2 border-gold pl-5 text-center md:text-left">
               <p className="font-display text-xl font-light italic leading-relaxed text-forest">
                 &ldquo;The best ingredient is always the one you did not plan for. That is why we do
                 not lock our menu in advance.&rdquo;
@@ -151,7 +151,7 @@ function ValuesSection() {
           <div className="h-px flex-1 bg-fog/20" />
         </div>
 
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-12 text-center md:grid-cols-3 md:text-left">
           {VALUES.map((v, i) => (
             <m.div
               key={v.id}
@@ -184,7 +184,7 @@ function Timeline() {
   return (
     <section aria-labelledby="timeline-heading" className="bg-linen py-16 md:py-20">
       <div className="mx-auto max-w-5xl px-5 md:px-6">
-        <h2 id="timeline-heading" className="font-display text-3xl font-semibold text-forest md:text-4xl">
+        <h2 id="timeline-heading" className="text-center font-display text-3xl font-semibold text-forest md:text-left md:text-4xl">
           Along the way
         </h2>
         <ol className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">

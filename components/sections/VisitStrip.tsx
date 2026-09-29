@@ -8,13 +8,13 @@ export default function VisitStrip() {
   return (
     <section aria-labelledby="visit-heading" className="bg-linen py-16 md:py-24">
       <div className="mx-auto grid max-w-content grid-cols-1 gap-10 px-5 md:grid-cols-12 md:gap-12 md:px-8">
-        <div className="md:col-span-5">
+        <div className="text-center md:col-span-5 md:text-left">
           <h2 id="visit-heading" className="font-display text-4xl font-semibold text-forest md:text-5xl">
             Visit us
           </h2>
-          <p className="mt-4 max-w-sm font-sans text-base leading-relaxed text-fog-dark">
-            On Main Street in downtown Lodi, a short walk from the train depot
-            and the wine district tasting rooms.
+          <p className="mx-auto mt-4 max-w-sm font-sans text-base leading-relaxed text-fog-dark md:mx-0">
+            In downtown Lodi, a short walk from the train depot and the wine
+            district tasting rooms.
           </p>
 
           <address className="mt-8 not-italic">
@@ -32,7 +32,7 @@ export default function VisitStrip() {
           </address>
 
           <h3 className="mt-6 font-mono text-xs uppercase tracking-label text-fog-dark">Hours</h3>
-          <dl className="mt-3 max-w-sm divide-y divide-fog/20 border-y border-fog/20">
+          <dl className="mx-auto mt-3 max-w-sm divide-y divide-fog/20 border-y border-fog/20 md:mx-0">
             {HOURS.map((h) => (
               <div key={h.day} className="flex items-baseline justify-between gap-4 py-2.5">
                 <dt className="font-sans text-sm text-forest">{h.day}</dt>
@@ -41,13 +41,13 @@ export default function VisitStrip() {
             ))}
           </dl>
 
-          <p className="mt-6 max-w-sm font-sans text-sm leading-relaxed text-fog-dark">
+          <p className="mx-auto mt-6 max-w-sm font-sans text-sm leading-relaxed text-fog-dark md:mx-0">
             <span className="font-medium text-forest">Parking:</span> free street
             parking on Main after 5 pm, and a public lot on Sacramento Street two
             minutes away.
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row md:items-stretch">
             <ButtonLink href="/reservations">Reserve a Table</ButtonLink>
             <a
               href={MAPS_URL}

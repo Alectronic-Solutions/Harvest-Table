@@ -3,7 +3,7 @@
 
 export const CONTACT = {
   name: "Harvest Table",
-  address: "214 Main Street",
+  address: "Harvest Lane",
   locality: "Lodi",
   region: "CA",
   postalCode: "95240",
@@ -16,7 +16,8 @@ export const CONTACT = {
 /** Digits-only phone for tel: links. */
 export const PHONE_HREF = `tel:+1${CONTACT.phone.replace(/\D/g, "")}`
 
-export const MAPS_URL = "https://maps.google.com/maps?q=214+Main+Street+Lodi+CA+95240"
+// Deliberately not a real street address, points the map at Lodi generally.
+export const MAPS_URL = "https://maps.google.com/maps?q=Lodi+CA+95240"
 export const MAPS_EMBED_URL = `${MAPS_URL}&output=embed`
 
 // Approximate coordinates for downtown Lodi, used by the Restaurant schema.

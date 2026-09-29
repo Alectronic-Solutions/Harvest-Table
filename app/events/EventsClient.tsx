@@ -151,7 +151,7 @@ function EventCard({ event, index }: { event: Event; index: number }) {
       </div>
 
       {/* Content column */}
-      <div className="flex flex-1 flex-col justify-between p-6 md:p-10">
+      <div className="flex flex-1 flex-col justify-between p-6 text-center md:p-10 md:text-left">
         <div>
           <p className="font-mono text-xs uppercase tracking-widest text-ember">
             {CATEGORY_LABELS[event.category]}
@@ -161,11 +161,11 @@ function EventCard({ event, index }: { event: Event; index: number }) {
             {event.title}
           </h2>
           <p className="mt-1 font-display text-lg italic text-fog-dark">{event.subtitle}</p>
-          <p className="mt-4 max-w-prose font-sans text-sm leading-relaxed text-fog-dark">
+          <p className="mx-auto mt-4 max-w-prose font-sans text-sm leading-relaxed text-fog-dark md:mx-0">
             {event.description}
           </p>
 
-          <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-fog/20 pt-5 md:grid-cols-4">
+          <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-fog/20 pt-5 text-center md:text-left">
             <div>
               <dt className="font-mono text-[11px] uppercase tracking-wide text-fog-dark">Date</dt>
               <dd className="mt-0.5 font-sans text-sm text-forest">
@@ -191,7 +191,7 @@ function EventCard({ event, index }: { event: Event; index: number }) {
           </dl>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-8 flex justify-center md:justify-start">
           {event.soldOut ? (
             <WaitlistForm event={event} />
           ) : event.category === 'private' ? (

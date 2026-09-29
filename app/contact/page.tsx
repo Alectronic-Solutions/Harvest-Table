@@ -6,7 +6,7 @@ import ContactClient from './ContactClient';
 export const metadata = pageMetadata({
   title: 'Contact & Directions',
   description:
-    'Find Harvest Table at 214 Main Street in downtown Lodi, CA. Hours, directions, parking, private dining inquiries, press, and careers.',
+    'Find Harvest Table in downtown Lodi, CA. Hours, directions, parking, private dining inquiries, press, and careers.',
   path: '/contact',
 });
 

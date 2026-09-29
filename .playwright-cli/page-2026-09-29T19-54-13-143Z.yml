@@ -1,0 +1,354 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - complementary "Seasonal announcement" [ref=e3]:
+    - paragraph [ref=e4]: Fall 2026 · Menu changes with the harvest
+  - banner [ref=e5]:
+    - navigation [ref=e6]:
+      - link "Harvest Table" [ref=e8] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e9]: Harvest Table
+      - list [ref=e10]:
+        - listitem [ref=e11]:
+          - link "Menu" [ref=e12] [cursor=pointer]:
+            - /url: /menu/
+        - listitem [ref=e13]:
+          - link "Farmers" [ref=e14] [cursor=pointer]:
+            - /url: /farmers/
+        - listitem [ref=e15]:
+          - link "Reservations" [ref=e16] [cursor=pointer]:
+            - /url: /reservations/
+        - listitem [ref=e17]:
+          - link "Events" [ref=e18] [cursor=pointer]:
+            - /url: /events/
+        - listitem [ref=e19]:
+          - link "About" [ref=e20] [cursor=pointer]:
+            - /url: /about/
+        - listitem [ref=e21]:
+          - link "Contact" [ref=e22] [cursor=pointer]:
+            - /url: /contact/
+      - link "Reserve a Table" [ref=e24] [cursor=pointer]:
+        - /url: /reservations/
+  - main [ref=e26]:
+    - generic [ref=e27]:
+      - img "Rolling farmland at golden hour" [ref=e29]
+      - generic [ref=e31]:
+        - heading "Our farm partners" [level=1] [ref=e32]
+        - paragraph [ref=e33]: We buy from 15 farms, ranches, and makers, all within 60 miles of our kitchen. The average delivery travels 30 miles.
+    - region "Core partners" [ref=e34]:
+      - generic [ref=e35]:
+        - paragraph [ref=e37]: The 5 farms we work with most closely
+        - generic [ref=e39]:
+          - article "Sunnyside Farm" [ref=e40]:
+            - img "Tom Reyes of Sunnyside Farm in Lodi, CA" [ref=e43]
+            - generic [ref=e44]:
+              - heading "Sunnyside Farm" [level=2] [ref=e45]
+              - paragraph [ref=e46]: Tom Reyes
+              - paragraph [ref=e47]:
+                - generic [ref=e48]: Lodi, CA
+                - generic [ref=e49]: ·
+                - generic [ref=e50]: 12 miles from our kitchen
+                - generic [ref=e51]: ·
+                - generic [ref=e52]: Since 2019
+              - paragraph [ref=e53]: Tom and his wife Linda converted their conventional row crop operation to certified organic in 2015. They were the first farm we called when we opened, and they have never missed a delivery. In the fall their chicory beds turn every shade of red and cream, and so does our salad course.
+              - generic [ref=e54]:
+                - heading "What they grow" [level=3] [ref=e55]
+                - list [ref=e56]:
+                  - listitem [ref=e57]: Chioggia beets
+                  - listitem [ref=e58]: Radicchio and chicories
+                  - listitem [ref=e59]: Edible flowers
+                  - listitem [ref=e60]: Arugula
+              - paragraph [ref=e61]:
+                - text: "On the menu:"
+                - link "Chicory & Fuyu Persimmon Salad" [ref=e63] [cursor=pointer]:
+                  - /url: /menu/#starters
+          - article "Riverbend Organics" [ref=e64]:
+            - img "Maria Gonzalez of Riverbend Organics in Elk Grove, CA" [ref=e67]
+            - generic [ref=e68]:
+              - heading "Riverbend Organics" [level=2] [ref=e69]
+              - paragraph [ref=e70]: Maria Gonzalez
+              - paragraph [ref=e71]:
+                - generic [ref=e72]: Elk Grove, CA
+                - generic [ref=e73]: ·
+                - generic [ref=e74]: 35 miles from our kitchen
+                - generic [ref=e75]: ·
+                - generic [ref=e76]: Since 2021
+              - paragraph [ref=e77]: Maria farms four acres along the Cosumnes River on land her family has worked for three generations. She texts us every Tuesday with what is ready to pick that week. Our kitchen plans around her message.
+              - generic [ref=e78]:
+                - heading "What they grow" [level=3] [ref=e79]
+                - list [ref=e80]:
+                  - listitem [ref=e81]: Delicata squash
+                  - listitem [ref=e82]: Kabocha squash
+                  - listitem [ref=e83]: Rainbow chard
+                  - listitem [ref=e84]: Shishito peppers
+              - paragraph [ref=e85]:
+                - text: "On the menu:"
+                - generic [ref=e86]:
+                  - link "Roasted Delicata Squash" [ref=e87] [cursor=pointer]:
+                    - /url: /menu/#starters
+                  - text: ","
+                - link "Roasted Kabocha Tart" [ref=e89] [cursor=pointer]:
+                  - /url: /menu/#desserts
+          - article "Mercier Orchards" [ref=e90]:
+            - img "James Whitfield of Mercier Orchards in Newcastle, CA" [ref=e93]
+            - generic [ref=e94]:
+              - heading "Mercier Orchards" [level=2] [ref=e95]
+              - paragraph [ref=e96]: James Whitfield
+              - paragraph [ref=e97]:
+                - generic [ref=e98]: Newcastle, CA
+                - generic [ref=e99]: ·
+                - generic [ref=e100]: 52 miles from our kitchen
+                - generic [ref=e101]: ·
+                - generic [ref=e102]: Since 2020
+              - paragraph [ref=e103]: James took over the Mercier family orchard in 2012 and kept the name out of respect for the trees they planted. He grows at 1,800 feet in the Sierra foothills, where cold nights make the apples sharp and the persimmons sweet. Our fall galette exists because of his harvest.
+              - generic [ref=e104]:
+                - heading "What they grow" [level=3] [ref=e105]
+                - list [ref=e106]:
+                  - listitem [ref=e107]: Heirloom apples
+                  - listitem [ref=e108]: Bartlett pears
+                  - listitem [ref=e109]: Fuyu persimmons
+                  - listitem [ref=e110]: Cider varieties
+              - paragraph [ref=e111]:
+                - text: "On the menu:"
+                - generic [ref=e112]:
+                  - link "Apple & Pear Galette" [ref=e113] [cursor=pointer]:
+                    - /url: /menu/#desserts
+                  - text: ","
+                - link "Hot Spiced Cider" [ref=e115] [cursor=pointer]:
+                  - /url: /menu/#drinks
+          - article "Valley Gold Farms" [ref=e116]:
+            - img "The Nakamura Family of Valley Gold Farms in Stockton, CA" [ref=e119]
+            - generic [ref=e120]:
+              - heading "Valley Gold Farms" [level=2] [ref=e121]
+              - paragraph [ref=e122]: The Nakamura Family
+              - paragraph [ref=e123]:
+                - generic [ref=e124]: Stockton, CA
+                - generic [ref=e125]: ·
+                - generic [ref=e126]: 18 miles from our kitchen
+                - generic [ref=e127]: ·
+                - generic [ref=e128]: Since 2022
+              - paragraph [ref=e129]: Three generations of the Nakamura family farm 80 acres in the San Joaquin Delta. We buy their entire dry bean harvest every October and cure it through winter. Their stone-ground heirloom corn is the polenta under our roast chicken.
+              - generic [ref=e130]:
+                - heading "What they grow" [level=3] [ref=e131]
+                - list [ref=e132]:
+                  - listitem [ref=e133]: Cranberry beans
+                  - listitem [ref=e134]: Heirloom polenta corn
+                  - listitem [ref=e135]: Sunflowers
+                  - listitem [ref=e136]: Pie pumpkins
+              - paragraph [ref=e137]:
+                - text: "On the menu:"
+                - link "Cranberry Bean Crostini" [ref=e139] [cursor=pointer]:
+                  - /url: /menu/#starters
+          - article "Blue Heron Farm" [ref=e140]:
+            - img "Sofia and Andre Petit of Blue Heron Farm in Winters, CA" [ref=e143]
+            - generic [ref=e144]:
+              - heading "Blue Heron Farm" [level=2] [ref=e145]
+              - paragraph [ref=e146]: Sofia and Andre Petit
+              - paragraph [ref=e147]:
+                - generic [ref=e148]: Winters, CA
+                - generic [ref=e149]: ·
+                - generic [ref=e150]: 58 miles from our kitchen
+                - generic [ref=e151]: ·
+                - generic [ref=e152]: Since 2023
+              - paragraph [ref=e153]: Sofia trained as a perfumer in Lyon before returning to California to farm botanicals with her husband Andre. Their lemon verbena goes into our pear spritz, and their dried chamomile finishes the dessert tea service.
+              - generic [ref=e154]:
+                - heading "What they grow" [level=3] [ref=e155]
+                - list [ref=e156]:
+                  - listitem [ref=e157]: Lemon verbena
+                  - listitem [ref=e158]: Culinary lavender
+                  - listitem [ref=e159]: Chamomile
+                  - listitem [ref=e160]: Garden herbs
+              - paragraph [ref=e161]:
+                - text: "On the menu:"
+                - link "Pear & Verbena Spritz" [ref=e163] [cursor=pointer]:
+                  - /url: /menu/#drinks
+    - region "Also on the menu" [ref=e164]:
+      - generic [ref=e165]:
+        - heading "Also on the menu" [level=2] [ref=e166]
+        - paragraph [ref=e167]: The ranchers, cheesemakers, beekeepers, and winemakers behind the rest of the plate.
+        - list [ref=e168]:
+          - listitem [ref=e169]:
+            - generic [ref=e170]:
+              - heading "Five Mile Cattle Co." [level=3] [ref=e171]
+              - paragraph [ref=e172]: Galt, CA · 15 mi
+            - paragraph [ref=e173]: The Albright Family · Grass-fed beef
+            - paragraph [ref=e174]: Grass-fed and grass-finished Angus raised on irrigated pasture along the Dry Creek.
+            - paragraph [ref=e175]:
+              - text: "On the menu:"
+              - link "Grass-Fed Ribeye" [ref=e177] [cursor=pointer]:
+                - /url: /menu/#mains
+          - listitem [ref=e178]:
+            - generic [ref=e179]:
+              - heading "Meadowlark Poultry" [level=3] [ref=e180]
+              - paragraph [ref=e181]: Dixon, CA · 45 mi
+            - paragraph [ref=e182]: Ben and Priya Castellanos · Pasture-raised chicken, Duck eggs
+            - paragraph [ref=e183]: Heritage-breed birds moved to fresh pasture every day in mobile coops.
+            - paragraph [ref=e184]:
+              - text: "On the menu:"
+              - link "Pan-Roasted Half Chicken" [ref=e186] [cursor=pointer]:
+                - /url: /menu/#mains
+          - listitem [ref=e187]:
+            - generic [ref=e188]:
+              - heading "Foggy Hollow Mushrooms" [level=3] [ref=e189]
+              - paragraph [ref=e190]: Placerville, CA · 55 mi
+            - paragraph [ref=e191]: Eli Brandt · Chanterelles, Maitake, Oyster mushrooms
+            - paragraph [ref=e192]: Cultivated oysters and maitake, plus chanterelles foraged on private oak land after the first rains.
+            - paragraph [ref=e193]:
+              - text: "On the menu:"
+              - link "Wild Mushroom Risotto" [ref=e195] [cursor=pointer]:
+                - /url: /menu/#mains
+          - listitem [ref=e196]:
+            - generic [ref=e197]:
+              - heading "Two Rivers Aquafarm" [level=3] [ref=e198]
+              - paragraph [ref=e199]: Elverta, CA · 42 mi
+            - paragraph [ref=e200]: Grace Oduya · White sturgeon
+            - paragraph [ref=e201]: Sustainably farmed California white sturgeon raised in cold, recirculating river water.
+            - paragraph [ref=e202]:
+              - text: "On the menu:"
+              - link "Seared White Sturgeon" [ref=e204] [cursor=pointer]:
+                - /url: /menu/#mains
+          - listitem [ref=e205]:
+            - generic [ref=e206]:
+              - heading "Acorn Ridge Farm" [level=3] [ref=e207]
+              - paragraph [ref=e208]: Wilton, CA · 25 mi
+            - paragraph [ref=e209]: Walt and June Pruitt · Heritage pork
+            - paragraph [ref=e210]: Red Wattle and Berkshire hogs finished on acorns from the ridge's valley oaks.
+            - paragraph [ref=e211]:
+              - text: "On the menu:"
+              - link "Heritage Pork Chop" [ref=e213] [cursor=pointer]:
+                - /url: /menu/#mains
+          - listitem [ref=e214]:
+            - generic [ref=e215]:
+              - heading "Cobblestone Gardens" [level=3] [ref=e216]
+              - paragraph [ref=e217]: Clarksburg, CA · 30 mi
+            - paragraph [ref=e218]: Hana Lee · Peppers, Meyer lemons, Microgreens
+            - paragraph [ref=e219]: A two-acre market garden on Delta river loam, picked the morning it is delivered.
+            - paragraph [ref=e220]:
+              - text: "On the menu:"
+              - link "Charred Shishito Peppers" [ref=e222] [cursor=pointer]:
+                - /url: /menu/#starters
+          - listitem [ref=e223]:
+            - generic [ref=e224]:
+              - heading "Pasture Gate Creamery" [level=3] [ref=e225]
+              - paragraph [ref=e226]: Galt, CA · 16 mi
+            - paragraph [ref=e227]: The Silveira Family · Cream, Butter, Whole milk ricotta
+            - paragraph [ref=e228]: A fourth-generation Portuguese dairy bottling low-temperature pasteurized milk and cream.
+            - paragraph [ref=e229]:
+              - text: "On the menu:"
+              - link "Dark Chocolate Pot de Crème" [ref=e231] [cursor=pointer]:
+                - /url: /menu/#desserts
+          - listitem [ref=e232]:
+            - generic [ref=e233]:
+              - heading "Bee Line Apiary" [level=3] [ref=e234]
+              - paragraph [ref=e235]: Lockeford, CA · 10 mi
+            - paragraph [ref=e236]: Marcus Hale · Wildflower honey, Beeswax
+            - paragraph [ref=e237]: Hives kept in local orchards and vineyards, pollinating the same farms we buy from.
+            - paragraph [ref=e238]:
+              - text: "On the menu:"
+              - link "Wildflower Honey Panna Cotta" [ref=e240] [cursor=pointer]:
+                - /url: /menu/#desserts
+          - listitem [ref=e241]:
+            - generic [ref=e242]:
+              - heading "Oak Row Cellars" [level=3] [ref=e243]
+              - paragraph [ref=e244]: Lodi, CA · 6 mi
+            - paragraph [ref=e245]: Dana and Luis Ferrante · Old-vine Zinfandel, Sparkling wine
+            - paragraph [ref=e246]: Dry-farmed Zinfandel from head-trained vines planted in 1921 on Mokelumne River sand.
+            - paragraph [ref=e247]:
+              - text: "On the menu:"
+              - link "Old-Vine Zinfandel, by the Glass" [ref=e249] [cursor=pointer]:
+                - /url: /menu/#drinks
+          - listitem [ref=e250]:
+            - generic [ref=e251]:
+              - heading "Delta Spirit Works" [level=3] [ref=e252]
+              - paragraph [ref=e253]: Sacramento, CA · 38 mi
+            - paragraph [ref=e254]: Owen Marsh · Rye whiskey, Apple brandy
+            - paragraph [ref=e255]: A small distillery making rye from Yolo County grain and brandy from Mercier Orchards cider apples.
+            - paragraph [ref=e256]:
+              - text: "On the menu:"
+              - link "Smoked Old Fashioned" [ref=e258] [cursor=pointer]:
+                - /url: /menu/#drinks
+    - generic [ref=e260]:
+      - heading "We visit every farm before we put it on the menu. No exceptions." [level=2] [ref=e261]
+      - paragraph [ref=e262]: If you want to know where a specific ingredient comes from, ask your server. They will know the answer.
+      - generic [ref=e263]:
+        - link "See the Menu" [ref=e264] [cursor=pointer]:
+          - /url: /menu/
+        - link "Become a Farm Partner" [ref=e265] [cursor=pointer]:
+          - /url: /contact/?inquiry=farm-partnership
+  - contentinfo [ref=e266]:
+    - generic [ref=e268]:
+      - generic [ref=e269]:
+        - link "Harvest Table" [ref=e270] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e271]: Harvest Table
+        - generic [ref=e272]:
+          - text: Harvest Lane
+          - text: Lodi, CA 95240
+        - link "Get directions" [ref=e273] [cursor=pointer]:
+          - /url: https://maps.google.com/maps?q=Lodi+CA+95240
+        - link "(209) 555-0182" [ref=e274] [cursor=pointer]:
+          - /url: tel:+12095550182
+        - link "hello@harvesttable.com" [ref=e275] [cursor=pointer]:
+          - /url: mailto:hello@harvesttable.com
+      - generic [ref=e276]:
+        - heading "Explore" [level=2] [ref=e277]
+        - navigation "Footer navigation" [ref=e278]:
+          - list [ref=e279]:
+            - listitem [ref=e280]:
+              - link "Menu" [ref=e281] [cursor=pointer]:
+                - /url: /menu/
+            - listitem [ref=e282]:
+              - link "Farmers" [ref=e283] [cursor=pointer]:
+                - /url: /farmers/
+            - listitem [ref=e284]:
+              - link "Reservations" [ref=e285] [cursor=pointer]:
+                - /url: /reservations/
+            - listitem [ref=e286]:
+              - link "Events" [ref=e287] [cursor=pointer]:
+                - /url: /events/
+            - listitem [ref=e288]:
+              - link "About" [ref=e289] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=e290]:
+              - link "Contact" [ref=e291] [cursor=pointer]:
+                - /url: /contact/
+      - generic [ref=e292]:
+        - heading "Hours" [level=2] [ref=e293]
+        - generic [ref=e294]:
+          - generic [ref=e295]:
+            - term [ref=e296]: Tuesday – Thursday
+            - definition [ref=e297]: 5:00 pm – 9:00 pm
+          - generic [ref=e298]:
+            - term [ref=e299]: Friday – Saturday
+            - definition [ref=e300]: 5:00 pm – 10:00 pm
+          - generic [ref=e301]:
+            - term [ref=e302]: Sunday
+            - definition [ref=e303]: 10:00 am – 2:00 pm (Brunch)
+          - generic [ref=e304]:
+            - term [ref=e305]: Monday
+            - definition [ref=e306]: Closed
+      - generic [ref=e307]:
+        - heading "Visit us" [level=2] [ref=e308]
+        - link "Reserve a Table" [ref=e309] [cursor=pointer]:
+          - /url: /reservations/
+        - generic [ref=e310]:
+          - link "Harvest Table on Instagram" [ref=e311] [cursor=pointer]:
+            - /url: https://instagram.com/harvesttablelodi
+            - img [ref=e312]
+          - link "Harvest Table on Facebook" [ref=e316] [cursor=pointer]:
+            - /url: https://facebook.com/harvesttablelodi
+            - img [ref=e317]
+    - generic [ref=e322]:
+      - paragraph [ref=e323]: © 2026 Harvest Table. All rights reserved.
+      - generic [ref=e324]:
+        - link "Privacy Policy" [ref=e325] [cursor=pointer]:
+          - /url: /privacy-policy/
+        - link "Terms of Service" [ref=e326] [cursor=pointer]:
+          - /url: /terms-of-service/
+      - link "Back to top" [ref=e327] [cursor=pointer]:
+        - /url: "#top"
+        - text: Back to top
+      - paragraph [ref=e330]:
+        - text: Built by
+        - link "Alectronic Solutions" [ref=e331] [cursor=pointer]:
+          - /url: https://alectronicsolutions.com

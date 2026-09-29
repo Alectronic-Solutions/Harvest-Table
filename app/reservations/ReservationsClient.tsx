@@ -40,10 +40,10 @@ function ReservationForm() {
   return (
     <>
       {modal}
-      <h2 className="font-display text-3xl font-semibold text-forest md:text-4xl">
+      <h2 className="text-center font-display text-3xl font-semibold text-forest md:text-left md:text-4xl">
         {selectedEvent ? `Reserve seats: ${selectedEvent.title}` : 'Request a table'}
       </h2>
-      <p className="mt-2 mb-8 font-sans text-sm leading-relaxed text-fog-dark">
+      <p className="mt-2 mb-8 text-center font-sans text-sm leading-relaxed text-fog-dark md:text-left">
         {selectedEvent
           ? `${selectedEvent.date} at ${selectedEvent.time}. ${selectedEvent.price}.`
           : 'Tell us when you would like to come in and we will confirm by email or text.'}
@@ -201,7 +201,7 @@ function ReservationForm() {
 
 function Faq() {
   return (
-    <section aria-labelledby="faq-heading" className="bg-white px-5 py-16 md:px-8 md:py-20">
+    <section aria-labelledby="faq-heading" className="bg-white px-5 py-16 text-center md:px-8 md:py-20 md:text-left">
       <div className="mx-auto max-w-3xl">
         <h2 id="faq-heading" className="font-display text-4xl font-semibold text-forest">
           Good to know
@@ -209,16 +209,17 @@ function Faq() {
         <div className="mt-8 divide-y divide-fog/20 border-y border-fog/20">
           {RESERVATION_FAQS.map((f) => (
             <details key={f.question} className="group py-1">
-              <summary className="flex min-h-[56px] cursor-pointer list-none items-center justify-between gap-4 font-sans text-base font-medium text-forest [&::-webkit-details-marker]:hidden">
-                {f.question}
+              <summary className="grid min-h-[56px] cursor-pointer list-none grid-cols-[1fr_auto_1fr] items-center gap-4 font-sans text-base font-medium text-forest md:flex md:justify-between [&::-webkit-details-marker]:hidden">
+                <span aria-hidden className="md:hidden" />
+                <span className="text-center md:text-left">{f.question}</span>
                 <span
-                  className="font-mono text-lg text-gold-dark transition-transform duration-200 group-open:rotate-45"
+                  className="justify-self-end font-mono text-lg text-gold-dark transition-transform duration-200 group-open:rotate-45"
                   aria-hidden
                 >
                   +
                 </span>
               </summary>
-              <p className="pb-5 pr-8 font-sans text-sm leading-relaxed text-fog-dark">{f.answer}</p>
+              <p className="pb-5 text-center font-sans text-sm leading-relaxed text-fog-dark md:pr-8 md:text-left">{f.answer}</p>
             </details>
           ))}
         </div>
@@ -249,12 +250,19 @@ export default function ReservationsClient() {
             sizes="100vw"
           />
         </m.div>
-        <div className="absolute inset-0 bg-forest/60" />
-        <div className="relative z-10 px-6 text-center">
-          <h1 className="font-display text-5xl font-semibold leading-none text-linen md:text-6xl">
+        <div className="absolute inset-0 bg-forest/70" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_80%_at_50%_50%,rgba(10,14,10,0.5)_0%,transparent_75%)]" />
+        <div className="relative z-10 mx-auto max-w-xl px-6 text-center">
+          <h1
+            className="font-display text-5xl font-semibold leading-none text-linen md:text-6xl"
+            style={{ textShadow: '0 2px 20px rgba(0,0,0,0.45)' }}
+          >
             Reserve a Table
           </h1>
-          <p className="mt-3 font-sans text-sm text-linen/90">
+          <p
+            className="mx-auto mt-3 max-w-sm font-sans text-sm text-linen/95 md:max-w-none"
+            style={{ textShadow: '0 1px 10px rgba(0,0,0,0.4)' }}
+          >
             Dinner Tuesday to Saturday · Brunch Sunday · Walk-ins welcome at the bar
           </p>
         </div>
@@ -285,15 +293,15 @@ export default function ReservationsClient() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="flex flex-col gap-10 bg-forest p-6 md:p-10"
+              className="flex flex-col gap-10 bg-forest p-6 text-center md:p-10 md:text-left"
             >
               <div>
                 <h2 className="font-mono text-xs uppercase tracking-widest text-gold">Hours</h2>
                 <dl className="mt-4 space-y-4">
                   {HOURS.map((h) => (
                     <div key={h.day}>
-                      <dt className="font-sans text-sm font-medium text-linen">{h.day}</dt>
-                      <dd className="mt-0.5 font-mono text-xs text-linen/80">{h.time}</dd>
+                      <dt className="font-sans text-base font-medium text-linen">{h.day}</dt>
+                      <dd className="mt-0.5 font-mono text-sm text-linen/80">{h.time}</dd>
                     </div>
                   ))}
                 </dl>
@@ -301,7 +309,7 @@ export default function ReservationsClient() {
 
               <div>
                 <h2 className="font-mono text-xs uppercase tracking-widest text-gold">Find us</h2>
-                <address className="mt-3 font-sans text-sm not-italic leading-relaxed text-linen/90">
+                <address className="mt-3 font-sans text-base not-italic leading-relaxed text-linen/90">
                   {CONTACT.address}
                   <br />
                   {CONTACT.city}
@@ -310,13 +318,13 @@ export default function ReservationsClient() {
                   href={MAPS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-1 inline-flex min-h-[40px] items-center font-sans text-sm text-linen/80 underline underline-offset-4 hover:text-gold"
+                  className="mt-1 inline-flex min-h-[40px] items-center font-sans text-base text-linen/80 underline underline-offset-4 hover:text-gold"
                 >
                   Get directions
                 </a>
                 <a
                   href={PHONE_HREF}
-                  className="flex min-h-[40px] items-center font-mono text-sm text-gold transition-opacity hover:opacity-80"
+                  className="flex min-h-[40px] items-center justify-center font-mono text-base text-gold transition-opacity hover:opacity-80 md:justify-start"
                 >
                   {CONTACT.phone}
                 </a>
@@ -326,7 +334,7 @@ export default function ReservationsClient() {
                 <h2 className="font-mono text-xs uppercase tracking-widest text-gold">
                   Parties of 9 or more
                 </h2>
-                <p className="mt-2 font-sans text-sm leading-relaxed text-linen/90">
+                <p className="mt-2 font-sans text-base leading-relaxed text-linen/90">
                   Please call us directly to arrange seating for large groups. We will do our best
                   to accommodate you.
                 </p>
@@ -336,12 +344,12 @@ export default function ReservationsClient() {
                 <h2 className="font-mono text-xs uppercase tracking-widest text-gold">
                   Private dining
                 </h2>
-                <p className="mt-2 font-sans text-sm leading-relaxed text-linen/90">
+                <p className="mt-2 font-sans text-base leading-relaxed text-linen/90">
                   Our private room seats up to 24 guests with a custom menu and a dedicated server.
                 </p>
                 <Link
                   href="/contact/?inquiry=private-dining"
-                  className="mt-2 inline-flex min-h-[40px] items-center font-sans text-sm text-gold underline underline-offset-4 transition-opacity hover:opacity-80"
+                  className="mt-2 inline-flex min-h-[40px] items-center font-sans text-base text-gold underline underline-offset-4 transition-opacity hover:opacity-80"
                 >
                   Inquire about private events &rarr;
                 </Link>

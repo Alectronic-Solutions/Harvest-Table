@@ -55,7 +55,7 @@ function FarmerCard({ farmer }: { farmer: Farmer }) {
         </m.div>
       </div>
 
-      <div className="mt-6">
+      <div className="mt-6 text-center md:text-left">
         <h3 className="font-display text-2xl font-semibold text-forest">
           {farmer.farm}
         </h3>
@@ -64,7 +64,7 @@ function FarmerCard({ farmer }: { farmer: Farmer }) {
           {farmer.location} · {farmer.distanceMiles} miles
         </p>
 
-        <div className="mt-3 flex flex-wrap gap-2">
+        <div className="mt-3 flex flex-wrap justify-center gap-2 md:justify-start">
           {farmer.grows.slice(0, 3).map((item) => (
             <span
               key={item}

@@ -87,7 +87,7 @@ export default function Hero() {
 
         <m.div
           variants={fadeUp}
-          className="mt-8 flex flex-col items-center gap-1 font-mono text-[11px] uppercase tracking-[0.12em] text-linen/70 sm:flex-row sm:justify-center sm:gap-3"
+          className="mx-auto mt-10 flex max-w-[280px] flex-col items-center gap-1.5 rounded-2xl bg-forest/50 px-5 py-4 font-mono text-[11px] uppercase leading-relaxed tracking-[0.1em] text-linen/85 backdrop-blur-sm sm:max-w-none sm:flex-row sm:justify-center sm:gap-3 sm:rounded-full sm:bg-transparent sm:px-0 sm:py-0 sm:backdrop-blur-none"
         >
           <span>{CONTACT.address}, {CONTACT.locality}</span>
           <span className="hidden h-1 w-1 rotate-45 bg-gold/60 sm:inline-block" aria-hidden />

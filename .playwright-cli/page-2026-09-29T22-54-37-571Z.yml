@@ -1,0 +1,425 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - complementary "Seasonal announcement" [ref=e3]:
+    - paragraph [ref=e4]: Fall 2026 · Menu changes with the harvest
+  - banner [ref=e5]:
+    - navigation [ref=e6]:
+      - link "Harvest Table" [ref=e8] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e9]: Harvest Table
+      - list [ref=e10]:
+        - listitem [ref=e11]:
+          - link "Menu" [ref=e12] [cursor=pointer]:
+            - /url: /menu/
+        - listitem [ref=e13]:
+          - link "Farmers" [ref=e14] [cursor=pointer]:
+            - /url: /farmers/
+        - listitem [ref=e15]:
+          - link "Reservations" [ref=e16] [cursor=pointer]:
+            - /url: /reservations/
+        - listitem [ref=e17]:
+          - link "Events" [ref=e18] [cursor=pointer]:
+            - /url: /events/
+        - listitem [ref=e19]:
+          - link "About" [ref=e20] [cursor=pointer]:
+            - /url: /about/
+        - listitem [ref=e21]:
+          - link "Contact" [ref=e22] [cursor=pointer]:
+            - /url: /contact/
+      - link "Reserve a Table" [ref=e24] [cursor=pointer]:
+        - /url: /reservations/
+  - main [ref=e26]:
+    - generic [ref=e27]:
+      - img "California farm fields at golden hour" [ref=e29]
+      - generic [ref=e31]:
+        - heading "The Fall 2026 Menu" [level=1] [ref=e32]
+        - paragraph [ref=e33]: Every dish names the farm it came from. Dishes marked Seasonal change with the harvest.
+        - paragraph [ref=e34]: Updated September 29, 2026
+    - generic [ref=e36]:
+      - navigation "Menu sections" [ref=e37]:
+        - link "To Start" [ref=e38] [cursor=pointer]:
+          - /url: "#starters"
+          - text: To Start
+        - link "Mains" [ref=e40] [cursor=pointer]:
+          - /url: "#mains"
+        - link "To Finish" [ref=e41] [cursor=pointer]:
+          - /url: "#desserts"
+        - link "Drinks" [ref=e42] [cursor=pointer]:
+          - /url: "#drinks"
+      - button "Print menu" [ref=e43] [cursor=pointer]
+    - region "Starters" [ref=e44]:
+      - generic [ref=e45]:
+        - img "Roasted delicata squash, chicory and persimmon salad, and blistered shishito peppers on a walnut table" [ref=e47]
+        - heading "Starters" [level=2] [ref=e49]
+        - list [ref=e51]:
+          - listitem [ref=e52]:
+            - generic [ref=e53]:
+              - generic [ref=e54]:
+                - heading "Roasted Delicata Squash" [level=3] [ref=e56]
+                - generic [ref=e57]:
+                  - generic [ref=e58]: Seasonal
+                  - generic "Vegetarian" [ref=e59]:
+                    - text: V
+                    - generic [ref=e60]: Vegetarian
+                  - generic "Gluten-free" [ref=e61]:
+                    - text: GF
+                    - generic [ref=e62]: Gluten-free
+                - paragraph [ref=e63]: Brown butter, crisp sage, and toasted pepitas over whipped whole milk ricotta.
+              - generic [ref=e64]:
+                - link "Riverbend Organics" [ref=e65] [cursor=pointer]:
+                  - /url: /farmers/#riverbend
+                - paragraph [ref=e66]: Elk Grove
+              - generic [ref=e67]: $15
+          - listitem [ref=e68]:
+            - generic [ref=e69]:
+              - generic [ref=e70]:
+                - heading "Chicory & Fuyu Persimmon Salad" [level=3] [ref=e72]
+                - generic [ref=e73]:
+                  - generic [ref=e74]: Seasonal
+                  - generic "Vegan" [ref=e75]:
+                    - text: VE
+                    - generic [ref=e76]: Vegan
+                  - generic "Gluten-free" [ref=e77]:
+                    - text: GF
+                    - generic [ref=e78]: Gluten-free
+                - paragraph [ref=e79]: Radicchio and frisée, sliced persimmon, candied walnut, and a sherry vinaigrette.
+              - generic [ref=e80]:
+                - link "Sunnyside Farm" [ref=e81] [cursor=pointer]:
+                  - /url: /farmers/#sunnyside
+                - paragraph [ref=e82]: Lodi
+              - generic [ref=e83]: $14
+          - listitem [ref=e84]:
+            - generic [ref=e85]:
+              - generic [ref=e86]:
+                - heading "Charred Shishito Peppers" [level=3] [ref=e88]
+                - generic [ref=e89]:
+                  - generic [ref=e90]: Seasonal
+                  - generic "Vegan" [ref=e91]:
+                    - text: VE
+                    - generic [ref=e92]: Vegan
+                  - generic "Gluten-free" [ref=e93]:
+                    - text: GF
+                    - generic [ref=e94]: Gluten-free
+                - paragraph [ref=e95]: The last of the season, blistered over oak coals with flaky salt and Meyer lemon.
+              - generic [ref=e96]:
+                - link "Cobblestone Gardens" [ref=e97] [cursor=pointer]:
+                  - /url: /farmers/#cobblestone
+                - paragraph [ref=e98]: Clarksburg
+              - generic [ref=e99]: $12
+          - listitem [ref=e100]:
+            - generic [ref=e101]:
+              - generic [ref=e102]:
+                - heading "Cranberry Bean Crostini" [level=3] [ref=e104]
+                - generic "Vegan" [ref=e106]:
+                  - text: VE
+                  - generic [ref=e107]: Vegan
+                - paragraph [ref=e108]: Slow-stewed heirloom beans, rosemary, and new olive oil on grilled levain.
+              - generic [ref=e109]:
+                - link "Valley Gold Farms" [ref=e110] [cursor=pointer]:
+                  - /url: /farmers/#valleygold
+                - paragraph [ref=e111]: Stockton
+              - generic [ref=e112]: $11
+    - region "Mains" [ref=e113]:
+      - generic [ref=e114]:
+        - img "Sliced grass-fed ribeye with bone marrow butter, fingerling potatoes, and charred radicchio" [ref=e116]
+        - heading "Mains" [level=2] [ref=e118]
+        - list [ref=e120]:
+          - listitem [ref=e121]:
+            - generic [ref=e122]:
+              - generic [ref=e123]:
+                - heading "Grass-Fed Ribeye" [level=3] [ref=e125]
+                - generic "Gluten-free" [ref=e127]:
+                  - text: GF
+                  - generic [ref=e128]: Gluten-free
+                - paragraph [ref=e129]: Twelve ounces over oak coals, bone marrow butter, roasted fingerlings, and charred radicchio.
+              - generic [ref=e130]:
+                - link "Five Mile Cattle Co." [ref=e131] [cursor=pointer]:
+                  - /url: /farmers/#fivemile
+                - paragraph [ref=e132]: Galt
+              - generic [ref=e133]: $46
+          - listitem [ref=e134]:
+            - generic [ref=e135]:
+              - generic [ref=e136]:
+                - heading "Pan-Roasted Half Chicken" [level=3] [ref=e138]
+                - generic "Gluten-free" [ref=e140]:
+                  - text: GF
+                  - generic [ref=e141]: Gluten-free
+                - paragraph [ref=e142]: Brined and crisped to order, over stone-ground heirloom polenta with maitake and pan jus.
+              - generic [ref=e143]:
+                - link "Meadowlark Poultry" [ref=e144] [cursor=pointer]:
+                  - /url: /farmers/#meadowlark
+                - paragraph [ref=e145]: Dixon
+              - generic [ref=e146]: $31
+          - listitem [ref=e147]:
+            - generic [ref=e148]:
+              - generic [ref=e149]:
+                - heading "Wild Mushroom Risotto" [level=3] [ref=e151]
+                - generic [ref=e152]:
+                  - generic [ref=e153]: Seasonal
+                  - generic "Vegetarian" [ref=e154]:
+                    - text: V
+                    - generic [ref=e155]: Vegetarian
+                  - generic "Gluten-free" [ref=e156]:
+                    - text: GF
+                    - generic [ref=e157]: Gluten-free
+                - paragraph [ref=e158]: Carnaroli rice folded with chanterelles and maitake, aged parmesan, and fresh thyme.
+              - generic [ref=e159]:
+                - link "Foggy Hollow Mushrooms" [ref=e160] [cursor=pointer]:
+                  - /url: /farmers/#foggyhollow
+                - paragraph [ref=e161]: Placerville
+              - generic [ref=e162]: $28
+          - listitem [ref=e163]:
+            - generic [ref=e164]:
+              - generic [ref=e165]:
+                - heading "Seared White Sturgeon" [level=3] [ref=e167]
+                - generic [ref=e168]:
+                  - generic [ref=e169]: Seasonal
+                  - generic "Gluten-free" [ref=e170]:
+                    - text: GF
+                    - generic [ref=e171]: Gluten-free
+                - paragraph [ref=e172]: Basted in brown butter, set over braised cranberry beans and a bright salsa verde.
+              - generic [ref=e173]:
+                - link "Two Rivers Aquafarm" [ref=e174] [cursor=pointer]:
+                  - /url: /farmers/#tworivers
+                - paragraph [ref=e175]: Elverta
+              - generic [ref=e176]: $36
+          - listitem [ref=e177]:
+            - generic [ref=e178]:
+              - generic [ref=e179]:
+                - heading "Heritage Pork Chop" [level=3] [ref=e181]
+                - generic "Gluten-free" [ref=e183]:
+                  - text: GF
+                  - generic [ref=e184]: Gluten-free
+                - paragraph [ref=e185]: Double-cut and grilled, glazed with Mercier apple cider and stone-ground mustard.
+              - generic [ref=e186]:
+                - link "Acorn Ridge Farm" [ref=e187] [cursor=pointer]:
+                  - /url: /farmers/#acornridge
+                - paragraph [ref=e188]: Wilton
+              - generic [ref=e189]: $34
+    - region "Desserts" [ref=e190]:
+      - generic [ref=e191]:
+        - img "Apple and pear galette with buttermilk gelato beside a dark chocolate pot de crème" [ref=e193]
+        - heading "Desserts" [level=2] [ref=e195]
+        - list [ref=e197]:
+          - listitem [ref=e198]:
+            - generic [ref=e199]:
+              - generic [ref=e200]:
+                - heading "Apple & Pear Galette" [level=3] [ref=e202]
+                - generic [ref=e203]:
+                  - generic [ref=e204]: Seasonal
+                  - generic "Vegetarian" [ref=e205]:
+                    - text: V
+                    - generic [ref=e206]: Vegetarian
+                - paragraph [ref=e207]: Free-form butter crust, slow-roasted orchard fruit, and a scoop of buttermilk gelato.
+              - generic [ref=e208]:
+                - link "Mercier Orchards" [ref=e209] [cursor=pointer]:
+                  - /url: /farmers/#mercier
+                - paragraph [ref=e210]: Newcastle
+              - generic [ref=e211]: $12
+          - listitem [ref=e212]:
+            - generic [ref=e213]:
+              - generic [ref=e214]:
+                - heading "Dark Chocolate Pot de Crème" [level=3] [ref=e216]
+                - generic [ref=e217]:
+                  - generic "Vegetarian" [ref=e218]:
+                    - text: V
+                    - generic [ref=e219]: Vegetarian
+                  - generic "Gluten-free" [ref=e220]:
+                    - text: GF
+                    - generic [ref=e221]: Gluten-free
+                - paragraph [ref=e222]: Silken custard under sea-salt cream, with a cocoa nib crumble for crunch.
+              - generic [ref=e223]:
+                - link "Pasture Gate Creamery" [ref=e224] [cursor=pointer]:
+                  - /url: /farmers/#pasturegate
+                - paragraph [ref=e225]: Galt
+              - generic [ref=e226]: $11
+          - listitem [ref=e227]:
+            - generic [ref=e228]:
+              - generic [ref=e229]:
+                - heading "Wildflower Honey Panna Cotta" [level=3] [ref=e231]
+                - generic "Gluten-free" [ref=e233]:
+                  - text: GF
+                  - generic [ref=e234]: Gluten-free
+                - paragraph [ref=e235]: Set with farm cream and local honey, topped with poached Bartlett pear.
+              - generic [ref=e236]:
+                - link "Bee Line Apiary" [ref=e237] [cursor=pointer]:
+                  - /url: /farmers/#beeline
+                - paragraph [ref=e238]: Lockeford
+              - generic [ref=e239]: $11
+          - listitem [ref=e240]:
+            - generic [ref=e241]:
+              - generic [ref=e242]:
+                - heading "Roasted Kabocha Tart" [level=3] [ref=e244]
+                - generic [ref=e245]:
+                  - generic [ref=e246]: Seasonal
+                  - generic "Vegetarian" [ref=e247]:
+                    - text: V
+                    - generic [ref=e248]: Vegetarian
+                - paragraph [ref=e249]: Spiced squash custard in a brown sugar crust, with maple whipped cream.
+              - generic [ref=e250]:
+                - link "Riverbend Organics" [ref=e251] [cursor=pointer]:
+                  - /url: /farmers/#riverbend
+                - paragraph [ref=e252]: Elk Grove
+              - generic [ref=e253]: $11
+    - region "Drinks" [ref=e254]:
+      - generic [ref=e255]:
+        - img "Old-vine Zinfandel, a smoked old fashioned, and a pear spritz on the bar" [ref=e257]
+        - heading "Drinks" [level=2] [ref=e259]
+        - list [ref=e261]:
+          - listitem [ref=e262]:
+            - generic [ref=e263]:
+              - generic [ref=e264]:
+                - heading "Pear & Verbena Spritz" [level=3] [ref=e266]
+                - generic [ref=e267]:
+                  - generic [ref=e268]: Seasonal
+                  - generic "Vegan" [ref=e269]:
+                    - text: VE
+                    - generic [ref=e270]: Vegan
+                  - generic "Gluten-free" [ref=e271]:
+                    - text: GF
+                    - generic [ref=e272]: Gluten-free
+                - paragraph [ref=e273]: Lodi sparkling wine, spiced pear shrub, and a sprig of fresh lemon verbena.
+              - generic [ref=e274]:
+                - link "Blue Heron Farm" [ref=e275] [cursor=pointer]:
+                  - /url: /farmers/#blueheron
+                - paragraph [ref=e276]: Winters
+              - generic [ref=e277]: $14
+          - listitem [ref=e278]:
+            - generic [ref=e279]:
+              - generic [ref=e280]:
+                - heading "Smoked Old Fashioned" [level=3] [ref=e282]
+                - paragraph [ref=e283]: Valley rye, bitters, and demerara under an oak-smoke cloche, over a single cube.
+              - generic [ref=e284]:
+                - link "Delta Spirit Works" [ref=e285] [cursor=pointer]:
+                  - /url: /farmers/#deltaspirit
+                - paragraph [ref=e286]: Sacramento
+              - generic [ref=e287]: $16
+          - listitem [ref=e288]:
+            - generic [ref=e289]:
+              - generic [ref=e290]:
+                - heading "Old-Vine Zinfandel, by the Glass" [level=3] [ref=e292]
+                - paragraph [ref=e293]: Dry-farmed from vines planted in 1921. Dark fruit, black pepper, and a long finish.
+              - generic [ref=e294]:
+                - link "Oak Row Cellars" [ref=e295] [cursor=pointer]:
+                  - /url: /farmers/#oakrow
+                - paragraph [ref=e296]: Lodi
+              - generic [ref=e297]: $14
+          - listitem [ref=e298]:
+            - generic [ref=e299]:
+              - generic [ref=e300]:
+                - heading "Hot Spiced Cider" [level=3] [ref=e302]
+                - generic [ref=e303]:
+                  - generic [ref=e304]: Seasonal
+                  - generic "Vegan" [ref=e305]:
+                    - text: VE
+                    - generic [ref=e306]: Vegan
+                  - generic "Gluten-free" [ref=e307]:
+                    - text: GF
+                    - generic [ref=e308]: Gluten-free
+                - paragraph [ref=e309]: Pressed from heirloom apples and mulled with cinnamon, clove, and orange peel.
+              - generic [ref=e310]:
+                - link "Mercier Orchards" [ref=e311] [cursor=pointer]:
+                  - /url: /farmers/#mercier
+                - paragraph [ref=e312]: Newcastle
+              - generic [ref=e313]: $7
+    - generic [ref=e315]:
+      - generic [ref=e316]:
+        - generic [ref=e317]:
+          - heading "The wine list" [level=2] [ref=e318]
+          - paragraph [ref=e319]: We pour small-production wines from Lodi and the Sierra foothills, chosen to go with what is on the menu that week. Old-vine Zinfandel is always open. Corkage is $20 per bottle.
+        - generic [ref=e320]:
+          - heading "Dietary needs" [level=2] [ref=e321]
+          - paragraph [ref=e322]: Most dishes can be adjusted for dietary needs with advance notice. Please mention any allergies or restrictions when you reserve.
+      - generic "Dietary key" [ref=e323]:
+        - generic [ref=e324]:
+          - generic [ref=e325]: V
+          - text: Vegetarian
+        - generic [ref=e326]:
+          - generic [ref=e327]: VE
+          - text: Vegan
+        - generic [ref=e328]:
+          - generic [ref=e329]: GF
+          - text: Gluten-free
+    - generic [ref=e331]:
+      - heading "Ready to sit down?" [level=2] [ref=e332]
+      - paragraph [ref=e333]: Dinner Tuesday through Saturday. Brunch on Sunday.
+      - link "Reserve a Table" [ref=e334] [cursor=pointer]:
+        - /url: /reservations/
+  - contentinfo [ref=e335]:
+    - generic [ref=e337]:
+      - generic [ref=e338]:
+        - link "Harvest Table" [ref=e339] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e340]: Harvest Table
+        - generic [ref=e341]:
+          - text: Harvest Lane
+          - text: Lodi, CA 95240
+        - link "Get directions" [ref=e342] [cursor=pointer]:
+          - /url: https://maps.google.com/maps?q=Lodi+CA+95240
+        - link "(209) 555-0182" [ref=e343] [cursor=pointer]:
+          - /url: tel:+12095550182
+        - link "hello@harvesttable.com" [ref=e344] [cursor=pointer]:
+          - /url: mailto:hello@harvesttable.com
+      - generic [ref=e345]:
+        - heading "Explore" [level=2] [ref=e346]
+        - navigation "Footer navigation" [ref=e347]:
+          - list [ref=e348]:
+            - listitem [ref=e349]:
+              - link "Menu" [ref=e350] [cursor=pointer]:
+                - /url: /menu/
+            - listitem [ref=e351]:
+              - link "Farmers" [ref=e352] [cursor=pointer]:
+                - /url: /farmers/
+            - listitem [ref=e353]:
+              - link "Reservations" [ref=e354] [cursor=pointer]:
+                - /url: /reservations/
+            - listitem [ref=e355]:
+              - link "Events" [ref=e356] [cursor=pointer]:
+                - /url: /events/
+            - listitem [ref=e357]:
+              - link "About" [ref=e358] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=e359]:
+              - link "Contact" [ref=e360] [cursor=pointer]:
+                - /url: /contact/
+      - generic [ref=e361]:
+        - heading "Hours" [level=2] [ref=e362]
+        - generic [ref=e363]:
+          - generic [ref=e364]:
+            - term [ref=e365]: Tuesday – Thursday
+            - definition [ref=e366]: 5:00 pm – 9:00 pm
+          - generic [ref=e367]:
+            - term [ref=e368]: Friday – Saturday
+            - definition [ref=e369]: 5:00 pm – 10:00 pm
+          - generic [ref=e370]:
+            - term [ref=e371]: Sunday
+            - definition [ref=e372]: 10:00 am – 2:00 pm (Brunch)
+          - generic [ref=e373]:
+            - term [ref=e374]: Monday
+            - definition [ref=e375]: Closed
+      - generic [ref=e376]:
+        - heading "Visit us" [level=2] [ref=e377]
+        - link "Reserve a Table" [ref=e378] [cursor=pointer]:
+          - /url: /reservations/
+        - generic [ref=e379]:
+          - link "Harvest Table on Instagram" [ref=e380] [cursor=pointer]:
+            - /url: https://instagram.com/harvesttablelodi
+            - img [ref=e381]
+          - link "Harvest Table on Facebook" [ref=e385] [cursor=pointer]:
+            - /url: https://facebook.com/harvesttablelodi
+            - img [ref=e386]
+    - generic [ref=e391]:
+      - paragraph [ref=e392]: © 2026 Harvest Table. All rights reserved.
+      - generic [ref=e393]:
+        - link "Privacy Policy" [ref=e394] [cursor=pointer]:
+          - /url: /privacy-policy/
+        - link "Terms of Service" [ref=e395] [cursor=pointer]:
+          - /url: /terms-of-service/
+      - link "Back to top" [ref=e396] [cursor=pointer]:
+        - /url: "#top"
+        - text: Back to top
+      - paragraph [ref=e399]:
+        - text: Built by
+        - link "Alectronic Solutions" [ref=e400] [cursor=pointer]:
+          - /url: https://alectronicsolutions.com

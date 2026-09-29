@@ -103,7 +103,7 @@ function DrinksNote() {
   return (
     <div className="border-t border-fog/25 bg-linen px-5 py-14 md:px-8">
       <div className="mx-auto max-w-3xl">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-12">
+        <div className="grid grid-cols-1 gap-10 text-center md:grid-cols-2 md:gap-12 md:text-left">
           <div>
             <h2 className="font-display text-2xl font-semibold text-forest">
               The wine list
@@ -125,7 +125,7 @@ function DrinksNote() {
           </div>
         </div>
         {/* Dietary key */}
-        <div className="mt-8 flex flex-wrap gap-4" aria-label="Dietary key">
+        <div className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start" aria-label="Dietary key">
           {(Object.entries(DIETARY_LABELS) as [DietaryFlag, string][]).map(([flag, label]) => (
             <span key={flag} className="flex items-center gap-1.5 font-sans text-xs text-fog-dark">
               <span className="rounded-full border border-fog/40 px-1.5 py-0.5 font-mono text-[10px] text-fog-dark">

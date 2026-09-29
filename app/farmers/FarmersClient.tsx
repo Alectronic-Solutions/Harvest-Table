@@ -18,7 +18,7 @@ function DishesFromFarm({ farmId }: { farmId: string }) {
   const dishes = dishesFromFarm(farmId)
   if (!dishes.length) return null
   return (
-    <p className="mt-4 font-sans text-sm text-fog-dark">
+    <p className="mt-4 text-center font-sans text-sm text-fog-dark md:text-left">
       <span className="font-mono text-xs uppercase tracking-wide">On the menu: </span>
       {dishes.map((d, i) => (
         <span key={d.name}>
@@ -65,23 +65,27 @@ function FeaturedFarmerCard({ farmer, index }: { farmer: Farmer; index: number }
       </div>
 
       {/* Content column */}
-      <div className={imageLeft ? "" : "md:order-1"}>
+      <div className={`text-center md:text-left ${imageLeft ? "" : "md:order-1"}`}>
         <h2 id={`${farmer.id}-name`} className="font-display text-4xl font-semibold leading-tight text-forest">
           {farmer.farm}
         </h2>
         <p className="mt-1 font-sans text-base text-fog-dark">{farmer.name}</p>
 
-        <p className="mt-3 font-mono text-xs uppercase tracking-widest text-fog-dark">
-          {farmer.location} · {farmer.distanceMiles} miles from our kitchen · Since {farmer.partnerSince}
+        <p className="mt-3 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 font-mono text-xs uppercase tracking-widest text-fog-dark md:justify-start">
+          <span>{farmer.location}</span>
+          <span aria-hidden="true">·</span>
+          <span>{farmer.distanceMiles} miles from our kitchen</span>
+          <span aria-hidden="true">·</span>
+          <span>Since {farmer.partnerSince}</span>
         </p>
 
-        <p className="mt-6 max-w-md font-sans text-base leading-relaxed text-fog-dark">
+        <p className="mx-auto mt-6 max-w-md font-sans text-base leading-relaxed text-fog-dark md:mx-0">
           {farmer.story}
         </p>
 
         <div className="mt-6">
           <h3 className="font-mono text-xs uppercase tracking-wide text-fog-dark">What they grow</h3>
-          <ul className="mt-2 flex flex-wrap gap-2">
+          <ul className="mt-2 flex flex-wrap justify-center gap-2 md:justify-start">
             {farmer.grows.map((item) => (
               <li
                 key={item}
@@ -101,8 +105,8 @@ function FeaturedFarmerCard({ farmer, index }: { farmer: Farmer; index: number }
 
 function PartnerRow({ farmer }: { farmer: Farmer }) {
   return (
-    <li id={farmer.id} className="scroll-mt-28 border-b border-fog/15 py-6">
-      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+    <li id={farmer.id} className="scroll-mt-28 border-b border-fog/15 py-6 text-center md:text-left">
+      <div className="flex flex-col items-center gap-x-4 gap-y-1 md:flex-row md:flex-wrap md:items-baseline md:justify-between">
         <h3 className="font-display text-2xl font-semibold leading-tight text-forest">{farmer.farm}</h3>
         <p className="font-mono text-xs uppercase tracking-wide text-fog-dark">
           {farmer.location} · {farmer.distanceMiles} mi
@@ -111,7 +115,7 @@ function PartnerRow({ farmer }: { farmer: Farmer }) {
       <p className="mt-1 font-sans text-sm text-fog-dark">
         {farmer.name} · {farmer.grows.join(", ")}
       </p>
-      <p className="mt-2 max-w-prose font-sans text-sm leading-relaxed text-fog-dark">{farmer.story}</p>
+      <p className="mx-auto mt-2 max-w-prose font-sans text-sm leading-relaxed text-fog-dark">{farmer.story}</p>
       <DishesFromFarm farmId={farmer.id} />
     </li>
   )

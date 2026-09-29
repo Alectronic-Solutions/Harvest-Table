@@ -112,7 +112,7 @@ function InquiryForm() {
             id="contact-inquiry-type"
             name="inquiry_type"
             defaultValue={defaultInquiry}
-            className="w-full min-h-[48px] border-0 border-b border-fog/40 bg-transparent py-3 font-sans text-base text-ink focus:border-forest focus:outline-none focus:ring-2 focus:ring-gold-dark transition-colors md:text-sm appearance-none cursor-pointer"
+            className="w-full min-h-[48px] border-0 border-b border-fog/40 bg-transparent py-3 text-center font-sans text-base text-ink focus:border-forest focus:outline-none focus:ring-2 focus:ring-gold-dark transition-colors md:text-left md:text-sm appearance-none cursor-pointer"
           >
             <option value="">Select one</option>
             {INQUIRY_OPTIONS.map((o) => (
@@ -161,6 +161,7 @@ function ContactContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="text-center md:text-left"
           >
             <p className="font-mono text-xs uppercase tracking-widest text-gold-dark">Find us</p>
             <div className="mt-3 mb-6 border-t border-fog/25" />
@@ -175,7 +176,7 @@ function ContactContent() {
               <p className="font-mono text-xs uppercase tracking-wide text-fog-dark">Reservations</p>
               <a
                 href={PHONE_HREF}
-                className="mt-1 flex min-h-[40px] items-center font-mono text-base text-forest transition-colors hover:text-ember"
+                className="mt-1 flex min-h-[40px] items-center justify-center font-mono text-base text-forest transition-colors hover:text-ember md:justify-start"
               >
                 {CONTACT.phone}
               </a>
@@ -185,7 +186,7 @@ function ContactContent() {
               <p className="font-mono text-xs uppercase tracking-wide text-fog-dark">General inquiries</p>
               <a
                 href={`mailto:${CONTACT.email}`}
-                className="mt-1 flex min-h-[40px] items-center font-sans text-sm text-forest transition-colors hover:text-ember"
+                className="mt-1 flex min-h-[40px] items-center justify-center font-sans text-sm text-forest transition-colors hover:text-ember md:justify-start"
               >
                 {CONTACT.email}
               </a>
@@ -211,6 +212,7 @@ function ContactContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-center md:text-left"
           >
             <p className="font-mono text-xs uppercase tracking-widest text-gold-dark">Location</p>
             <div className="mt-3 mb-6 border-t border-fog/25" />
@@ -244,6 +246,7 @@ function ContactContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-center md:text-left"
           >
             <Suspense fallback={<div className="h-96" />}>
               <InquiryForm />
@@ -270,7 +273,7 @@ function CareersAndPress() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="py-10 md:py-0 md:pr-12"
+            className="py-10 text-center md:py-0 md:pr-12 md:text-left"
           >
             <h2 className="font-display text-2xl font-medium text-forest">
               We are always looking for people who care about food.
@@ -293,7 +296,7 @@ function CareersAndPress() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="py-10 md:py-0 md:pl-12"
+            className="py-10 text-center md:py-0 md:pl-12 md:text-left"
           >
             <h2 className="font-display text-2xl font-medium text-forest">
               We are happy to speak with food writers and journalists.

@@ -1,0 +1,255 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - complementary "Seasonal announcement" [ref=e3]:
+    - paragraph [ref=e4]: Fall 2026 · Menu changes with the harvest
+  - banner [ref=e5]:
+    - navigation [ref=e6]:
+      - link "Harvest Table" [ref=e8] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e9]: Harvest Table
+      - generic [ref=e10]:
+        - link "Call Harvest Table at (209) 555-0182" [ref=e11] [cursor=pointer]:
+          - /url: tel:+12095550182
+          - img [ref=e12]
+        - button "Open menu" [ref=e14] [cursor=pointer]
+  - main [ref=e20]:
+    - generic [ref=e21]:
+      - img "A candlelit dinner table set outdoors in the evening" [ref=e23]
+      - generic [ref=e25]:
+        - heading "Events" [level=1] [ref=e26]
+        - paragraph [ref=e27]: A handful of special dinners each season, in the vineyard, at the pass, and around the holidays. Seats go quickly.
+    - region "Upcoming events" [ref=e28]:
+      - generic [ref=e29]:
+        - article "Harvest Moon Wine Dinner" [ref=e30]:
+          - generic [ref=e31]:
+            - img "A candlelit dinner table set outdoors in the evening" [ref=e33]
+            - generic [ref=e34]:
+              - generic [ref=e35]: Oct
+              - generic [ref=e36]: "24"
+              - generic [ref=e37]: Sat
+          - generic [ref=e38]:
+            - generic [ref=e39]:
+              - paragraph [ref=e40]: Wine Dinner · At Oak Row Cellars
+              - heading "Harvest Moon Wine Dinner" [level=2] [ref=e41]
+              - paragraph [ref=e42]: Six courses. Six pours. One long table in the vines.
+              - paragraph [ref=e43]: Dinner at Oak Row Cellars among Zinfandel vines planted in 1921. Six courses from the last of the fall harvest, each paired with a pour chosen alongside winemakers Dana and Luis Ferrante. Shuttle from the restaurant at 5:15 PM. Dietary accommodations available with two weeks notice.
+              - generic [ref=e44]:
+                - generic [ref=e45]:
+                  - term [ref=e46]: Date
+                  - definition [ref=e47]:
+                    - time [ref=e48]: Saturday, October 24, 2026
+                - generic [ref=e49]:
+                  - term [ref=e50]: Time
+                  - definition [ref=e51]: 6:00 PM
+                - generic [ref=e52]:
+                  - term [ref=e53]: Price
+                  - definition [ref=e54]: $150 per person
+                - generic [ref=e55]:
+                  - term [ref=e56]: Seats
+                  - definition [ref=e57]: 9 of 40 left
+            - link "Reserve Seats" [ref=e59] [cursor=pointer]:
+              - /url: /reservations/?event=harvest-moon-wine-dinner
+        - 'article "Chef''s Table: November" [ref=e60]':
+          - generic [ref=e61]:
+            - img "A chef tossing wild mushrooms in a pan" [ref=e63]
+            - generic [ref=e64]:
+              - generic [ref=e65]: Nov
+              - generic [ref=e66]: "12"
+              - generic [ref=e67]: Thu
+            - generic [ref=e69]: Sold Out
+          - generic [ref=e70]:
+            - generic [ref=e71]:
+              - paragraph [ref=e72]: Chef's Table
+              - 'heading "Chef''s Table: November" [level=2] [ref=e73]'
+              - paragraph [ref=e74]: Eight seats. One night. No menu in advance.
+              - paragraph [ref=e75]: Dinner at the pass. Chef Daniel Park builds the menu that morning from what arrives off the farm trucks. Eight courses, eight guests, and a kitchen view throughout. Wine pairing available for an additional $75 per person.
+              - generic [ref=e76]:
+                - generic [ref=e77]:
+                  - term [ref=e78]: Date
+                  - definition [ref=e79]:
+                    - time [ref=e80]: Thursday, November 12, 2026
+                - generic [ref=e81]:
+                  - term [ref=e82]: Time
+                  - definition [ref=e83]: 7:00 PM
+                - generic [ref=e84]:
+                  - term [ref=e85]: Price
+                  - definition [ref=e86]: $215 per person
+                - generic [ref=e87]:
+                  - term [ref=e88]: Seats
+                  - definition [ref=e89]: Sold out
+            - button "Join the Waitlist" [ref=e91] [cursor=pointer]
+        - article "Thanksgiving Family Supper" [ref=e92]:
+          - generic [ref=e93]:
+            - img "A family-style Thanksgiving table with roast turkey, squash, stuffing, and pie" [ref=e95]
+            - generic [ref=e96]:
+              - generic [ref=e97]: Nov
+              - generic [ref=e98]: "26"
+              - generic [ref=e99]: Thu
+          - generic [ref=e100]:
+            - generic [ref=e101]:
+              - paragraph [ref=e102]: Holiday Dinner
+              - heading "Thanksgiving Family Supper" [level=2] [ref=e103]
+              - paragraph [ref=e104]: Family style. Two seatings. Nobody does the dishes.
+              - paragraph [ref=e105]: A heritage turkey from Meadowlark Poultry, Valley Gold cornbread stuffing, roasted Riverbend squash, and apple and pear pie from Mercier Orchards, passed down long tables the way it should be. Vegetarian mains available on request.
+              - generic [ref=e106]:
+                - generic [ref=e107]:
+                  - term [ref=e108]: Date
+                  - definition [ref=e109]:
+                    - time [ref=e110]: Thursday, November 26, 2026
+                - generic [ref=e111]:
+                  - term [ref=e112]: Time
+                  - definition [ref=e113]: 1:00 PM or 4:30 PM
+                - generic [ref=e114]:
+                  - term [ref=e115]: Price
+                  - definition [ref=e116]: $95 per person, $40 under 12
+                - generic [ref=e117]:
+                  - term [ref=e118]: Seats
+                  - definition [ref=e119]: 26 of 80 left
+            - link "Reserve Seats" [ref=e121] [cursor=pointer]:
+              - /url: /reservations/?event=thanksgiving-supper
+        - article "Winter Solstice Dinner" [ref=e122]:
+          - generic [ref=e123]:
+            - img "A dining table set with pine boughs and glowing candles" [ref=e125]
+            - generic [ref=e126]:
+              - generic [ref=e127]: Dec
+              - generic [ref=e128]: "21"
+              - generic [ref=e129]: Mon
+          - generic [ref=e130]:
+            - generic [ref=e131]:
+              - paragraph [ref=e132]: Holiday Dinner
+              - heading "Winter Solstice Dinner" [level=2] [ref=e133]
+              - paragraph [ref=e134]: The longest night of the year, by candlelight.
+              - paragraph [ref=e135]: "We open on a Monday for one night only. Five courses built from the winter cellar: cured beans, stored squash, citrus from Cobblestone Gardens, and the first chicories of the new year. Lit entirely by beeswax candles from Bee Line Apiary."
+              - generic [ref=e136]:
+                - generic [ref=e137]:
+                  - term [ref=e138]: Date
+                  - definition [ref=e139]:
+                    - time [ref=e140]: Monday, December 21, 2026
+                - generic [ref=e141]:
+                  - term [ref=e142]: Time
+                  - definition [ref=e143]: 6:00 PM
+                - generic [ref=e144]:
+                  - term [ref=e145]: Price
+                  - definition [ref=e146]: $165 per person
+                - generic [ref=e147]:
+                  - term [ref=e148]: Seats
+                  - definition [ref=e149]: 40 of 40 left
+            - link "Reserve Seats" [ref=e151] [cursor=pointer]:
+              - /url: /reservations/?event=winter-solstice-dinner
+        - article "Private Dining" [ref=e152]:
+          - img "The private dining room set for an intimate event" [ref=e155]
+          - generic [ref=e156]:
+            - generic [ref=e157]:
+              - paragraph [ref=e158]: Private Dining
+              - heading "Private Dining" [level=2] [ref=e159]
+              - paragraph [ref=e160]: Your event. Your menu. Our room.
+              - paragraph [ref=e161]: Our private dining room seats up to 24 guests with a fully custom menu, dedicated server, and curated wine list. Available for rehearsal dinners, corporate gatherings, milestone birthdays, and full buyouts. Inquire at least three weeks in advance.
+              - generic [ref=e162]:
+                - generic [ref=e163]:
+                  - term [ref=e164]: Date
+                  - definition [ref=e165]: Year-round availability
+                - generic [ref=e166]:
+                  - term [ref=e167]: Time
+                  - definition [ref=e168]: By arrangement
+                - generic [ref=e169]:
+                  - term [ref=e170]: Price
+                  - definition [ref=e171]: Custom pricing
+            - link "Inquire About Private Dining" [ref=e173] [cursor=pointer]:
+              - /url: /contact/?inquiry=private-dining
+    - region "Be the first to know" [ref=e174]:
+      - generic [ref=e175]:
+        - heading "Be the first to know" [level=2] [ref=e176]
+        - paragraph [ref=e177]: Events sell out quickly. We announce new dinners to our list before anyone else.
+        - generic [ref=e178]:
+          - generic [ref=e179]: Email address
+          - textbox "Email address" [ref=e180]:
+            - /placeholder: your@email.com
+          - button "Notify Me" [ref=e181] [cursor=pointer]
+        - paragraph [ref=e182]: A few emails a season. Unsubscribe anytime.
+  - contentinfo [ref=e183]:
+    - generic [ref=e185]:
+      - generic [ref=e186]:
+        - link "Harvest Table" [ref=e187] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e188]: Harvest Table
+        - generic [ref=e189]:
+          - text: Harvest Lane
+          - text: Lodi, CA 95240
+        - link "Get directions" [ref=e190] [cursor=pointer]:
+          - /url: https://maps.google.com/maps?q=Lodi+CA+95240
+        - link "(209) 555-0182" [ref=e191] [cursor=pointer]:
+          - /url: tel:+12095550182
+        - link "hello@harvesttable.com" [ref=e192] [cursor=pointer]:
+          - /url: mailto:hello@harvesttable.com
+      - generic [ref=e194]:
+        - heading "Explore" [level=2] [ref=e195]
+        - navigation "Footer navigation" [ref=e196]:
+          - list [ref=e197]:
+            - listitem [ref=e198]:
+              - link "Menu" [ref=e199] [cursor=pointer]:
+                - /url: /menu/
+            - listitem [ref=e200]:
+              - link "Farmers" [ref=e201] [cursor=pointer]:
+                - /url: /farmers/
+            - listitem [ref=e202]:
+              - link "Reservations" [ref=e203] [cursor=pointer]:
+                - /url: /reservations/
+            - listitem [ref=e204]:
+              - link "Events" [ref=e205] [cursor=pointer]:
+                - /url: /events/
+            - listitem [ref=e206]:
+              - link "About" [ref=e207] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=e208]:
+              - link "Contact" [ref=e209] [cursor=pointer]:
+                - /url: /contact/
+      - generic [ref=e211]:
+        - heading "Hours" [level=2] [ref=e212]
+        - generic [ref=e213]:
+          - generic [ref=e214]:
+            - term [ref=e215]: Tuesday – Thursday
+            - definition [ref=e216]: 5:00 pm – 9:00 pm
+          - generic [ref=e217]:
+            - term [ref=e218]: Friday – Saturday
+            - definition [ref=e219]: 5:00 pm – 10:00 pm
+          - generic [ref=e220]:
+            - term [ref=e221]: Sunday
+            - definition [ref=e222]: 10:00 am – 2:00 pm (Brunch)
+          - generic [ref=e223]:
+            - term [ref=e224]: Monday
+            - definition [ref=e225]: Closed
+      - generic [ref=e227]:
+        - heading "Visit us" [level=2] [ref=e228]
+        - link "Reserve a Table" [ref=e229] [cursor=pointer]:
+          - /url: /reservations/
+        - generic [ref=e230]:
+          - link "Harvest Table on Instagram" [ref=e231] [cursor=pointer]:
+            - /url: https://instagram.com/harvesttablelodi
+            - img [ref=e232]
+          - link "Harvest Table on Facebook" [ref=e236] [cursor=pointer]:
+            - /url: https://facebook.com/harvesttablelodi
+            - img [ref=e237]
+    - generic [ref=e242]:
+      - paragraph [ref=e243]: © 2026 Harvest Table. All rights reserved.
+      - generic [ref=e244]:
+        - link "Privacy Policy" [ref=e245] [cursor=pointer]:
+          - /url: /privacy-policy/
+        - link "Terms of Service" [ref=e246] [cursor=pointer]:
+          - /url: /terms-of-service/
+      - link "Back to top" [ref=e247] [cursor=pointer]:
+        - /url: "#top"
+        - text: Back to top
+      - paragraph [ref=e250]:
+        - text: Built by
+        - link "Alectronic Solutions" [ref=e251] [cursor=pointer]:
+          - /url: https://alectronicsolutions.com
+  - navigation:
+    - generic:
+      - link:
+        - /url: tel:+12095550182
+        - img
+        - text: Call
+      - link:
+        - /url: /reservations/
+        - text: Reserve a Table

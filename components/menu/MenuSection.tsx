@@ -92,25 +92,37 @@ export default function MenuSection({ section, isEven }: Props) {
               {/* Desktop: 12-col grid. Mobile: flex column. */}
               <div className="grid-cols-12 gap-4 md:grid md:items-start">
 
-                {/* Left content block: col 1-8 */}
-                <div className="md:col-span-8">
+                {/* Left content block: col 1-7 */}
+                <div className="md:col-span-7">
                   <div className="flex items-start justify-between gap-4 md:block">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <h3 className="font-display text-xl font-semibold text-forest md:text-2xl">
-                        <span className="link-underline">{item.name}</span>
-                      </h3>
-                      {item.seasonal && (
-                        <span className="rounded-full bg-gold px-2 py-0.5 font-mono text-[11px] text-forest">
-                          Seasonal
-                        </span>
-                      )}
+                    <h3 className="font-display text-xl font-semibold text-forest md:text-2xl">
+                      <span className="link-underline">{item.name}</span>
+                    </h3>
+                    {/* Price + dietary badges grouped together on mobile */}
+                    <span className="flex shrink-0 items-center gap-1.5 md:hidden">
                       {item.dietaryFlags?.map((flag) => (
                         <DietaryBadge key={flag} flag={flag} />
                       ))}
-                    </div>
-                    {/* Price inline with the name on mobile */}
-                    <span className="shrink-0 font-mono text-base text-ember md:hidden">{item.price}</span>
+                      <span className="font-mono text-base text-ember">{item.price}</span>
+                    </span>
                   </div>
+                  {/* Seasonal + dietary badges: desktop, next to the name */}
+                  <div className="mt-1 hidden items-center gap-2 md:flex">
+                    {item.seasonal && (
+                      <span className="rounded-full bg-gold px-2 py-0.5 font-mono text-[11px] text-forest">
+                        Seasonal
+                      </span>
+                    )}
+                    {item.dietaryFlags?.map((flag) => (
+                      <DietaryBadge key={flag} flag={flag} />
+                    ))}
+                  </div>
+                  {/* Seasonal badge: mobile, below name */}
+                  {item.seasonal && (
+                    <span className="mt-1 inline-block rounded-full bg-gold px-2 py-0.5 font-mono text-[11px] text-forest md:hidden">
+                      Seasonal
+                    </span>
+                  )}
                   <p className="mt-2 max-w-prose font-sans text-sm leading-relaxed text-fog-dark">
                     {item.description}
                   </p>
@@ -122,8 +134,8 @@ export default function MenuSection({ section, isEven }: Props) {
                   </p>
                 </div>
 
-                {/* Farm source: desktop col 9-10 */}
-                <div className="hidden md:col-span-2 md:block">
+                {/* Farm source: desktop col 8-10 */}
+                <div className="hidden md:col-span-3 md:block">
                   <Link
                     href={farmHref(item.farmId)}
                     className="link-underline font-mono text-xs leading-relaxed text-fog-dark hover:text-forest"

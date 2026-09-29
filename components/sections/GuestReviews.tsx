@@ -78,7 +78,7 @@ export default function GuestReviews() {
               }}
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3, ease: 'easeOut' }}
-              className="flex flex-col rounded-sm border border-linen/10 bg-linen/[0.03] p-7 md:p-8"
+              className="flex flex-col items-center rounded-sm border border-linen/10 bg-linen/[0.03] p-7 text-center md:items-start md:p-8 md:text-left"
             >
               <Stars />
               <blockquote className="mt-5 flex-1">

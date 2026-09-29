@@ -1,0 +1,163 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - complementary "Seasonal announcement" [ref=e3]:
+    - paragraph [ref=e4]: Fall 2026 · Menu changes with the harvest
+  - banner [ref=e5]:
+    - navigation [ref=e6]:
+      - link "Harvest Table" [ref=e8] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e9]: Harvest Table
+      - list [ref=e10]:
+        - listitem [ref=e11]:
+          - link "Menu" [ref=e12] [cursor=pointer]:
+            - /url: /menu/
+        - listitem [ref=e13]:
+          - link "Farmers" [ref=e14] [cursor=pointer]:
+            - /url: /farmers/
+        - listitem [ref=e15]:
+          - link "Reservations" [ref=e16] [cursor=pointer]:
+            - /url: /reservations/
+        - listitem [ref=e17]:
+          - link "Events" [ref=e18] [cursor=pointer]:
+            - /url: /events/
+        - listitem [ref=e19]:
+          - link "About" [ref=e20] [cursor=pointer]:
+            - /url: /about/
+        - listitem [ref=e21]:
+          - link "Contact" [ref=e22] [cursor=pointer]:
+            - /url: /contact/
+      - link "Reserve a Table" [ref=e24] [cursor=pointer]:
+        - /url: /reservations/
+  - main [ref=e26]:
+    - generic [ref=e27]:
+      - img "Dinner service in the Harvest Table dining room" [ref=e29]
+      - heading "We opened because we were hungry." [level=1] [ref=e32]:
+        - text: We opened
+        - text: because we were
+        - text: hungry.
+    - region "Our story" [ref=e33]:
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - paragraph [ref=e37]: "Harvest Table opened in 2019 with eight tables, a wood-fired oven, and a handshake agreement with two farms down the road. The plan was simple: cook what was ripe, name where it came from, and get out of the way."
+          - paragraph [ref=e38]: Our chef and founder, Daniel Park, spent twelve years in restaurant kitchens in San Francisco and Portland before moving to the Central Valley. He did not come here for the restaurant scene. He came because the farms were here.
+          - paragraph [ref=e39]: The menu has never been the same two weeks in a row. We have served dishes we could not repeat if we tried, because the ingredient that made them possible was gone by the following Tuesday. That is not a problem. That is the point.
+          - paragraph [ref=e40]: We now buy from 15 farms and makers. We seat forty guests a night for dinner Tuesday through Saturday, plus Sunday brunch. We have never put a dish on the menu that we were not proud of. We intend to keep it that way.
+        - generic [ref=e41]:
+          - img "Chef and founder Daniel Park preparing a dish in the Harvest Table kitchen" [ref=e43]
+          - blockquote [ref=e44]:
+            - paragraph [ref=e45]: “The best ingredient is always the one you did not plan for. That is why we do not lock our menu in advance.”
+            - generic [ref=e46]: Daniel Park, Chef and Founder
+    - region "How we cook" [ref=e47]:
+      - generic [ref=e48]:
+        - heading "How we cook" [level=2] [ref=e50]
+        - generic [ref=e52]:
+          - generic [ref=e53]:
+            - heading "No dish lives forever" [level=3] [ref=e54]
+            - paragraph [ref=e55]: When an ingredient goes out of season it comes off the menu. We do not source from outside California to extend a dish. When it is gone, it is gone until next year.
+          - generic [ref=e56]:
+            - heading "You will know the farmer" [level=3] [ref=e57]
+            - paragraph [ref=e58]: Every dish names its source. We visit every farm personally before we list it on the menu. If we would not eat there, it does not appear on your plate.
+          - generic [ref=e59]:
+            - heading "Small on purpose" [level=3] [ref=e60]
+            - paragraph [ref=e61]: Forty seats. Five dinners and one brunch a week. We are not trying to scale. We are trying to get dinner right, every night, for the people who show up.
+    - region "Along the way" [ref=e62]:
+      - generic [ref=e63]:
+        - heading "Along the way" [level=2] [ref=e64]
+        - list [ref=e65]:
+          - listitem [ref=e66]:
+            - paragraph [ref=e67]: "2019"
+            - paragraph [ref=e68]: Opened on Main Street with eight tables and two farm partners down the road.
+          - listitem [ref=e69]:
+            - paragraph [ref=e70]: "2021"
+            - paragraph [ref=e71]: Grew to forty seats and started buying whole animals from local ranches.
+          - listitem [ref=e72]:
+            - paragraph [ref=e73]: "2023"
+            - paragraph [ref=e74]: Opened the private dining room and hosted our first dinner in the vineyard.
+          - listitem [ref=e75]:
+            - paragraph [ref=e76]: "2026"
+            - paragraph [ref=e77]: 15 farm partners, all within 60 miles of the kitchen.
+    - region "Our kitchen team" [ref=e78]:
+      - img "The Harvest Table kitchen team plating dishes together at the pass during dinner service" [ref=e80]
+      - paragraph [ref=e82]: One kitchen, one pass, and whatever came off the farm trucks this morning.
+    - generic [ref=e84]:
+      - heading "Come see what is on the menu tonight." [level=2] [ref=e85]
+      - link "Reserve a Table" [ref=e86] [cursor=pointer]:
+        - /url: /reservations/
+  - contentinfo [ref=e87]:
+    - generic [ref=e89]:
+      - generic [ref=e90]:
+        - link "Harvest Table" [ref=e91] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e92]: Harvest Table
+        - generic [ref=e93]:
+          - text: Harvest Lane
+          - text: Lodi, CA 95240
+        - link "Get directions" [ref=e94] [cursor=pointer]:
+          - /url: https://maps.google.com/maps?q=Lodi+CA+95240
+        - link "(209) 555-0182" [ref=e95] [cursor=pointer]:
+          - /url: tel:+12095550182
+        - link "hello@harvesttable.com" [ref=e96] [cursor=pointer]:
+          - /url: mailto:hello@harvesttable.com
+      - generic [ref=e97]:
+        - heading "Explore" [level=2] [ref=e98]
+        - navigation "Footer navigation" [ref=e99]:
+          - list [ref=e100]:
+            - listitem [ref=e101]:
+              - link "Menu" [ref=e102] [cursor=pointer]:
+                - /url: /menu/
+            - listitem [ref=e103]:
+              - link "Farmers" [ref=e104] [cursor=pointer]:
+                - /url: /farmers/
+            - listitem [ref=e105]:
+              - link "Reservations" [ref=e106] [cursor=pointer]:
+                - /url: /reservations/
+            - listitem [ref=e107]:
+              - link "Events" [ref=e108] [cursor=pointer]:
+                - /url: /events/
+            - listitem [ref=e109]:
+              - link "About" [ref=e110] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=e111]:
+              - link "Contact" [ref=e112] [cursor=pointer]:
+                - /url: /contact/
+      - generic [ref=e113]:
+        - heading "Hours" [level=2] [ref=e114]
+        - generic [ref=e115]:
+          - generic [ref=e116]:
+            - term [ref=e117]: Tuesday – Thursday
+            - definition [ref=e118]: 5:00 pm – 9:00 pm
+          - generic [ref=e119]:
+            - term [ref=e120]: Friday – Saturday
+            - definition [ref=e121]: 5:00 pm – 10:00 pm
+          - generic [ref=e122]:
+            - term [ref=e123]: Sunday
+            - definition [ref=e124]: 10:00 am – 2:00 pm (Brunch)
+          - generic [ref=e125]:
+            - term [ref=e126]: Monday
+            - definition [ref=e127]: Closed
+      - generic [ref=e128]:
+        - heading "Visit us" [level=2] [ref=e129]
+        - link "Reserve a Table" [ref=e130] [cursor=pointer]:
+          - /url: /reservations/
+        - generic [ref=e131]:
+          - link "Harvest Table on Instagram" [ref=e132] [cursor=pointer]:
+            - /url: https://instagram.com/harvesttablelodi
+            - img [ref=e133]
+          - link "Harvest Table on Facebook" [ref=e137] [cursor=pointer]:
+            - /url: https://facebook.com/harvesttablelodi
+            - img [ref=e138]
+    - generic [ref=e143]:
+      - paragraph [ref=e144]: © 2026 Harvest Table. All rights reserved.
+      - generic [ref=e145]:
+        - link "Privacy Policy" [ref=e146] [cursor=pointer]:
+          - /url: /privacy-policy/
+        - link "Terms of Service" [ref=e147] [cursor=pointer]:
+          - /url: /terms-of-service/
+      - link "Back to top" [ref=e148] [cursor=pointer]:
+        - /url: "#top"
+        - text: Back to top
+      - paragraph [ref=e151]:
+        - text: Built by
+        - link "Alectronic Solutions" [ref=e152] [cursor=pointer]:
+          - /url: https://alectronicsolutions.com

@@ -33,7 +33,7 @@ export default function PrivateDining() {
     <section
       ref={ref}
       aria-label="Private dining"
-      className="relative min-h-[500px] overflow-hidden md:min-h-[600px]"
+      className="relative overflow-hidden md:min-h-[600px]"
     >
       {/* Background image with parallax */}
       <m.div style={{ y: imageY }} className="absolute inset-0 scale-110">
@@ -55,36 +55,41 @@ export default function PrivateDining() {
 
       {/* Content */}
       <m.div
-        className="relative z-10 flex h-full min-h-[500px] flex-col items-center justify-center px-8 py-24 text-center md:min-h-[600px] md:items-start md:pl-16 md:pr-0 md:text-left"
+        className="relative z-10 flex flex-col items-center justify-center px-6 py-16 text-center sm:px-8 sm:py-20 md:h-full md:min-h-[600px] md:items-start md:pl-16 md:pr-0 md:py-24 md:text-left"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
       >
         <div className="max-w-xl">
-          <h2
-            className="font-display text-4xl font-light leading-[1.15] text-linen [text-shadow:0_2px_12px_rgba(0,0,0,0.45)] sm:text-5xl md:text-6xl md:leading-tight"
-          >
-            Host something
-            <br className="hidden md:block" />
-            <span className="md:hidden"> </span>
-            worth remembering
-          </h2>
-          <p className="mx-auto mt-5 max-w-sm font-sans text-base leading-relaxed text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.4)] md:mx-0">
-            Our private dining room seats up to 24 guests. Custom menus,
-            dedicated service, and a wine list curated for your event.
-            Weddings, rehearsal dinners, corporate gatherings, milestone
-            birthdays.
-          </p>
+          <div className="rounded-lg bg-forest/70 px-5 py-5 backdrop-blur-sm md:bg-transparent md:px-0 md:py-0 md:backdrop-blur-none">
+            <h2
+              className="font-display text-3xl font-light leading-[1.15] text-linen [text-shadow:0_2px_12px_rgba(0,0,0,0.45)] sm:text-5xl md:text-6xl md:leading-tight"
+            >
+              Host something
+              <br className="hidden md:block" />
+              <span className="md:hidden"> </span>
+              worth remembering
+            </h2>
+            <p className="mx-auto mt-4 max-w-sm font-sans text-sm leading-relaxed text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.4)] sm:mt-5 sm:text-base md:mx-0">
+              Our private dining room seats up to 24 guests. Custom menus,
+              dedicated service, and a wine list curated for your event.
+              Weddings, rehearsal dinners, corporate gatherings, milestone
+              birthdays.
+            </p>
+          </div>
 
           {/* Stats row */}
-          <div className="mt-10 grid grid-cols-2 gap-6 md:flex md:gap-8">
+          <div className="mt-8 grid grid-cols-3 gap-3 sm:mt-10 sm:gap-6 md:flex md:gap-8">
             {STATS.map((stat) => (
-              <div key={stat.label}>
-                <p className="font-display text-3xl font-semibold text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.4)]">
+              <div
+                key={stat.label}
+                className="rounded-md bg-forest/60 px-3 py-3 backdrop-blur-sm md:bg-transparent md:px-0 md:py-0 md:backdrop-blur-none"
+              >
+                <p className="font-display text-2xl font-semibold text-white sm:text-3xl">
                   {stat.value}
                 </p>
-                <p className="mt-1 font-mono text-xs uppercase tracking-wide text-white/85">
+                <p className="mt-1 font-mono text-[10px] uppercase tracking-wide text-white/85 sm:text-xs">
                   {stat.label}
                 </p>
               </div>
@@ -94,7 +99,7 @@ export default function PrivateDining() {
           <ButtonLink
             href="/contact/?inquiry=private-dining"
             tone="dark"
-            className="mt-10 w-full sm:w-auto"
+            className="mt-8 w-full sm:mt-10 sm:w-auto"
           >
             Inquire About Private Dining
           </ButtonLink>

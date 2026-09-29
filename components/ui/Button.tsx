@@ -18,7 +18,7 @@ const VARIANTS: Record<Variant, Record<Tone, string>> = {
   },
   outline: {
     light: 'border border-forest/40 text-forest hover:border-forest hover:bg-forest hover:text-linen focus-visible:ring-offset-linen',
-    dark: 'border border-linen/50 text-linen hover:border-gold hover:bg-gold hover:text-forest focus-visible:ring-offset-forest',
+    dark: 'border border-linen bg-forest/40 text-linen backdrop-blur-sm hover:border-gold hover:bg-gold hover:text-forest focus-visible:ring-offset-forest',
   },
 };
 
