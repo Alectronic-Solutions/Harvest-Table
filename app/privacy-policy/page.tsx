@@ -1,23 +1,25 @@
-import { Metadata } from 'next';
 import Link from 'next/link';
-import { SITE_URL } from '@/lib/basePath';
+import { CONTACT, SITE_UPDATED, BUILD_DATE } from '@/data/restaurant';
+import { pageMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-  title: 'Privacy Policy | Harvest Table',
-  description: 'Privacy Policy for Harvest Table restaurant.',
-  alternates: { canonical: `${SITE_URL}/privacy-policy` },
-};
+export const metadata = pageMetadata({
+  title: 'Privacy Policy',
+  description: 'How Harvest Table collects and uses information from reservations and inquiries.',
+  path: '/privacy-policy',
+});
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="min-h-screen bg-linen pt-24">
+    <div className="min-h-screen bg-linen">
       <div className="mx-auto max-w-3xl px-5 py-12 md:px-8 md:py-16">
-        <h1 className="font-display text-3xl text-forest md:text-4xl">Privacy Policy</h1>
-        <p className="mt-2 font-mono text-xs text-gold-dark">Last updated: January 2025</p>
+        <h1 className="font-display text-4xl font-semibold text-forest md:text-5xl">Privacy Policy</h1>
+        <p className="mt-2 font-mono text-xs text-gold-dark">
+          Last updated: <time dateTime={BUILD_DATE.toISOString().slice(0, 10)}>{SITE_UPDATED}</time>
+        </p>
 
-        <div className="prose prose-stone mt-8 font-sans text-forest/80">
+        <div className="mt-10 font-sans text-base leading-relaxed text-ink/80">
           <section className="mb-8">
-            <h2 className="font-display text-xl text-forest">1. Information We Collect</h2>
+            <h2 className="font-display text-2xl font-semibold text-forest">1. Information We Collect</h2>
             <p className="mt-2">
               We collect information you provide directly to us when making reservations,
               including your name, email address, phone number, and any special requests
@@ -26,7 +28,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-display text-xl text-forest">2. How We Use Your Information</h2>
+            <h2 className="font-display text-2xl font-semibold text-forest">2. How We Use Your Information</h2>
             <p className="mt-2">
               We use the information we collect to:
             </p>
@@ -39,16 +41,30 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-display text-xl text-forest">3. Information Sharing</h2>
+            <h2 className="font-display text-2xl font-semibold text-forest">3. Information Sharing</h2>
             <p className="mt-2">
               We do not sell, trade, or rent your personal information to third parties.
-              We may share your information with trusted service providers who assist us
-              in operating our business, such as reservation platforms.
+              We share it only with the service providers that help us run the website and
+              the restaurant:
             </p>
+            <ul className="mt-2 list-disc space-y-1 pl-5">
+              <li>
+                <strong className="font-medium text-forest">FormSubmit</strong> delivers reservation,
+                contact, and newsletter form submissions to our inbox.
+              </li>
+              <li>
+                <strong className="font-medium text-forest">Google Maps</strong> powers the embedded
+                map on our home and contact pages. Google may set its own cookies when the map loads.
+              </li>
+              <li>
+                <strong className="font-medium text-forest">GitHub Pages</strong> hosts this website
+                and may log basic request data such as IP address for security.
+              </li>
+            </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="font-display text-xl text-forest">4. Data Security</h2>
+            <h2 className="font-display text-2xl font-semibold text-forest">4. Data Security</h2>
             <p className="mt-2">
               We implement reasonable security measures to protect your personal information.
               However, no method of transmission over the internet is 100% secure.
@@ -56,38 +72,42 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-display text-xl text-forest">5. Your Rights</h2>
+            <h2 className="font-display text-2xl font-semibold text-forest">5. Your Rights</h2>
             <p className="mt-2">
               You have the right to access, correct, or delete your personal information.
               Contact us at{' '}
-              <a href="mailto:hello@harvesttable.com" className="text-gold-dark underline">
-                hello@harvesttable.com
+              <a href={`mailto:${CONTACT.email}`} className="text-gold-dark underline">
+                {CONTACT.email}
               </a>{' '}
-              with any requests.
+              with any requests. California residents have additional rights under the
+              California Consumer Privacy Act, including the right to know what we collect
+              and to request deletion.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="font-display text-xl text-forest">6. Cookies</h2>
+            <h2 className="font-display text-2xl font-semibold text-forest">6. Cookies</h2>
             <p className="mt-2">
-              Our website uses essential cookies to ensure proper functionality.
-              We do not use tracking cookies for advertising purposes.
+              Our own pages do not set cookies, and we do not use advertising or tracking
+              cookies. The embedded Google map may set cookies governed by Google&apos;s
+              privacy policy.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="font-display text-xl text-forest">7. Contact Us</h2>
+            <h2 className="font-display text-2xl font-semibold text-forest">7. Contact Us</h2>
             <p className="mt-2">
-              For questions about this Privacy Policy, please contact us at:{' '}
-              <a href="mailto:hello@harvesttable.com" className="text-gold-dark underline">
-                hello@harvesttable.com
-              </a>
+              For questions about this Privacy Policy, email{' '}
+              <a href={`mailto:${CONTACT.email}`} className="text-gold-dark underline">
+                {CONTACT.email}
+              </a>{' '}
+              or write to {CONTACT.name}, {CONTACT.address}, {CONTACT.city}.
             </p>
           </section>
 
           <div className="mt-12 border-t border-forest/10 pt-6">
-            <Link href="/" className="text-sm text-gold-dark hover:underline">
-              ← Back to Home
+            <Link href="/" className="inline-flex min-h-[44px] items-center text-sm text-gold-dark underline-offset-4 hover:underline">
+              Back to home
             </Link>
           </div>
         </div>

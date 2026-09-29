@@ -12,3 +12,16 @@ export function asset(src: string): string {
 // truth for metadata, sitemap, robots, and JSON-LD so they can't drift from
 // where the site is actually deployed.
 export const SITE_URL = `${PRODUCTION_ORIGIN}${BASE_PATH}`;
+
+// Absolute URL for a route. next.config sets `trailingSlash: true`, so every
+// page is served at `/route/`. Canonicals and the sitemap must match that
+// exactly or crawlers see a redirect on every canonical URL.
+export function pageUrl(path: string): string {
+  const clean = path.replace(/^\/+|\/+$/g, '');
+  return clean ? `${SITE_URL}/${clean}/` : `${SITE_URL}/`;
+}
+
+// Absolute URL for a static file in /public (images, icons).
+export function assetUrl(src: string): string {
+  return `${SITE_URL}${src}`;
+}

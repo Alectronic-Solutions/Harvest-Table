@@ -6,10 +6,10 @@
 import Image from 'next/image';
 import { asset } from '@/lib/basePath';
 import { Suspense } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { m, useScroll, useTransform } from 'framer-motion';
 import { useSearchParams } from 'next/navigation';
 import { useIsDesktop } from '@/lib/useIsDesktop';
-import { CONTACT, HOURS } from '@/data/restaurant';
+import { CONTACT, HOURS, PHONE_HREF, MAPS_URL, MAPS_EMBED_URL } from '@/data/restaurant';
 import { useDemoForm } from '@/components/DemoModal';
 
 // ── Hero ──────────────────────────────────────────────────────────────────────
@@ -22,7 +22,7 @@ function ContactHero() {
 
   return (
     <section className="relative flex h-[200px] items-center justify-center overflow-hidden md:h-[260px]">
-      <motion.div style={{ y: imageY }} className="absolute inset-0 scale-110">
+      <m.div style={{ y: imageY }} className="absolute inset-0 scale-110">
         <Image
           src={asset('/images/restaurant-interior.webp')}
           alt="Harvest Table dining room"
@@ -32,10 +32,10 @@ function ContactHero() {
           style={{ objectPosition: 'center 40%' }}
           sizes="100vw"
         />
-      </motion.div>
+      </m.div>
       <div className="absolute inset-0 bg-forest/60" />
       <div className="relative z-10 text-center">
-        <h1 className="font-display text-5xl font-semibold text-white">Get in Touch</h1>
+        <h1 className="font-display text-5xl font-semibold text-linen md:text-6xl">Get in Touch</h1>
       </div>
     </section>
   );
@@ -73,6 +73,7 @@ function InquiryForm() {
       <div className="mt-3 mb-6 border-t border-fog/25" />
 
       <form onSubmit={handleSubmit} className="space-y-6">
+        <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
 
         <div>
           <label htmlFor="contact-name" className="block font-mono text-xs uppercase tracking-widest text-fog-dark mb-2">
@@ -83,7 +84,8 @@ function InquiryForm() {
             type="text"
             name="name"
             required
-            className="w-full border-0 border-b border-fog/40 bg-transparent py-2 font-sans text-sm text-ink focus:border-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-dark transition-colors"
+            autoComplete="name"
+            className="w-full min-h-[48px] border-0 border-b border-fog/40 bg-transparent py-3 font-sans text-base text-ink focus:border-forest focus:outline-none focus:ring-2 focus:ring-gold-dark transition-colors md:text-sm"
           />
         </div>
 
@@ -96,7 +98,9 @@ function InquiryForm() {
             type="email"
             name="email"
             required
-            className="w-full border-0 border-b border-fog/40 bg-transparent py-2 font-sans text-sm text-ink focus:border-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-dark transition-colors"
+            autoComplete="email"
+            inputMode="email"
+            className="w-full min-h-[48px] border-0 border-b border-fog/40 bg-transparent py-3 font-sans text-base text-ink focus:border-forest focus:outline-none focus:ring-2 focus:ring-gold-dark transition-colors md:text-sm"
           />
         </div>
 
@@ -108,7 +112,7 @@ function InquiryForm() {
             id="contact-inquiry-type"
             name="inquiry_type"
             defaultValue={defaultInquiry}
-            className="w-full appearance-none border-0 border-b border-fog/40 bg-transparent py-2 font-sans text-sm text-ink focus:border-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-dark transition-colors"
+            className="w-full min-h-[48px] border-0 border-b border-fog/40 bg-transparent py-3 font-sans text-base text-ink focus:border-forest focus:outline-none focus:ring-2 focus:ring-gold-dark transition-colors md:text-sm appearance-none cursor-pointer"
           >
             <option value="">Select one</option>
             {INQUIRY_OPTIONS.map((o) => (
@@ -128,13 +132,13 @@ function InquiryForm() {
             name="message"
             rows={5}
             required
-            className="w-full resize-none border-0 border-b border-fog/40 bg-transparent py-2 font-sans text-sm text-ink focus:border-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-dark transition-colors"
+            className="w-full min-h-[48px] border-0 border-b border-fog/40 bg-transparent py-3 font-sans text-base text-ink focus:border-forest focus:outline-none focus:ring-2 focus:ring-gold-dark transition-colors md:text-sm resize-none"
           />
         </div>
 
         <button
           type="submit"
-          className="w-full min-h-[48px] bg-gold py-4 font-sans text-sm font-medium text-forest transition-opacity hover:opacity-90"
+          className="w-full min-h-[52px] rounded-full bg-gold py-4 font-sans text-base font-medium text-forest transition-all duration-300 hover:scale-[1.01] hover:bg-gold/90"
         >
           Send Message
         </button>
@@ -147,12 +151,12 @@ function InquiryForm() {
 
 function ContactContent() {
   return (
-    <section className="bg-linen py-24">
-      <div className="mx-auto max-w-5xl px-6">
-        <div className="grid grid-cols-1 gap-16 md:grid-cols-3">
+    <section className="bg-linen px-5 py-16 md:px-8 md:py-24" data-hide-mobile-bar>
+      <div className="mx-auto max-w-5xl">
+        <div className="grid grid-cols-1 gap-14 md:grid-cols-3 md:gap-12">
 
           {/* Column 1: Visit info */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -170,8 +174,8 @@ function ContactContent() {
             <div className="mt-4">
               <p className="font-mono text-xs uppercase tracking-wide text-fog-dark">Reservations</p>
               <a
-                href={`tel:${CONTACT.phone.replace(/\D/g, '')}`}
-                className="mt-1 block font-sans text-base text-forest transition-colors hover:text-ember"
+                href={PHONE_HREF}
+                className="mt-1 flex min-h-[40px] items-center font-mono text-base text-forest transition-colors hover:text-ember"
               >
                 {CONTACT.phone}
               </a>
@@ -181,7 +185,7 @@ function ContactContent() {
               <p className="font-mono text-xs uppercase tracking-wide text-fog-dark">General inquiries</p>
               <a
                 href={`mailto:${CONTACT.email}`}
-                className="mt-1 block font-sans text-sm text-forest transition-colors hover:text-ember"
+                className="mt-1 flex min-h-[40px] items-center font-sans text-sm text-forest transition-colors hover:text-ember"
               >
                 {CONTACT.email}
               </a>
@@ -199,10 +203,10 @@ function ContactContent() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Column 2: Map */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -212,28 +216,30 @@ function ContactContent() {
             <div className="mt-3 mb-6 border-t border-fog/25" />
 
             <iframe
-              src="https://maps.google.com/maps?q=214+Main+Street+Lodi+CA&output=embed"
+              src={MAPS_EMBED_URL}
               width="100%"
-              className="h-[220px] md:h-[300px]"
+              className="h-[220px] md:h-[300px] focus:outline-none focus:ring-2 focus:ring-gold-dark focus:ring-offset-2"
               style={{ border: 0, filter: 'grayscale(30%) contrast(1.1)' }}
               allowFullScreen
               loading="lazy"
-              title="Harvest Table location"
+              title={`Map showing ${CONTACT.name} at ${CONTACT.address}, ${CONTACT.city}`}
             />
 
-            <p className="mt-4 font-sans text-xs text-fog-dark">214 Main Street, Lodi CA 95240</p>
+            <p className="mt-4 font-sans text-sm text-fog-dark">
+              Free street parking on Main after 5 pm. Public lot on Sacramento Street, two minutes on foot.
+            </p>
             <a
-              href="https://maps.google.com/maps?q=214+Main+Street+Lodi+CA"
+              href={MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-1 block font-sans text-xs text-ember underline"
+              className="mt-1 inline-flex min-h-[44px] items-center font-sans text-sm text-ember underline underline-offset-4"
             >
               Get directions &rarr;
             </a>
-          </motion.div>
+          </m.div>
 
           {/* Column 3: Inquiry form */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -242,7 +248,7 @@ function ContactContent() {
             <Suspense fallback={<div className="h-96" />}>
               <InquiryForm />
             </Suspense>
-          </motion.div>
+          </m.div>
 
         </div>
       </div>
@@ -254,12 +260,12 @@ function ContactContent() {
 
 function CareersAndPress() {
   return (
-    <section className="bg-white py-16">
-      <div className="mx-auto max-w-5xl px-6">
+    <section className="bg-white px-5 py-16 md:px-8">
+      <div className="mx-auto max-w-5xl">
         <div className="grid grid-cols-1 divide-y divide-fog/20 md:grid-cols-2 md:divide-x md:divide-y-0">
 
           {/* Careers */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -275,14 +281,14 @@ function CareersAndPress() {
             </p>
             <a
               href="mailto:careers@harvesttable.com"
-              className="mt-4 block font-sans text-sm text-ember underline"
+              className="mt-4 inline-flex min-h-[44px] items-center font-sans text-sm text-ember underline underline-offset-4"
             >
               careers@harvesttable.com
             </a>
-          </motion.div>
+          </m.div>
 
           {/* Press */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -298,11 +304,11 @@ function CareersAndPress() {
             </p>
             <a
               href="mailto:press@harvesttable.com"
-              className="mt-4 block font-sans text-sm text-ember underline"
+              className="mt-4 inline-flex min-h-[44px] items-center font-sans text-sm text-ember underline underline-offset-4"
             >
               press@harvesttable.com
             </a>
-          </motion.div>
+          </m.div>
 
         </div>
       </div>

@@ -4,6 +4,7 @@
 
 :root {
   --seasonal-strip-height: 36px;
+  --nav-height: 64px;
 
   /* Brand palette. Mirrors tailwind.config.ts. Single source of truth for
      raw CSS and inline style props that can't reference Tailwind classes. */
@@ -29,9 +30,30 @@
   --scrollbar-thumb-active-end: #9b6e20;
 }
 
+@media (min-width: 768px) {
+  :root {
+    --nav-height: 80px;
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Anchor jumps land below the sticky navbar. */
+    scroll-padding-top: calc(var(--nav-height) + 16px);
+  }
+
+  /* Keep focused elements clear of the fixed mobile reserve bar (WCAG 2.4.11). */
+  @media (max-width: 767px) {
+    html {
+      scroll-padding-bottom: 96px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 
   body {
@@ -134,5 +156,34 @@
     background-repeat: repeat;
     background-size: 160px 160px;
     mix-blend-mode: multiply;
+  }
+}
+/* Printable menu: strip the site chrome and print the menu as a clean list. */
+@media print {
+  .grain,
+  header,
+  footer,
+  .print-hide,
+  .skip-link {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .print-avoid-break {
+    break-inside: avoid;
+  }
+
+  section {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    background: #fff !important;
+  }
+
+  [style*="opacity: 0"] {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

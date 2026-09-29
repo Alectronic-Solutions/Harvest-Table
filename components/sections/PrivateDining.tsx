@@ -6,9 +6,9 @@
 
 import Image from 'next/image';
 import { asset } from '@/lib/basePath';
-import Link from 'next/link';
+import { ButtonLink } from '@/components/ui/Button';
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { m, useScroll, useTransform } from 'framer-motion';
 import { useIsDesktop } from '@/lib/useIsDesktop';
 
 const STATS = [
@@ -32,10 +32,11 @@ export default function PrivateDining() {
   return (
     <section
       ref={ref}
+      aria-label="Private dining"
       className="relative min-h-[500px] overflow-hidden md:min-h-[600px]"
     >
       {/* Background image with parallax */}
-      <motion.div style={{ y: imageY }} className="absolute inset-0 scale-110">
+      <m.div style={{ y: imageY }} className="absolute inset-0 scale-110">
         <Image
           src={asset('/images/private-dining.webp')}
           alt="The private dining room set for an intimate event"
@@ -43,16 +44,17 @@ export default function PrivateDining() {
           className="object-cover object-center"
           sizes="100vw"
         />
-      </motion.div>
+      </m.div>
 
-      {/* Overlay: uniform forest/70 on mobile, left-to-right gradient on desktop. */}
-      <div className="absolute inset-0 bg-forest/72 md:hidden" />
+      {/* Overlay: darker top-to-bottom scrim on mobile so text stays readable
+          over busy parts of the photo, left-to-right gradient on desktop. */}
+      <div className="absolute inset-0 bg-gradient-to-b from-forest/80 via-forest/78 to-forest/88 md:hidden" />
       <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-forest/85 via-forest/60 to-forest/20" />
       {/* Vignette edges */}
       <div className="absolute inset-0 hidden md:block bg-[radial-gradient(ellipse_at_left,rgba(44,59,45,0.3)_0%,transparent_60%)]" />
 
       {/* Content */}
-      <motion.div
+      <m.div
         className="relative z-10 flex h-full min-h-[500px] flex-col items-center justify-center px-8 py-24 text-center md:min-h-[600px] md:items-start md:pl-16 md:pr-0 md:text-left"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -60,12 +62,15 @@ export default function PrivateDining() {
         transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
       >
         <div className="max-w-xl">
-          <h2 className="font-display text-5xl font-light leading-tight text-white md:text-6xl">
+          <h2
+            className="font-display text-4xl font-light leading-[1.15] text-linen [text-shadow:0_2px_12px_rgba(0,0,0,0.45)] sm:text-5xl md:text-6xl md:leading-tight"
+          >
             Host something
-            <br />
+            <br className="hidden md:block" />
+            <span className="md:hidden"> </span>
             worth remembering
           </h2>
-          <p className="mt-6 max-w-sm font-sans text-base leading-relaxed text-white/90">
+          <p className="mx-auto mt-5 max-w-sm font-sans text-base leading-relaxed text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.4)] md:mx-0">
             Our private dining room seats up to 24 guests. Custom menus,
             dedicated service, and a wine list curated for your event.
             Weddings, rehearsal dinners, corporate gatherings, milestone
@@ -73,10 +78,10 @@ export default function PrivateDining() {
           </p>
 
           {/* Stats row */}
-          <div className="mt-8 grid grid-cols-2 gap-6 md:flex md:gap-8">
+          <div className="mt-10 grid grid-cols-2 gap-6 md:flex md:gap-8">
             {STATS.map((stat) => (
               <div key={stat.label}>
-                <p className="font-display text-3xl font-semibold text-white">
+                <p className="font-display text-3xl font-semibold text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.4)]">
                   {stat.value}
                 </p>
                 <p className="mt-1 font-mono text-xs uppercase tracking-wide text-white/85">
@@ -86,14 +91,15 @@ export default function PrivateDining() {
             ))}
           </div>
 
-          <Link
-            href="/contact?inquiry=private-dining"
-            className="mt-10 flex min-h-[48px] items-center justify-center border-[1.5px] border-gold px-9 py-4 font-sans text-base font-medium text-gold transition-all duration-300 hover:bg-gold hover:text-forest hover:shadow-[0_0_24px_rgba(212,168,67,0.3)] md:inline-flex md:w-auto"
+          <ButtonLink
+            href="/contact/?inquiry=private-dining"
+            tone="dark"
+            className="mt-10 w-full sm:w-auto"
           >
-            Inquire About Events
-          </Link>
+            Inquire About Private Dining
+          </ButtonLink>
         </div>
-      </motion.div>
+      </m.div>
     </section>
   );
 }

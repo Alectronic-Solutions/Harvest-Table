@@ -1,22 +1,24 @@
 'use client';
 
-// One job: two-column reservation section. Left: FormSubmit form on a forest
-// background with underline-only inputs. Right: restaurant interior photo with
-// per-element parallax. Stacks to form-over-image on mobile.
+// One job: two-column reservation section. Left: reservation request form on
+// a forest background with underline-only inputs and date-aware time slots.
+// Right: restaurant interior photo with desktop-only parallax. Stacks to
+// form-over-image on mobile.
 
 import Image from 'next/image';
 import { asset } from '@/lib/basePath';
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { CONTACT } from '@/data/restaurant';
+import { useEffect, useRef, useState } from 'react';
+import { m, useScroll, useTransform } from 'framer-motion';
+import { CONTACT, PHONE_HREF } from '@/data/restaurant';
 import { useIsDesktop } from '@/lib/useIsDesktop';
 import { useDemoForm } from '@/components/DemoModal';
+import { todayISO, useTimeSlots } from '@/lib/useTimeSlots';
 
 // Chevron SVG used inside the custom select dropdowns.
 function SelectChevron() {
   return (
     <svg
-      className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-linen/50"
+      className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-linen/60"
       width={16}
       height={16}
       viewBox="0 0 24 24"
@@ -33,16 +35,21 @@ function SelectChevron() {
 }
 
 // Shared class strings kept as constants to avoid repetition.
-const inputClass =
-  'w-full border-b border-linen/30 bg-transparent py-3 font-sans text-base text-white placeholder-linen/50 focus:border-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-forest transition-colors duration-200';
+const labelClass = 'block font-mono text-[11px] uppercase tracking-[0.14em] text-linen/70';
 
-const selectClass =
-  'w-full appearance-none border-b border-linen/30 bg-transparent py-3 font-sans text-base text-white focus:border-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-forest transition-colors duration-200 cursor-pointer';
+const inputClass =
+  'mt-1 min-h-[48px] w-full border-b border-linen/30 bg-transparent py-3 font-sans text-base text-linen placeholder-linen/40 transition-colors duration-200 [color-scheme:dark] focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-forest';
+
+const selectClass = `${inputClass} cursor-pointer appearance-none pr-6 disabled:cursor-not-allowed disabled:opacity-50`;
 
 export default function ReservationSection() {
-  const { handleSubmit, modal } = useDemoForm();
+  const { date, setDate, slots, closedNote, serviceLabel } = useTimeSlots();
+  const { handleSubmit, modal } = useDemoForm({ onReset: () => setDate('') });
   const isDesktop = useIsDesktop();
   const imageRef = useRef<HTMLDivElement>(null);
+  // Set after mount so the static HTML and the first client render agree.
+  const [minDate, setMinDate] = useState<string>();
+  useEffect(() => setMinDate(todayISO()), []);
 
   const { scrollYProgress } = useScroll({
     target: imageRef,
@@ -54,121 +61,147 @@ export default function ReservationSection() {
   const rawY = useTransform(scrollYProgress, [0, 1], ['0px', '-80px']);
   const imageY = useTransform(rawY, (v) => (isDesktop ? v : '0px'));
 
-  // Today's date in YYYY-MM-DD for the date input min attribute.
-  const today = new Date().toISOString().split('T')[0];
-
   return (
-    <section className="flex flex-col md:flex-row md:items-stretch">
+    <section
+      aria-labelledby="home-reserve-heading"
+      data-hide-mobile-bar
+      className="flex flex-col md:flex-row md:items-stretch"
+    >
       {/* LEFT: form column (55%) */}
-      <div className="bg-forest px-6 py-14 md:w-[55%] md:px-12 md:py-20">
+      <div className="bg-forest px-5 py-12 md:w-[55%] md:px-12 md:py-20">
         <div className="mx-auto max-w-lg">
-          {/* Header */}
-          <h2 className="font-display text-4xl font-normal text-white">
+          <h2 id="home-reserve-heading" className="text-center font-display text-4xl font-normal text-linen md:text-left md:text-5xl">
             Reserve a table
           </h2>
-          <p className="mt-3 font-sans text-sm text-linen/90">
-            For parties larger than 8 or private events, call us at{' '}
-            <a
-              href={`tel:${CONTACT.phone.replace(/\D/g, '')}`}
-              className="text-gold underline underline-offset-2"
-            >
+          <p className="mx-auto mt-3 max-w-xs text-center font-sans text-sm leading-relaxed text-linen/85 md:mx-0 md:max-w-none md:text-left">
+            Dinner Tuesday through Saturday, brunch on Sunday. For parties larger
+            than 8 or private events, call us at{' '}
+            <a href={PHONE_HREF} className="text-gold underline underline-offset-2">
               {CONTACT.phone}
             </a>
+            .
           </p>
 
           {modal}
-          {/* Form */}
-          <form
-            onSubmit={handleSubmit}
-            className="mt-8 flex flex-col gap-5"
-          >
+          <form onSubmit={handleSubmit} className="mt-8 grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-2">
+            {/* FormSubmit honeypot: real visitors never see or fill this. */}
+            <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
 
-            <input
-              type="text"
-              name="name"
-              required
-              placeholder="Your name"
-              className={inputClass}
-            />
-
-            <input
-              type="tel"
-              name="phone"
-              placeholder="(xxx) xxx-xxxx"
-              className={inputClass}
-            />
-
-            <input
-              type="email"
-              name="email"
-              required
-              placeholder="your@email.com"
-              className={inputClass}
-            />
-
-            <input
-              type="date"
-              name="date"
-              required
-              min={today}
-              className={inputClass}
-            />
-
-            {/* Time select with custom chevron */}
-            <div className="relative">
-              <select name="time" required defaultValue="" className={selectClass}>
-                <option value="" disabled className="bg-forest text-white">
-                  Preferred time
-                </option>
-                {[
-                  '5:00 PM', '5:30 PM', '6:00 PM', '6:30 PM',
-                  '7:00 PM', '7:30 PM', '8:00 PM', '8:30 PM',
-                  '9:00 PM', '9:30 PM',
-                ].map((t) => (
-                  <option key={t} value={t} className="bg-forest text-white">
-                    {t}
-                  </option>
-                ))}
-              </select>
-              <SelectChevron />
+            <div className="sm:col-span-2">
+              <label htmlFor="home-name" className={labelClass}>Name</label>
+              <input id="home-name" type="text" name="name" required autoComplete="name" className={inputClass} />
             </div>
 
-            {/* Party size select */}
-            <div className="relative">
-              <select name="party_size" required defaultValue="" className={selectClass}>
-                <option value="" disabled className="bg-forest text-white">
-                  Party size
-                </option>
-                {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
-                  <option key={n} value={n} className="bg-forest text-white">
-                    {n} {n === 1 ? 'guest' : 'guests'}
-                  </option>
-                ))}
-                <option value="9+" className="bg-forest text-white">
-                  9+ guests / please call
-                </option>
-              </select>
-              <SelectChevron />
+            <div>
+              <label htmlFor="home-email" className={labelClass}>Email</label>
+              <input id="home-email" type="email" name="email" required autoComplete="email" inputMode="email" className={inputClass} />
             </div>
 
-            <textarea
-              name="special_requests"
-              rows={3}
-              placeholder="Dietary needs, celebrations, accessibility..."
-              className={`${inputClass} resize-none`}
-            />
+            <div>
+              <label htmlFor="home-phone" className={labelClass}>Phone</label>
+              <input
+                id="home-phone"
+                type="tel"
+                name="phone"
+                autoComplete="tel"
+                inputMode="tel"
+                placeholder="(209) 555-0000"
+                className={inputClass}
+              />
+            </div>
 
-            {/* FormSubmit sends a confirmation email automatically */}
-            <button
-              type="submit"
-              className="mt-1 min-h-[48px] w-full bg-gold py-4 font-sans text-base font-medium text-forest transition-opacity duration-200 hover:opacity-90"
-            >
-              Request Reservation
-            </button>
+            <div>
+              <label htmlFor="home-date" className={labelClass}>Date</label>
+              <input
+                id="home-date"
+                type="date"
+                name="date"
+                required
+                min={minDate}
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                aria-describedby={closedNote ? 'home-date-note' : undefined}
+                className={inputClass}
+              />
+            </div>
 
-            <p className="mt-1 text-center font-sans text-xs text-linen/80">
-              We will confirm within 2 hours during business hours.
-            </p>
+            <div>
+              <label htmlFor="home-time" className={labelClass}>
+                Time{serviceLabel ? ` (${serviceLabel.toLowerCase()})` : ''}
+              </label>
+              <div className="relative">
+                <select
+                  id="home-time"
+                  name="time"
+                  required
+                  defaultValue=""
+                  key={date}
+                  disabled={Boolean(closedNote)}
+                  className={selectClass}
+                >
+                  <option value="" disabled className="bg-forest text-linen">
+                    Select a time
+                  </option>
+                  {slots.map((t) => (
+                    <option key={t} value={t} className="bg-forest text-linen">
+                      {t}
+                    </option>
+                  ))}
+                </select>
+                <SelectChevron />
+              </div>
+            </div>
+
+            {closedNote && (
+              <p id="home-date-note" role="status" className="font-sans text-sm text-gold sm:col-span-2">
+                {closedNote}
+              </p>
+            )}
+
+            <div className="sm:col-span-2">
+              <label htmlFor="home-party" className={labelClass}>Party size</label>
+              <div className="relative">
+                <select id="home-party" name="party_size" required defaultValue="" className={selectClass}>
+                  <option value="" disabled className="bg-forest text-linen">
+                    Select party size
+                  </option>
+                  {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
+                    <option key={n} value={n} className="bg-forest text-linen">
+                      {n} {n === 1 ? 'guest' : 'guests'}
+                    </option>
+                  ))}
+                  <option value="9+" className="bg-forest text-linen">
+                    9+ guests (please call)
+                  </option>
+                </select>
+                <SelectChevron />
+              </div>
+            </div>
+
+            <div className="sm:col-span-2">
+              <label htmlFor="home-requests" className={labelClass}>
+                Dietary needs or occasion <span className="normal-case tracking-normal text-linen/70">(optional)</span>
+              </label>
+              <textarea
+                id="home-requests"
+                name="special_requests"
+                rows={2}
+                placeholder="Allergies, a birthday, accessibility needs..."
+                className={`${inputClass} resize-none`}
+              />
+            </div>
+
+            <div className="sm:col-span-2">
+              <button
+                type="submit"
+                className="mt-2 min-h-[52px] w-full rounded-full bg-gold py-4 font-sans text-base font-medium text-forest transition-all duration-300 hover:scale-[1.01] hover:bg-gold/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
+              >
+                Request Reservation
+              </button>
+              <p className="mt-3 text-center font-sans text-xs text-linen/75">
+                We confirm every request within 2 hours during business hours.
+              </p>
+            </div>
           </form>
         </div>
       </div>
@@ -176,9 +209,9 @@ export default function ReservationSection() {
       {/* RIGHT: image column (45%) */}
       <div
         ref={imageRef}
-        className="relative h-[300px] overflow-hidden md:h-auto md:min-h-full md:w-[45%] md:self-stretch"
+        className="relative h-[280px] overflow-hidden md:h-auto md:min-h-full md:w-[45%] md:self-stretch"
       >
-        <motion.div style={{ y: imageY }} className="absolute inset-0 scale-110">
+        <m.div style={{ y: imageY }} className="absolute inset-0 scale-110">
           <Image
             src={asset('/images/restaurant-interior.webp')}
             alt="The warm, wood-paneled dining room at Harvest Table"
@@ -186,7 +219,7 @@ export default function ReservationSection() {
             className="object-cover"
             sizes="(min-width: 768px) 45vw, 100vw"
           />
-        </motion.div>
+        </m.div>
         {/* Subtle forest color wash over the photo */}
         <div className="absolute inset-0 bg-forest/20" />
       </div>

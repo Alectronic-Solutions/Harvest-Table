@@ -1,5 +1,5 @@
 // Generates raster brand assets (PWA icons + OG social preview image) from the
-// existing SVG logo mark, so they can't visually drift from the brand.
+// existing SVG logo mark and site photography, so they can't drift from the brand.
 // Run manually: node scripts/generate-brand-assets.mjs
 
 import sharp from 'sharp';
@@ -28,33 +28,45 @@ async function generateIcons() {
   }
 }
 
+// Social preview: the dining room photo, darkened toward the left, with the
+// logo, name, and tagline set over it. Written as JPEG to keep it small.
 async function generateOgImage() {
   const width = 1200;
   const height = 630;
-  const logoSize = 220;
+  const logoSize = 120;
 
-  const ogSvg = `
+  const photo = await sharp(path.join(publicDir, 'images', 'space-wide.webp'))
+    .resize(width, height, { fit: 'cover', position: 'centre' })
+    .toBuffer();
+
+  const overlaySvg = `
     <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
-      <rect width="${width}" height="${height}" fill="#2C3B2D"/>
-      <rect x="24" y="24" width="${width - 48}" height="${height - 48}" fill="none" stroke="#D4A843" stroke-opacity="0.35" stroke-width="1.5"/>
-      <text x="${width / 2}" y="${height / 2 + logoSize / 2 + 92}" font-family="Georgia, 'Cormorant Garamond', serif" font-size="72" font-weight="600" fill="#F0EBE1" text-anchor="middle" letter-spacing="4">Harvest Table</text>
-      <text x="${width / 2}" y="${height / 2 + logoSize / 2 + 140}" font-family="Georgia, monospace" font-size="22" fill="#D4A843" text-anchor="middle" letter-spacing="6">FARM-TO-TABLE IN LODI, CA</text>
+      <defs>
+        <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#2C3B2D" stop-opacity="0.96"/>
+          <stop offset="0.45" stop-color="#2C3B2D" stop-opacity="0.82"/>
+          <stop offset="1" stop-color="#2C3B2D" stop-opacity="0.15"/>
+        </linearGradient>
+      </defs>
+      <rect width="${width}" height="${height}" fill="url(#fade)"/>
+      <rect x="24" y="24" width="${width - 48}" height="${height - 48}" fill="none" stroke="#D4A843" stroke-opacity="0.45" stroke-width="1.5"/>
+      <text x="80" y="330" font-family="Georgia, 'Cormorant Garamond', serif" font-size="76" font-weight="600" fill="#F0EBE1" letter-spacing="2">Harvest Table</text>
+      <text x="82" y="382" font-family="Consolas, 'DM Mono', monospace" font-size="22" fill="#D4A843" letter-spacing="5">FARM-TO-TABLE IN LODI, CA</text>
+      <text x="82" y="450" font-family="Georgia, serif" font-size="28" font-style="italic" fill="#F0EBE1" fill-opacity="0.85">Every dish sourced within 60 miles.</text>
+      <text x="82" y="490" font-family="Georgia, serif" font-size="28" font-style="italic" fill="#F0EBE1" fill-opacity="0.85">Every farm named on the menu.</text>
     </svg>
   `;
 
   const logoBuffer = await sharp(logoSvg).resize(logoSize, logoSize).png().toBuffer();
 
-  await sharp(Buffer.from(ogSvg))
+  await sharp(photo)
     .composite([
-      {
-        input: logoBuffer,
-        top: Math.round(height / 2 - logoSize / 2 - 60),
-        left: Math.round(width / 2 - logoSize / 2),
-      },
+      { input: Buffer.from(overlaySvg), top: 0, left: 0 },
+      { input: logoBuffer, top: 130, left: 76 },
     ])
-    .png()
-    .toFile(path.join(publicDir, 'og-image.png'));
-  console.log('Wrote og-image.png');
+    .jpeg({ quality: 86, mozjpeg: true })
+    .toFile(path.join(publicDir, 'og-image.jpg'));
+  console.log('Wrote og-image.jpg');
 }
 
 function generateManifest() {

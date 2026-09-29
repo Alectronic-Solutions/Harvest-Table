@@ -1,18 +1,20 @@
-import type { Metadata } from 'next';
-import { SITE_URL } from '@/lib/basePath';
-import { pageOpenGraph } from '@/lib/metadata';
+import { pageMetadata } from '@/lib/metadata';
+import { breadcrumbSchema } from '@/lib/schema';
+import JsonLd from '@/components/JsonLd';
 import ContactClient from './ContactClient';
 
-const description =
-  'Get in touch with Harvest Table in Lodi, CA. Reservations, private dining inquiries, press, and careers.';
-
-export const metadata: Metadata = {
-  title: 'Contact',
-  description,
-  alternates: { canonical: `${SITE_URL}/contact` },
-  openGraph: pageOpenGraph({ title: 'Contact | Harvest Table', description, path: '/contact' }),
-};
+export const metadata = pageMetadata({
+  title: 'Contact & Directions',
+  description:
+    'Find Harvest Table at 214 Main Street in downtown Lodi, CA. Hours, directions, parking, private dining inquiries, press, and careers.',
+  path: '/contact',
+});
 
 export default function ContactPage() {
-  return <ContactClient />;
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema('Contact', '/contact')} />
+      <ContactClient />
+    </>
+  );
 }

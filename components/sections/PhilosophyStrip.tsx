@@ -1,36 +1,42 @@
 'use client';
 
-// One job: impact section directly below the hero. Top half: four animated
-// stat counters that tick up on scroll entry. Bottom half: three philosophy
-// pillars with stronger typography.
+// One job: impact section directly below the hero. Top half: four stat
+// counters that tick up as they approach the viewport (the static HTML carries
+// the real numbers for crawlers and no-JS visitors). Bottom half: three
+// philosophy pillars.
 
 import { useEffect, useRef, useState } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { m, useInView } from 'framer-motion';
+import { FARMERS } from '@/data/farmers';
 
 // ── Stat counter ─────────────────────────────────────────────────────────────
 
 const STATS = [
   { value: 60,  suffix: ' mi',  label: 'Sourcing radius',      decimals: 0 },
-  { value: 12,  suffix: '+',    label: 'Farm partners',         decimals: 0 },
+  { value: FARMERS.length, suffix: '', label: 'Farm partners', decimals: 0 },
   { value: 98,  suffix: '%',    label: 'Locally sourced',       decimals: 0 },
   { value: 4,   suffix: '',     label: 'Seasons on the menu',   decimals: 0 },
 ];
 
 function useCounter(target: number, decimals: number, active: boolean, duration = 1400) {
-  const [count, setCount] = useState(0);
+  // Starts at the real value so the server-rendered HTML is accurate.
+  const [count, setCount] = useState(target);
 
   useEffect(() => {
     if (!active) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     let start: number | null = null;
+    let frame = 0;
     const step = (ts: number) => {
       if (!start) start = ts;
       const progress = Math.min((ts - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
       setCount(parseFloat((eased * target).toFixed(decimals)));
-      if (progress < 1) requestAnimationFrame(step);
+      if (progress < 1) frame = requestAnimationFrame(step);
       else setCount(target);
     };
-    requestAnimationFrame(step);
+    frame = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(frame);
   }, [active, target, decimals, duration]);
 
   return count;
@@ -76,10 +82,13 @@ const pillars = [
 
 export default function PhilosophyStrip() {
   const statsRef = useRef<HTMLDivElement>(null);
-  const statsInView = useInView(statsRef, { once: true, margin: '-60px' });
+  // Fires just before the stats scroll into view, so the reset to zero
+  // happens off screen and the visitor sees the count climb.
+  const statsInView = useInView(statsRef, { once: true, margin: '0px 0px 120px 0px' });
 
   return (
-    <section className="bg-forest">
+    <section aria-labelledby="philosophy-heading" className="bg-forest">
+      <h2 id="philosophy-heading" className="sr-only">How we source and cook</h2>
 
       {/* Stat counters */}
       <div
@@ -104,7 +113,7 @@ export default function PhilosophyStrip() {
       </div>
 
       {/* Philosophy pillars */}
-      <motion.div
+      <m.div
         className="mx-auto grid max-w-content grid-cols-1 gap-0 px-5 py-16 md:grid-cols-3 md:px-8 md:py-20"
         initial="hidden"
         whileInView="visible"
@@ -112,27 +121,27 @@ export default function PhilosophyStrip() {
         variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.15 } } }}
       >
         {pillars.map(({ headline, body }, i) => (
-          <motion.div
+          <m.div
             key={headline}
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
             }}
-            className={`flex flex-col gap-4 px-0 py-10 md:py-0 md:px-10 ${
+            className={`flex flex-col items-center gap-4 px-0 py-10 text-center md:items-start md:py-0 md:px-10 md:text-left ${
               i < pillars.length - 1
                 ? 'border-b border-gold/10 md:border-b-0 md:border-r md:border-r-gold/10'
                 : ''
             }`}
           >
-            <h2 className="font-display text-2xl font-semibold text-linen">
+            <h3 className="font-display text-2xl font-semibold text-linen">
               {headline}
-            </h2>
+            </h3>
             <p className="font-sans text-sm leading-relaxed text-linen/80">
               {body}
             </p>
-          </motion.div>
+          </m.div>
         ))}
-      </motion.div>
+      </m.div>
 
     </section>
   );

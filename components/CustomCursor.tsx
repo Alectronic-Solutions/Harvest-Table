@@ -19,21 +19,30 @@ export default function CustomCursor() {
   // Smoothed position for the ring (lerped).
   const ring  = useRef({ x: -100, y: -100 });
   const rafId = useRef<number>(0);
+  // Tracked in a ref so the effect below subscribes once, not on every show/hide.
+  const visibleRef = useRef(false);
 
   useEffect(() => {
-    // Skip on touch-primary devices.
+    // Skip on touch-primary devices and for visitors who prefer reduced motion.
     if (window.matchMedia('(hover: none)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const show = (v: boolean) => {
+      if (visibleRef.current === v) return;
+      visibleRef.current = v;
+      setVisible(v);
+    };
 
     // Add class to body for CSS cursor hiding
     document.body.classList.add('custom-cursor-active');
 
     const onMove = (e: MouseEvent) => {
       mouse.current = { x: e.clientX, y: e.clientY };
-      if (!visible) setVisible(true);
+      show(true);
     };
 
-    const onLeave = () => setVisible(false);
-    const onEnter = () => setVisible(true);
+    const onLeave = () => show(false);
+    const onEnter = () => show(true);
 
     // Detect interactive elements for the expanded state.
     const onOver = (e: MouseEvent) => {
@@ -74,7 +83,7 @@ export default function CustomCursor() {
       cancelAnimationFrame(rafId.current);
       document.body.classList.remove('custom-cursor-active');
     };
-  }, [visible]);
+  }, []);
 
   return (
     <>

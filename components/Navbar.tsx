@@ -1,17 +1,19 @@
 'use client';
 
-// One job: sticky primary navigation. Transparent with dark ink text over the
-// linen page; transitions to solid forest with linen text once scrolled past
-// the hero. Logo centered (restaurant convention). Mobile: hamburger opens a
-// full-screen overlay.
+// One job: sticky primary navigation. Translucent linen bar with the logo on
+// the left, links in the center, and the Reserve CTA on the right; it firms
+// up with a shadow once scrolled. Mobile: click-to-call plus a hamburger that
+// opens a full-screen overlay.
 
 import { useEffect, useState, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, m } from 'framer-motion';
 import { asset } from '@/lib/basePath';
-import { CONTACT } from '@/data/restaurant';
+import { CONTACT, PHONE_HREF } from '@/data/restaurant';
+import { useFocusTrap } from '@/lib/useFocusTrap';
 
 const LINKS = [
   { label: 'Menu', href: '/menu' },
@@ -28,6 +30,12 @@ export default function Navbar() {
   const [mounted, setMounted] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
+  const wasOpenRef = useRef(false);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  // Keep Tab inside the open menu (plus the hamburger, which closes it).
+  useFocusTrap([menuButtonRef, dialogRef], menuOpen);
+  const pathname = usePathname();
+  const isActive = (href: string) => pathname?.replace(/\/$/, '').endsWith(href) ?? false;
 
   useEffect(() => {
     setMounted(true);
@@ -43,12 +51,14 @@ export default function Navbar() {
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
 
-    // Focus management for mobile menu
+    // Focus management for mobile menu. Only return focus to the hamburger
+    // when the menu actually closes, never on first render.
     if (menuOpen && firstLinkRef.current) {
       firstLinkRef.current.focus();
-    } else if (!menuOpen && menuButtonRef.current) {
+    } else if (!menuOpen && wasOpenRef.current && menuButtonRef.current) {
       menuButtonRef.current.focus();
     }
+    wasOpenRef.current = menuOpen;
 
     if (!menuOpen) return () => { document.body.style.overflow = ''; };
 
@@ -106,7 +116,10 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className={`link-underline font-sans text-sm font-medium transition-colors duration-300 ${textColor} ${solid ? 'opacity-80 hover:opacity-100' : 'opacity-100'} focus:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded`}
+                aria-current={isActive(link.href) ? 'page' : undefined}
+                className={`link-underline font-sans text-sm font-medium transition-colors duration-300 ${textColor} ${
+                  isActive(link.href) ? 'bg-[length:100%_1px] text-forest' : solid ? 'opacity-80 hover:opacity-100' : 'opacity-100'
+                } focus:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded`}
               >
                 {link.label}
               </Link>
@@ -116,6 +129,15 @@ export default function Navbar() {
 
         {/* Right: mobile hamburger + desktop reserve CTA */}
         <div className="flex items-center justify-end">
+          <a
+            href={PHONE_HREF}
+            aria-label={`Call ${CONTACT.name} at ${CONTACT.phone}`}
+            className="flex h-12 w-12 items-center justify-center text-ink md:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+          >
+            <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z" />
+            </svg>
+          </a>
           <button
             ref={menuButtonRef}
             type="button"
@@ -153,7 +175,8 @@ export default function Navbar() {
       {mounted && createPortal(
         <AnimatePresence>
           {menuOpen && (
-            <motion.div
+            <m.div
+              ref={dialogRef}
               role="dialog"
               aria-modal="true"
               aria-label="Mobile navigation"
@@ -163,9 +186,9 @@ export default function Navbar() {
               transition={{ duration: 0.25, ease: 'easeOut' }}
               className="fixed inset-0 top-16 z-40 flex flex-col bg-forest pb-10 pt-8 shadow-[0_24px_60px_rgba(0,0,0,0.35)] md:top-20 md:hidden"
             >
-              <ul className="flex flex-1 flex-col justify-center gap-1 px-8" role="menu">
+              <ul className="flex flex-1 flex-col justify-center gap-1 px-8">
                 {LINKS.map((link, i) => (
-                  <motion.li
+                  <m.li
                     key={link.href}
                     initial={{ opacity: 0, x: -16 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -179,12 +202,14 @@ export default function Navbar() {
                       ref={i === 0 ? firstLinkRef : null}
                       href={link.href}
                       onClick={() => setMenuOpen(false)}
-                      className="font-display text-4xl font-light leading-none text-linen transition-colors duration-200 hover:text-gold focus:outline-none focus-visible:text-gold focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
-                      role="menuitem"
+                      aria-current={isActive(link.href) ? 'page' : undefined}
+                      className={`font-display text-4xl font-light leading-none transition-colors duration-200 hover:text-gold focus:outline-none focus-visible:text-gold focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-forest ${
+                        isActive(link.href) ? 'text-gold' : 'text-linen'
+                      }`}
                     >
                       {link.label}
                     </Link>
-                  </motion.li>
+                  </m.li>
                 ))}
               </ul>
 
@@ -197,14 +222,14 @@ export default function Navbar() {
                   Reserve a Table
                 </Link>
                 <a
-                  href={`tel:${CONTACT.phone.replace(/\D/g, '')}`}
+                  href={PHONE_HREF}
                   onClick={() => setMenuOpen(false)}
-                  className="mt-4 block text-center font-mono text-[11px] tracking-[0.1em] text-linen/50 transition-colors duration-200 hover:text-gold focus:outline-none focus-visible:text-gold"
+                  className="mt-2 flex min-h-[48px] items-center justify-center font-mono text-xs tracking-[0.1em] text-linen/70 transition-colors duration-200 hover:text-gold focus:outline-none focus-visible:text-gold"
                 >
                   {CONTACT.phone}
                 </a>
               </div>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>,
         document.body

@@ -1,22 +1,20 @@
-import type { Metadata } from 'next';
-import { SITE_URL } from '@/lib/basePath';
-import { pageOpenGraph } from '@/lib/metadata';
+import { pageMetadata } from '@/lib/metadata';
+import { breadcrumbSchema } from '@/lib/schema';
+import JsonLd from '@/components/JsonLd';
 import FarmersClient from './FarmersClient';
 
-const description =
-  'We source from 12 farms within 60 miles. Meet the people who grow what we cook.';
-
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: 'Our Farm Partners',
-  description,
-  alternates: { canonical: `${SITE_URL}/farmers` },
-  openGraph: pageOpenGraph({
-    title: 'Our Farm Partners | Harvest Table',
-    description,
-    path: '/farmers',
-  }),
-};
+  description:
+    'Meet the fifteen farms, ranches, and producers within 60 miles of Lodi, CA who grow what we cook. Every dish on our menu names its farm.',
+  path: '/farmers',
+});
 
 export default function FarmersPage() {
-  return <FarmersClient />;
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema('Farm Partners', '/farmers')} />
+      <FarmersClient />
+    </>
+  );
 }

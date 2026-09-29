@@ -1,22 +1,21 @@
-import type { Metadata } from 'next';
-import { SITE_URL } from '@/lib/basePath';
-import { pageOpenGraph } from '@/lib/metadata';
+import { pageMetadata } from '@/lib/metadata';
+import { RESERVATION_FAQS } from '@/data/faq';
+import { breadcrumbSchema, faqSchema } from '@/lib/schema';
+import JsonLd from '@/components/JsonLd';
 import ReservationsClient from './ReservationsClient';
 
-const description =
-  'Reserve a table at Harvest Table in Lodi, CA. Dinner Tuesday through Sunday. Brunch on Sunday.';
-
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: 'Reserve a Table',
-  description,
-  alternates: { canonical: `${SITE_URL}/reservations` },
-  openGraph: pageOpenGraph({
-    title: 'Reserve a Table | Harvest Table',
-    description,
-    path: '/reservations',
-  }),
-};
+  description:
+    'Reserve a table at Harvest Table in Lodi, CA. Dinner Tuesday through Saturday from 5 pm, brunch Sunday 10 am to 2 pm. Walk-ins welcome at the bar.',
+  path: '/reservations',
+});
 
 export default function ReservationsPage() {
-  return <ReservationsClient />;
+  return (
+    <>
+      <JsonLd data={[faqSchema(RESERVATION_FAQS), breadcrumbSchema('Reservations', '/reservations')]} />
+      <ReservationsClient />
+    </>
+  );
 }

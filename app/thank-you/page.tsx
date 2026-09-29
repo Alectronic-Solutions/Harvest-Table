@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { pageUrl } from '@/lib/basePath';
 
 export const metadata: Metadata = {
   title: 'Thank You',
   description: 'Your message has been received.',
+  robots: { index: false, follow: true },
+  alternates: { canonical: pageUrl('/thank-you') },
 };
 
 export default function ThankYouPage() {
@@ -20,7 +23,7 @@ export default function ThankYouPage() {
         </p>
         <Link
           href="/"
-          className="mt-8 inline-flex min-h-[48px] items-center bg-gold px-8 py-3 font-sans text-sm font-medium text-forest transition-opacity hover:opacity-90"
+          className="mt-8 inline-flex min-h-[48px] items-center rounded-full bg-gold px-8 py-3 font-sans text-sm font-medium text-forest transition-opacity hover:opacity-90"
         >
           Back to home
         </Link>

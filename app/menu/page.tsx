@@ -1,27 +1,21 @@
-import type { Metadata } from 'next';
-import { SITE_URL } from '@/lib/basePath';
-import { pageOpenGraph } from '@/lib/metadata';
+import { pageMetadata } from '@/lib/metadata';
 import { MENU } from '@/data/menu';
-import { menuSchema } from '@/lib/schema';
+import { CURRENT_SEASON } from '@/data/restaurant';
+import { breadcrumbSchema, menuSchema } from '@/lib/schema';
+import JsonLd from '@/components/JsonLd';
 import MenuClient from './MenuClient';
 
-const description =
-  'Our seasonal menu changes with the harvest. Every dish names its farm source. Current as of Summer 2026.';
-
-export const metadata: Metadata = {
-  title: 'Menu',
-  description,
-  alternates: { canonical: `${SITE_URL}/menu` },
-  openGraph: pageOpenGraph({ title: 'Menu | Harvest Table', description, path: '/menu' }),
-};
+export const metadata = pageMetadata({
+  title: `${CURRENT_SEASON} Menu`,
+  description: `Our ${CURRENT_SEASON} farm-to-table menu in Lodi, CA. Every dish names the farm it came from, all within 60 miles. Vegetarian, vegan, and gluten-free options marked.`,
+  path: '/menu',
+  image: { url: '/images/dish-ribeye.webp', width: 1440, height: 1080, alt: 'Grass-fed ribeye with bone marrow butter and charred radicchio' },
+});
 
 export default function MenuPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(menuSchema(MENU)) }}
-      />
+      <JsonLd data={[menuSchema(MENU), breadcrumbSchema('Menu', '/menu')]} />
       <MenuClient />
     </>
   );

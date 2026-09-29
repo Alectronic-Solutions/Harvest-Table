@@ -1,28 +1,24 @@
 'use client';
 
-// One job: full-bleed hero with a crossfading video background, staggered
-// entry animations, and a scroll-progress chevron.
+// One job: full-bleed hero that answers the three questions every diner
+// arrives with: what kind of food, where, and how to get a table. Video
+// background on desktop, poster image on mobile, staggered entry animation.
 
-import Link from 'next/link';
 import HeroVideoBackground from './HeroVideoBackground';
-import { motion, useScroll, AnimatePresence } from 'framer-motion';
+import { m, useScroll, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
-
+import { ButtonLink } from '@/components/ui/Button';
+import { CONTACT, PHONE_HREF } from '@/data/restaurant';
 
 const contentVariants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.2 } },
+  visible: { transition: { staggerChildren: 0.18, delayChildren: 0.1 } },
 };
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
 };
-
-const fadeIn = (delay: number) => ({
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.7, ease: 'easeOut', delay } },
-});
 
 export default function Hero() {
   const { scrollY } = useScroll();
@@ -34,7 +30,10 @@ export default function Hero() {
   }, [scrollY]);
 
   return (
-    <section className="relative flex h-[calc(100svh-100px)] min-h-[520px] items-center justify-center overflow-hidden md:h-[calc(100svh-116px)]">
+    <section
+      aria-label="Welcome"
+      className="relative flex h-[calc(100svh-var(--seasonal-strip-height)-var(--nav-height))] min-h-[560px] items-center justify-center overflow-hidden"
+    >
       <HeroVideoBackground />
 
       {/* Layered overlays: base dark wash, focused contrast scrim behind the
@@ -47,56 +46,70 @@ export default function Hero() {
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-forest/40" />
 
       {/* Content */}
-      <motion.div
-        className="relative z-10 mx-auto max-w-content px-5 text-center md:px-8"
+      <m.div
+        className="relative z-10 mx-auto w-full max-w-content px-5 text-center md:px-8"
         variants={contentVariants}
         initial="hidden"
         animate="visible"
       >
-        <motion.h1
+        <m.h1
           variants={fadeUp}
-          className="font-display text-4xl font-semibold leading-none text-linen md:text-[clamp(4rem,10vw,6rem)]"
-          style={{ transitionDelay: '0.5s', textShadow: '0 2px 24px rgba(0,0,0,0.35)' }}
+          className="font-display text-5xl font-semibold leading-[0.95] text-linen sm:text-6xl md:text-[clamp(4rem,9vw,6.5rem)]"
+          style={{ textShadow: '0 2px 24px rgba(0,0,0,0.35)' }}
         >
           Honest food.
           <br />
           In season.
           <br />
           Right now.
-        </motion.h1>
+        </m.h1>
 
-        <motion.p
-          variants={fadeIn(1.2)}
-          className="mx-auto mt-6 max-w-md font-sans text-lg leading-relaxed text-linen/80"
+        <m.p
+          variants={fadeUp}
+          className="mx-auto mt-6 max-w-md font-sans text-base leading-relaxed text-linen/85 md:text-lg"
           style={{ textShadow: '0 1px 12px rgba(0,0,0,0.3)' }}
         >
-          Sourced from farms within 60 miles.
-          <br />
-          Changed when the land says so.
-        </motion.p>
+          Farm-to-table dining in downtown Lodi, sourced from farms within
+          60 miles and changed when the land says so.
+        </m.p>
 
-        <motion.div variants={fadeIn(1.5)}>
-          <Link
-            href="/reservations"
-            className="mt-8 flex w-full min-h-[48px] items-center justify-center rounded-full bg-gold px-8 py-4 font-sans text-base font-medium text-forest transition-all duration-300 hover:opacity-95 hover:scale-[1.02] md:inline-flex md:w-auto"
-            style={{ boxShadow: '0 0 32px rgba(212,168,67,0.35), inset 0 1px 0 rgba(255,255,255,0.2)' }}
-          >
+        <m.div
+          variants={fadeUp}
+          className="mx-auto mt-8 flex max-w-xs flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center"
+        >
+          <ButtonLink href="/reservations" tone="dark">
             Reserve a Table
-          </Link>
-        </motion.div>
-      </motion.div>
+          </ButtonLink>
+          <ButtonLink href="/menu" variant="outline" tone="dark">
+            View the Menu
+          </ButtonLink>
+        </m.div>
+
+        <m.div
+          variants={fadeUp}
+          className="mt-8 flex flex-col items-center gap-1 font-mono text-[11px] uppercase tracking-[0.12em] text-linen/70 sm:flex-row sm:justify-center sm:gap-3"
+        >
+          <span>{CONTACT.address}, {CONTACT.locality}</span>
+          <span className="hidden h-1 w-1 rotate-45 bg-gold/60 sm:inline-block" aria-hidden />
+          <span>Dinner Tue to Sat · Brunch Sun</span>
+          <span className="hidden h-1 w-1 rotate-45 bg-gold/60 sm:inline-block" aria-hidden />
+          <a href={PHONE_HREF} className="inline-flex min-h-[32px] items-center transition-colors hover:text-gold">
+            {CONTACT.phone}
+          </a>
+        </m.div>
+      </m.div>
 
       {/* Scroll chevron */}
       <AnimatePresence>
         {showChevron && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2"
+            className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 md:block"
             aria-hidden
           >
-            <motion.svg
+            <m.svg
               animate={{ y: [0, 6, 0] }}
               transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
               width={24}
@@ -110,8 +123,8 @@ export default function Hero() {
               className="text-linen/80"
             >
               <path d="M6 9l6 6 6-6" />
-            </motion.svg>
-          </motion.div>
+            </m.svg>
+          </m.div>
         )}
       </AnimatePresence>
     </section>

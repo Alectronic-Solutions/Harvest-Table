@@ -1,0 +1,424 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - paragraph [ref=e4]: Fall 2026 · Menu changes with the harvest
+  - banner [ref=e5]:
+    - navigation [ref=e6]:
+      - link "Harvest Table" [ref=e8] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e9]: Harvest Table
+      - list [ref=e10]:
+        - listitem [ref=e11]:
+          - link "Menu" [ref=e12] [cursor=pointer]:
+            - /url: /menu/
+        - listitem [ref=e13]:
+          - link "Farmers" [ref=e14] [cursor=pointer]:
+            - /url: /farmers/
+        - listitem [ref=e15]:
+          - link "Reservations" [ref=e16] [cursor=pointer]:
+            - /url: /reservations/
+        - listitem [ref=e17]:
+          - link "Events" [ref=e18] [cursor=pointer]:
+            - /url: /events/
+        - listitem [ref=e19]:
+          - link "About" [ref=e20] [cursor=pointer]:
+            - /url: /about/
+        - listitem [ref=e21]:
+          - link "Contact" [ref=e22] [cursor=pointer]:
+            - /url: /contact/
+      - link "Reserve a Table" [ref=e24] [cursor=pointer]:
+        - /url: /reservations/
+  - main [ref=e26]:
+    - region "Welcome" [ref=e27]:
+      - generic [ref=e34]:
+        - heading "Honest food. In season. Right now." [level=1] [ref=e35]:
+          - text: Honest food.
+          - text: In season.
+          - text: Right now.
+        - paragraph [ref=e36]: Farm-to-table dining in downtown Lodi, sourced from farms within 60 miles and changed when the land says so.
+        - generic [ref=e37]:
+          - link "Reserve a Table" [ref=e38] [cursor=pointer]:
+            - /url: /reservations/
+          - link "View the Menu" [ref=e39] [cursor=pointer]:
+            - /url: /menu/
+        - generic [ref=e40]:
+          - generic [ref=e41]: 214 Main Street, Lodi
+          - generic [ref=e43]: Dinner Tue to Sat · Brunch Sun
+          - link "(209) 555-0182" [ref=e45] [cursor=pointer]:
+            - /url: tel:+12095550182
+      - img [ref=e47]
+    - region "How we source and cook" [ref=e49]:
+      - heading "How we source and cook" [level=2] [ref=e50]
+      - generic [ref=e51]:
+        - generic [ref=e53]:
+          - paragraph [ref=e54]: 60 mi
+          - paragraph [ref=e55]: Sourcing radius
+        - generic [ref=e57]:
+          - paragraph [ref=e58]: "15"
+          - paragraph [ref=e59]: Farm partners
+        - generic [ref=e61]:
+          - paragraph [ref=e62]: 98%
+          - paragraph [ref=e63]: Locally sourced
+        - generic [ref=e65]:
+          - paragraph [ref=e66]: "4"
+          - paragraph [ref=e67]: Seasons on the menu
+      - generic [ref=e70]:
+        - generic [ref=e71]:
+          - heading "Sourced within 60 miles" [level=3] [ref=e72]
+          - paragraph [ref=e73]: Every ingredient on this menu has a farm, a face, and a story behind it. We list them all.
+        - generic [ref=e74]:
+          - heading "Named by the farmer" [level=3] [ref=e75]
+          - paragraph [ref=e76]: You will see the farm name on every dish. We think you should know where your food comes from.
+        - generic [ref=e77]:
+          - heading "Cooked to order" [level=3] [ref=e78]
+          - paragraph [ref=e79]: We do not hold food under heat lamps. Your plate leaves the kitchen the moment it is ready.
+    - region "This season's menu" [ref=e80]:
+      - generic [ref=e81]:
+        - generic [ref=e82]:
+          - generic [ref=e83]:
+            - heading "This season's menu" [level=2] [ref=e84]
+            - paragraph [ref=e85]: A few of the mains on our Fall 2026 menu. Every plate names the farm it came from.
+          - link "View the full menu →" [ref=e86] [cursor=pointer]:
+            - /url: /menu/
+        - generic [ref=e87]:
+          - article [ref=e88]:
+            - 'link "Grass-Fed Ribeye: Twelve ounces over oak coals, bone marrow butter, roasted fingerlings, and charred radicchio. Grass-Fed Ribeye Five Mile Cattle Co., Galt $46 Twelve ounces over oak coals, bone marrow butter, roasted fingerlings, and charred radicchio. Dietary information" [ref=e89] [cursor=pointer]':
+              - /url: /menu/#mains
+              - 'img "Grass-Fed Ribeye: Twelve ounces over oak coals, bone marrow butter, roasted fingerlings, and charred radicchio." [ref=e92]'
+              - generic [ref=e93]:
+                - generic [ref=e94]:
+                  - heading "Grass-Fed Ribeye" [level=3] [ref=e95]
+                  - paragraph [ref=e96]: Five Mile Cattle Co., Galt
+                - paragraph [ref=e97]: $46
+              - paragraph [ref=e98]: Twelve ounces over oak coals, bone marrow butter, roasted fingerlings, and charred radicchio.
+              - list "Dietary information" [ref=e99]:
+                - listitem "Gluten-free" [ref=e100]:
+                  - text: GF
+                  - generic [ref=e101]: Gluten-free
+          - article [ref=e102]:
+            - 'link "Pan-Roasted Half Chicken: Brined and crisped to order, over stone-ground heirloom polenta with maitake and pan jus. Pan-Roasted Half Chicken Meadowlark Poultry, Dixon $31 Brined and crisped to order, over stone-ground heirloom polenta with maitake and pan jus. Dietary information" [ref=e103] [cursor=pointer]':
+              - /url: /menu/#mains
+              - 'img "Pan-Roasted Half Chicken: Brined and crisped to order, over stone-ground heirloom polenta with maitake and pan jus." [ref=e106]'
+              - generic [ref=e107]:
+                - generic [ref=e108]:
+                  - heading "Pan-Roasted Half Chicken" [level=3] [ref=e109]
+                  - paragraph [ref=e110]: Meadowlark Poultry, Dixon
+                - paragraph [ref=e111]: $31
+              - paragraph [ref=e112]: Brined and crisped to order, over stone-ground heirloom polenta with maitake and pan jus.
+              - list "Dietary information" [ref=e113]:
+                - listitem "Gluten-free" [ref=e114]:
+                  - text: GF
+                  - generic [ref=e115]: Gluten-free
+          - article [ref=e116]:
+            - 'link "Wild Mushroom Risotto: Carnaroli rice folded with chanterelles and maitake, aged parmesan, and fresh thyme. Seasonal Wild Mushroom Risotto Foggy Hollow Mushrooms, Placerville $28 Carnaroli rice folded with chanterelles and maitake, aged parmesan, and fresh thyme. Dietary information" [ref=e117] [cursor=pointer]':
+              - /url: /menu/#mains
+              - generic [ref=e118]:
+                - 'img "Wild Mushroom Risotto: Carnaroli rice folded with chanterelles and maitake, aged parmesan, and fresh thyme." [ref=e120]'
+                - generic [ref=e121]: Seasonal
+              - generic [ref=e122]:
+                - generic [ref=e123]:
+                  - heading "Wild Mushroom Risotto" [level=3] [ref=e124]
+                  - paragraph [ref=e125]: Foggy Hollow Mushrooms, Placerville
+                - paragraph [ref=e126]: $28
+              - paragraph [ref=e127]: Carnaroli rice folded with chanterelles and maitake, aged parmesan, and fresh thyme.
+              - list "Dietary information" [ref=e128]:
+                - listitem "Vegetarian" [ref=e129]:
+                  - text: V
+                  - generic [ref=e130]: Vegetarian
+                - listitem "Gluten-free" [ref=e131]:
+                  - text: GF
+                  - generic [ref=e132]: Gluten-free
+          - article [ref=e133]:
+            - 'link "Seared White Sturgeon: Basted in brown butter, set over braised cranberry beans and a bright salsa verde. Seasonal Seared White Sturgeon Two Rivers Aquafarm, Elverta $36 Basted in brown butter, set over braised cranberry beans and a bright salsa verde. Dietary information" [ref=e134] [cursor=pointer]':
+              - /url: /menu/#mains
+              - generic [ref=e135]:
+                - 'img "Seared White Sturgeon: Basted in brown butter, set over braised cranberry beans and a bright salsa verde." [ref=e137]'
+                - generic [ref=e138]: Seasonal
+              - generic [ref=e139]:
+                - generic [ref=e140]:
+                  - heading "Seared White Sturgeon" [level=3] [ref=e141]
+                  - paragraph [ref=e142]: Two Rivers Aquafarm, Elverta
+                - paragraph [ref=e143]: $36
+              - paragraph [ref=e144]: Basted in brown butter, set over braised cranberry beans and a bright salsa verde.
+              - list "Dietary information" [ref=e145]:
+                - listitem "Gluten-free" [ref=e146]:
+                  - text: GF
+                  - generic [ref=e147]: Gluten-free
+    - region "Meet our farmers" [ref=e148]:
+      - generic [ref=e149]:
+        - generic [ref=e150]:
+          - heading "Meet our farmers" [level=2] [ref=e151]
+          - paragraph [ref=e152]: We visit every farm before we put it on the menu. These are the people who make this food possible.
+        - generic [ref=e153]:
+          - article [ref=e154]:
+            - img "Tom Reyes of Sunnyside Farm" [ref=e157]
+            - generic [ref=e158]:
+              - heading "Sunnyside Farm" [level=3] [ref=e159]
+              - paragraph [ref=e160]: Tom Reyes
+              - paragraph [ref=e161]: Lodi, CA · 12 miles
+              - generic [ref=e162]:
+                - generic [ref=e163]: Chioggia beets
+                - generic [ref=e164]: Radicchio and chicories
+                - generic [ref=e165]: Edible flowers
+              - paragraph [ref=e166]: Partners since 2019
+          - article [ref=e167]:
+            - img "Maria Gonzalez of Riverbend Organics" [ref=e170]
+            - generic [ref=e171]:
+              - heading "Riverbend Organics" [level=3] [ref=e172]
+              - paragraph [ref=e173]: Maria Gonzalez
+              - paragraph [ref=e174]: Elk Grove, CA · 35 miles
+              - generic [ref=e175]:
+                - generic [ref=e176]: Delicata squash
+                - generic [ref=e177]: Kabocha squash
+                - generic [ref=e178]: Rainbow chard
+              - paragraph [ref=e179]: Partners since 2021
+          - article [ref=e180]:
+            - img "James Whitfield of Mercier Orchards" [ref=e183]
+            - generic [ref=e184]:
+              - heading "Mercier Orchards" [level=3] [ref=e185]
+              - paragraph [ref=e186]: James Whitfield
+              - paragraph [ref=e187]: Newcastle, CA · 52 miles
+              - generic [ref=e188]:
+                - generic [ref=e189]: Heirloom apples
+                - generic [ref=e190]: Bartlett pears
+                - generic [ref=e191]: Fuyu persimmons
+              - paragraph [ref=e192]: Partners since 2020
+        - link "Meet all 15 of our farm partners →" [ref=e194] [cursor=pointer]:
+          - /url: /farmers/
+    - region "From our guests" [ref=e195]:
+      - generic [ref=e196]:
+        - heading "From our guests" [level=2] [ref=e198]
+        - list [ref=e203]:
+          - listitem [ref=e204]:
+            - img "Rated 5 out of 5" [ref=e205]:
+              - img [ref=e206]
+              - img [ref=e208]
+              - img [ref=e210]
+              - img [ref=e212]
+              - img [ref=e214]
+            - blockquote [ref=e216]:
+              - paragraph [ref=e217]: “The server told us which farm the squash came from and which week the chanterelles showed up. You can taste that someone cared about every plate.”
+            - paragraph [ref=e218]: Megan R.
+            - paragraph [ref=e219]: Anniversary dinner
+          - listitem [ref=e220]:
+            - img "Rated 5 out of 5" [ref=e221]:
+              - img [ref=e222]
+              - img [ref=e224]
+              - img [ref=e226]
+              - img [ref=e228]
+              - img [ref=e230]
+            - blockquote [ref=e232]:
+              - paragraph [ref=e233]: “We drive in from Sacramento once a month because the menu is never the same. The ribeye and the apple galette are worth the trip on their own.”
+            - paragraph [ref=e234]: David and Lin T.
+            - paragraph [ref=e235]: Regulars since 2022
+          - listitem [ref=e236]:
+            - img "Rated 5 out of 5" [ref=e237]:
+              - img [ref=e238]
+              - img [ref=e240]
+              - img [ref=e242]
+              - img [ref=e244]
+              - img [ref=e246]
+            - blockquote [ref=e248]:
+              - paragraph [ref=e249]: “Hosted my parents’ 40th in the private room. The team built a menu around my mom’s favorite peaches and nobody wanted to leave.”
+            - paragraph [ref=e250]: Carla M.
+            - paragraph [ref=e251]: Private dining, 18 guests
+    - region "Reserve a table" [ref=e253]:
+      - generic [ref=e255]:
+        - heading "Reserve a table" [level=2] [ref=e256]
+        - paragraph [ref=e257]:
+          - text: Dinner Tuesday through Saturday, brunch on Sunday. For parties larger than 8 or private events, call us at
+          - link "(209) 555-0182" [ref=e258] [cursor=pointer]:
+            - /url: tel:+12095550182
+          - text: .
+        - generic [ref=e259]:
+          - generic [ref=e260]:
+            - generic [ref=e261]: Name
+            - textbox "Name" [ref=e262]
+          - generic [ref=e263]:
+            - generic [ref=e264]: Email
+            - textbox "Email" [ref=e265]
+          - generic [ref=e266]:
+            - generic [ref=e267]: Phone
+            - textbox "Phone" [ref=e268]:
+              - /placeholder: (209) 555-0000
+          - generic [ref=e269]:
+            - generic [ref=e270]: Date
+            - textbox "Date" [ref=e271]
+          - generic [ref=e272]:
+            - generic [ref=e273]: Time
+            - generic [ref=e274]:
+              - combobox "Time" [ref=e275] [cursor=pointer]:
+                - option "Select a time" [disabled] [selected]
+                - option "5:00 PM"
+                - option "5:30 PM"
+                - option "6:00 PM"
+                - option "6:30 PM"
+                - option "7:00 PM"
+                - option "7:30 PM"
+                - option "8:00 PM"
+                - option "8:30 PM"
+                - option "9:00 PM"
+              - img
+          - generic [ref=e276]:
+            - generic [ref=e277]: Party size
+            - generic [ref=e278]:
+              - combobox "Party size" [ref=e279] [cursor=pointer]:
+                - option "Select party size" [disabled] [selected]
+                - option "1 guest"
+                - option "2 guests"
+                - option "3 guests"
+                - option "4 guests"
+                - option "5 guests"
+                - option "6 guests"
+                - option "7 guests"
+                - option "8 guests"
+                - option "9+ guests (please call)"
+              - img
+          - generic [ref=e280]:
+            - generic [ref=e281]: Dietary needs or occasion (optional)
+            - textbox "Dietary needs or occasion (optional)" [ref=e282]:
+              - /placeholder: Allergies, a birthday, accessibility needs...
+          - generic [ref=e283]:
+            - button "Request Reservation" [ref=e284] [cursor=pointer]
+            - paragraph [ref=e285]: We confirm every request within 2 hours during business hours.
+      - img "The warm, wood-paneled dining room at Harvest Table" [ref=e288]
+    - generic [ref=e291]:
+      - generic [ref=e292]:
+        - heading "The room" [level=2] [ref=e293]
+        - paragraph [ref=e294]: Forty seats. Natural light during the day. Candlelight after dark. No music loud enough to interrupt a conversation.
+      - generic [ref=e295]:
+        - 'img "The Harvest Table dining room at dusk: walnut paneling, green banquettes, and candlelit oak tables" [ref=e298]'
+        - img "A candlelit place setting with brass cutlery in front of a green leather banquette" [ref=e301]
+        - img "Old-vine Zinfandel poured into a glass at a candlelit table" [ref=e304]
+        - img "Dried grasses, a dahlia, and a beeswax taper on an oak table" [ref=e307]
+        - img "The walnut wine bar, with open shelving of local bottles and house preserves" [ref=e310]
+        - img "Golden evening light through the front windows onto Main Street" [ref=e313]
+    - region "Private dining" [ref=e314]:
+      - img "The private dining room set for an intimate event" [ref=e316]
+      - generic [ref=e320]:
+        - heading "Host something worth remembering" [level=2] [ref=e321]:
+          - text: Host something
+          - text: worth remembering
+        - paragraph [ref=e322]: Our private dining room seats up to 24 guests. Custom menus, dedicated service, and a wine list curated for your event. Weddings, rehearsal dinners, corporate gatherings, milestone birthdays.
+        - generic [ref=e323]:
+          - generic [ref=e324]:
+            - paragraph [ref=e325]: "24"
+            - paragraph [ref=e326]: guests max
+          - generic [ref=e327]:
+            - paragraph [ref=e328]: "3"
+            - paragraph [ref=e329]: menu options
+          - generic [ref=e330]:
+            - paragraph [ref=e331]: Full
+            - paragraph [ref=e332]: buyout available
+        - link "Inquire About Private Dining" [ref=e333] [cursor=pointer]:
+          - /url: /contact/?inquiry=private-dining
+    - region "Visit us" [ref=e334]:
+      - generic [ref=e335]:
+        - generic [ref=e336]:
+          - heading "Visit us" [level=2] [ref=e337]
+          - paragraph [ref=e338]: On Main Street in downtown Lodi, a short walk from the train depot and the wine district tasting rooms.
+          - generic [ref=e339]:
+            - paragraph [ref=e340]:
+              - text: 214 Main Street
+              - text: Lodi, CA 95240
+            - link "(209) 555-0182" [ref=e341] [cursor=pointer]:
+              - /url: tel:+12095550182
+          - heading "Hours" [level=3] [ref=e342]
+          - generic [ref=e343]:
+            - generic [ref=e344]:
+              - term [ref=e345]: Tuesday – Thursday
+              - definition [ref=e346]: 5:00 pm – 9:00 pm
+            - generic [ref=e347]:
+              - term [ref=e348]: Friday – Saturday
+              - definition [ref=e349]: 5:00 pm – 10:00 pm
+            - generic [ref=e350]:
+              - term [ref=e351]: Sunday
+              - definition [ref=e352]: 10:00 am – 2:00 pm (Brunch)
+            - generic [ref=e353]:
+              - term [ref=e354]: Monday
+              - definition [ref=e355]: Closed
+          - paragraph [ref=e356]: "Parking: free street parking on Main after 5 pm, and a public lot on Sacramento Street two minutes away."
+          - generic [ref=e357]:
+            - link "Reserve a Table" [ref=e358] [cursor=pointer]:
+              - /url: /reservations/
+            - link "Get Directions" [ref=e359] [cursor=pointer]:
+              - /url: https://maps.google.com/maps?q=214+Main+Street+Lodi+CA+95240
+        - iframe [ref=e362]:
+          
+  - contentinfo [ref=e363]:
+    - generic [ref=e365]:
+      - generic [ref=e366]:
+        - link "Harvest Table" [ref=e367] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e368]: Harvest Table
+        - generic [ref=e369]:
+          - text: 214 Main Street
+          - text: Lodi, CA 95240
+        - link "Get directions" [ref=e370] [cursor=pointer]:
+          - /url: https://maps.google.com/maps?q=214+Main+Street+Lodi+CA+95240
+        - link "(209) 555-0182" [ref=e371] [cursor=pointer]:
+          - /url: tel:+12095550182
+        - link "hello@harvesttable.com" [ref=e372] [cursor=pointer]:
+          - /url: mailto:hello@harvesttable.com
+      - generic [ref=e373]:
+        - heading "Explore" [level=2] [ref=e374]
+        - navigation "Footer navigation" [ref=e375]:
+          - list [ref=e376]:
+            - listitem [ref=e377]:
+              - link "Menu" [ref=e378] [cursor=pointer]:
+                - /url: /menu/
+            - listitem [ref=e379]:
+              - link "Farmers" [ref=e380] [cursor=pointer]:
+                - /url: /farmers/
+            - listitem [ref=e381]:
+              - link "Reservations" [ref=e382] [cursor=pointer]:
+                - /url: /reservations/
+            - listitem [ref=e383]:
+              - link "Events" [ref=e384] [cursor=pointer]:
+                - /url: /events/
+            - listitem [ref=e385]:
+              - link "About" [ref=e386] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=e387]:
+              - link "Contact" [ref=e388] [cursor=pointer]:
+                - /url: /contact/
+      - generic [ref=e389]:
+        - heading "Hours" [level=2] [ref=e390]
+        - generic [ref=e391]:
+          - generic [ref=e392]:
+            - term [ref=e393]: Tuesday – Thursday
+            - definition [ref=e394]: 5:00 pm – 9:00 pm
+          - generic [ref=e395]:
+            - term [ref=e396]: Friday – Saturday
+            - definition [ref=e397]: 5:00 pm – 10:00 pm
+          - generic [ref=e398]:
+            - term [ref=e399]: Sunday
+            - definition [ref=e400]: 10:00 am – 2:00 pm (Brunch)
+          - generic [ref=e401]:
+            - term [ref=e402]: Monday
+            - definition [ref=e403]: Closed
+      - generic [ref=e404]:
+        - heading "Visit us" [level=2] [ref=e405]
+        - link "Reserve a Table" [ref=e406] [cursor=pointer]:
+          - /url: /reservations/
+        - generic [ref=e407]:
+          - link "Harvest Table on Instagram" [ref=e408] [cursor=pointer]:
+            - /url: https://instagram.com/harvesttablelodi
+            - img [ref=e409]
+          - link "Harvest Table on Facebook" [ref=e413] [cursor=pointer]:
+            - /url: https://facebook.com/harvesttablelodi
+            - img [ref=e414]
+    - generic [ref=e419]:
+      - paragraph [ref=e420]: © 2026 Harvest Table. All rights reserved.
+      - generic [ref=e421]:
+        - link "Privacy Policy" [ref=e422] [cursor=pointer]:
+          - /url: /privacy-policy/
+        - link "Terms of Service" [ref=e423] [cursor=pointer]:
+          - /url: /terms-of-service/
+      - link "Back to top" [ref=e424] [cursor=pointer]:
+        - /url: "#top"
+        - text: Back to top
+      - paragraph [ref=e427]:
+        - text: Built by
+        - link "Alectronic Solutions" [ref=e428] [cursor=pointer]:
+          - /url: https://alectronicsolutions.com

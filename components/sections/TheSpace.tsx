@@ -8,7 +8,7 @@
 import Image from 'next/image';
 import { asset } from '@/lib/basePath';
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { m, useScroll, useTransform } from 'framer-motion';
 import { useIsDesktop } from '@/lib/useIsDesktop';
 
 function ParallaxPanel({
@@ -38,7 +38,7 @@ function ParallaxPanel({
   const imageY = useTransform(rawY, (v) => (isDesktop ? v : '0px'));
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       className={`relative overflow-hidden ${className}`}
       initial={{ opacity: 0, scale: 1.06 }}
@@ -49,10 +49,10 @@ function ParallaxPanel({
         scale:   { duration: 1.2, ease: [0.25, 0, 0, 1], delay: revealDelay },
       }}
     >
-      <motion.div style={{ y: imageY }} className="absolute inset-0 scale-110">
+      <m.div style={{ y: imageY }} className="absolute inset-0 scale-110">
         <Image src={src} alt={alt} fill className="object-cover" sizes={sizes} />
-      </motion.div>
-    </motion.div>
+      </m.div>
+    </m.div>
   );
 }
 
@@ -63,7 +63,7 @@ export default function TheSpace() {
 
         {/* Section header */}
         <div className="mb-16 text-center">
-          <h2 className="font-display text-5xl font-semibold text-forest">
+          <h2 className="font-display text-4xl font-semibold text-forest md:text-5xl">
             The room
           </h2>
           <p className="mx-auto mt-4 max-w-lg font-sans text-base text-fog-dark">
@@ -76,7 +76,7 @@ export default function TheSpace() {
         <div className="flex flex-col gap-3 md:hidden">
           <ParallaxPanel
             src={asset('/images/space-wide.webp')}
-            alt="The full dining room at Harvest Table"
+            alt="The Harvest Table dining room at dusk, with walnut paneling and candlelit oak tables"
             parallaxEnd="0px"
             revealDelay={0}
             sizes="100vw"
@@ -84,7 +84,7 @@ export default function TheSpace() {
           />
           <ParallaxPanel
             src={asset('/images/space-detail-1.webp')}
-            alt="Candlelit place setting with crystal glasses"
+            alt="A candlelit place setting in front of a green leather banquette"
             parallaxEnd="0px"
             revealDelay={0.05}
             sizes="100vw"
@@ -93,7 +93,7 @@ export default function TheSpace() {
           <div className="flex gap-3">
             <ParallaxPanel
               src={asset('/images/space-detail-2.webp')}
-              alt="Table detail: silver cutlery and wine glass"
+              alt="Old-vine Zinfandel poured at the table"
               parallaxEnd="0px"
               revealDelay={0.1}
               sizes="50vw"
@@ -101,7 +101,7 @@ export default function TheSpace() {
             />
             <ParallaxPanel
               src={asset('/images/space-detail-3.webp')}
-              alt="Wine glass and candle flame"
+              alt="Dried grasses, a dahlia, and a beeswax taper on an oak table"
               parallaxEnd="0px"
               revealDelay={0.15}
               sizes="50vw"
@@ -110,7 +110,7 @@ export default function TheSpace() {
           </div>
           <ParallaxPanel
             src={asset('/images/space-bar.webp')}
-            alt="The wine and spirits bar"
+            alt="The walnut wine bar with six leather stools"
             parallaxEnd="0px"
             revealDelay={0.2}
             sizes="100vw"
@@ -130,7 +130,7 @@ export default function TheSpace() {
 
           <ParallaxPanel
             src={asset('/images/space-wide.webp')}
-            alt="The full dining room at Harvest Table, warm wood and candlelight"
+            alt="The Harvest Table dining room at dusk: walnut paneling, green banquettes, and candlelit oak tables"
             parallaxEnd="-40px"
             revealDelay={0}
             sizes="58vw"
@@ -139,7 +139,7 @@ export default function TheSpace() {
 
           <ParallaxPanel
             src={asset('/images/space-detail-1.webp')}
-            alt="Candlelit place setting, crystal glasses and polished silver"
+            alt="A candlelit place setting with brass cutlery in front of a green leather banquette"
             parallaxEnd="-25px"
             revealDelay={0.1}
             sizes="42vw"
@@ -148,7 +148,7 @@ export default function TheSpace() {
 
           <ParallaxPanel
             src={asset('/images/space-detail-2.webp')}
-            alt="Table detail: silver cutlery and a wine glass by candlelight"
+            alt="Old-vine Zinfandel poured into a glass at a candlelit table"
             parallaxEnd="-30px"
             revealDelay={0.2}
             sizes="25vw"
@@ -157,7 +157,7 @@ export default function TheSpace() {
 
           <ParallaxPanel
             src={asset('/images/space-detail-3.webp')}
-            alt="Wine glass and candle flame, close detail"
+            alt="Dried grasses, a dahlia, and a beeswax taper on an oak table"
             parallaxEnd="-20px"
             revealDelay={0.3}
             sizes="17vw"
@@ -166,7 +166,7 @@ export default function TheSpace() {
 
           <ParallaxPanel
             src={asset('/images/space-bar.webp')}
-            alt="The wine and spirits bar, warm wood shelving and ambient light"
+            alt="The walnut wine bar, with open shelving of local bottles and house preserves"
             parallaxEnd="-35px"
             revealDelay={0.4}
             sizes="42vw"
@@ -175,7 +175,7 @@ export default function TheSpace() {
 
           <ParallaxPanel
             src={asset('/images/restaurant-interior.webp')}
-            alt="Restaurant interior, evening light through the front windows"
+            alt="Golden evening light through the front windows onto Main Street"
             parallaxEnd="-25px"
             revealDelay={0.5}
             sizes="58vw"

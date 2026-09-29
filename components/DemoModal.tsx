@@ -5,10 +5,19 @@
 // Exported as both a wrapper component and a standalone hook.
 
 import { useState, useCallback, useEffect, useRef, type FormEvent } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
+import { useFocusTrap } from '@/lib/useFocusTrap';
 
 function ThankYouModal({ onClose }: { onClose: () => void }) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+  useFocusTrap([cardRef], true);
+
+  // Return focus to whatever opened the modal (the submit button) on close.
+  useEffect(() => {
+    const opener = document.activeElement as HTMLElement | null;
+    return () => opener?.focus?.();
+  }, []);
 
   useEffect(() => {
     closeButtonRef.current?.focus();
@@ -22,7 +31,7 @@ function ThankYouModal({ onClose }: { onClose: () => void }) {
 
   return (
     <AnimatePresence>
-      <motion.div
+      <m.div
         key="backdrop"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -30,8 +39,9 @@ function ThankYouModal({ onClose }: { onClose: () => void }) {
         className="fixed inset-0 z-[200] flex items-center justify-center bg-forest/80 px-5 backdrop-blur-sm"
         onClick={onClose}
       >
-        <motion.div
+        <m.div
           key="card"
+          ref={cardRef}
           role="dialog"
           aria-modal="true"
           aria-labelledby="thank-you-modal-title"
@@ -56,16 +66,16 @@ function ThankYouModal({ onClose }: { onClose: () => void }) {
           <button
             ref={closeButtonRef}
             onClick={onClose}
-            className="mt-8 inline-flex min-h-[48px] items-center bg-gold px-8 py-3 font-sans text-sm font-medium text-forest transition-opacity hover:opacity-90"
+            className="mt-8 inline-flex min-h-[48px] items-center rounded-full bg-gold px-8 py-3 font-sans text-sm font-medium text-forest transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2 focus-visible:ring-offset-linen"
           >
             Close
           </button>
 
-          <p className="mt-4 font-sans text-xs italic text-fog-dark/70">
+          <p className="mt-4 font-sans text-xs italic text-fog-dark">
             This is a demo site. No data was sent.
           </p>
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
     </AnimatePresence>
   );
 }
@@ -75,7 +85,9 @@ function ThankYouModal({ onClose }: { onClose: () => void }) {
 //   const { handleSubmit, modal } = useDemoForm();
 //   <form onSubmit={handleSubmit}> ... </form>
 //   {modal}
-export function useDemoForm() {
+// Pass `onReset` to clear any React state that mirrors form fields (e.g. a
+// controlled date input), since form.reset() only clears the DOM.
+export function useDemoForm({ onReset }: { onReset?: () => void } = {}) {
   const [open, setOpen] = useState(false);
 
   const handleSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
@@ -83,7 +95,8 @@ export function useDemoForm() {
     setOpen(true);
     // Reset the form so it is clean if the modal is dismissed and re-used.
     (e.target as HTMLFormElement).reset();
-  }, []);
+    onReset?.();
+  }, [onReset]);
 
   const modal = open ? <ThankYouModal onClose={() => setOpen(false)} /> : null;
 

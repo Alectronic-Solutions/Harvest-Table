@@ -1,11 +1,20 @@
 // Single source of truth for event listings shown on /events.
+// Ticketed events carry ISO start/end times (with the Pacific offset) so the
+// page can hide anything already past at build time and the Event schema
+// gets exact timestamps. Private dining has no date and always shows.
 
-export type EventCategory = 'wine' | 'chefs-table' | 'harvest' | 'private';
+import { BUILD_DATE } from '@/data/restaurant';
+
+export type EventCategory = 'wine' | 'chefs-table' | 'holiday' | 'private';
 
 export type Event = {
   id: string;
   title: string;
   subtitle: string;
+  /** ISO 8601 with offset. Omitted for by-arrangement listings. */
+  startDate?: string;
+  endDate?: string;
+  /** Display strings. */
   date: string;
   time: string;
   price: string;
@@ -13,55 +22,86 @@ export type Event = {
   seatsRemaining: number;
   description: string;
   image: string;
+  imageAlt: string;
+  /** Off-site location. Omitted when the event is at the restaurant. */
+  venue?: { name: string; locality: string };
   category: EventCategory;
   soldOut: boolean;
 };
 
 export const EVENTS: Event[] = [
   {
-    id: 'summer-wine-july',
-    title: 'Summer Wine Pairing Dinner',
-    subtitle: 'Six courses. Six pours. One long table.',
-    date: 'July 18, 2026',
-    time: '6:30 PM',
-    price: '$145 per person',
-    seats: 24,
-    seatsRemaining: 8,
+    id: 'harvest-moon-wine-dinner',
+    title: 'Harvest Moon Wine Dinner',
+    subtitle: 'Six courses. Six pours. One long table in the vines.',
+    startDate: '2026-10-24T18:00:00-07:00',
+    endDate: '2026-10-24T22:00:00-07:00',
+    date: 'Saturday, October 24, 2026',
+    time: '6:00 PM',
+    price: '$150 per person',
+    seats: 40,
+    seatsRemaining: 9,
     description:
-      'An evening built around California natural wine. Chef pairs each course to a small-production pour selected by our sommelier. Wines are sourced within 150 miles. Dietary accommodations available with two weeks notice.',
-    image: '/images/event-wine.jpg',
+      'Dinner at Oak Row Cellars among Zinfandel vines planted in 1921. Six courses from the last of the fall harvest, each paired with a pour chosen alongside winemakers Dana and Luis Ferrante. Shuttle from the restaurant at 5:15 PM. Dietary accommodations available with two weeks notice.',
+    image: '/images/event-harvest-moon.webp',
+    imageAlt: 'A long candlelit table among autumn grapevines under a rising full moon',
+    venue: { name: 'Oak Row Cellars', locality: 'Lodi' },
     category: 'wine',
     soldOut: false,
   },
   {
-    id: 'chefs-table-august',
-    title: "Chef's Table: August",
+    id: 'chefs-table-november',
+    title: "Chef's Table: November",
     subtitle: 'Eight seats. One night. No menu in advance.',
-    date: 'August 6, 2026',
+    startDate: '2026-11-12T19:00:00-08:00',
+    endDate: '2026-11-12T22:00:00-08:00',
+    date: 'Thursday, November 12, 2026',
     time: '7:00 PM',
-    price: '$210 per person',
+    price: '$215 per person',
     seats: 8,
-    seatsRemaining: 3,
+    seatsRemaining: 0,
     description:
-      'Dinner at the pass. Chef builds the menu that morning based on what arrives from the farms. Eight courses, eight guests, a kitchen view throughout. Wine pairing available for an additional $75 per person.',
-    image: '/images/event-chefs-table.jpg',
+      'Dinner at the pass. Chef Daniel Park builds the menu that morning from what arrives off the farm trucks. Eight courses, eight guests, and a kitchen view throughout. Wine pairing available for an additional $75 per person.',
+    image: '/images/event-chefs-table.webp',
+    imageAlt: 'A chef plating a tasting course in front of guests at an open kitchen counter',
     category: 'chefs-table',
+    soldOut: true,
+  },
+  {
+    id: 'thanksgiving-supper',
+    title: 'Thanksgiving Family Supper',
+    subtitle: 'Family style. Two seatings. Nobody does the dishes.',
+    startDate: '2026-11-26T13:00:00-08:00',
+    endDate: '2026-11-26T19:00:00-08:00',
+    date: 'Thursday, November 26, 2026',
+    time: '1:00 PM or 4:30 PM',
+    price: '$95 per person, $40 under 12',
+    seats: 80,
+    seatsRemaining: 26,
+    description:
+      'A heritage turkey from Meadowlark Poultry, Valley Gold cornbread stuffing, roasted Riverbend squash, and apple and pear pie from Mercier Orchards, passed down long tables the way it should be. Vegetarian mains available on request.',
+    image: '/images/event-thanksgiving.webp',
+    imageAlt: 'A family-style Thanksgiving table with roast turkey, squash, stuffing, and pie',
+    category: 'holiday',
     soldOut: false,
   },
   {
-    id: 'harvest-dinner-september',
-    title: 'Harvest Dinner',
-    subtitle: 'One night a year. Outside. On the farm.',
-    date: 'September 12, 2026',
-    time: '5:30 PM',
-    price: '$185 per person',
-    seats: 60,
-    seatsRemaining: 0,
+    id: 'winter-solstice-dinner',
+    title: 'Winter Solstice Dinner',
+    subtitle: 'The longest night of the year, by candlelight.',
+    startDate: '2026-12-21T18:00:00-08:00',
+    endDate: '2026-12-21T21:30:00-08:00',
+    date: 'Monday, December 21, 2026',
+    time: '6:00 PM',
+    price: '$165 per person',
+    seats: 40,
+    seatsRemaining: 40,
     description:
-      'Our annual dinner held at Sunnyside Farm in Lodi. Long tables in the field, dishes built from what was picked that morning, live music after dark. This is the night Harvest Table exists for. Transportation from the restaurant provided.',
-    image: '/images/event-harvest.jpg',
-    category: 'harvest',
-    soldOut: true,
+      'We open on a Monday for one night only. Five courses built from the winter cellar: cured beans, stored squash, citrus from Cobblestone Gardens, and the first chicories of the new year. Lit entirely by beeswax candles from Bee Line Apiary.',
+    image: '/images/event-solstice.webp',
+    imageAlt: 'A dining table lit by dozens of taper candles with an evergreen and citrus garland',
+    category: 'holiday',
+    soldOut: false,
   },
   {
     id: 'private-dining-inquiry',
@@ -74,8 +114,14 @@ export const EVENTS: Event[] = [
     seatsRemaining: 24,
     description:
       'Our private dining room seats up to 24 guests with a fully custom menu, dedicated server, and curated wine list. Available for rehearsal dinners, corporate gatherings, milestone birthdays, and full buyouts. Inquire at least three weeks in advance.',
-    image: '/images/space-wide.webp',
+    image: '/images/private-dining.webp',
+    imageAlt: 'The private dining room set for an intimate event',
     category: 'private',
     soldOut: false,
   },
 ];
+
+/** Events that have not ended as of `now` (build time by default). */
+export function upcomingEvents(now: Date = BUILD_DATE): Event[] {
+  return EVENTS.filter((e) => !e.endDate || new Date(e.endDate) > now);
+}
