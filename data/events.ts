@@ -44,7 +44,7 @@ export const EVENTS: Event[] = [
     description:
       'Dinner at Oak Row Cellars among Zinfandel vines planted in 1921. Six courses from the last of the fall harvest, each paired with a pour chosen alongside winemakers Dana and Luis Ferrante. Shuttle from the restaurant at 5:15 PM. Dietary accommodations available with two weeks notice.',
     image: '/images/event-harvest-moon.webp',
-    imageAlt: 'A long candlelit table among autumn grapevines under a rising full moon',
+    imageAlt: 'A candlelit dinner table set outdoors in the evening',
     venue: { name: 'Oak Row Cellars', locality: 'Lodi' },
     category: 'wine',
     soldOut: false,
@@ -63,7 +63,7 @@ export const EVENTS: Event[] = [
     description:
       'Dinner at the pass. Chef Daniel Park builds the menu that morning from what arrives off the farm trucks. Eight courses, eight guests, and a kitchen view throughout. Wine pairing available for an additional $75 per person.',
     image: '/images/event-chefs-table.webp',
-    imageAlt: 'A chef plating a tasting course in front of guests at an open kitchen counter',
+    imageAlt: 'A chef tossing wild mushrooms in a pan',
     category: 'chefs-table',
     soldOut: true,
   },
@@ -99,7 +99,7 @@ export const EVENTS: Event[] = [
     description:
       'We open on a Monday for one night only. Five courses built from the winter cellar: cured beans, stored squash, citrus from Cobblestone Gardens, and the first chicories of the new year. Lit entirely by beeswax candles from Bee Line Apiary.',
     image: '/images/event-solstice.webp',
-    imageAlt: 'A dining table lit by dozens of taper candles with an evergreen and citrus garland',
+    imageAlt: 'A dining table set with pine boughs and glowing candles',
     category: 'holiday',
     soldOut: false,
   },

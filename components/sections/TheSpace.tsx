@@ -76,7 +76,7 @@ export default function TheSpace() {
         <div className="flex flex-col gap-3 md:hidden">
           <ParallaxPanel
             src={asset('/images/space-wide.webp')}
-            alt="The Harvest Table dining room at dusk, with walnut paneling and candlelit oak tables"
+            alt="A warmly lit dining nook with hanging lanterns and string decor"
             parallaxEnd="0px"
             revealDelay={0}
             sizes="100vw"
@@ -84,7 +84,7 @@ export default function TheSpace() {
           />
           <ParallaxPanel
             src={asset('/images/space-detail-1.webp')}
-            alt="A candlelit place setting in front of a green leather banquette"
+            alt="A candlelit table set with wine glasses at dusk"
             parallaxEnd="0px"
             revealDelay={0.05}
             sizes="100vw"
@@ -101,7 +101,7 @@ export default function TheSpace() {
             />
             <ParallaxPanel
               src={asset('/images/space-detail-3.webp')}
-              alt="Dried grasses, a dahlia, and a beeswax taper on an oak table"
+              alt="A single taper candle beside a vase of flowering branches"
               parallaxEnd="0px"
               revealDelay={0.15}
               sizes="50vw"
@@ -110,7 +110,7 @@ export default function TheSpace() {
           </div>
           <ParallaxPanel
             src={asset('/images/space-bar.webp')}
-            alt="The walnut wine bar with six leather stools"
+            alt="Shelves of wine and spirits behind the bar, backlit at night"
             parallaxEnd="0px"
             revealDelay={0.2}
             sizes="100vw"
@@ -130,7 +130,7 @@ export default function TheSpace() {
 
           <ParallaxPanel
             src={asset('/images/space-wide.webp')}
-            alt="The Harvest Table dining room at dusk: walnut paneling, green banquettes, and candlelit oak tables"
+            alt="A warmly lit dining nook with hanging lanterns and string decor"
             parallaxEnd="-40px"
             revealDelay={0}
             sizes="58vw"
@@ -139,7 +139,7 @@ export default function TheSpace() {
 
           <ParallaxPanel
             src={asset('/images/space-detail-1.webp')}
-            alt="A candlelit place setting with brass cutlery in front of a green leather banquette"
+            alt="A candlelit table set with wine glasses at dusk"
             parallaxEnd="-25px"
             revealDelay={0.1}
             sizes="42vw"
@@ -157,7 +157,7 @@ export default function TheSpace() {
 
           <ParallaxPanel
             src={asset('/images/space-detail-3.webp')}
-            alt="Dried grasses, a dahlia, and a beeswax taper on an oak table"
+            alt="A single taper candle beside a vase of flowering branches"
             parallaxEnd="-20px"
             revealDelay={0.3}
             sizes="17vw"
@@ -166,7 +166,7 @@ export default function TheSpace() {
 
           <ParallaxPanel
             src={asset('/images/space-bar.webp')}
-            alt="The walnut wine bar, with open shelving of local bottles and house preserves"
+            alt="Shelves of wine and spirits behind the bar, backlit at night"
             parallaxEnd="-35px"
             revealDelay={0.4}
             sizes="42vw"

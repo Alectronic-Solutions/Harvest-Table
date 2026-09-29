@@ -118,7 +118,7 @@ function OriginStory() {
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
                 src={asset('/images/chef-daniel-park.webp')}
-                alt="Chef and founder Daniel Park at the pass, holding just-harvested carrots"
+                alt="Chef and founder Daniel Park preparing a dish in the Harvest Table kitchen"
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 768px) 100vw, 42vw"

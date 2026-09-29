@@ -41,7 +41,7 @@ function EventsHero() {
       <m.div style={{ y: imageY }} className="absolute inset-0 scale-110">
         <Image
           src={asset('/images/event-harvest-moon.webp')}
-          alt="A long candlelit dinner table set among autumn grapevines at dusk"
+          alt="A candlelit dinner table set outdoors in the evening"
           fill
           priority
           className="object-cover"
