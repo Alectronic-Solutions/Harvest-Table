@@ -1,10 +1,11 @@
 'use client';
 
-// One job: crossfade endlessly between 3 background video clips on desktop,
-// over a priority-loaded poster image that is the page's LCP element. Phones,
-// data-saver connections, and reduced-motion visitors only ever get the
-// poster, so they never download the video files. A pause button stops the
-// motion on request (WCAG 2.2.2).
+// One job: crossfade endlessly between 3 background video clips, over a
+// priority-loaded poster image that is the page's LCP element. Phones get
+// lighter portrait encodes (about 100-485 KB each, no audio). Data-saver
+// connections and reduced-motion visitors only ever get the poster, so they
+// never download the video files. Playback halts while the hero is offscreen,
+// and a pause button stops the motion on request (WCAG 2.2.2).
 
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
@@ -12,9 +13,9 @@ import { m } from 'framer-motion';
 import { asset } from '@/lib/basePath';
 
 const CLIPS = [
-  { src: '/videos/hero-1.mp4' },
-  { src: '/videos/hero-2.mp4' },
-  { src: '/videos/hero-3.mp4' },
+  { desktop: '/videos/hero-1.mp4', mobile: '/videos/hero-1-mobile.mp4' },
+  { desktop: '/videos/hero-2.mp4', mobile: '/videos/hero-2-mobile.mp4' },
+  { desktop: '/videos/hero-3.mp4', mobile: '/videos/hero-3-mobile.mp4' },
 ];
 
 const FADE_MS = 1500;
@@ -27,9 +28,13 @@ export default function HeroVideoBackground() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [canPlay, setCanPlay] = useState(false);
   const [allowVideo, setAllowVideo] = useState(false);
+  const [mobile, setMobile] = useState(false);
   const [paused, setPaused] = useState(false);
+  const [inView, setInView] = useState(true);
+  const rootRef = useRef<HTMLDivElement>(null);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const durationsRef = useRef<(number | null)[]>(CLIPS.map(() => null));
+  const halted = paused || !inView;
   const prerollTimerRef = useRef<ReturnType<typeof setTimeout>>();
   const advanceTimerRef = useRef<ReturnType<typeof setTimeout>>();
 
@@ -37,7 +42,10 @@ export default function HeroVideoBackground() {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
     const desktop = window.matchMedia('(min-width: 768px)');
     const saveData = (navigator as Navigator & { connection?: NetworkInformation }).connection?.saveData;
-    const evaluate = () => setAllowVideo(desktop.matches && !reduced.matches && !saveData);
+    const evaluate = () => {
+      setMobile(!desktop.matches);
+      setAllowVideo(!reduced.matches && !saveData);
+    };
     evaluate();
     reduced.addEventListener('change', evaluate);
     desktop.addEventListener('change', evaluate);
@@ -47,15 +55,24 @@ export default function HeroVideoBackground() {
     };
   }, []);
 
+  // Stop decoding while the hero is scrolled out of view (battery on phones).
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+    const observer = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting));
+    observer.observe(root);
+    return () => observer.disconnect();
+  }, []);
+
   useEffect(() => {
     if (!allowVideo) return;
     const video = videoRefs.current[activeIndex];
-    if (paused) video?.pause();
+    if (halted) video?.pause();
     else video?.play().catch(() => {});
-  }, [activeIndex, allowVideo, paused]);
+  }, [activeIndex, allowVideo, halted]);
 
   useEffect(() => {
-    if (!allowVideo || paused) return;
+    if (!allowVideo || halted) return;
 
     const nextIndex = (activeIndex + 1) % CLIPS.length;
     const durationMs = durationsRef.current[activeIndex];
@@ -86,10 +103,10 @@ export default function HeroVideoBackground() {
       clearTimeout(prerollTimerRef.current);
       clearTimeout(advanceTimerRef.current);
     };
-  }, [activeIndex, allowVideo, paused]);
+  }, [activeIndex, allowVideo, halted]);
 
   return (
-    <div className="absolute inset-0">
+    <div ref={rootRef} className="absolute inset-0">
       {/* Poster: always rendered first so it can be the LCP image, then fades
           out once the first clip is ready (desktop only). */}
       <div
@@ -117,20 +134,25 @@ export default function HeroVideoBackground() {
 
           return (
             <m.video
-              key={clip.src}
+              key={`${mobile ? 'm' : 'd'}-${clip.desktop}`}
               ref={(el) => {
                 videoRefs.current[i] = el;
+                // React doesn't reflect the muted prop to the DOM attribute,
+                // and iOS Safari refuses to autoplay without it.
+                if (el) el.muted = true;
               }}
-              src={asset(clip.src)}
+              src={asset(mobile ? clip.mobile : clip.desktop)}
               muted
               playsInline
-              autoPlay={i === 0 && !paused}
+              disablePictureInPicture
+              disableRemotePlayback
+              autoPlay={i === 0 && !halted}
               preload={i === activeIndex ? 'auto' : 'metadata'}
               aria-hidden
               onLoadedMetadata={(e) => {
                 durationsRef.current[i] = e.currentTarget.duration;
               }}
-              onCanPlay={() => i === 0 && setCanPlay(true)}
+              onPlaying={() => i === 0 && setCanPlay(true)}
               className="absolute inset-0 h-full w-full object-cover"
               initial={{ opacity: 0 }}
               animate={{ opacity: i === activeIndex && canPlay ? 1 : 0 }}
@@ -149,7 +171,7 @@ export default function HeroVideoBackground() {
           type="button"
           onClick={() => setPaused((p) => !p)}
           aria-label={paused ? 'Play background video' : 'Pause background video'}
-          className="absolute bottom-6 right-6 z-20 flex h-11 w-11 items-center justify-center rounded-full border border-linen/40 bg-forest/40 text-linen backdrop-blur-sm transition-colors hover:border-gold hover:text-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
+          className="absolute right-4 top-4 z-20 flex h-12 w-12 md:bottom-6 md:right-6 md:top-auto items-center justify-center rounded-full border border-linen/40 bg-forest/40 text-linen backdrop-blur-sm transition-colors hover:border-gold hover:text-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
         >
           {paused ? (
             <svg width={16} height={16} viewBox="0 0 24 24" fill="currentColor" aria-hidden>

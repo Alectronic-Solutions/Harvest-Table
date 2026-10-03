@@ -2,7 +2,7 @@
 
 // One job: full-bleed hero that answers the three questions every diner
 // arrives with: what kind of food, where, and how to get a table. Video
-// background on desktop, poster image on mobile, staggered entry animation.
+// background (lighter encodes on phones, poster fallback), staggered entry animation.
 
 import HeroVideoBackground from './HeroVideoBackground';
 import { m, useScroll, AnimatePresence } from 'framer-motion';
