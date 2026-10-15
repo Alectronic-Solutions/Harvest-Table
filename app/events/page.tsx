@@ -1,6 +1,6 @@
 import { pageMetadata } from '@/lib/metadata';
 import { upcomingEvents } from '@/data/events';
-import { breadcrumbSchema, eventsSchema } from '@/lib/schema';
+import { breadcrumbSchema } from '@/lib/schema';
 import JsonLd from '@/components/JsonLd';
 import EventsClient from './EventsClient';
 
@@ -16,7 +16,7 @@ export default function EventsPage() {
   const events = upcomingEvents();
   return (
     <>
-      <JsonLd data={[...eventsSchema(events), breadcrumbSchema('Events', '/events')]} />
+      <JsonLd data={breadcrumbSchema('Events', '/events')} />
       <EventsClient events={events} />
     </>
   );

@@ -10,9 +10,8 @@ import GrainOverlay from '@/components/GrainOverlay';
 import PageTransition from '@/components/PageTransition';
 import MotionProvider from '@/components/MotionProvider';
 import MobileReserveBar from '@/components/MobileReserveBar';
-import JsonLd from '@/components/JsonLd';
 import { CONTACT } from '@/data/restaurant';
-import { restaurantSchema } from '@/lib/schema';
+import DemoNotice from './DemoNotice';
 import { SITE_URL, asset, pageUrl } from '@/lib/basePath';
 
 // Custom cursor is a purely decorative, client-only effect that runs a
@@ -57,6 +56,8 @@ export const metadata: Metadata = {
   description: DEFAULT_DESCRIPTION,
   applicationName: CONTACT.name,
   alternates: { canonical: pageUrl('/') },
+  // Fictional business: keep it out of search (see DemoNotice).
+  robots: { index: false, follow: false },
   formatDetection: { telephone: true, address: true, email: true },
   icons: {
     icon: [{ url: asset('/favicon.svg'), type: 'image/svg+xml' }],
@@ -99,9 +100,6 @@ export default function RootLayout({
       lang="en"
       className={`${cormorant.variable} ${dmMono.variable} ${dmSans.variable}`}
     >
-      <head>
-        <JsonLd data={restaurantSchema()} />
-      </head>
       <body id="top">
         <a href="#main-content" className="skip-link">
           Skip to main content
@@ -116,6 +114,7 @@ export default function RootLayout({
             <main id="main-content" tabIndex={-1}>{children}</main>
           </PageTransition>
           <Footer />
+          <DemoNotice />
           <MobileReserveBar />
         </MotionProvider>
       </body>

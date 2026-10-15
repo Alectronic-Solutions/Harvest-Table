@@ -1,7 +1,6 @@
 import { pageMetadata } from '@/lib/metadata';
-import { MENU } from '@/data/menu';
 import { CURRENT_SEASON } from '@/data/restaurant';
-import { breadcrumbSchema, menuSchema } from '@/lib/schema';
+import { breadcrumbSchema } from '@/lib/schema';
 import JsonLd from '@/components/JsonLd';
 import MenuClient from './MenuClient';
 
@@ -15,7 +14,7 @@ export const metadata = pageMetadata({
 export default function MenuPage() {
   return (
     <>
-      <JsonLd data={[menuSchema(MENU), breadcrumbSchema('Menu', '/menu')]} />
+      <JsonLd data={breadcrumbSchema('Menu', '/menu')} />
       <MenuClient />
     </>
   );
