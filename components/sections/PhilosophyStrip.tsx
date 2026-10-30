@@ -15,7 +15,7 @@ const STATS = [
   { value: 60,  suffix: ' mi',  label: 'Sourcing radius',      decimals: 0 },
   { value: FARMERS.length, suffix: '', label: 'Farm partners', decimals: 0 },
   { value: 98,  suffix: '%',    label: 'Locally sourced',       decimals: 0 },
-  { value: 4,   suffix: '',     label: 'Seasons on the menu',   decimals: 0 },
+  { value: 4,   suffix: '',     label: 'Seasonal menus',   decimals: 0 },
 ];
 
 function useCounter(target: number, decimals: number, active: boolean, duration = 1400) {
@@ -65,8 +65,8 @@ function StatItem({ value, suffix, label, decimals, active }: typeof STATS[numbe
 
 const pillars = [
   {
-    headline: 'Sourced within 60 miles',
-    body: 'Every ingredient on this menu has a farm, a face, and a story behind it. We list them all.',
+    headline: 'Close to home',
+    body: 'Our farms are neighbors, not distributors. What you eat tonight grew nearby.',
   },
   {
     headline: 'Named by the farmer',
@@ -87,13 +87,13 @@ export default function PhilosophyStrip() {
   const statsInView = useInView(statsRef, { once: true, margin: '0px 0px 120px 0px' });
 
   return (
-    <section aria-labelledby="philosophy-heading" className="bg-forest">
+    <section aria-labelledby="philosophy-heading" className="bg-forest py-16 md:py-0">
       <h2 id="philosophy-heading" className="sr-only">How we source and cook</h2>
 
       {/* Stat counters */}
       <div
         ref={statsRef}
-        className="mx-auto grid max-w-content grid-cols-2 gap-x-6 gap-y-10 px-5 py-16 md:grid-cols-4 md:px-8 md:gap-0 md:py-20"
+        className="mx-auto grid max-w-content grid-cols-2 gap-x-6 gap-y-10 px-5 pb-12 md:grid-cols-4 md:px-8 md:gap-0 md:py-20"
       >
         {STATS.map((stat, i) => (
           <div
@@ -114,7 +114,7 @@ export default function PhilosophyStrip() {
 
       {/* Philosophy pillars */}
       <m.div
-        className="mx-auto grid max-w-content grid-cols-1 gap-0 px-5 py-16 md:grid-cols-3 md:px-8 md:py-20"
+        className="mx-auto grid max-w-content grid-cols-1 gap-0 px-5 pt-12 md:grid-cols-3 md:px-8 md:py-20"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: '-60px' }}
@@ -127,7 +127,7 @@ export default function PhilosophyStrip() {
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
             }}
-            className={`flex flex-col items-start gap-4 px-0 py-10 text-left md:py-0 md:px-10 ${
+            className={`flex flex-col items-start gap-4 px-0 py-6 text-left first:pt-0 last:pb-0 md:py-0 md:px-10 ${
               i < pillars.length - 1
                 ? 'border-b border-gold/10 md:border-b-0 md:border-r md:border-r-gold/10'
                 : ''

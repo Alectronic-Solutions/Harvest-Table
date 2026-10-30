@@ -182,11 +182,11 @@ function ReservationForm() {
         <div className="pt-2 sm:col-span-2">
           <button
             type="submit"
-            className="min-h-[52px] w-full rounded-full bg-gold py-4 font-sans text-base font-medium text-forest transition-all duration-300 hover:scale-[1.01] hover:bg-gold/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-dark focus-visible:ring-offset-2"
+            className="min-h-[52px] w-full rounded-full bg-gold py-4 font-sans text-base font-semibold text-forest transition-all duration-300 hover:scale-[1.01] hover:bg-gold/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-dark focus-visible:ring-offset-2"
           >
             {selectedEvent ? 'Request Seats' : 'Reserve a Table'}
           </button>
-          <p className="mt-4 font-sans text-xs leading-relaxed text-fog-dark">
+          <p className="mt-4 font-sans text-sm leading-relaxed text-fog-dark">
             We confirm every request within 2 hours during business hours. For
             same-day tables, please call{' '}
             <a href={PHONE_HREF} className="text-forest underline underline-offset-2">{CONTACT.phone}</a>.
@@ -324,7 +324,7 @@ export default function ReservationsClient() {
                 </a>
                 <a
                   href={PHONE_HREF}
-                  className="flex min-h-12 items-center justify-center font-mono text-base text-gold transition-opacity hover:opacity-80 md:justify-start"
+                  className="flex min-h-12 items-center font-mono text-base text-gold transition-opacity hover:opacity-80"
                 >
                   {CONTACT.phone}
                 </a>

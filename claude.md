@@ -62,7 +62,7 @@ Every page has a thin top bar ABOVE the navbar:
 - Logo and wordmark on the left (as built; the earlier centered-logo plan was dropped)
 - Links: Menu / Farmers / Reservations / Events / About / Contact
 - "Reserve a Table" button far right on desktop, gold background
-- Mobile: call icon and hamburger; hamburger opens a full-screen forest overlay with numbered links, a Reserve a Table button and the phone number
+- Below lg (tablets included): call icon and hamburger; hamburger opens a full-screen forest overlay with numbered links, a Reserve a Table button and the phone number
 - Mobile also shows a fixed bottom Call and Reserve bar after the hero; it hides near forms and the footer
 
 ## Quality Gates (run before every section)

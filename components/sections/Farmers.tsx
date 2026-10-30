@@ -68,14 +68,14 @@ function FarmerCard({ farmer }: { farmer: Farmer }) {
           {farmer.grows.slice(0, 3).map((item) => (
             <span
               key={item}
-              className="rounded-sm border border-fog/40 px-2 py-0.5 font-sans text-xs text-fog-dark"
+              className="rounded-sm border border-fog/40 px-2 py-0.5 font-sans text-sm text-fog-dark"
             >
               {item}
             </span>
           ))}
         </div>
 
-        <p className="mt-3 font-mono text-xs text-fog-dark">Partners since {farmer.partnerSince}</p>
+        <p className="mt-3 font-mono text-label text-fog-dark">Partners since {farmer.partnerSince}</p>
       </div>
     </m.article>
   );

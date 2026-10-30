@@ -91,7 +91,7 @@ function FeaturedFarmerCard({ farmer, index }: { farmer: Farmer; index: number }
             {farmer.grows.map((item) => (
               <li
                 key={item}
-                className="rounded-full border border-fog/40 px-3 py-1 font-sans text-xs text-fog-dark"
+                className="rounded-full border border-fog/40 px-3 py-1 font-sans text-sm text-fog-dark"
               >
                 {item}
               </li>

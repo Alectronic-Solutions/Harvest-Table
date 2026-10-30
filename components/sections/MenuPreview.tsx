@@ -88,7 +88,7 @@ function MenuCard({ item }: { item: MenuItem & { image: string } }) {
               <li
                 key={flag}
                 title={DIETARY_LABELS[flag]}
-                className="rounded-full border border-fog/40 px-2 py-0.5 font-mono text-xs text-fog-dark"
+                className="rounded-full border border-fog/40 px-2 py-0.5 font-mono text-label text-fog-dark"
               >
                 <span aria-hidden>{flag}</span>
                 <span className="sr-only">{DIETARY_LABELS[flag]}</span>

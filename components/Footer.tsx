@@ -117,7 +117,7 @@ export default function Footer() {
               {HOURS.map((entry) => (
                 <div key={entry.day} className="flex flex-col items-center gap-0.5 md:items-start">
                   <dt className="font-sans text-base text-linen/80 md:text-sm">{entry.day}</dt>
-                  <dd className="font-mono text-sm text-linen/70 md:text-xs">{entry.time}</dd>
+                  <dd className="font-mono text-sm text-linen/85">{entry.time}</dd>
                 </div>
               ))}
             </dl>
@@ -131,7 +131,7 @@ export default function Footer() {
             <h2 className="font-mono text-label uppercase tracking-label text-gold">Visit us</h2>
             <Link
               href="/reservations"
-              className="mt-4 inline-flex min-h-[48px] items-center rounded-full bg-gold px-6 py-2.5 font-sans text-sm font-medium text-forest transition-opacity hover:opacity-90"
+              className="mt-4 inline-flex min-h-[48px] items-center rounded-full bg-gold px-6 py-2.5 font-sans text-base font-semibold text-forest transition-opacity hover:opacity-90"
             >
               Reserve a Table
             </Link>
@@ -166,7 +166,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div>
         <div className="mx-auto flex max-w-content flex-col items-center gap-4 px-5 py-6 md:flex-row md:justify-between md:gap-0 md:px-8">
-          <p className="font-sans text-xs text-linen/70">
+          <p className="font-sans text-sm text-linen/80">
             &copy; {new Date().getFullYear()} {CONTACT.name}. All rights reserved.
           </p>
 
@@ -174,13 +174,13 @@ export default function Footer() {
           <div className="flex gap-6">
             <Link
               href="/privacy-policy"
-              className="inline-flex min-h-12 items-center font-sans text-xs text-linen/70 transition-colors hover:text-gold/80"
+              className="inline-flex min-h-12 items-center font-sans text-sm text-linen/80 transition-colors hover:text-gold"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms-of-service"
-              className="inline-flex min-h-12 items-center font-sans text-xs text-linen/70 transition-colors hover:text-gold/80"
+              className="inline-flex min-h-12 items-center font-sans text-sm text-linen/80 transition-colors hover:text-gold"
             >
               Terms of Service
             </Link>
@@ -196,7 +196,7 @@ export default function Footer() {
             <span className="inline-block h-px w-6 bg-current opacity-40 transition-all group-hover:w-8" />
           </a>
 
-          <p className="flex min-h-12 items-center gap-1 font-sans text-xs text-linen/70">
+          <p className="flex min-h-12 items-center gap-1 font-sans text-sm text-linen/80">
             Built by{' '}
             <a
               href="https://alectronicsolutions.com"

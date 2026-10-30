@@ -97,6 +97,29 @@ function SectionNav({ activeId }: { activeId: string }) {
   );
 }
 
+// ── Dietary key: shown before the dishes so the codes are decoded as they are read ──
+
+function DietaryKey() {
+  return (
+    <div className="print-hide border-b border-fog/25 bg-linen px-5 py-4 md:px-8">
+      <div
+        className="mx-auto flex max-w-3xl flex-wrap gap-x-5 gap-y-2"
+        role="group"
+        aria-label="Dietary key"
+      >
+        {(Object.entries(DIETARY_LABELS) as [DietaryFlag, string][]).map(([flag, label]) => (
+          <span key={flag} className="flex items-center gap-2 font-sans text-sm text-fog-dark">
+            <span className="rounded-full border border-fog/40 px-2 py-0.5 font-mono text-label text-fog-dark">
+              {flag}
+            </span>
+            {label}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ── PART 4: Wine and dietary notes ──────────────────────────────────────────
 
 function DrinksNote() {
@@ -123,17 +146,6 @@ function DrinksNote() {
               Please mention any allergies or restrictions when you reserve.
             </p>
           </div>
-        </div>
-        {/* Dietary key */}
-        <div className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start" aria-label="Dietary key">
-          {(Object.entries(DIETARY_LABELS) as [DietaryFlag, string][]).map(([flag, label]) => (
-            <span key={flag} className="flex items-center gap-1.5 font-sans text-xs text-fog-dark">
-              <span className="rounded-full border border-fog/40 px-1.5 py-0.5 font-mono text-xs text-fog-dark">
-                {flag}
-              </span>
-              {label}
-            </span>
-          ))}
         </div>
       </div>
     </div>
@@ -190,6 +202,7 @@ export default function MenuClient() {
     <>
       <MenuHero />
       <SectionNav activeId={activeId} />
+      <DietaryKey />
       {MENU.map((section, i) => (
         <MenuSection key={section.id} section={section} isEven={i % 2 === 0} />
       ))}

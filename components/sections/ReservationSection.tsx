@@ -194,11 +194,11 @@ export default function ReservationSection() {
             <div className="sm:col-span-2">
               <button
                 type="submit"
-                className="mt-2 min-h-[52px] w-full rounded-full bg-gold py-4 font-sans text-base font-medium text-forest transition-all duration-300 hover:scale-[1.01] hover:bg-gold/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
+                className="mt-2 min-h-[52px] w-full rounded-full bg-gold py-4 font-sans text-base font-semibold text-forest transition-all duration-300 hover:scale-[1.01] hover:bg-gold/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
               >
                 Reserve a Table
               </button>
-              <p className="mt-3 text-center font-sans text-xs text-linen/75">
+              <p className="mt-3 text-left font-sans text-sm text-linen/85">
                 We confirm every request within 2 hours during business hours.
               </p>
             </div>

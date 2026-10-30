@@ -19,7 +19,7 @@ function DietaryBadge({ flag }: { flag: DietaryFlag }) {
   return (
     <span
       title={DIETARY_LABELS[flag]}
-      className="rounded-full border border-fog/40 px-1.5 py-0.5 font-mono text-xs text-fog-dark"
+      className="rounded-full border border-fog/40 px-1.5 py-0.5 font-mono text-label text-fog-dark"
     >
       <span aria-hidden>{flag}</span>
       <span className="sr-only">{DIETARY_LABELS[flag]}</span>
@@ -109,7 +109,7 @@ export default function MenuSection({ section, isEven }: Props) {
                   {/* Seasonal + dietary badges: desktop, next to the name */}
                   <div className="mt-1 hidden items-center gap-2 md:flex">
                     {item.seasonal && (
-                      <span className="rounded-full bg-gold px-2 py-0.5 font-mono text-xs text-forest">
+                      <span className="rounded-full bg-gold px-2 py-0.5 font-mono text-label text-forest">
                         Seasonal
                       </span>
                     )}
@@ -119,7 +119,7 @@ export default function MenuSection({ section, isEven }: Props) {
                   </div>
                   {/* Seasonal badge: mobile, below name */}
                   {item.seasonal && (
-                    <span className="mt-1 inline-block rounded-full bg-gold px-2 py-0.5 font-mono text-xs text-forest md:hidden">
+                    <span className="mt-1 inline-block rounded-full bg-gold px-2 py-0.5 font-mono text-label text-forest md:hidden">
                       Seasonal
                     </span>
                   )}
@@ -138,11 +138,11 @@ export default function MenuSection({ section, isEven }: Props) {
                 <div className="hidden md:col-span-3 md:block">
                   <Link
                     href={farmHref(item.farmId)}
-                    className="link-underline font-mono text-xs leading-relaxed text-fog-dark hover:text-forest"
+                    className="link-underline font-mono text-label leading-relaxed text-fog-dark hover:text-forest"
                   >
                     {item.farmSource}
                   </Link>
-                  <p className="font-mono text-xs text-fog-dark">
+                  <p className="font-mono text-label text-fog-dark">
                     {item.farmLocation}
                   </p>
                 </div>

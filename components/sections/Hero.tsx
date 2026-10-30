@@ -87,13 +87,13 @@ export default function Hero() {
 
         <m.div
           variants={fadeUp}
-          className="mx-auto mt-10 flex max-w-xs flex-col items-center gap-1.5 rounded-2xl bg-forest/50 px-5 py-4 font-mono text-label uppercase leading-relaxed tracking-label text-linen/85 backdrop-blur-sm sm:max-w-none sm:flex-row sm:justify-center sm:gap-3 sm:rounded-full sm:bg-transparent sm:px-0 sm:py-0 sm:backdrop-blur-none"
+          className="mx-auto mt-10 flex max-w-xs flex-col items-center gap-1 rounded-2xl bg-forest/60 px-5 py-4 font-sans text-sm leading-relaxed text-linen backdrop-blur-sm sm:max-w-none sm:flex-row sm:justify-center sm:gap-3 sm:rounded-full sm:bg-transparent sm:px-0 sm:py-0 sm:backdrop-blur-none"
         >
           <span>{CONTACT.address}, {CONTACT.locality}</span>
           <span className="hidden h-1 w-1 rotate-45 bg-gold/60 sm:inline-block" aria-hidden />
           <span>Dinner Tue to Sat · Brunch Sun</span>
           <span className="hidden h-1 w-1 rotate-45 bg-gold/60 sm:inline-block" aria-hidden />
-          <a href={PHONE_HREF} className="inline-flex min-h-12 items-center transition-colors hover:text-gold">
+          <a href={PHONE_HREF} className="inline-flex min-h-12 items-center font-mono transition-colors hover:text-gold">
             {CONTACT.phone}
           </a>
         </m.div>

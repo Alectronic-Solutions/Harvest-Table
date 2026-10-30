@@ -56,7 +56,7 @@ export default function MobileReserveBar() {
   return (
     <nav
       aria-label="Quick actions"
-      className={`print-hide fixed inset-x-0 bottom-0 z-40 border-t border-linen/10 bg-forest/95 px-4 pb-[calc(env(safe-area-inset-bottom)+12px)] pt-3 backdrop-blur-md transition-transform duration-300 md:hidden ${
+      className={`print-hide fixed inset-x-0 bottom-0 z-40 border-t border-linen/10 bg-forest/95 px-4 pb-[calc(env(safe-area-inset-bottom)+12px)] pt-3 backdrop-blur-md transition-transform duration-300 lg:hidden ${
         show ? 'translate-y-0' : 'pointer-events-none translate-y-full'
       }`}
       aria-hidden={!show}

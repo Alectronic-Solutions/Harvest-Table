@@ -13,7 +13,7 @@ export default function NotFound() {
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
             href="/menu"
-            className="inline-flex min-h-[48px] items-center rounded-full bg-gold px-8 py-3 font-sans text-sm font-medium text-forest transition-opacity hover:opacity-90"
+            className="inline-flex min-h-[48px] items-center rounded-full bg-gold px-8 py-3 font-sans text-base font-semibold text-forest transition-opacity hover:opacity-90"
           >
             View the menu
           </Link>

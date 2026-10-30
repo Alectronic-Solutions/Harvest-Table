@@ -66,12 +66,12 @@ function ThankYouModal({ onClose }: { onClose: () => void }) {
           <button
             ref={closeButtonRef}
             onClick={onClose}
-            className="mt-8 inline-flex min-h-[48px] items-center rounded-full bg-gold px-8 py-3 font-sans text-sm font-medium text-forest transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2 focus-visible:ring-offset-linen"
+            className="mt-8 inline-flex min-h-[48px] items-center rounded-full bg-gold px-8 py-3 font-sans text-base font-semibold text-forest transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2 focus-visible:ring-offset-linen"
           >
             Close
           </button>
 
-          <p className="mt-4 font-sans text-xs italic text-fog-dark">
+          <p className="mt-4 font-sans text-sm italic text-fog-dark">
             This is a demo site. No data was sent.
           </p>
         </m.div>

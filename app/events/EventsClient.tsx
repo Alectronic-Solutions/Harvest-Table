@@ -235,7 +235,7 @@ function NewsletterStrip() {
             Notify Me
           </button>
         </form>
-        <p className="mt-4 font-sans text-xs text-linen/60">
+        <p className="mt-4 font-sans text-sm text-linen/80">
           A few emails a season. Unsubscribe anytime.
         </p>
       </div>

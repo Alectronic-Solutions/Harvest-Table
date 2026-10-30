@@ -138,7 +138,7 @@ function InquiryForm() {
 
         <button
           type="submit"
-          className="w-full min-h-[52px] rounded-full bg-gold py-4 font-sans text-base font-medium text-forest transition-all duration-300 hover:scale-[1.01] hover:bg-gold/90"
+          className="w-full min-h-[52px] rounded-full bg-gold py-4 font-sans text-base font-semibold text-forest transition-all duration-300 hover:scale-[1.01] hover:bg-gold/90"
         >
           Send Message
         </button>
@@ -176,7 +176,7 @@ function ContactContent() {
               <p className="font-mono text-label uppercase tracking-label text-fog-dark">Reservations</p>
               <a
                 href={PHONE_HREF}
-                className="mt-1 flex min-h-12 items-center justify-center font-mono text-base text-forest transition-colors hover:text-ember md:justify-start"
+                className="mt-1 flex min-h-12 items-center font-mono text-base text-forest transition-colors hover:text-ember"
               >
                 {CONTACT.phone}
               </a>
@@ -186,7 +186,7 @@ function ContactContent() {
               <p className="font-mono text-label uppercase tracking-label text-fog-dark">General inquiries</p>
               <a
                 href={`mailto:${CONTACT.email}`}
-                className="mt-1 flex min-h-12 items-center justify-center font-sans text-sm text-forest transition-colors hover:text-ember md:justify-start"
+                className="mt-1 flex min-h-12 items-center font-sans text-sm text-forest transition-colors hover:text-ember"
               >
                 {CONTACT.email}
               </a>
@@ -200,7 +200,7 @@ function ContactContent() {
                   className="flex justify-between border-b border-fog/15 py-2"
                 >
                   <span className="font-sans text-sm text-forest">{h.day}</span>
-                  <span className="font-mono text-xs text-fog-dark">{h.time}</span>
+                  <span className="font-mono text-sm text-fog-dark">{h.time}</span>
                 </div>
               ))}
             </div>
