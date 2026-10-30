@@ -58,7 +58,7 @@ function ParallaxPanel({
 
 export default function TheSpace() {
   return (
-    <section className="bg-linen py-16 md:py-24">
+    <section className="blend-top-linen bg-linen py-16 md:py-24">
       <div className="mx-auto max-w-content px-5 md:px-8">
 
         {/* Section header */}

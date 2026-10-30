@@ -5,7 +5,7 @@ import { CONTACT, HOURS, MAPS_EMBED_URL, MAPS_URL, PHONE_HREF } from '@/data/res
 
 export default function VisitStrip() {
   return (
-    <section aria-labelledby="visit-heading" className="bg-linen py-16 md:py-24">
+    <section aria-labelledby="visit-heading" className="blend-top-linen bg-linen py-16 md:py-24">
       <div className="mx-auto grid max-w-content grid-cols-1 gap-10 px-5 md:grid-cols-12 md:gap-12 md:px-8">
         <div className="text-left md:col-span-5">
           <h2 id="visit-heading" className="font-display text-4xl font-semibold text-forest md:text-5xl">

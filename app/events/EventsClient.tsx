@@ -59,6 +59,7 @@ function EventsHero() {
           pass, and around the holidays. Seats go quickly.
         </p>
       </div>
+      <div aria-hidden className="blend-out-linen" />
     </section>
   );
 }
@@ -210,7 +211,7 @@ function EventCard({ event, index }: { event: Event; index: number }) {
 function NewsletterStrip() {
   const { handleSubmit, modal } = useDemoForm();
   return (
-    <section aria-labelledby="newsletter-heading" className="bg-forest py-16 md:py-20" data-hide-mobile-bar>
+    <section aria-labelledby="newsletter-heading" className="blend-top-forest bg-forest py-16 md:py-20" data-hide-mobile-bar>
       {modal}
       <div className="mx-auto max-w-2xl px-5 text-center">
         <h2 id="newsletter-heading" className="font-display text-4xl font-normal text-linen">Be the first to know</h2>

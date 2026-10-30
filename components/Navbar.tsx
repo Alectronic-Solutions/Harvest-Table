@@ -83,8 +83,8 @@ export default function Navbar() {
     <header
       className={`sticky top-0 z-50 transition-all duration-500 ${
         solid
-          ? 'bg-linen/90 backdrop-blur-md border-b border-ink/10 shadow-[0_2px_20px_rgba(0,0,0,0.08)]'
-          : 'bg-linen/70 backdrop-blur-sm border-b border-ink/6'
+          ? 'bg-linen/90 backdrop-blur-md shadow-[0_2px_20px_rgba(0,0,0,0.08)]'
+          : 'bg-linen/70 backdrop-blur-sm'
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-content items-center justify-between px-5 md:h-20 md:px-8">

@@ -44,6 +44,7 @@ export default function Hero() {
       <div className="absolute inset-0 warmth-hero" />
       {/* Bottom vignette bleeds the hero into the Philosophy section */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-forest/40" />
+      <div aria-hidden className="blend-out-forest" />
 
       {/* Content */}
       <m.div

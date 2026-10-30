@@ -42,7 +42,7 @@ function FacebookIcon() {
 
 export default function Footer() {
   return (
-    <footer className="bg-forest text-linen">
+    <footer className="blend-top-forest bg-forest text-linen">
 
       {/* Main grid */}
       <div className="mx-auto max-w-content px-5 py-16 md:px-8">

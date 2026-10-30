@@ -19,6 +19,8 @@
   /* RGB channels of the palette, for translucent scrims and glows in CSS. */
   --rgb-ink: 26 26 26;
   --rgb-forest: 44 59 45;
+  --rgb-linen: 240 235 225;
+  --rgb-paper: 255 255 255;
   --rgb-gold: 212 168 67;
   --rgb-ember: 160 82 45;
   --color-fog-dark: #566256;
@@ -136,6 +138,68 @@
       -webkit-mask-image: none;
       mask-image: none;
     }
+  }
+  /* Soft blends between sections so colours fade instead of meeting at a hard edge.
+     blend-top-*: gradient laid over the bottom of the previous section, for sections with a solid colour.
+     blend-in-* / blend-out-*: overlay div inside an image section, fading its top or bottom edge. */
+  .blend-top-forest,
+  .blend-top-linen,
+  .blend-top-paper {
+    position: relative;
+  }
+  .blend-top-forest::before,
+  .blend-top-linen::before,
+  .blend-top-paper::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -6rem;
+    z-index: 1;
+    height: 6rem;
+    pointer-events: none;
+  }
+  .blend-in-forest,
+  .blend-in-linen,
+  .blend-in-paper,
+  .blend-out-forest,
+  .blend-out-linen,
+  .blend-out-paper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    height: 5rem;
+    pointer-events: none;
+  }
+  .blend-in-forest, .blend-in-linen, .blend-in-paper { top: 0; }
+  .blend-out-forest, .blend-out-linen, .blend-out-paper { bottom: 0; }
+  .blend-top-forest::before {
+    background-image: linear-gradient(to bottom, transparent, rgb(var(--rgb-forest)));
+  }
+  .blend-in-forest {
+    background-image: linear-gradient(to bottom, rgb(var(--rgb-forest)), transparent);
+  }
+  .blend-out-forest {
+    background-image: linear-gradient(to top, rgb(var(--rgb-forest)), transparent);
+  }
+  .blend-top-linen::before {
+    background-image: linear-gradient(to bottom, transparent, rgb(var(--rgb-linen)));
+  }
+  .blend-in-linen {
+    background-image: linear-gradient(to bottom, rgb(var(--rgb-linen)), transparent);
+  }
+  .blend-out-linen {
+    background-image: linear-gradient(to top, rgb(var(--rgb-linen)), transparent);
+  }
+  .blend-top-paper::before {
+    background-image: linear-gradient(to bottom, transparent, rgb(var(--rgb-paper)));
+  }
+  .blend-in-paper {
+    background-image: linear-gradient(to bottom, rgb(var(--rgb-paper)), transparent);
+  }
+  .blend-out-paper {
+    background-image: linear-gradient(to top, rgb(var(--rgb-paper)), transparent);
   }
   /* Legibility scrims and warm glows behind hero and section copy. */
   .scrim-hero {

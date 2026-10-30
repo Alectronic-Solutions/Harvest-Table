@@ -41,7 +41,7 @@ function Stars() {
 
 export default function GuestReviews() {
   return (
-    <section aria-labelledby="reviews-heading" className="relative overflow-hidden bg-paper py-16 md:py-20">
+    <section aria-labelledby="reviews-heading" className="blend-top-paper relative bg-paper py-16 md:py-20">
       {/* Subtle radial warmth behind the quotes */}
       <div
         className="warmth-reviews pointer-events-none absolute inset-0"

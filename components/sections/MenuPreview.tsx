@@ -103,7 +103,7 @@ function MenuCard({ item }: { item: MenuItem & { image: string } }) {
 
 export default function MenuPreview() {
   return (
-    <section aria-labelledby="menu-preview-heading" className="bg-linen py-16 md:py-24">
+    <section aria-labelledby="menu-preview-heading" className="blend-top-linen bg-linen py-16 md:py-24">
       <div className="mx-auto max-w-content px-5 md:px-8">
         {/* Section header */}
         <div className="mb-10 flex flex-col items-start gap-4 text-left md:mb-12 md:flex-row md:items-end md:justify-between">
