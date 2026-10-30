@@ -2,7 +2,6 @@
 // Hours, address with directions, phone, parking, and a lazy-loaded map.
 
 import { CONTACT, HOURS, MAPS_EMBED_URL, MAPS_URL, PHONE_HREF } from '@/data/restaurant';
-import { ButtonLink } from '@/components/ui/Button';
 
 export default function VisitStrip() {
   return (
@@ -48,7 +47,6 @@ export default function VisitStrip() {
           </p>
 
           <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row">
-            <ButtonLink href="/reservations">Reserve a Table</ButtonLink>
             <a
               href={MAPS_URL}
               target="_blank"

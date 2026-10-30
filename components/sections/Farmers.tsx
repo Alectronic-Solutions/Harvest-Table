@@ -75,7 +75,7 @@ function FarmerCard({ farmer }: { farmer: Farmer }) {
           ))}
         </div>
 
-        <p className="mt-3 font-mono text-label text-fog-dark">Partners since {farmer.partnerSince}</p>
+        <p className="mt-3 font-sans text-sm text-fog-dark">Partners since {farmer.partnerSince}</p>
       </div>
     </m.article>
   );
@@ -86,11 +86,11 @@ export default function Farmers() {
     <section aria-labelledby="farmers-heading" className="bg-linen py-16 md:py-24">
       <div className="mx-auto max-w-content px-5 md:px-8">
         {/* Section header */}
-        <div className="mb-10 text-center md:mb-12 md:text-left">
+        <div className="mb-10 text-left md:mb-12">
           <h2 id="farmers-heading" className="font-display text-4xl font-semibold text-forest md:text-5xl">
             Meet our farmers
           </h2>
-          <p className="mx-auto mt-4 max-w-xs font-sans text-base text-fog-dark md:mx-0 md:max-w-xl">
+          <p className="mt-4 max-w-xl font-sans text-base text-fog-dark">
             We visit every farm before we put it on the menu. These are the
             people who make this food possible.
           </p>
@@ -112,7 +112,7 @@ export default function Farmers() {
         </m.div>
 
         {/* See more link */}
-        <div className="mt-12 text-center">
+        <div className="mt-12 text-left">
           <Link
             href="/farmers"
             className="inline-flex min-h-[48px] items-center font-sans text-sm font-medium text-ember underline underline-offset-4 hover:opacity-80"

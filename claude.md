@@ -24,7 +24,7 @@ to show prospective restaurant clients a premium $5K-$8K web presence.
 - Weights: only use Cormorant 300/400/600 (no font-medium on display text); dark backgrounds use 400, linen uses 600
 - Mobile floor: no text under 12px except the seasonal strip (11px); mono labels are text-xs with tracking-label (0.15em), one tracking value for all caps labels
 - Readable paragraphs (menu items, events, FAQ, stories) are text-base leading-relaxed; text-sm is for captions, names and status notes only
-- Multi-line paragraphs are left-aligned on mobile; only headings and one-line sublines are centered
+- Body copy and section headings are left-aligned on mobile; only the hero and the dark closing CTA bands are centered
 - DM Mono h2/h3 are allowed only for short column labels (Hours, Visit us); never as a label above a heading
 
 ## Seasonal Strip

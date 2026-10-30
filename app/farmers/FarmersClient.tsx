@@ -73,10 +73,10 @@ function FeaturedFarmerCard({ farmer, index }: { farmer: Farmer; index: number }
         </h2>
         <p className="mt-1 font-sans text-base text-fog-dark">{farmer.name}</p>
 
-        <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-label uppercase tracking-label text-fog-dark">
+        <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 font-sans text-sm text-fog-dark">
           <span>{farmer.location}</span>
           <span aria-hidden="true">·</span>
-          <span>{farmer.distanceMiles} miles from our kitchen</span>
+          <span>{farmer.distanceMiles} miles away</span>
           <span aria-hidden="true">·</span>
           <span>Since {farmer.partnerSince}</span>
         </p>

@@ -70,7 +70,7 @@ export default function ReservationSection() {
       {/* LEFT: form column (55%) */}
       <div className="bg-forest px-5 py-16 md:w-[55%] md:px-12 md:py-20">
         <div className="mx-auto max-w-lg">
-          <h2 id="home-reserve-heading" className="text-center font-display text-4xl font-normal text-linen md:text-left md:text-5xl">
+          <h2 id="home-reserve-heading" className="text-left font-display text-4xl font-normal text-linen md:text-5xl">
             Reserve a table
           </h2>
           <p className="mt-3 text-left font-sans text-base leading-relaxed text-linen/85">

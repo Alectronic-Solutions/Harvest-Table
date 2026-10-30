@@ -106,12 +106,12 @@ export default function MenuPreview() {
     <section aria-labelledby="menu-preview-heading" className="bg-linen py-16 md:py-24">
       <div className="mx-auto max-w-content px-5 md:px-8">
         {/* Section header */}
-        <div className="mb-10 flex flex-col items-center gap-4 text-center md:mb-12 md:flex-row md:items-end md:justify-between md:text-left">
+        <div className="mb-10 flex flex-col items-start gap-4 text-left md:mb-12 md:flex-row md:items-end md:justify-between">
           <div>
             <h2 id="menu-preview-heading" className="font-display text-4xl font-semibold text-forest md:text-5xl">
               This season&apos;s menu
             </h2>
-            <p className="mx-auto mt-3 max-w-lg font-sans text-base text-fog-dark md:mx-0">
+            <p className="mt-3 max-w-lg font-sans text-base text-fog-dark">
               A few of the mains on our {CURRENT_SEASON} menu. Every plate names the
               farm it came from.
             </p>

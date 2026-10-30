@@ -62,11 +62,11 @@ export default function TheSpace() {
       <div className="mx-auto max-w-content px-5 md:px-8">
 
         {/* Section header */}
-        <div className="mb-10 text-center md:mb-12">
+        <div className="mb-10 text-left md:mb-12">
           <h2 className="font-display text-4xl font-semibold text-forest md:text-5xl">
             The room
           </h2>
-          <p className="mx-auto mt-4 max-w-lg font-sans text-base text-fog-dark">
+          <p className="mt-4 max-w-lg font-sans text-base text-fog-dark">
             Forty seats. Natural light during the day. Candlelight after dark.
             No music loud enough to interrupt a conversation.
           </p>

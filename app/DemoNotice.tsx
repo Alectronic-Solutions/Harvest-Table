@@ -20,7 +20,13 @@ export default function DemoNotice() {
       Fictional business. This is a concept website built by{" "}
       <a
         href="https://alectronicsolutions.com/portfolio"
-        style={{ color: "inherit", textDecoration: "underline" }}
+        style={{
+          color: "inherit",
+          textDecoration: "underline",
+          display: "inline-block",
+          padding: "15px 2px",
+          margin: "-15px 0",
+        }}
       >
         Alectronic Solutions
       </a>

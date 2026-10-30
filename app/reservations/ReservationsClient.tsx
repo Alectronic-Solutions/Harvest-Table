@@ -40,7 +40,7 @@ function ReservationForm() {
   return (
     <>
       {modal}
-      <h2 className="text-center font-display text-4xl font-semibold text-forest md:text-left">
+      <h2 className="text-left font-display text-4xl font-semibold text-forest">
         {selectedEvent ? `Reserve seats: ${selectedEvent.title}` : 'Request a table'}
       </h2>
       <p className="mt-2 mb-8 text-left font-sans text-base leading-relaxed text-fog-dark">

@@ -50,12 +50,12 @@ export default function GuestReviews() {
       />
 
       <div className="relative mx-auto max-w-content px-5 md:px-8">
-        <div className="text-center">
+        <div className="text-left">
           <h2 id="reviews-heading" className="font-display text-4xl font-semibold text-forest md:text-5xl">
             From our guests
           </h2>
           {/* Gold ornament */}
-          <div className="mt-5 flex items-center justify-center gap-3" aria-hidden>
+          <div className="mt-5 flex items-center justify-start gap-3" aria-hidden>
             <div className="h-px w-12 bg-gradient-to-r from-transparent to-gold/40" />
             <div className="h-1.5 w-1.5 rotate-45 bg-gold/60" />
             <div className="h-px w-12 bg-gradient-to-l from-transparent to-gold/40" />
