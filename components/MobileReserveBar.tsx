@@ -56,7 +56,7 @@ export default function MobileReserveBar() {
   return (
     <nav
       aria-label="Quick actions"
-      className={`print-hide fixed inset-x-0 bottom-0 z-40 border-t border-linen/10 bg-forest/95 px-4 pb-[calc(env(safe-area-inset-bottom)+12px)] pt-3 backdrop-blur-md transition-transform duration-300 md:hidden ${
+      className={`print-hide fixed inset-x-0 bottom-0 z-40 border-t border-linen/10 bg-forest/95 px-4 pb-[calc(env(safe-area-inset-bottom)+12px)] pt-3 backdrop-blur-md transition-transform duration-300 lg:hidden ${
         show ? 'translate-y-0' : 'pointer-events-none translate-y-full'
       }`}
       aria-hidden={!show}
@@ -65,7 +65,7 @@ export default function MobileReserveBar() {
         <a
           href={PHONE_HREF}
           tabIndex={show ? 0 : -1}
-          className="flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-linen/30 px-5 font-sans text-sm font-medium text-linen"
+          className="flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-linen/30 px-5 font-sans text-base font-semibold text-linen"
         >
           <PhoneIcon />
           Call
@@ -73,7 +73,7 @@ export default function MobileReserveBar() {
         <Link
           href="/reservations"
           tabIndex={show ? 0 : -1}
-          className="flex min-h-[48px] flex-1 items-center justify-center rounded-full bg-gold font-sans text-sm font-medium text-forest"
+          className="flex min-h-[48px] flex-1 items-center justify-center rounded-full bg-gold font-sans text-base font-semibold text-forest"
         >
           Reserve a Table
         </Link>

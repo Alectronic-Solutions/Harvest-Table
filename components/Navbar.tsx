@@ -94,7 +94,7 @@ export default function Navbar() {
           <Link
             href="/"
             onClick={() => setMenuOpen(false)}
-            className="flex items-center gap-2.5"
+            className="flex min-h-12 items-center gap-2.5"
           >
             <Image
               src={asset('/logo.svg')}
@@ -111,7 +111,7 @@ export default function Navbar() {
         </div>
 
         {/* Center: desktop nav links */}
-        <ul className="hidden gap-8 md:flex">
+        <ul className="hidden gap-8 lg:flex">
           {LINKS.map((link) => (
             <li key={link.href}>
               <Link
@@ -132,7 +132,7 @@ export default function Navbar() {
           <a
             href={PHONE_HREF}
             aria-label={`Call ${CONTACT.name} at ${CONTACT.phone}`}
-            className="flex h-12 w-12 items-center justify-center text-ink md:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            className="flex h-12 w-12 items-center justify-center text-ink lg:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
           >
             <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
               <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z" />
@@ -144,7 +144,7 @@ export default function Navbar() {
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
-            className="-mr-2 flex h-12 w-12 items-center justify-center md:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-linen"
+            className="-mr-2 flex h-12 w-12 items-center justify-center lg:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-linen"
           >
             <span className="relative block h-[14px] w-6">
               <span className={`absolute left-0 block h-[1.5px] w-6 transition-all duration-300 ${barColor} ${
@@ -161,7 +161,7 @@ export default function Navbar() {
 
           <Link
             href="/reservations"
-            className="hidden rounded-full bg-gold px-5 py-2.5 font-sans text-sm font-medium text-forest transition-all duration-300 hover:scale-[1.02] hover:opacity-90 md:inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-linen"
+            className="hidden rounded-full bg-gold px-5 py-2.5 font-sans text-base font-semibold text-forest transition-all duration-300 hover:scale-[1.02] hover:opacity-90 lg:inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-linen"
           >
             Reserve a Table
           </Link>
@@ -184,7 +184,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
-              className="fixed inset-0 top-16 z-40 flex flex-col bg-forest pb-10 pt-8 shadow-[0_24px_60px_rgba(0,0,0,0.35)] md:top-20 md:hidden"
+              className="fixed inset-0 top-16 z-40 flex flex-col bg-forest pb-10 pt-8 shadow-[0_24px_60px_rgba(0,0,0,0.35)] md:top-20 lg:hidden"
             >
               <ul className="flex flex-1 flex-col justify-center gap-1 px-8">
                 {LINKS.map((link, i) => (
@@ -195,7 +195,7 @@ export default function Navbar() {
                     transition={{ delay: 0.04 * i + 0.1, duration: 0.3, ease: 'easeOut' }}
                     className="flex items-baseline gap-4 border-b border-linen/10 py-4 first:pt-0"
                   >
-                    <span className="font-mono text-[11px] text-gold/70">
+                    <span className="font-mono text-label text-gold">
                       {String(i + 1).padStart(2, '0')}
                     </span>
                     <Link
@@ -203,7 +203,7 @@ export default function Navbar() {
                       href={link.href}
                       onClick={() => setMenuOpen(false)}
                       aria-current={isActive(link.href) ? 'page' : undefined}
-                      className={`font-display text-4xl font-light leading-none transition-colors duration-200 hover:text-gold focus:outline-none focus-visible:text-gold focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-forest ${
+                      className={`font-display text-4xl font-normal leading-none transition-colors duration-200 hover:text-gold focus:outline-none focus-visible:text-gold focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-forest ${
                         isActive(link.href) ? 'text-gold' : 'text-linen'
                       }`}
                     >
@@ -217,14 +217,14 @@ export default function Navbar() {
                 <Link
                   href="/reservations"
                   onClick={() => setMenuOpen(false)}
-                  className="flex h-14 items-center justify-center rounded-full bg-gold font-sans text-base font-medium text-forest transition-transform duration-200 hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
+                  className="flex h-14 items-center justify-center rounded-full bg-gold font-sans text-base font-semibold text-forest transition-transform duration-200 hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
                 >
                   Reserve a Table
                 </Link>
                 <a
                   href={PHONE_HREF}
                   onClick={() => setMenuOpen(false)}
-                  className="mt-2 flex min-h-[48px] items-center justify-center font-mono text-xs tracking-[0.1em] text-linen/70 transition-colors duration-200 hover:text-gold focus:outline-none focus-visible:text-gold"
+                  className="mt-2 flex min-h-[48px] items-center justify-center font-mono text-label tracking-wide text-linen/85 transition-colors duration-200 hover:text-gold focus:outline-none focus-visible:text-gold"
                 >
                   {CONTACT.phone}
                 </a>

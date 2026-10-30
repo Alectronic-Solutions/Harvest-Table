@@ -50,11 +50,11 @@ function EventsHero() {
         />
       </m.div>
       <div className="absolute inset-0 bg-forest/60" />
-      <div className="relative z-10 px-6 text-center">
-        <h1 className="font-display text-5xl font-semibold text-linen md:text-6xl">
+      <div className="relative z-10 px-5 text-center">
+        <h1 className="font-display text-5xl font-semibold leading-[1.05] text-linen md:text-6xl">
           Events
         </h1>
-        <p className="mx-auto mt-4 max-w-sm font-sans text-sm leading-relaxed text-linen/90 md:text-base">
+        <p className="mx-auto mt-4 max-w-sm font-sans text-base leading-relaxed text-linen/90">
           A handful of special dinners each season, in the vineyard, at the
           pass, and around the holidays. Seats go quickly.
         </p>
@@ -119,7 +119,7 @@ function EventCard({ event, index }: { event: Event; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.6, delay: Math.min(index, 2) * 0.08 }}
-      className="flex flex-col overflow-hidden rounded-sm bg-white shadow-[0_18px_40px_-28px_rgba(44,59,45,0.45)] md:flex-row"
+      className="flex flex-col overflow-hidden rounded-sm bg-paper shadow-[0_18px_40px_-28px_rgba(44,59,45,0.45)] md:flex-row"
     >
       {/* Image column */}
       <div className="relative aspect-[4/3] flex-shrink-0 overflow-hidden md:aspect-auto md:min-h-[360px] md:w-[42%]">
@@ -135,15 +135,15 @@ function EventCard({ event, index }: { event: Event; index: number }) {
 
         {badge && (
           <div className="absolute left-4 top-4 flex min-w-[64px] flex-col items-center rounded-sm bg-linen px-3 py-2 text-center shadow-md">
-            <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-ember">{badge.month}</span>
+            <span className="font-mono text-label uppercase tracking-label text-ember">{badge.month}</span>
             <span className="font-display text-3xl font-semibold leading-none text-forest">{badge.day}</span>
-            <span className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.14em] text-fog-dark">{badge.weekday}</span>
+            <span className="mt-0.5 font-mono text-label uppercase tracking-label text-fog-dark">{badge.weekday}</span>
           </div>
         )}
 
         {event.soldOut && (
           <div className="absolute inset-0 flex items-center justify-center bg-forest/65">
-            <span className="rounded-full border border-gold/60 px-4 py-1.5 font-mono text-sm uppercase tracking-widest text-gold">
+            <span className="rounded-full border border-gold/60 px-4 py-1.5 font-mono text-label uppercase tracking-label text-gold">
               Sold Out
             </span>
           </div>
@@ -151,38 +151,38 @@ function EventCard({ event, index }: { event: Event; index: number }) {
       </div>
 
       {/* Content column */}
-      <div className="flex flex-1 flex-col justify-between p-6 text-center md:p-10 md:text-left">
+      <div className="flex flex-1 flex-col justify-between p-6 text-left md:p-10">
         <div>
-          <p className="font-mono text-xs uppercase tracking-widest text-ember">
-            {CATEGORY_LABELS[event.category]}
-            {event.venue ? ` · At ${event.venue.name}` : ''}
-          </p>
-          <h2 id={`${event.id}-title`} className="mt-2 font-display text-3xl font-semibold leading-tight text-forest md:text-4xl">
+          <h2 id={`${event.id}-title`} className="font-display text-3xl font-semibold leading-tight text-forest md:text-4xl">
             {event.title}
           </h2>
           <p className="mt-1 font-display text-lg italic text-fog-dark">{event.subtitle}</p>
-          <p className="mx-auto mt-4 max-w-prose font-sans text-sm leading-relaxed text-fog-dark md:mx-0">
+          <p className="mt-3 font-mono text-label uppercase tracking-label text-ember">
+            {CATEGORY_LABELS[event.category]}
+            {event.venue ? ` · At ${event.venue.name}` : ''}
+          </p>
+          <p className="mt-4 max-w-prose text-left font-sans text-base leading-relaxed text-fog-dark">
             {event.description}
           </p>
 
-          <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-fog/20 pt-5 text-center md:text-left">
+          <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-fog/20 pt-5 text-left">
             <div>
-              <dt className="font-mono text-[11px] uppercase tracking-wide text-fog-dark">Date</dt>
+              <dt className="font-mono text-label uppercase tracking-label text-fog-dark">Date</dt>
               <dd className="mt-0.5 font-sans text-sm text-forest">
                 {event.startDate ? <time dateTime={event.startDate}>{event.date}</time> : event.date}
               </dd>
             </div>
             <div>
-              <dt className="font-mono text-[11px] uppercase tracking-wide text-fog-dark">Time</dt>
+              <dt className="font-mono text-label uppercase tracking-label text-fog-dark">Time</dt>
               <dd className="mt-0.5 font-sans text-sm text-forest">{event.time}</dd>
             </div>
             <div>
-              <dt className="font-mono text-[11px] uppercase tracking-wide text-fog-dark">Price</dt>
+              <dt className="font-mono text-label uppercase tracking-label text-fog-dark">Price</dt>
               <dd className="mt-0.5 font-mono text-sm text-ember">{event.price}</dd>
             </div>
             {event.category !== 'private' && (
               <div>
-                <dt className="font-mono text-[11px] uppercase tracking-wide text-fog-dark">Seats</dt>
+                <dt className="font-mono text-label uppercase tracking-label text-fog-dark">Seats</dt>
                 <dd className={`mt-0.5 font-sans text-sm ${event.soldOut ? 'text-ember' : 'text-forest'}`}>
                   {event.soldOut ? 'Sold out' : `${event.seatsRemaining} of ${event.seats} left`}
                 </dd>
@@ -235,7 +235,7 @@ function NewsletterStrip() {
             Notify Me
           </button>
         </form>
-        <p className="mt-4 font-sans text-xs text-linen/60">
+        <p className="mt-4 font-sans text-sm text-linen/80">
           A few emails a season. Unsubscribe anytime.
         </p>
       </div>

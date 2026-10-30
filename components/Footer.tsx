@@ -45,7 +45,7 @@ export default function Footer() {
     <footer className="bg-forest text-linen">
 
       {/* Main grid */}
-      <div className="mx-auto max-w-content px-5 py-14 md:px-8 md:py-16">
+      <div className="mx-auto max-w-content px-5 py-16 md:px-8">
         <div className="grid grid-cols-1 gap-0 md:grid-cols-4 md:gap-10">
 
           {/* Col 1: Brand */}
@@ -68,37 +68,36 @@ export default function Footer() {
               href={MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-flex min-h-[32px] items-center font-sans text-sm text-linen/60 underline underline-offset-4 transition-colors hover:text-gold"
+              className="mt-2 inline-flex min-h-12 items-center font-sans text-sm text-linen/60 underline underline-offset-4 transition-colors hover:text-gold"
             >
               Get directions
             </a>
             <a
               href={PHONE_HREF}
-              className="mt-3 flex min-h-[32px] items-center font-mono text-base text-gold transition-opacity hover:opacity-80"
+              className="mt-3 flex min-h-12 items-center font-mono text-base text-gold transition-opacity hover:opacity-80"
             >
               {CONTACT.phone}
             </a>
             <a
               href={`mailto:${CONTACT.email}`}
-              className="flex min-h-[32px] items-center font-sans text-sm text-linen/60 transition-colors hover:text-linen/80"
+              className="flex min-h-12 items-center font-sans text-sm text-linen/60 transition-colors hover:text-linen/80"
             >
               {CONTACT.email}
             </a>
           </div>
 
           {/* Divider - mobile only */}
-          <div className="border-t border-linen/10 md:hidden" />
 
           {/* Col 2: Nav links */}
-          <div className="flex flex-col items-center py-10 text-center md:items-start md:py-0 md:text-left">
-            <h2 className="font-mono text-xs uppercase tracking-label text-gold">Explore</h2>
+          <div className="hidden flex-col md:flex md:items-start md:py-0 md:text-left">
+            <h2 className="font-mono text-label uppercase tracking-label text-gold">Explore</h2>
             <nav aria-label="Footer navigation">
               <ul className="mt-4 space-y-2 md:space-y-3">
                 {NAV_LINKS.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="inline-flex min-h-[40px] items-center font-sans text-base text-linen/80 transition-colors hover:text-linen md:min-h-0 md:text-sm"
+                      className="inline-flex min-h-12 items-center font-sans text-base text-linen/80 transition-colors hover:text-linen md:min-h-0 md:text-sm"
                     >
                       {link.label}
                     </Link>
@@ -113,12 +112,12 @@ export default function Footer() {
 
           {/* Col 3: Hours */}
           <div className="flex flex-col items-center py-10 text-center md:items-start md:py-0 md:text-left">
-            <h2 className="font-mono text-xs uppercase tracking-label text-gold">Hours</h2>
+            <h2 className="font-mono text-label uppercase tracking-label text-gold">Hours</h2>
             <dl className="mt-4 space-y-3">
               {HOURS.map((entry) => (
                 <div key={entry.day} className="flex flex-col items-center gap-0.5 md:items-start">
                   <dt className="font-sans text-base text-linen/80 md:text-sm">{entry.day}</dt>
-                  <dd className="font-mono text-sm text-linen/70 md:text-xs">{entry.time}</dd>
+                  <dd className="font-mono text-sm text-linen/85">{entry.time}</dd>
                 </div>
               ))}
             </dl>
@@ -129,10 +128,10 @@ export default function Footer() {
 
           {/* Col 4: Visit + social */}
           <div className="flex flex-col items-center pt-10 text-center md:items-start md:pt-0 md:text-left">
-            <h2 className="font-mono text-xs uppercase tracking-label text-gold">Visit us</h2>
+            <h2 className="font-mono text-label uppercase tracking-label text-gold">Visit us</h2>
             <Link
               href="/reservations"
-              className="mt-4 inline-flex min-h-[48px] items-center rounded-full bg-gold px-6 py-2.5 font-sans text-sm font-medium text-forest transition-opacity hover:opacity-90"
+              className="mt-4 inline-flex min-h-[48px] items-center rounded-full bg-gold px-6 py-2.5 font-sans text-base font-semibold text-forest transition-opacity hover:opacity-90"
             >
               Reserve a Table
             </Link>
@@ -167,7 +166,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div>
         <div className="mx-auto flex max-w-content flex-col items-center gap-4 px-5 py-6 md:flex-row md:justify-between md:gap-0 md:px-8">
-          <p className="font-sans text-xs text-linen/70">
+          <p className="font-sans text-sm text-linen/80">
             &copy; {new Date().getFullYear()} {CONTACT.name}. All rights reserved.
           </p>
 
@@ -175,13 +174,13 @@ export default function Footer() {
           <div className="flex gap-6">
             <Link
               href="/privacy-policy"
-              className="inline-flex min-h-[44px] items-center font-sans text-xs text-linen/70 transition-colors hover:text-gold/80"
+              className="inline-flex min-h-12 items-center font-sans text-sm text-linen/80 transition-colors hover:text-gold"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms-of-service"
-              className="inline-flex min-h-[44px] items-center font-sans text-xs text-linen/70 transition-colors hover:text-gold/80"
+              className="inline-flex min-h-12 items-center font-sans text-sm text-linen/80 transition-colors hover:text-gold"
             >
               Terms of Service
             </Link>
@@ -190,20 +189,20 @@ export default function Footer() {
           {/* Centered back-to-top with ornament */}
           <a
             href="#top"
-            className="group flex min-h-[44px] items-center gap-2 font-mono text-xs tracking-label text-linen/70 transition-colors hover:text-gold"
+            className="group flex min-h-12 items-center gap-2 font-mono text-label tracking-label text-linen/85 transition-colors hover:text-gold"
           >
             <span className="inline-block h-px w-6 bg-current opacity-40 transition-all group-hover:w-8" />
             Back to top
             <span className="inline-block h-px w-6 bg-current opacity-40 transition-all group-hover:w-8" />
           </a>
 
-          <p className="font-sans text-xs text-linen/70">
+          <p className="flex min-h-12 items-center gap-1 font-sans text-sm text-linen/80">
             Built by{' '}
             <a
               href="https://alectronicsolutions.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-linen/60 underline-offset-4 transition-colors hover:text-gold/80 hover:underline"
+              className="inline-flex min-h-12 items-center text-linen/60 underline-offset-4 transition-colors hover:text-gold/80 hover:underline"
             >
               Alectronic Solutions
             </a>

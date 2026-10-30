@@ -16,6 +16,8 @@ const config: Config = {
         ember: '#A0522D',
         fog: '#6B7A6B',
         ink: '#1A1A1A',
+        // Pure white for raised panels that sit on linen.
+        paper: '#FFFFFF',
         // WCAG AA-safe variants for small text on linen/white backgrounds.
         // `gold` and `fog` stay unchanged for use on forest (dark) backgrounds
         // and decorative/large-scale treatments where they already pass.
@@ -27,6 +29,10 @@ const config: Config = {
         display: ['var(--font-cormorant)', 'Georgia', 'serif'],
         mono: ['var(--font-dm-mono)', 'ui-monospace', 'monospace'],
         sans: ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
+      },
+      fontSize: {
+        // Mono caps labels: 13px floor on mobile, replaces text-xs for tracked labels.
+        label: ['0.8125rem', { lineHeight: '1.25rem' }],
       },
       letterSpacing: {
         label: '0.15em',

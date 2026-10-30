@@ -13,7 +13,7 @@ export default function PrivacyPolicyPage() {
     <div className="min-h-screen bg-linen">
       <div className="mx-auto max-w-3xl px-5 py-12 md:px-8 md:py-16">
         <h1 className="font-display text-4xl font-semibold text-forest md:text-5xl">Privacy Policy</h1>
-        <p className="mt-2 font-mono text-xs text-gold-dark">
+        <p className="mt-2 font-mono text-label text-gold-dark">
           Last updated: <time dateTime={BUILD_DATE.toISOString().slice(0, 10)}>{SITE_UPDATED}</time>
         </p>
 
@@ -106,7 +106,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <div className="mt-12 border-t border-forest/10 pt-6">
-            <Link href="/" className="inline-flex min-h-[44px] items-center text-sm text-gold-dark underline-offset-4 hover:underline">
+            <Link href="/" className="inline-flex min-h-12 items-center text-sm text-gold-dark underline-offset-4 hover:underline">
               Back to home
             </Link>
           </div>

@@ -35,7 +35,7 @@ function SelectChevron() {
 }
 
 // Shared class strings kept as constants to avoid repetition.
-const labelClass = 'block font-mono text-[11px] uppercase tracking-[0.14em] text-linen/70';
+const labelClass = 'block font-mono text-label uppercase tracking-label text-linen/85';
 
 const inputClass =
   'mt-1 min-h-[48px] w-full border-b border-linen/30 bg-transparent py-3 font-sans text-base text-linen placeholder-linen/40 transition-colors duration-200 [color-scheme:dark] focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-forest';
@@ -68,12 +68,12 @@ export default function ReservationSection() {
       className="flex flex-col md:flex-row md:items-stretch"
     >
       {/* LEFT: form column (55%) */}
-      <div className="bg-forest px-5 py-12 md:w-[55%] md:px-12 md:py-20">
+      <div className="bg-forest px-5 py-16 md:w-[55%] md:px-12 md:py-20">
         <div className="mx-auto max-w-lg">
-          <h2 id="home-reserve-heading" className="text-center font-display text-4xl font-normal text-linen md:text-left md:text-5xl">
+          <h2 id="home-reserve-heading" className="text-left font-display text-4xl font-normal text-linen md:text-5xl">
             Reserve a table
           </h2>
-          <p className="mx-auto mt-3 max-w-xs text-center font-sans text-sm leading-relaxed text-linen/85 md:mx-0 md:max-w-none md:text-left">
+          <p className="mt-3 text-left font-sans text-base leading-relaxed text-linen/85">
             Dinner Tuesday through Saturday, brunch on Sunday. For parties larger
             than 8 or private events, call us at{' '}
             <a href={PHONE_HREF} className="text-gold underline underline-offset-2">
@@ -194,11 +194,11 @@ export default function ReservationSection() {
             <div className="sm:col-span-2">
               <button
                 type="submit"
-                className="mt-2 min-h-[52px] w-full rounded-full bg-gold py-4 font-sans text-base font-medium text-forest transition-all duration-300 hover:scale-[1.01] hover:bg-gold/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
+                className="mt-2 min-h-[52px] w-full rounded-full bg-gold py-4 font-sans text-base font-semibold text-forest transition-all duration-300 hover:scale-[1.01] hover:bg-gold/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
               >
-                Request Reservation
+                Reserve a Table
               </button>
-              <p className="mt-3 text-center font-sans text-xs text-linen/75">
+              <p className="mt-3 text-left font-sans text-sm text-linen/85">
                 We confirm every request within 2 hours during business hours.
               </p>
             </div>

@@ -55,27 +55,27 @@ function FarmerCard({ farmer }: { farmer: Farmer }) {
         </m.div>
       </div>
 
-      <div className="mt-6 text-center md:text-left">
+      <div className="mt-6 text-left">
         <h3 className="font-display text-2xl font-semibold text-forest">
           {farmer.farm}
         </h3>
         <p className="mt-1 font-sans text-sm text-fog-dark">{farmer.name}</p>
-        <p className="mt-2 font-mono text-xs uppercase tracking-wide text-fog-dark">
+        <p className="mt-2 font-mono text-label uppercase tracking-label text-fog-dark">
           {farmer.location} · {farmer.distanceMiles} miles
         </p>
 
-        <div className="mt-3 flex flex-wrap justify-center gap-2 md:justify-start">
+        <div className="mt-3 flex flex-wrap gap-2">
           {farmer.grows.slice(0, 3).map((item) => (
             <span
               key={item}
-              className="rounded-sm border border-fog/40 px-2 py-0.5 font-sans text-xs text-fog-dark"
+              className="rounded-sm border border-fog/40 px-2 py-0.5 font-sans text-sm text-fog-dark"
             >
               {item}
             </span>
           ))}
         </div>
 
-        <p className="mt-3 font-mono text-xs text-fog-dark">Partners since {farmer.partnerSince}</p>
+        <p className="mt-3 font-sans text-sm text-fog-dark">Partners since {farmer.partnerSince}</p>
       </div>
     </m.article>
   );
@@ -86,11 +86,11 @@ export default function Farmers() {
     <section aria-labelledby="farmers-heading" className="bg-linen py-16 md:py-24">
       <div className="mx-auto max-w-content px-5 md:px-8">
         {/* Section header */}
-        <div className="mb-14 text-center md:text-left">
+        <div className="mb-10 text-left md:mb-12">
           <h2 id="farmers-heading" className="font-display text-4xl font-semibold text-forest md:text-5xl">
             Meet our farmers
           </h2>
-          <p className="mx-auto mt-4 max-w-xs font-sans text-base text-fog-dark md:mx-0 md:max-w-xl">
+          <p className="mt-4 max-w-xl font-sans text-base text-fog-dark">
             We visit every farm before we put it on the menu. These are the
             people who make this food possible.
           </p>
@@ -104,13 +104,15 @@ export default function Farmers() {
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
         >
-          {HOME_FARMERS.map((farmer) => (
-            <FarmerCard key={farmer.id} farmer={farmer} />
+          {HOME_FARMERS.map((farmer, i) => (
+            <div key={farmer.id} className={i >= 2 ? 'hidden md:block' : undefined}>
+              <FarmerCard farmer={farmer} />
+            </div>
           ))}
         </m.div>
 
         {/* See more link */}
-        <div className="mt-12 text-center">
+        <div className="mt-12 text-left">
           <Link
             href="/farmers"
             className="inline-flex min-h-[48px] items-center font-sans text-sm font-medium text-ember underline underline-offset-4 hover:opacity-80"

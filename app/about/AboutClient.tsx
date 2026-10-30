@@ -57,7 +57,7 @@ function AboutHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="font-display text-5xl font-light leading-none text-linen sm:text-6xl md:text-7xl"
+          className="font-display text-5xl font-semibold leading-[1.05] text-linen sm:text-6xl md:text-7xl"
         >
           We opened
           <br />
@@ -83,24 +83,24 @@ function OriginStory() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="space-y-6 text-center md:col-span-7 md:text-left"
+            className="space-y-6 text-left md:col-span-7"
           >
-            <p className="font-display text-xl leading-relaxed text-forest">
+            <p className="font-sans text-lg leading-relaxed text-forest">
               Harvest Table opened in 2019 with eight tables, a wood-fired oven, and a handshake
               agreement with two farms down the road. The plan was simple: cook what was ripe, name
               where it came from, and get out of the way.
             </p>
-            <p className="font-sans text-base leading-loose text-fog-dark">
+            <p className="font-sans text-base leading-relaxed text-fog-dark">
               Our chef and founder, Daniel Park, spent twelve years in restaurant kitchens in San
               Francisco and Portland before moving to the Central Valley. He did not come here for
               the restaurant scene. He came because the farms were here.
             </p>
-            <p className="font-sans text-base leading-loose text-fog-dark">
+            <p className="font-sans text-base leading-relaxed text-fog-dark">
               The menu has never been the same two weeks in a row. We have served dishes we could
               not repeat if we tried, because the ingredient that made them possible was gone by the
               following Tuesday. That is not a problem. That is the point.
             </p>
-            <p className="font-sans text-base leading-loose text-fog-dark">
+            <p className="font-sans text-base leading-relaxed text-fog-dark">
               We now buy from {FARMERS.length} farms and makers. We seat forty guests a night for
               dinner Tuesday through Saturday, plus Sunday brunch. We have never put a dish on the
               menu that we were not proud of. We intend to keep it that way.
@@ -124,12 +124,12 @@ function OriginStory() {
                 sizes="(max-width: 768px) 100vw, 42vw"
               />
             </div>
-            <blockquote className="mt-8 border-l-2 border-gold pl-5 text-center md:text-left">
-              <p className="font-display text-xl font-light italic leading-relaxed text-forest">
+            <blockquote className="mt-8 border-l-2 border-gold pl-5 text-left">
+              <p className="font-display text-xl font-normal italic leading-relaxed text-forest">
                 &ldquo;The best ingredient is always the one you did not plan for. That is why we do
                 not lock our menu in advance.&rdquo;
               </p>
-              <footer className="mt-3 font-mono text-xs uppercase tracking-wide text-fog-dark">
+              <footer className="mt-3 font-mono text-label uppercase tracking-label text-fog-dark">
                 Daniel Park, Chef and Founder
               </footer>
             </blockquote>
@@ -144,14 +144,14 @@ function OriginStory() {
 
 function ValuesSection() {
   return (
-    <section aria-labelledby="values-heading" className="bg-white py-16 md:py-20">
+    <section aria-labelledby="values-heading" className="bg-paper py-16 md:py-20">
       <div className="mx-auto max-w-5xl px-5 md:px-6">
-        <div className="mb-12 flex items-center gap-6">
-          <h2 id="values-heading" className="whitespace-nowrap font-display text-3xl font-semibold text-forest md:text-4xl">How we cook</h2>
+        <div className="mb-10 flex items-center gap-6 md:mb-12">
+          <h2 id="values-heading" className="whitespace-nowrap font-display text-4xl font-semibold text-forest">How we cook</h2>
           <div className="h-px flex-1 bg-fog/20" />
         </div>
 
-        <div className="grid grid-cols-1 gap-12 text-center md:grid-cols-3 md:text-left">
+        <div className="grid grid-cols-1 gap-12 text-left md:grid-cols-3">
           {VALUES.map((v, i) => (
             <m.div
               key={v.id}
@@ -161,8 +161,8 @@ function ValuesSection() {
               transition={{ duration: 0.6, delay: i * 0.1 }}
               className="border-t-2 border-gold pt-8"
             >
-              <h3 className="font-display text-2xl font-medium text-forest">{v.headline}</h3>
-              <p className="mt-3 font-sans text-sm leading-relaxed text-fog-dark">{v.body}</p>
+              <h3 className="font-display text-2xl font-semibold text-forest">{v.headline}</h3>
+              <p className="mt-3 font-sans text-base leading-relaxed text-fog-dark">{v.body}</p>
             </m.div>
           ))}
         </div>
@@ -184,14 +184,14 @@ function Timeline() {
   return (
     <section aria-labelledby="timeline-heading" className="bg-linen py-16 md:py-20">
       <div className="mx-auto max-w-5xl px-5 md:px-6">
-        <h2 id="timeline-heading" className="text-center font-display text-3xl font-semibold text-forest md:text-left md:text-4xl">
+        <h2 id="timeline-heading" className="text-center font-display text-4xl font-semibold text-forest md:text-left">
           Along the way
         </h2>
         <ol className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
           {MILESTONES.map((milestone) => (
             <li key={milestone.year} className="border-l-2 border-gold/60 pl-5">
               <p className="font-mono text-sm text-ember">{milestone.year}</p>
-              <p className="mt-2 font-sans text-sm leading-relaxed text-fog-dark">{milestone.text}</p>
+              <p className="mt-2 font-sans text-base leading-relaxed text-fog-dark">{milestone.text}</p>
             </li>
           ))}
         </ol>
@@ -221,7 +221,7 @@ function TeamPhoto() {
         />
       </m.div>
       <div className="absolute inset-0 bg-gradient-to-t from-forest/70 via-forest/10 to-transparent" />
-      <p className="absolute bottom-6 left-5 right-5 font-display text-2xl font-light italic text-linen md:bottom-10 md:left-10 md:text-3xl">
+      <p className="absolute bottom-6 left-5 right-5 font-display text-2xl font-normal italic text-linen md:bottom-10 md:left-10 md:text-3xl">
         One kitchen, one pass, and whatever came off the farm trucks this morning.
       </p>
     </section>
@@ -232,7 +232,7 @@ function TeamPhoto() {
 
 function BottomCta() {
   return (
-    <section className="bg-forest py-20 text-center">
+    <section className="bg-forest py-16 text-center md:py-20">
       <m.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -24,14 +24,14 @@ export default function SeasonalStrip() {
   }, []);
 
   return (
-    <aside aria-label="Seasonal announcement" className="print-hide flex h-9 items-center justify-center gap-4 bg-forest px-4">
-      <p className="truncate text-center font-mono text-[10px] uppercase tracking-[0.12em] text-gold md:text-[11px] md:tracking-label">
+    <aside aria-label="Seasonal announcement" className="print-hide flex h-9 items-center justify-center gap-4 bg-forest px-3 md:px-4">
+      <p className="truncate text-center font-mono text-[11px] uppercase tracking-label text-gold">
         {SEASONAL_STRIP_TEXT}
       </p>
       {status && (
         <>
           <span className="hidden h-1 w-1 rotate-45 bg-gold/40 md:inline-block" aria-hidden />
-          <p className="hidden font-mono text-[11px] uppercase tracking-label text-linen/70 md:block">
+          <p className="hidden font-mono text-[11px] uppercase tracking-label text-linen/85 md:block">
             {status}
           </p>
         </>
