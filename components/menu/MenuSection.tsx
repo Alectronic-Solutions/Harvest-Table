@@ -50,7 +50,7 @@ export default function MenuSection({ section, isEven }: Props) {
     <section
       id={section.id}
       aria-labelledby={headingId}
-      className={`scroll-mt-[calc(var(--nav-height)+52px)] px-5 py-16 md:px-8 md:py-20 ${isEven ? 'bg-linen' : 'bg-paper'}`}
+      className={`scroll-mt-[calc(var(--nav-height)+52px)] px-5 py-16 md:px-8 md:py-20 ${isEven ? 'blend-top-linen bg-linen' : 'blend-top-paper bg-paper'}`}
     >
       <div className="mx-auto max-w-3xl">
         {/* Banner photo */}

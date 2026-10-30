@@ -37,6 +37,7 @@ function ContactHero() {
       <div className="relative z-10 text-center">
         <h1 className="font-display text-5xl font-semibold leading-[1.05] text-linen md:text-6xl">Get in Touch</h1>
       </div>
+      <div aria-hidden className="blend-out-linen" />
     </section>
   );
 }
@@ -263,7 +264,7 @@ function ContactContent() {
 
 function CareersAndPress() {
   return (
-    <section className="bg-paper px-5 py-16 md:px-8">
+    <section className="blend-top-paper bg-paper px-5 py-16 md:px-8">
       <div className="mx-auto max-w-5xl">
         <div className="grid grid-cols-1 divide-y divide-fog/20 md:grid-cols-2 md:divide-x md:divide-y-0">
 

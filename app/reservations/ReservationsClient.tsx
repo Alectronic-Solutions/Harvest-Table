@@ -201,7 +201,7 @@ function ReservationForm() {
 
 function Faq() {
   return (
-    <section aria-labelledby="faq-heading" className="bg-paper px-5 py-16 text-left md:px-8 md:py-20">
+    <section aria-labelledby="faq-heading" className="blend-top-paper bg-paper px-5 py-16 text-left md:px-8 md:py-20">
       <div className="mx-auto max-w-3xl">
         <h2 id="faq-heading" className="font-display text-4xl font-semibold text-forest">
           Good to know
@@ -266,6 +266,7 @@ export default function ReservationsClient() {
             Dinner Tuesday to Saturday · Brunch Sunday · Walk-ins welcome at the bar
           </p>
         </div>
+        <div aria-hidden className="blend-out-linen" />
       </section>
 
       {/* Form + sidebar */}
@@ -371,6 +372,7 @@ export default function ReservationsClient() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-forest/30" />
+        <div aria-hidden className="blend-in-paper" />
       </section>
     </>
   );

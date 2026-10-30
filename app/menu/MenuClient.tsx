@@ -48,6 +48,7 @@ function MenuHero() {
           Updated {MENU_UPDATED}
         </p>
       </div>
+      <div aria-hidden className="blend-out-linen print:hidden" />
     </div>
   );
 }
@@ -56,7 +57,7 @@ function MenuHero() {
 
 function SectionNav({ activeId }: { activeId: string }) {
   return (
-    <div className="print-hide sticky top-16 z-40 border-b border-fog/30 bg-linen/95 backdrop-blur-sm md:top-20">
+    <div className="print-hide sticky top-16 z-40 bg-linen/95 backdrop-blur-sm md:top-20">
       <div className="mx-auto flex h-[52px] max-w-3xl items-center justify-between gap-6 overflow-x-auto px-5 scrollbar-none scroll-fade-end md:px-0">
         <nav aria-label="Menu sections" className="flex min-w-max gap-7 md:gap-8">
           {MENU.map((section) => {
@@ -101,7 +102,7 @@ function SectionNav({ activeId }: { activeId: string }) {
 
 function DietaryKey() {
   return (
-    <div className="print-hide border-b border-fog/25 bg-linen px-5 py-4 md:px-8">
+    <div className="print-hide bg-linen px-5 py-4 md:px-8">
       <div
         className="mx-auto flex max-w-3xl flex-wrap gap-x-5 gap-y-2"
         role="group"
@@ -124,7 +125,7 @@ function DietaryKey() {
 
 function DrinksNote() {
   return (
-    <div className="border-t border-fog/25 bg-linen px-5 py-16 md:px-8">
+    <div className="blend-top-linen bg-linen px-5 py-16 md:px-8">
       <div className="mx-auto max-w-3xl">
         <div className="grid grid-cols-1 gap-10 text-left md:grid-cols-2 md:gap-12">
           <div>
@@ -156,7 +157,7 @@ function DrinksNote() {
 
 function BottomCta() {
   return (
-    <section className="print-hide bg-forest py-16 text-center md:py-20">
+    <section className="print-hide blend-top-forest bg-forest py-16 text-center md:py-20">
       <div className="px-5">
         <h2 className="font-display text-4xl font-normal text-linen md:text-5xl">
           Ready to sit down?

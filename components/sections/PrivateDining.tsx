@@ -105,6 +105,7 @@ export default function PrivateDining() {
           </ButtonLink>
         </div>
       </m.div>
+      <div aria-hidden className="blend-in-linen" />
     </section>
   );
 }

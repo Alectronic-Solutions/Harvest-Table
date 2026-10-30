@@ -66,6 +66,7 @@ function AboutHero() {
           hungry.
         </m.h1>
       </div>
+      <div aria-hidden className="blend-out-linen" />
     </section>
   );
 }
@@ -144,7 +145,7 @@ function OriginStory() {
 
 function ValuesSection() {
   return (
-    <section aria-labelledby="values-heading" className="bg-paper py-16 md:py-20">
+    <section aria-labelledby="values-heading" className="blend-top-paper bg-paper py-16 md:py-20">
       <div className="mx-auto max-w-5xl px-5 md:px-6">
         <div className="mb-10 flex items-center gap-6 md:mb-12">
           <h2 id="values-heading" className="whitespace-nowrap font-display text-4xl font-semibold text-forest">How we cook</h2>
@@ -182,7 +183,7 @@ const MILESTONES = [
 
 function Timeline() {
   return (
-    <section aria-labelledby="timeline-heading" className="bg-linen py-16 md:py-20">
+    <section aria-labelledby="timeline-heading" className="blend-top-linen bg-linen py-16 md:py-20">
       <div className="mx-auto max-w-5xl px-5 md:px-6">
         <h2 id="timeline-heading" className="text-center font-display text-4xl font-semibold text-forest md:text-left">
           Along the way
@@ -224,6 +225,7 @@ function TeamPhoto() {
       <p className="absolute bottom-6 left-5 right-5 font-display text-2xl font-normal italic text-linen md:bottom-10 md:left-10 md:text-3xl">
         One kitchen, one pass, and whatever came off the farm trucks this morning.
       </p>
+      <div aria-hidden className="blend-in-linen" />
     </section>
   );
 }
@@ -232,7 +234,7 @@ function TeamPhoto() {
 
 function BottomCta() {
   return (
-    <section className="bg-forest py-16 text-center md:py-20">
+    <section className="blend-top-forest bg-forest py-16 text-center md:py-20">
       <m.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}

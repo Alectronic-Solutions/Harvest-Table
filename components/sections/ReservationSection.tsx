@@ -65,8 +65,10 @@ export default function ReservationSection() {
     <section
       aria-labelledby="home-reserve-heading"
       data-hide-mobile-bar
-      className="flex flex-col md:flex-row md:items-stretch"
+      className="relative flex flex-col md:flex-row md:items-stretch"
     >
+      <div aria-hidden className="blend-in-paper" />
+
       {/* LEFT: form column (55%) */}
       <div className="bg-forest px-5 py-16 md:w-[55%] md:px-12 md:py-20">
         <div className="mx-auto max-w-lg">

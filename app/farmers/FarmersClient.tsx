@@ -154,6 +154,7 @@ export default function FarmersClient() {
             of our kitchen. The average delivery travels {averageMiles} miles.
           </p>
         </div>
+        <div aria-hidden className="blend-out-linen" />
       </section>
 
       {/* PART 2: Core partners */}
@@ -175,7 +176,7 @@ export default function FarmersClient() {
       </section>
 
       {/* PART 3: Additional partners */}
-      <section aria-labelledby="partners-heading" className="bg-paper px-5 py-16 md:px-8 md:py-20">
+      <section aria-labelledby="partners-heading" className="blend-top-paper bg-paper px-5 py-16 md:px-8 md:py-20">
         <div className="mx-auto max-w-5xl">
           <h2 id="partners-heading" className="font-display text-4xl font-semibold text-forest">
             Also on the menu
@@ -192,7 +193,7 @@ export default function FarmersClient() {
       </section>
 
       {/* PART 4: Commitment statement */}
-      <section className="bg-forest px-5 py-16 text-center md:px-8 md:py-20">
+      <section className="blend-top-forest bg-forest px-5 py-16 text-center md:px-8 md:py-20">
         <m.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
