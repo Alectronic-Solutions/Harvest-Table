@@ -19,7 +19,7 @@ function DietaryBadge({ flag }: { flag: DietaryFlag }) {
   return (
     <span
       title={DIETARY_LABELS[flag]}
-      className="rounded-full border border-fog/40 px-1.5 py-0.5 font-mono text-[10px] text-fog-dark"
+      className="rounded-full border border-fog/40 px-1.5 py-0.5 font-mono text-xs text-fog-dark"
     >
       <span aria-hidden>{flag}</span>
       <span className="sr-only">{DIETARY_LABELS[flag]}</span>
@@ -50,7 +50,7 @@ export default function MenuSection({ section, isEven }: Props) {
     <section
       id={section.id}
       aria-labelledby={headingId}
-      className={`scroll-mt-[calc(var(--nav-height)+52px)] px-5 py-16 md:px-8 md:py-20 ${isEven ? 'bg-linen' : 'bg-white'}`}
+      className={`scroll-mt-[calc(var(--nav-height)+52px)] px-5 py-16 md:px-8 md:py-20 ${isEven ? 'bg-linen' : 'bg-paper'}`}
     >
       <div className="mx-auto max-w-3xl">
         {/* Banner photo */}
@@ -109,7 +109,7 @@ export default function MenuSection({ section, isEven }: Props) {
                   {/* Seasonal + dietary badges: desktop, next to the name */}
                   <div className="mt-1 hidden items-center gap-2 md:flex">
                     {item.seasonal && (
-                      <span className="rounded-full bg-gold px-2 py-0.5 font-mono text-[11px] text-forest">
+                      <span className="rounded-full bg-gold px-2 py-0.5 font-mono text-xs text-forest">
                         Seasonal
                       </span>
                     )}
@@ -119,16 +119,16 @@ export default function MenuSection({ section, isEven }: Props) {
                   </div>
                   {/* Seasonal badge: mobile, below name */}
                   {item.seasonal && (
-                    <span className="mt-1 inline-block rounded-full bg-gold px-2 py-0.5 font-mono text-[11px] text-forest md:hidden">
+                    <span className="mt-1 inline-block rounded-full bg-gold px-2 py-0.5 font-mono text-xs text-forest md:hidden">
                       Seasonal
                     </span>
                   )}
-                  <p className="mt-2 max-w-prose font-sans text-sm leading-relaxed text-fog-dark">
+                  <p className="mt-2 max-w-prose font-sans text-base leading-relaxed text-fog-dark">
                     {item.description}
                   </p>
                   {/* Farm source: visible below description on mobile */}
-                  <p className="mt-3 font-mono text-xs text-fog-dark md:hidden">
-                    <Link href={farmHref(item.farmId)} className="inline-flex min-h-[32px] items-center underline decoration-fog/40 underline-offset-4 hover:text-forest">
+                  <p className="mt-3 font-sans text-base font-medium text-forest md:hidden">
+                    <Link href={farmHref(item.farmId)} className="inline-flex min-h-12 items-center underline decoration-fog/40 underline-offset-4 hover:text-ember">
                       {item.farmSource}, {item.farmLocation}
                     </Link>
                   </p>

@@ -106,7 +106,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <div className="mt-12 border-t border-forest/10 pt-6">
-            <Link href="/" className="inline-flex min-h-[44px] items-center text-sm text-gold-dark underline-offset-4 hover:underline">
+            <Link href="/" className="inline-flex min-h-12 items-center text-sm text-gold-dark underline-offset-4 hover:underline">
               Back to home
             </Link>
           </div>

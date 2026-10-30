@@ -9,7 +9,7 @@ type Variant = 'primary' | 'outline';
 type Tone = 'light' | 'dark';
 
 const BASE =
-  'inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-8 py-3 font-sans text-sm font-medium tracking-wide transition-all duration-300 hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 md:text-base';
+  'inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-8 py-3 font-sans text-base font-semibold tracking-wide transition-all duration-300 hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2';
 
 const VARIANTS: Record<Variant, Record<Tone, string>> = {
   primary: {

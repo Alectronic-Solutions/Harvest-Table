@@ -59,35 +59,36 @@ function MenuCard({ item }: { item: MenuItem & { image: string } }) {
             />
           </m.div>
           {item.seasonal && (
-            <span className="absolute left-3 top-3 rounded-full bg-gold px-2.5 py-1 font-mono text-[11px] uppercase tracking-wide text-forest">
+            <span className="absolute left-3 top-3 rounded-full bg-gold px-2.5 py-1 font-mono text-label uppercase tracking-label text-forest">
               Seasonal
             </span>
           )}
         </div>
 
-        <div className="mt-4 flex flex-col items-center gap-1 text-center md:flex-row md:items-start md:justify-between md:gap-4 md:text-left">
+        <div className="mt-4 flex flex-col items-start gap-1 text-left md:flex-row md:justify-between md:gap-4">
           <div className="min-w-0">
             <h3 className="font-display text-2xl font-semibold leading-tight text-forest md:text-[1.75rem]">
               <span className="link-underline">{item.name}</span>
             </h3>
-            <p className="mt-1 font-mono text-xs uppercase tracking-wide text-fog-dark">
-              {item.farmSource}, {item.farmLocation}
+            <p className="mt-1 font-sans text-base font-medium text-forest">
+              {item.farmSource}
+              <span className="ml-2 font-mono text-label uppercase tracking-label text-fog-dark">{item.farmLocation}</span>
             </p>
           </div>
           <p className="shrink-0 font-mono text-lg text-ember md:pt-1">{item.price}</p>
         </div>
 
-        <p className="mt-2 text-center font-sans text-sm leading-relaxed text-fog-dark md:text-left">
+        <p className="mt-2 text-left font-sans text-base leading-relaxed text-fog-dark">
           {item.description}
         </p>
 
         {item.dietaryFlags && (
-          <ul className="mt-3 flex justify-center gap-2 md:justify-start" aria-label="Dietary information">
+          <ul className="mt-3 flex gap-2" aria-label="Dietary information">
             {item.dietaryFlags.map((flag) => (
               <li
                 key={flag}
                 title={DIETARY_LABELS[flag]}
-                className="rounded-full border border-fog/40 px-2 py-0.5 font-mono text-[11px] text-fog-dark"
+                className="rounded-full border border-fog/40 px-2 py-0.5 font-mono text-xs text-fog-dark"
               >
                 <span aria-hidden>{flag}</span>
                 <span className="sr-only">{DIETARY_LABELS[flag]}</span>
@@ -131,8 +132,10 @@ export default function MenuPreview() {
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
         >
-          {PREVIEW_ITEMS.map((item) => (
-            <MenuCard key={item.name} item={item} />
+          {PREVIEW_ITEMS.map((item, i) => (
+            <div key={item.name} className={i >= 2 ? 'hidden md:block' : undefined}>
+              <MenuCard item={item} />
+            </div>
           ))}
         </m.div>
       </div>

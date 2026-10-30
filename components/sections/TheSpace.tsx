@@ -62,7 +62,7 @@ export default function TheSpace() {
       <div className="mx-auto max-w-content px-5 md:px-8">
 
         {/* Section header */}
-        <div className="mb-16 text-center">
+        <div className="mb-10 text-center md:mb-12">
           <h2 className="font-display text-4xl font-semibold text-forest md:text-5xl">
             The room
           </h2>

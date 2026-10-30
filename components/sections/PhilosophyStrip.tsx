@@ -48,15 +48,15 @@ function StatItem({ value, suffix, label, decimals, active }: typeof STATS[numbe
     <div className="relative flex flex-col items-center text-center">
       {/* Radial gold glow behind the number */}
       <div
-        className="pointer-events-none absolute -top-4 left-1/2 -translate-x-1/2 h-24 w-24 rounded-full"
-        style={{ background: 'radial-gradient(circle, rgba(212,168,67,0.12) 0%, transparent 70%)' }}
+        className="pointer-events-none glow-gold absolute -top-4 left-1/2 -translate-x-1/2 h-24 w-24 rounded-full"
+        
         aria-hidden
       />
       <p className="font-display text-5xl font-semibold leading-none text-gold md:text-6xl">
         {decimals > 0 ? count.toFixed(decimals) : Math.round(count)}
         <span className="text-3xl md:text-4xl">{suffix}</span>
       </p>
-      <p className="mt-3 font-mono text-xs uppercase tracking-widest text-linen/60">{label}</p>
+      <p className="mt-3 font-mono text-label uppercase tracking-label text-linen/80">{label}</p>
     </div>
   );
 }
@@ -93,7 +93,7 @@ export default function PhilosophyStrip() {
       {/* Stat counters */}
       <div
         ref={statsRef}
-        className="mx-auto grid max-w-content grid-cols-2 gap-x-6 gap-y-10 px-8 py-16 md:grid-cols-4 md:gap-0 md:py-20"
+        className="mx-auto grid max-w-content grid-cols-2 gap-x-6 gap-y-10 px-5 py-16 md:grid-cols-4 md:px-8 md:gap-0 md:py-20"
       >
         {STATS.map((stat, i) => (
           <div
@@ -127,7 +127,7 @@ export default function PhilosophyStrip() {
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
             }}
-            className={`flex flex-col items-center gap-4 px-0 py-10 text-center md:items-start md:py-0 md:px-10 md:text-left ${
+            className={`flex flex-col items-start gap-4 px-0 py-10 text-left md:py-0 md:px-10 ${
               i < pillars.length - 1
                 ? 'border-b border-gold/10 md:border-b-0 md:border-r md:border-r-gold/10'
                 : ''
@@ -136,7 +136,7 @@ export default function PhilosophyStrip() {
             <h3 className="font-display text-2xl font-semibold text-linen">
               {headline}
             </h3>
-            <p className="font-sans text-sm leading-relaxed text-linen/80">
+            <p className="font-sans text-base leading-relaxed text-linen/80">
               {body}
             </p>
           </m.div>

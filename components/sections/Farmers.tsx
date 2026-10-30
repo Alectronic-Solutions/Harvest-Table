@@ -55,16 +55,16 @@ function FarmerCard({ farmer }: { farmer: Farmer }) {
         </m.div>
       </div>
 
-      <div className="mt-6 text-center md:text-left">
+      <div className="mt-6 text-left">
         <h3 className="font-display text-2xl font-semibold text-forest">
           {farmer.farm}
         </h3>
         <p className="mt-1 font-sans text-sm text-fog-dark">{farmer.name}</p>
-        <p className="mt-2 font-mono text-xs uppercase tracking-wide text-fog-dark">
+        <p className="mt-2 font-mono text-label uppercase tracking-label text-fog-dark">
           {farmer.location} · {farmer.distanceMiles} miles
         </p>
 
-        <div className="mt-3 flex flex-wrap justify-center gap-2 md:justify-start">
+        <div className="mt-3 flex flex-wrap gap-2">
           {farmer.grows.slice(0, 3).map((item) => (
             <span
               key={item}
@@ -86,7 +86,7 @@ export default function Farmers() {
     <section aria-labelledby="farmers-heading" className="bg-linen py-16 md:py-24">
       <div className="mx-auto max-w-content px-5 md:px-8">
         {/* Section header */}
-        <div className="mb-14 text-center md:text-left">
+        <div className="mb-10 text-center md:mb-12 md:text-left">
           <h2 id="farmers-heading" className="font-display text-4xl font-semibold text-forest md:text-5xl">
             Meet our farmers
           </h2>
@@ -104,8 +104,10 @@ export default function Farmers() {
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
         >
-          {HOME_FARMERS.map((farmer) => (
-            <FarmerCard key={farmer.id} farmer={farmer} />
+          {HOME_FARMERS.map((farmer, i) => (
+            <div key={farmer.id} className={i >= 2 ? 'hidden md:block' : undefined}>
+              <FarmerCard farmer={farmer} />
+            </div>
           ))}
         </m.div>
 

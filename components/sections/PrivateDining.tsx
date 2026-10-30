@@ -51,11 +51,11 @@ export default function PrivateDining() {
       <div className="absolute inset-0 bg-gradient-to-b from-forest/80 via-forest/78 to-forest/88 md:hidden" />
       <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-forest/85 via-forest/60 to-forest/20" />
       {/* Vignette edges */}
-      <div className="absolute inset-0 hidden md:block bg-[radial-gradient(ellipse_at_left,rgba(44,59,45,0.3)_0%,transparent_60%)]" />
+      <div className="absolute inset-0 hidden md:block scrim-left" />
 
       {/* Content */}
       <m.div
-        className="relative z-10 flex flex-col items-center justify-center px-6 py-16 text-center sm:px-8 sm:py-20 md:h-full md:min-h-[600px] md:items-start md:pl-16 md:pr-0 md:py-24 md:text-left"
+        className="relative z-10 flex flex-col items-start justify-center px-5 py-16 text-left sm:px-8 sm:py-20 md:h-full md:min-h-[600px] md:pl-16 md:pr-0 md:py-24"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -64,14 +64,14 @@ export default function PrivateDining() {
         <div className="max-w-xl">
           <div className="rounded-lg bg-forest/70 px-5 py-5 backdrop-blur-sm md:bg-transparent md:px-0 md:py-0 md:backdrop-blur-none">
             <h2
-              className="font-display text-3xl font-light leading-[1.15] text-linen [text-shadow:0_2px_12px_rgba(0,0,0,0.45)] sm:text-5xl md:text-6xl md:leading-tight"
+              className="font-display text-4xl font-normal leading-[1.15] text-linen text-shadow-title sm:text-5xl md:text-6xl md:leading-tight"
             >
               Host something
               <br className="hidden md:block" />
               <span className="md:hidden"> </span>
               worth remembering
             </h2>
-            <p className="mx-auto mt-4 max-w-sm font-sans text-sm leading-relaxed text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.4)] sm:mt-5 sm:text-base md:mx-0">
+            <p className="mt-4 max-w-sm font-sans text-base leading-relaxed text-paper text-shadow-body sm:mt-5">
               Our private dining room seats up to 24 guests. Custom menus,
               dedicated service, and a wine list curated for your event.
               Weddings, rehearsal dinners, corporate gatherings, milestone
@@ -86,10 +86,10 @@ export default function PrivateDining() {
                 key={stat.label}
                 className="rounded-md bg-forest/60 px-3 py-3 backdrop-blur-sm md:bg-transparent md:px-0 md:py-0 md:backdrop-blur-none"
               >
-                <p className="font-display text-2xl font-semibold text-white sm:text-3xl">
+                <p className="font-display text-2xl font-semibold text-paper sm:text-3xl">
                   {stat.value}
                 </p>
-                <p className="mt-1 font-mono text-[10px] uppercase tracking-wide text-white/85 sm:text-xs">
+                <p className="mt-1 font-mono text-label uppercase tracking-label text-paper/90">
                   {stat.label}
                 </p>
               </div>

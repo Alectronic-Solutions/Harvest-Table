@@ -18,17 +18,19 @@ function DishesFromFarm({ farmId }: { farmId: string }) {
   const dishes = dishesFromFarm(farmId)
   if (!dishes.length) return null
   return (
-    <p className="mt-4 text-center font-sans text-sm text-fog-dark md:text-left">
-      <span className="font-mono text-xs uppercase tracking-wide">On the menu: </span>
-      {dishes.map((d, i) => (
-        <span key={d.name}>
-          <Link href={`/menu/#${d.sectionId}`} className="text-forest underline decoration-fog/40 underline-offset-4 hover:decoration-forest">
-            {d.name}
-          </Link>
-          {i < dishes.length - 1 ? ", " : ""}
-        </span>
-      ))}
-    </p>
+    <div className="mt-4 text-left font-sans text-sm text-fog-dark md:flex md:flex-wrap md:items-baseline md:gap-x-2">
+      <p className="font-mono text-label uppercase tracking-label">On the menu:</p>
+      <ul className="flex flex-col md:flex-row md:flex-wrap md:gap-x-1">
+        {dishes.map((d, i) => (
+          <li key={d.name}>
+            <Link href={`/menu/#${d.sectionId}`} className="inline-flex min-h-12 items-center text-forest underline decoration-fog/40 underline-offset-4 hover:decoration-forest md:min-h-0">
+              {d.name}
+            </Link>
+            {i < dishes.length - 1 && <span className="hidden md:inline">,</span>}
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
 
@@ -65,13 +67,13 @@ function FeaturedFarmerCard({ farmer, index }: { farmer: Farmer; index: number }
       </div>
 
       {/* Content column */}
-      <div className={`text-center md:text-left ${imageLeft ? "" : "md:order-1"}`}>
+      <div className={`text-left ${imageLeft ? "" : "md:order-1"}`}>
         <h2 id={`${farmer.id}-name`} className="font-display text-4xl font-semibold leading-tight text-forest">
           {farmer.farm}
         </h2>
         <p className="mt-1 font-sans text-base text-fog-dark">{farmer.name}</p>
 
-        <p className="mt-3 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 font-mono text-xs uppercase tracking-widest text-fog-dark md:justify-start">
+        <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-label uppercase tracking-label text-fog-dark">
           <span>{farmer.location}</span>
           <span aria-hidden="true">·</span>
           <span>{farmer.distanceMiles} miles from our kitchen</span>
@@ -79,13 +81,13 @@ function FeaturedFarmerCard({ farmer, index }: { farmer: Farmer; index: number }
           <span>Since {farmer.partnerSince}</span>
         </p>
 
-        <p className="mx-auto mt-6 max-w-md font-sans text-base leading-relaxed text-fog-dark md:mx-0">
+        <p className="mt-6 max-w-md text-left font-sans text-base leading-relaxed text-fog-dark">
           {farmer.story}
         </p>
 
         <div className="mt-6">
-          <h3 className="font-mono text-xs uppercase tracking-wide text-fog-dark">What they grow</h3>
-          <ul className="mt-2 flex flex-wrap justify-center gap-2 md:justify-start">
+          <h3 className="font-mono text-label uppercase tracking-label text-fog-dark">What they grow</h3>
+          <ul className="mt-2 flex flex-wrap gap-2">
             {farmer.grows.map((item) => (
               <li
                 key={item}
@@ -105,17 +107,17 @@ function FeaturedFarmerCard({ farmer, index }: { farmer: Farmer; index: number }
 
 function PartnerRow({ farmer }: { farmer: Farmer }) {
   return (
-    <li id={farmer.id} className="scroll-mt-28 border-b border-fog/15 py-6 text-center md:text-left">
-      <div className="flex flex-col items-center gap-x-4 gap-y-1 md:flex-row md:flex-wrap md:items-baseline md:justify-between">
+    <li id={farmer.id} className="scroll-mt-28 border-b border-fog/15 py-6 text-left">
+      <div className="flex flex-col items-start gap-x-4 gap-y-1 md:flex-row md:flex-wrap md:items-baseline md:justify-between">
         <h3 className="font-display text-2xl font-semibold leading-tight text-forest">{farmer.farm}</h3>
-        <p className="font-mono text-xs uppercase tracking-wide text-fog-dark">
+        <p className="font-mono text-label uppercase tracking-label text-fog-dark">
           {farmer.location} · {farmer.distanceMiles} mi
         </p>
       </div>
       <p className="mt-1 font-sans text-sm text-fog-dark">
         {farmer.name} · {farmer.grows.join(", ")}
       </p>
-      <p className="mx-auto mt-2 max-w-prose font-sans text-sm leading-relaxed text-fog-dark">{farmer.story}</p>
+      <p className="mt-2 max-w-prose text-left font-sans text-base leading-relaxed text-fog-dark">{farmer.story}</p>
       <DishesFromFarm farmId={farmer.id} />
     </li>
   )
@@ -143,11 +145,11 @@ export default function FarmersClient() {
           />
         </m.div>
         <div className="absolute inset-0 bg-forest/65" />
-        <div className="relative z-10 px-6 text-center">
-          <h1 className="font-display text-5xl font-semibold leading-none text-linen md:text-6xl">
+        <div className="relative z-10 px-5 text-center">
+          <h1 className="font-display text-5xl font-semibold leading-[1.05] text-linen md:text-6xl">
             Our farm partners
           </h1>
-          <p className="mx-auto mt-4 max-w-md font-sans text-sm leading-relaxed text-linen/90 md:text-base">
+          <p className="mx-auto mt-4 max-w-md font-sans text-base leading-relaxed text-linen/90">
             We buy from {FARMERS.length} farms, ranches, and makers, all within 60 miles
             of our kitchen. The average delivery travels {averageMiles} miles.
           </p>
@@ -157,8 +159,8 @@ export default function FarmersClient() {
       {/* PART 2: Core partners */}
       <section aria-label="Core partners" className="bg-linen px-5 py-16 md:px-8 md:py-24">
         <div className="mx-auto max-w-5xl">
-          <div className="mb-12 flex items-center gap-6 md:mb-16">
-            <p className="font-mono text-xs uppercase tracking-widest text-fog-dark sm:whitespace-nowrap">
+          <div className="mb-10 flex items-center gap-6 md:mb-16">
+            <p className="font-mono text-label uppercase tracking-label text-fog-dark sm:whitespace-nowrap">
               The {FEATURED_FARMERS.length} farms we work with most closely
             </p>
             <div className="h-px flex-1 bg-fog/20" />
@@ -173,7 +175,7 @@ export default function FarmersClient() {
       </section>
 
       {/* PART 3: Additional partners */}
-      <section aria-labelledby="partners-heading" className="bg-white px-5 py-16 md:px-8 md:py-20">
+      <section aria-labelledby="partners-heading" className="bg-paper px-5 py-16 md:px-8 md:py-20">
         <div className="mx-auto max-w-5xl">
           <h2 id="partners-heading" className="font-display text-4xl font-semibold text-forest">
             Also on the menu
@@ -190,17 +192,17 @@ export default function FarmersClient() {
       </section>
 
       {/* PART 4: Commitment statement */}
-      <section className="bg-forest px-6 py-20 text-center">
+      <section className="bg-forest px-5 py-16 text-center md:px-8 md:py-20">
         <m.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="mx-auto max-w-2xl font-display text-4xl font-light leading-snug text-linen">
+          <h2 className="mx-auto max-w-2xl font-display text-4xl font-normal leading-snug text-linen">
             We visit every farm before we put it on the menu. No exceptions.
           </h2>
-          <p className="mx-auto mt-4 max-w-lg font-sans text-sm leading-relaxed text-linen/75">
+          <p className="mx-auto mt-4 max-w-lg font-sans text-base leading-relaxed text-linen/75">
             If you want to know where a specific ingredient comes from, ask your server. They will
             know the answer.
           </p>

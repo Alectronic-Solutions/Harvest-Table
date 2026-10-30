@@ -58,7 +58,7 @@ function ThankYouModal({ onClose }: { onClose: () => void }) {
           <h2 id="thank-you-modal-title" className="font-display text-4xl font-semibold text-forest">
             Thank you.
           </h2>
-          <p className="mx-auto mt-4 max-w-xs font-sans text-sm leading-relaxed text-fog-dark">
+          <p className="mx-auto mt-4 max-w-xs font-sans text-base leading-relaxed text-fog-dark">
             We will be in touch within 2 hours during business hours. We look
             forward to having you at the table.
           </p>

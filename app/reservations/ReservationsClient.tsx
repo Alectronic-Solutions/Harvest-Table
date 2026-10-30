@@ -19,7 +19,7 @@ import { useDemoForm } from '@/components/DemoModal';
 
 const TICKETED_EVENTS = upcomingEvents().filter((e) => e.startDate && !e.soldOut);
 
-const labelClass = 'mb-1 block font-mono text-xs uppercase tracking-widest text-fog-dark';
+const labelClass = 'mb-1 block font-mono text-label uppercase tracking-label text-fog-dark';
 
 const inputClass =
   'w-full min-h-[48px] border-0 border-b border-fog/40 bg-transparent py-3 font-sans text-base text-ink transition-colors focus:border-forest focus:outline-none focus:ring-2 focus:ring-gold-dark md:text-sm';
@@ -40,10 +40,10 @@ function ReservationForm() {
   return (
     <>
       {modal}
-      <h2 className="text-center font-display text-3xl font-semibold text-forest md:text-left md:text-4xl">
+      <h2 className="text-center font-display text-4xl font-semibold text-forest md:text-left">
         {selectedEvent ? `Reserve seats: ${selectedEvent.title}` : 'Request a table'}
       </h2>
-      <p className="mt-2 mb-8 text-center font-sans text-sm leading-relaxed text-fog-dark md:text-left">
+      <p className="mt-2 mb-8 text-left font-sans text-base leading-relaxed text-fog-dark">
         {selectedEvent
           ? `${selectedEvent.date} at ${selectedEvent.time}. ${selectedEvent.price}.`
           : 'Tell us when you would like to come in and we will confirm by email or text.'}
@@ -184,7 +184,7 @@ function ReservationForm() {
             type="submit"
             className="min-h-[52px] w-full rounded-full bg-gold py-4 font-sans text-base font-medium text-forest transition-all duration-300 hover:scale-[1.01] hover:bg-gold/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-dark focus-visible:ring-offset-2"
           >
-            {selectedEvent ? 'Request Seats' : 'Request Reservation'}
+            {selectedEvent ? 'Request Seats' : 'Reserve a Table'}
           </button>
           <p className="mt-4 font-sans text-xs leading-relaxed text-fog-dark">
             We confirm every request within 2 hours during business hours. For
@@ -201,7 +201,7 @@ function ReservationForm() {
 
 function Faq() {
   return (
-    <section aria-labelledby="faq-heading" className="bg-white px-5 py-16 text-center md:px-8 md:py-20 md:text-left">
+    <section aria-labelledby="faq-heading" className="bg-paper px-5 py-16 text-left md:px-8 md:py-20">
       <div className="mx-auto max-w-3xl">
         <h2 id="faq-heading" className="font-display text-4xl font-semibold text-forest">
           Good to know
@@ -211,7 +211,7 @@ function Faq() {
             <details key={f.question} className="group py-1">
               <summary className="grid min-h-[56px] cursor-pointer list-none grid-cols-[1fr_auto_1fr] items-center gap-4 font-sans text-base font-medium text-forest md:flex md:justify-between [&::-webkit-details-marker]:hidden">
                 <span aria-hidden className="md:hidden" />
-                <span className="text-center md:text-left">{f.question}</span>
+                <span className="text-left">{f.question}</span>
                 <span
                   className="justify-self-end font-mono text-lg text-gold-dark transition-transform duration-200 group-open:rotate-45"
                   aria-hidden
@@ -219,7 +219,7 @@ function Faq() {
                   +
                 </span>
               </summary>
-              <p className="pb-5 text-center font-sans text-sm leading-relaxed text-fog-dark md:pr-8 md:text-left">{f.answer}</p>
+              <p className="pb-5 text-left font-sans text-base leading-relaxed text-fog-dark md:pr-8">{f.answer}</p>
             </details>
           ))}
         </div>
@@ -251,17 +251,17 @@ export default function ReservationsClient() {
           />
         </m.div>
         <div className="absolute inset-0 bg-forest/70" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_80%_at_50%_50%,rgba(10,14,10,0.5)_0%,transparent_75%)]" />
-        <div className="relative z-10 mx-auto max-w-xl px-6 text-center">
+        <div className="absolute inset-0 scrim-banner" />
+        <div className="relative z-10 mx-auto max-w-xl px-5 text-center">
           <h1
-            className="font-display text-5xl font-semibold leading-none text-linen md:text-6xl"
-            style={{ textShadow: '0 2px 20px rgba(0,0,0,0.45)' }}
+            className="text-shadow-title font-display text-5xl font-semibold leading-[1.05] text-linen md:text-6xl"
+            
           >
             Reserve a Table
           </h1>
           <p
-            className="mx-auto mt-3 max-w-sm font-sans text-sm text-linen/95 md:max-w-none"
-            style={{ textShadow: '0 1px 10px rgba(0,0,0,0.4)' }}
+            className="text-shadow-body mx-auto mt-3 max-w-sm font-sans text-sm text-linen/95 md:max-w-none"
+            
           >
             Dinner Tuesday to Saturday · Brunch Sunday · Walk-ins welcome at the bar
           </p>
@@ -269,7 +269,7 @@ export default function ReservationsClient() {
       </section>
 
       {/* Form + sidebar */}
-      <section className="bg-linen px-5 py-12 md:px-8 md:py-20">
+      <section className="bg-linen px-5 py-16 md:px-8 md:py-20">
         <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-1 items-stretch lg:grid-cols-[3fr_2fr]">
 
@@ -279,7 +279,7 @@ export default function ReservationsClient() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="border border-fog/20 bg-white p-6 md:p-10"
+              className="border border-fog/20 bg-paper p-6 md:p-10"
             >
               <Suspense fallback={<div className="min-h-[640px]" />}>
                 <ReservationForm />
@@ -293,10 +293,10 @@ export default function ReservationsClient() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="flex flex-col gap-10 bg-forest p-6 text-center md:p-10 md:text-left"
+              className="flex flex-col gap-10 bg-forest p-6 text-left md:p-10"
             >
               <div>
-                <h2 className="font-mono text-xs uppercase tracking-widest text-gold">Hours</h2>
+                <h2 className="font-mono text-label uppercase tracking-label text-gold">Hours</h2>
                 <dl className="mt-4 space-y-4">
                   {HOURS.map((h) => (
                     <div key={h.day}>
@@ -308,7 +308,7 @@ export default function ReservationsClient() {
               </div>
 
               <div>
-                <h2 className="font-mono text-xs uppercase tracking-widest text-gold">Find us</h2>
+                <h2 className="font-mono text-label uppercase tracking-label text-gold">Find us</h2>
                 <address className="mt-3 font-sans text-base not-italic leading-relaxed text-linen/90">
                   {CONTACT.address}
                   <br />
@@ -318,20 +318,20 @@ export default function ReservationsClient() {
                   href={MAPS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-1 inline-flex min-h-[40px] items-center font-sans text-base text-linen/80 underline underline-offset-4 hover:text-gold"
+                  className="mt-1 inline-flex min-h-12 items-center font-sans text-base text-linen/80 underline underline-offset-4 hover:text-gold"
                 >
                   Get directions
                 </a>
                 <a
                   href={PHONE_HREF}
-                  className="flex min-h-[40px] items-center justify-center font-mono text-base text-gold transition-opacity hover:opacity-80 md:justify-start"
+                  className="flex min-h-12 items-center justify-center font-mono text-base text-gold transition-opacity hover:opacity-80 md:justify-start"
                 >
                   {CONTACT.phone}
                 </a>
               </div>
 
               <div>
-                <h2 className="font-mono text-xs uppercase tracking-widest text-gold">
+                <h2 className="font-mono text-label uppercase tracking-label text-gold">
                   Parties of 9 or more
                 </h2>
                 <p className="mt-2 font-sans text-base leading-relaxed text-linen/90">
@@ -341,7 +341,7 @@ export default function ReservationsClient() {
               </div>
 
               <div>
-                <h2 className="font-mono text-xs uppercase tracking-widest text-gold">
+                <h2 className="font-mono text-label uppercase tracking-label text-gold">
                   Private dining
                 </h2>
                 <p className="mt-2 font-sans text-base leading-relaxed text-linen/90">
@@ -349,7 +349,7 @@ export default function ReservationsClient() {
                 </p>
                 <Link
                   href="/contact/?inquiry=private-dining"
-                  className="mt-2 inline-flex min-h-[40px] items-center font-sans text-base text-gold underline underline-offset-4 transition-opacity hover:opacity-80"
+                  className="mt-2 inline-flex min-h-12 items-center font-sans text-base text-gold underline underline-offset-4 transition-opacity hover:opacity-80"
                 >
                   Inquire about private events &rarr;
                 </Link>

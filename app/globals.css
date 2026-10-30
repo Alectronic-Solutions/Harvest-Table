@@ -15,6 +15,12 @@
   --color-fog: #6B7A6B;
   --color-ink: #1A1A1A;
   --color-gold-dark: #7A5A1C;
+
+  /* RGB channels of the palette, for translucent scrims and glows in CSS. */
+  --rgb-ink: 26 26 26;
+  --rgb-forest: 44 59 45;
+  --rgb-gold: 212 168 67;
+  --rgb-ember: 160 82 45;
   --color-fog-dark: #566256;
 
   /* One-off tints used by the custom scrollbar / scroll-progress bar. */
@@ -120,6 +126,42 @@
 }
 
 @layer utilities {
+  /* Horizontal scroller cue: the last visible item fades out until scrolled. */
+  .scroll-fade-end {
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 40px), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 40px), transparent);
+  }
+  @media (min-width: 768px) {
+    .scroll-fade-end {
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+  }
+  /* Legibility scrims and warm glows behind hero and section copy. */
+  .scrim-hero {
+    background-image: radial-gradient(ellipse 65% 55% at 50% 48%, rgb(var(--rgb-ink) / 0.5) 0%, transparent 72%);
+  }
+  .scrim-banner {
+    background-image: radial-gradient(ellipse 70% 80% at 50% 50%, rgb(var(--rgb-ink) / 0.5) 0%, transparent 75%);
+  }
+  .scrim-left {
+    background-image: radial-gradient(ellipse at left, rgb(var(--rgb-forest) / 0.3) 0%, transparent 60%);
+  }
+  .warmth-hero {
+    background-image: radial-gradient(ellipse 60% 70% at 50% 45%, rgb(var(--rgb-ember) / 0.08) 0%, transparent 70%);
+  }
+  .warmth-reviews {
+    background-image: radial-gradient(ellipse 70% 50% at 50% 40%, rgb(var(--rgb-ember) / 0.08) 0%, transparent 70%);
+  }
+  .glow-gold {
+    background-image: radial-gradient(circle, rgb(var(--rgb-gold) / 0.12) 0%, transparent 70%);
+  }
+  .text-shadow-title {
+    text-shadow: 0 2px 20px rgb(var(--rgb-ink) / 0.45);
+  }
+  .text-shadow-body {
+    text-shadow: 0 1px 10px rgb(var(--rgb-ink) / 0.4);
+  }
   .scrollbar-none {
     scrollbar-width: none;
     -ms-overflow-style: none;

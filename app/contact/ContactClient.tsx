@@ -35,7 +35,7 @@ function ContactHero() {
       </m.div>
       <div className="absolute inset-0 bg-forest/60" />
       <div className="relative z-10 text-center">
-        <h1 className="font-display text-5xl font-semibold text-linen md:text-6xl">Get in Touch</h1>
+        <h1 className="font-display text-5xl font-semibold leading-[1.05] text-linen md:text-6xl">Get in Touch</h1>
       </div>
     </section>
   );
@@ -69,14 +69,14 @@ function InquiryForm() {
   return (
     <div>
       {modal}
-      <p className="font-mono text-xs uppercase tracking-widest text-gold-dark">Send a message</p>
+      <p className="font-mono text-label uppercase tracking-label text-gold-dark">Send a message</p>
       <div className="mt-3 mb-6 border-t border-fog/25" />
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
 
         <div>
-          <label htmlFor="contact-name" className="block font-mono text-xs uppercase tracking-widest text-fog-dark mb-2">
+          <label htmlFor="contact-name" className="block font-mono text-label uppercase tracking-label text-fog-dark mb-2">
             Name
           </label>
           <input
@@ -90,7 +90,7 @@ function InquiryForm() {
         </div>
 
         <div>
-          <label htmlFor="contact-email" className="block font-mono text-xs uppercase tracking-widest text-fog-dark mb-2">
+          <label htmlFor="contact-email" className="block font-mono text-label uppercase tracking-label text-fog-dark mb-2">
             Email
           </label>
           <input
@@ -105,14 +105,14 @@ function InquiryForm() {
         </div>
 
         <div>
-          <label htmlFor="contact-inquiry-type" className="block font-mono text-xs uppercase tracking-widest text-fog-dark mb-2">
+          <label htmlFor="contact-inquiry-type" className="block font-mono text-label uppercase tracking-label text-fog-dark mb-2">
             Inquiry type
           </label>
           <select
             id="contact-inquiry-type"
             name="inquiry_type"
             defaultValue={defaultInquiry}
-            className="w-full min-h-[48px] border-0 border-b border-fog/40 bg-transparent py-3 text-center font-sans text-base text-ink focus:border-forest focus:outline-none focus:ring-2 focus:ring-gold-dark transition-colors md:text-left md:text-sm appearance-none cursor-pointer"
+            className="w-full min-h-[48px] border-0 border-b border-fog/40 bg-transparent py-3 text-left font-sans text-base text-ink focus:border-forest focus:outline-none focus:ring-2 focus:ring-gold-dark transition-colors md:text-sm appearance-none cursor-pointer"
           >
             <option value="">Select one</option>
             {INQUIRY_OPTIONS.map((o) => (
@@ -124,7 +124,7 @@ function InquiryForm() {
         </div>
 
         <div>
-          <label htmlFor="contact-message" className="block font-mono text-xs uppercase tracking-widest text-fog-dark mb-2">
+          <label htmlFor="contact-message" className="block font-mono text-label uppercase tracking-label text-fog-dark mb-2">
             Message
           </label>
           <textarea
@@ -161,9 +161,9 @@ function ContactContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center md:text-left"
+            className="text-left"
           >
-            <p className="font-mono text-xs uppercase tracking-widest text-gold-dark">Find us</p>
+            <p className="font-mono text-label uppercase tracking-label text-gold-dark">Find us</p>
             <div className="mt-3 mb-6 border-t border-fog/25" />
 
             <address className="not-italic font-sans text-base leading-relaxed text-forest">
@@ -173,27 +173,27 @@ function ContactContent() {
             </address>
 
             <div className="mt-4">
-              <p className="font-mono text-xs uppercase tracking-wide text-fog-dark">Reservations</p>
+              <p className="font-mono text-label uppercase tracking-label text-fog-dark">Reservations</p>
               <a
                 href={PHONE_HREF}
-                className="mt-1 flex min-h-[40px] items-center justify-center font-mono text-base text-forest transition-colors hover:text-ember md:justify-start"
+                className="mt-1 flex min-h-12 items-center justify-center font-mono text-base text-forest transition-colors hover:text-ember md:justify-start"
               >
                 {CONTACT.phone}
               </a>
             </div>
 
             <div className="mt-4">
-              <p className="font-mono text-xs uppercase tracking-wide text-fog-dark">General inquiries</p>
+              <p className="font-mono text-label uppercase tracking-label text-fog-dark">General inquiries</p>
               <a
                 href={`mailto:${CONTACT.email}`}
-                className="mt-1 flex min-h-[40px] items-center justify-center font-sans text-sm text-forest transition-colors hover:text-ember md:justify-start"
+                className="mt-1 flex min-h-12 items-center justify-center font-sans text-sm text-forest transition-colors hover:text-ember md:justify-start"
               >
                 {CONTACT.email}
               </a>
             </div>
 
             <div className="mt-8">
-              <p className="mb-3 font-mono text-xs uppercase tracking-wide text-fog-dark">Hours</p>
+              <p className="mb-3 font-mono text-label uppercase tracking-label text-fog-dark">Hours</p>
               {HOURS.map((h) => (
                 <div
                   key={h.day}
@@ -212,9 +212,9 @@ function ContactContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-center md:text-left"
+            className="text-left"
           >
-            <p className="font-mono text-xs uppercase tracking-widest text-gold-dark">Location</p>
+            <p className="font-mono text-label uppercase tracking-label text-gold-dark">Location</p>
             <div className="mt-3 mb-6 border-t border-fog/25" />
 
             <iframe
@@ -234,7 +234,7 @@ function ContactContent() {
               href={MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-1 inline-flex min-h-[44px] items-center font-sans text-sm text-ember underline underline-offset-4"
+              className="mt-1 inline-flex min-h-12 items-center font-sans text-sm text-ember underline underline-offset-4"
             >
               Get directions &rarr;
             </a>
@@ -246,7 +246,7 @@ function ContactContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-center md:text-left"
+            className="text-left"
           >
             <Suspense fallback={<div className="h-96" />}>
               <InquiryForm />
@@ -263,7 +263,7 @@ function ContactContent() {
 
 function CareersAndPress() {
   return (
-    <section className="bg-white px-5 py-16 md:px-8">
+    <section className="bg-paper px-5 py-16 md:px-8">
       <div className="mx-auto max-w-5xl">
         <div className="grid grid-cols-1 divide-y divide-fog/20 md:grid-cols-2 md:divide-x md:divide-y-0">
 
@@ -273,18 +273,18 @@ function CareersAndPress() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="py-10 text-center md:py-0 md:pr-12 md:text-left"
+            className="py-10 text-left md:py-0 md:pr-12"
           >
-            <h2 className="font-display text-2xl font-medium text-forest">
+            <h2 className="font-display text-2xl font-semibold text-forest">
               We are always looking for people who care about food.
             </h2>
-            <p className="mt-3 font-sans text-sm leading-relaxed text-fog-dark">
+            <p className="mt-3 font-sans text-base leading-relaxed text-fog-dark">
               Send your resume and a note about why you want to cook or serve at Harvest Table.
               We read every message.
             </p>
             <a
               href="mailto:careers@harvesttable.com"
-              className="mt-4 inline-flex min-h-[44px] items-center font-sans text-sm text-ember underline underline-offset-4"
+              className="mt-4 inline-flex min-h-12 items-center font-sans text-sm text-ember underline underline-offset-4"
             >
               careers@harvesttable.com
             </a>
@@ -296,18 +296,18 @@ function CareersAndPress() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="py-10 text-center md:py-0 md:pl-12 md:text-left"
+            className="py-10 text-left md:py-0 md:pl-12"
           >
-            <h2 className="font-display text-2xl font-medium text-forest">
+            <h2 className="font-display text-2xl font-semibold text-forest">
               We are happy to speak with food writers and journalists.
             </h2>
-            <p className="mt-3 font-sans text-sm leading-relaxed text-fog-dark">
+            <p className="mt-3 font-sans text-base leading-relaxed text-fog-dark">
               For recipe requests, photography access, chef interviews, or event coverage, reach
               out directly. We respond within three business days.
             </p>
             <a
               href="mailto:press@harvesttable.com"
-              className="mt-4 inline-flex min-h-[44px] items-center font-sans text-sm text-ember underline underline-offset-4"
+              className="mt-4 inline-flex min-h-12 items-center font-sans text-sm text-ember underline underline-offset-4"
             >
               press@harvesttable.com
             </a>

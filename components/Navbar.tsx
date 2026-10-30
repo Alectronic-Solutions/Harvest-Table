@@ -94,7 +94,7 @@ export default function Navbar() {
           <Link
             href="/"
             onClick={() => setMenuOpen(false)}
-            className="flex items-center gap-2.5"
+            className="flex min-h-12 items-center gap-2.5"
           >
             <Image
               src={asset('/logo.svg')}
@@ -195,7 +195,7 @@ export default function Navbar() {
                     transition={{ delay: 0.04 * i + 0.1, duration: 0.3, ease: 'easeOut' }}
                     className="flex items-baseline gap-4 border-b border-linen/10 py-4 first:pt-0"
                   >
-                    <span className="font-mono text-[11px] text-gold/70">
+                    <span className="font-mono text-xs text-gold">
                       {String(i + 1).padStart(2, '0')}
                     </span>
                     <Link
@@ -203,7 +203,7 @@ export default function Navbar() {
                       href={link.href}
                       onClick={() => setMenuOpen(false)}
                       aria-current={isActive(link.href) ? 'page' : undefined}
-                      className={`font-display text-4xl font-light leading-none transition-colors duration-200 hover:text-gold focus:outline-none focus-visible:text-gold focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-forest ${
+                      className={`font-display text-4xl font-normal leading-none transition-colors duration-200 hover:text-gold focus:outline-none focus-visible:text-gold focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-forest ${
                         isActive(link.href) ? 'text-gold' : 'text-linen'
                       }`}
                     >
@@ -224,7 +224,7 @@ export default function Navbar() {
                 <a
                   href={PHONE_HREF}
                   onClick={() => setMenuOpen(false)}
-                  className="mt-2 flex min-h-[48px] items-center justify-center font-mono text-xs tracking-[0.1em] text-linen/70 transition-colors duration-200 hover:text-gold focus:outline-none focus-visible:text-gold"
+                  className="mt-2 flex min-h-[48px] items-center justify-center font-mono text-xs tracking-wide text-linen/85 transition-colors duration-200 hover:text-gold focus:outline-none focus-visible:text-gold"
                 >
                   {CONTACT.phone}
                 </a>
